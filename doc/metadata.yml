@@ -1,10 +1,9 @@
 # ------------------------------------------------------------------------------
-# Trivadis AG, Infrastructure Managed Services
-# Saegereistrasse 29, 8152 Glattbrugg, Switzerland
+# OraDBA - Oracle Database Infrastructure and Security, 5630 Muri, Switzerland
 # ------------------------------------------------------------------------------
 # Name.......: matadata.yml
-# Author.....: Stefan Oehrli (oes) stefan.oehrli@trivadis.com
-# Date.......: 2019.11.22
+# Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
+# Date.......: 2024.08.15
 # Revision...: 
 # Purpose....: Metadata file for pandoc coversion 
 # Notes......: 
@@ -15,45 +14,38 @@
 # Modified...:
 # see git revision history for more information on changes/updates
 # ------------------------------------------------------------------------------
-title: Oracle Cloud Infrastructure (OCI) Kickstart Workshop
+title: Oracle Cloud Infrastructure (OCI) Security Workshop
 subtitle: Labor- und Übungsleitfaden 
 author: 
 - Stefan Oehrli
 - Martin Berger
+
 # date is set by pandoc, uncomment the date line to explicitly set a date
 #date: 2020 November 06
-tvddocversion: 0.0.1
+tvddocversion: 0.1.0
 lang: de
 
-# - TVD Variables --------------------------------------------------------------
-# Mainly used to customize the cover page
-tvdlocname:     Trivadis part of Accenture
-tvdlocstreet:   Sägereistrasse 29
-tvdlocplz:      8152
-tvdloccity:     Glattbrugg
-tvdloccountry:  Switzerland
-tvdcontact:
-tvdtitle:
-tvdmail:        info@trivadis.com
-tvdphone:       +41 58 459 55 55
-
 # - Book settings --------------------------------------------------------------
-#book: true
-#classoption: oneside
+# book: true
+# classoption: oneside
 
 # - Page settings --------------------------------------------------------------
 papersize: a4 
 geometry:
-- top=25mm
-- bottom=25mm
-- right=20mm
+- top=2.54cm
+- bottom=2.54cm
+- left=2.54cm
+- right=2.54cm
+
+# - Page Header/Footer ---------------------------------------------------------
+disable-header: true
+footer-left: "Copyright © 2024 Accenture. All rights reserved."
 
 # - Titel Page -----------------------------------------------------------------
 titlepage: true
 titlepage-rule-height: 0
-# titlepage-text-color: 000000 
-titlepage-text-color: FFFFFF
-titlepage-background: /trivadis/images/TVDTitle2021.png
+titlepage-text-color: "000000"
+subtitle-color: 7500C0
 
 # - TOC Config -----------------------------------------------------------------
 toc: true
@@ -62,17 +54,17 @@ toc-title: Table of Contents
 toc-depth: 2
 
 # - List of Tables / Figures ---------------------------------------------------
-lof: true
-lof-own-page: true
+lof: false
+lof-own-page: false
 lot: true
 lot-own-page: true
 
 numbersections: true
 links-as-notes: false
-linkcolor:    tvdcolor
-urlcolor:     tvdcolor
-filecolor:    tvdcolor
-bulletcolor:  black
+linkcolor:      purple
+urlcolor:       purple
+filecolor:      purple
+bulletcolor:    black
 
 # - Listings -------------------------------------------------------------------
 listings: true
@@ -81,12 +73,8 @@ listings-no-page-break: true
 code-block-font-size: \scriptsize
 
 # - LaTeX config ---------------------------------------------------------------
-# header-includes: |
-#   \setcounter{page}{0}
-#   \usepackage{sectsty}
-#   \sectionfont{\clearpage}
-#   \usepackage{awesomebox}
-#   \definecolor{tvdcolor}{HTML}{9600FF}
+header-includes: |
+   \definecolor{purple}{HTML}{7500C0}
 
 # - Pandoc Environment ---------------------------------------------------------
 pandoc-latex-environment:
@@ -97,20 +85,30 @@ pandoc-latex-environment:
   importantblock: [important]
 
 # - Font settings --------------------------------------------------------------
-# due to an issue with XeLaTeX with images in docker container the font family
-# has to be set to a sanserif font like Helvetica (helvet)
-# fontfamily: helvet
-# For regular pandoc pdf generation with XeLaTeX mainfont is set to Open Sans
-sansfont: Montserrat      # Title font
-mainfont: Open Sans Light # Copy text font
-monofont: Courier New     # Code Text
+# generic font settings
+# mainfont: Arial           # Main font
+# sansfont: Arial           # Font for headings and toc
+monofont: Courier New     # Font for listing and codes
+
+mainfont: Graphik-Regular.ttf
+mainfontoptions:
+- Path=images/fonts/
+- BoldFont=Graphik-Bold.ttf
+- ItalicFont=Graphik-Regular-Italic.ttf
+- BoldItalicFont=Graphik-Bold-Italic.ttf
+  
+sansfont: Graphik-Regular.ttf
+sansfontoptions:
+- Path=images/fonts/
+- BoldFont=Graphik-Bold.ttf
+- ItalicFont=Graphik-Regular-Italic.ttf
+- BoldItalicFont=Graphik-Bold-Italic.ttf
 
 # - Logo settings --------------------------------------------------------------
 # Local logo
-# logo: images/TVDLogo2019.eps
+titlepage-logo: images/Acc_Logo_Black_Purple_RGB.png
 # Container based logos
-logo: /trivadis/images/TVDLogo2021blue.eps
-footer-logo: /trivadis/images/TVDLogo2021blue.eps
-titlepage-logo: /trivadis/images/TVDLogo2021white.eps
-# titlepage-logo: /trivadis/images/TVDLogo2021blue.eps
-# --- EOF ----------------------------------------------------------------------    
+# logo:           /trivadis/images/TVDLogo2021blue.eps
+# footer-logo:    /trivadis/images/TVDLogo2021blue.eps
+# titlepage-logo: /trivadis/images/TVDLogo2021white.eps
+# --- EOF ----------------------------------------------------------------------
