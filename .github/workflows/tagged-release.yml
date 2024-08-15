@@ -129,6 +129,9 @@ jobs:
     name: Create a tagged release
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: write
+
     steps:
       # download generated pdf document from artifact
       - name: Get lab document from artifact store
@@ -162,13 +165,13 @@ jobs:
             ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
             ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
 
-      - name: Update release $GITHUB_REF_NAME
-        uses: Roang-zero1/github-upload-release-artifacts-action@master
-        if: ${{ steps.release.outputs.id != '' }}
+      - name: Upload release assets
+        uses: actions/upload-release-asset@v1
         with:
-          args:
-            ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
-            ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
+          upload_url: ${{ steps.release.outputs.upload_url }}
+          asset_path: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
+          asset_name: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
+          asset_content_type: application/pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
