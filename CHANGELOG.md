@@ -16,6 +16,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.2.0] - 2024-08-15
+
+### Added
+
+- add fonts folder use for pandoc PDF conversion (Fonts and documentation)
+- add Accenture Logo file
+
+### Changed
+
+- complete update of image folder readme documentation
+- complete update of doc folder readme documentation
+- Update Pandoc meta data files *metadata_requirements.yml* and *metadata.yml*
+  for latest release of Pandoc docker image
+
 ## [0.1.0] - 2024-08-15
 
 ### Added
