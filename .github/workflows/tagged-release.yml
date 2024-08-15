@@ -72,8 +72,8 @@ jobs:
             --output=${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf ${{ env.DOC_FOLDER }}/0x04_Requirements.md
       
       # Upload generated pdf document as artifact
-      - name: Upload pdf document as artifact 
-        uses: actions/upload-artifact@master
+      - name: Upload requirement pdf document as artifact 
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
           path: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
@@ -116,8 +116,8 @@ jobs:
             --output=${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf ${{ env.MD_FILES }}
 
       # Upload generated pdf document as artifact
-      - name: Upload pdf document as artifact 
-        uses: actions/upload-artifact@master
+      - name: Upload Lab pdf document as artifact 
+        uses: actions/upload-artifact@v3
         with:
           name: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
           path: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
@@ -185,14 +185,14 @@ jobs:
 
       # download generated pdf document from artifact
       - name: Get lab document from artifact store
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
           path: others
 
       # download generated requirements pdf document from artifact
       - name: Get requirements document from artifact store
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
           path: others
