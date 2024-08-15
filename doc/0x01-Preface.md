@@ -7,13 +7,13 @@ Wollten Sie sich schon immer einmal die Möglichkeiten der Oracle Cloud
 Infrastruktur genauer anschauen, haben aber nie Zeit gefunden? Dann ist unser
 Oracle Cloud Infrastructure (OCI) Security Workshop genau das Richtige. Nach
 einer theoretischen Einführung geht es ab in die Cloud. In einem ersten Teil
-bauen wir gemeinsam in der Konsole eine Umgebung bestehenden aus Compute Instanzen und Datenbanken auf.
-Auf Security wird von Beginn weg grossen Wert gelegt und die entsprechenden
-OCI-Komponenten wie Bastion Host und Cloud Guard von Beginn weg integriert.
-Und weil Freunde ihre Freunde nicht manuell deployen lassen, befassen wir uns
-in einem zweiten Teil mit dem Thema Infrastructure as Code (IaC). In praktischen
-Übungen konfigurieren wir Terraform und deployen anschließend unterschiedliche
-Ressourcen mithilfe von Terraform und OCI Stacks.
+bauen wir gemeinsam in der Konsole eine Umgebung bestehenden aus Compute Instanzen
+und Datenbanken auf. Auf Security wird von Beginn weg grossen Wert gelegt und die
+entsprechenden OCI-Komponenten wie Bastion Host und Cloud Guard von Beginn weg
+integriert. Und weil Freunde ihre Freunde nicht manuell deployen lassen, befassen
+wir uns in einem zweiten Teil mit dem Thema Infrastructure as Code (IaC). In
+praktischen Übungen konfigurieren wir Terraform und deployen anschließend
+unterschiedliche Ressourcen mithilfe von Terraform und OCI Stacks.
 
 ## Ausbildungsziele {.unlisted .unnumbered}
 
