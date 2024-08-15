@@ -22,6 +22,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - initial release *Everything has to start somewhere*. This release is based on
   DOAG 2022 [Oracle Cloud Infrastructure (OCI) Kickstart Workshop](https://github.com/oehrlis/doag2022)
+- add navigation for GitHub pages
+- add bin folder for scripts
+- add ppt folder with initial power point presentation
+- add image folder
+- add other folder and files
 
 ## Release
 

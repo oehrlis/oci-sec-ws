@@ -1,0 +1,143 @@
+# ------------------------------------------------------------------------------
+# OraDBA - Oracle Database Infrastructure and Security, 5630 Muri, Switzerland
+# ------------------------------------------------------------------------------
+# Name.......: _config.yml
+# Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
+# Editor.....: Stefan Oehrli
+# Date.......: 2024.08.15
+# Revision...: 
+# Purpose....: Jekyll Configuration
+# Notes......: --
+# Reference..: --
+# License....: Apache License Version 2.0, January 2004 as shown
+#              at http://www.apache.org/licenses/
+# ------------------------------------------------------------------------------
+
+# Plugins (previously gems:)
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-remote-theme
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+
+# Theme Settings
+# theme                   : "minimal-mistakes-jekyll"
+remote_theme            : "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin   : "default" # "default", "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
+# Site Settings
+locale                  : "de-CH"
+timezone                : Europe/Berlin
+title                   : OCI Security Kickstart Workshop
+title_separator         : "-"
+subtitle                : "DOAG Trainingsday"
+name                    : "Stefan Oehrli & Martin Berger"
+description             : >
+  Oracle Cloud Infrastructure (OCI) Security Kickstart Workshop
+  mit Oehrli und Berger - mit Freunden in der Cloud unterwegs.
+url                     : "https://code.oradba.ch"
+baseurl                 : "/oci-sec-ws"
+git_address             : https://github.com/oehrlis/oci-sec-ws
+git_edit_address        : https://github.com/oehrlis/oci-sec-ws/blob/main
+repository              : "oehrlis/oci-sec-ws"
+teaser                  : "/images/logo_500x300.png"
+logo                    : "/images/logo.png"
+masthead_title          : # overrides the website title displayed in the masthead, use " " for no title
+breadcrumbs             : true # true, false (default)
+words_per_minute        : 200
+atom_feed:
+  path                  : # blank (default) uses feed.xml
+  hide                  : # true, false (default)
+search                  : # true, false (default)
+search_full_content     : # true, false (default)
+search_provider         : # lunr (default), algolia, google
+lunr:
+  search_within_pages   : # true, false (default)
+# google:
+#   search_engine_id       : 37722ce2ba1db42e7
+#   instant_search         : true # false (default), true
+
+google_analytics:
+source: doc
+
+exclude:
+  - .build
+  - .github
+  - .ideas
+  - .vscode
+  - bin
+  - ppt
+  - AUTHOR_GUIDE.md
+  - CHANGELOG.md
+  - VERSION
+  - LICENSE
+  - README.md
+  - CHANGELOG.md
+  - doc/0x01-Preface.md
+  - doc/1x10-Workshop.md
+  - doc/metadata.yml
+  - doc/metadata_requirements.yml
+  - lab/ex01/1x01-Intro.md
+  - lab/ex09/1x01-tf-intro.md
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "single"
+      classes: wide
+      sidebar:
+        nav: "lab"
+
+# _docs
+  - scope:
+      path: "/lab/ex01/"
+    values:
+      read_time: true
+      breadcrumbs : true
+      classes: wide
+      class: wide
+      sidebar:
+        nav: "lab"
+
+# collections_dir: lab
+# collections:
+#   ex00:
+#     output: true
+#     permalink: /:name
+#   ex01:
+#     output: true
+#     permalink: /:name
+#   ex02:
+#     output: true
+#     permalink: /:name 
+
+# defaults:
+# - scope:
+#     path: lab/ex01
+#     type: posts
+#   values:
+#     layout: post
+#     sectionid: blog
+
+# - scope:
+#     path: doc
+#     type: docs
+#   values:
+#     layout: docs
+#     sectionid: docs
+#     seo:
+#       type: "WebPage"
+
+# collections:
+#   docs:
+#     permalink: /:collection/:path/
+#     output: true
+#   posts:
+#     permalink: /blog/:year/:month/:day/:title/
+#     output: true
