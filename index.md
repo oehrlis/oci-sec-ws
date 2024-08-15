@@ -1,8 +1,17 @@
 <!-- markdownlint-disable MD033 -->
-# Oracle Cloud Security Workshop
+<!-- markdownlint-disable MD013 -->
+# # Oracle Cloud Security Workshop
 
 Oracle Cloud Infrastructure Security Kickstart Workshop mit
 Oehrli und Berger.
+
+- [Einführung](./doc/README.md) in die Umgebung und den Workshop
+- [Übungen](./lab/README.md) zum OCI Walkthrough und Terraform Kickstart
+- [Extras](./others/README.md) mit Links, Referenzen sowie den Übungsunterlagen als PDF
+  
+## Themen
+
+- tbd
 
 ## Zeitplan
 
@@ -16,7 +25,3 @@ Oehrli und Berger.
 - 15:00 Misc
 - 16:00 Feedback / Fragen
 - 16:30 Ende
-  
-## Themen
-
-- tbd
