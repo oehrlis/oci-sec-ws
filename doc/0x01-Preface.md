@@ -59,9 +59,9 @@ Table: Übersicht der Autoren
 
 ## Revisionshistorie {.unlisted .unnumbered}
 
-| Version | Datum      | Visum | Bemerkung                          |
-|---------|------------|-------|------------------------------------|
-| 0.1.0   | 2024.04.15 | soe   | Initial release based on DOAG 2022 |
-| 0.x.x   | tbd        | tbd   | tbd                                |
+| Version | Datum      | Visum | Bemerkung                           |
+|---------|------------|-------|-------------------------------------|
+| 0.1.0   | 2024.04.15 | soe   | Initial release based on DOAG 2022  |
+| 0.2.0   | 2024.04.15 | soe   | Add PDF documentation functionality |
 
 Table: Historie der Änderungen
