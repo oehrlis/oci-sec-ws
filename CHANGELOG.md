@@ -20,7 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fix GitHub Workflow issues, migrate action to latest version (v4)
+- Fix GitHub Workflow issues, migrate actions to latest version (v4)
 
 ## [0.2.0] - 2024-08-15
 
