@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.2.1] - 2024-08-15
+
+### Fixed
+
+- Fix GitHub Workflow issues
+
 ## [0.2.0] - 2024-08-15
 
 ### Added
