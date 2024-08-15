@@ -1,7 +1,7 @@
 ---
 title: "Workshop Übersicht"
 permalink: /lab/
-excerpt: "Einführung in den OCI Workshop (O-OCI-WS)"
+excerpt: "Einführung in den OCI Workshop (O-OCISEC-WS)"
 ---
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-configure-file { "MD013": { "tables": false } } -->
