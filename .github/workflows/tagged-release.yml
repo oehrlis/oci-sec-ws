@@ -132,13 +132,13 @@ jobs:
     steps:
       # download generated pdf document from artifact
       - name: Get lab document from artifact store
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
 
       # download generated requirements pdf document from artifact
       - name: Get requirements document from artifact store
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
 
