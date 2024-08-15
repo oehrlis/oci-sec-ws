@@ -16,6 +16,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.2.6] - 2024-08-15
+
+### Fixed
+
+- Fix GitHub Workflow issues, migrate actions to latest version
+  
+### Added
+
+- add write permission for Create a tagged release
+
+### Changed
+
+- change action to actions/upload-release-asset@v1
+
 ## [0.2.5] - 2024-08-15
 
 ### Fixed
