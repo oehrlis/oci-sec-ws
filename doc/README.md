@@ -1,55 +1,100 @@
 # Documentation
 
-This folder contains the documentation files and folder.
+This folder contains all the necessary documentation files and directories used
+in the project. The structure and purpose of each file or folder are outlined below.
 
-- [doc](./README.md) documentation files.
-- [images](../images/README.md) Images and logo files.
-- [metadata.yml](./metadata.yml) Meta file used during pandoc conversion. This
-  file include different information like, title, subtile, author, fonts etc
+## Folder Structure
 
-## Build Documentation
+- **[doc](./README.md):** Contains the primary documentation files in Markdown format.
+- **[images](../images/README.md):** Stores images, logos, and other visual assets
+  referenced in the documentation.
+- **[lab](../lab/README.md):** Contains lab exercises and associated files.
+- **[metadata.yml](./metadata.yml):** Metadata file used during *Pandoc* conversion.
+  This file includes various details such as the title, subtitle, author
+  information, fonts, and other document settings.
 
-The workshop documentation is based on markdown. This allows to convert it to
-different formats e.g. PDF, DOCX and PPTX
+## Building the Documentation
 
-- Create PDF using a docker container.
+The workshop documentation is written in Markdown, allowing it to be easily
+converted into various formats such as PDF, DOCX, and HTML using *Pandoc*. Below
+are the instructions for generating different formats.
+
+### Create PDF Using a Docker Container
+
+To generate a PDF document using *Pandoc* within a Docker container, run the
+following command:
 
 ```bash
 docker run --rm -v "$PWD":/workdir:z oehrlis/pandoc \
 --metadata-file=doc/metadata.yml \
 --listings --pdf-engine=xelatex \
 --resource-path=images --filter pandoc-latex-environment \
---output=tvd-ldap-doc.pdf doc/?x??-*.md
+--output=O-OCISEC-WS_lab_de.pdf doc/[0-8]x??-*.md lab/ex??/?x??-*.md doc/9x??-*.md
 ```
 
-- Create DOCX using a local *pandoc* installation.
+### Create Requirements PDF Using a Docker Container
+
+To generate a PDF specifically for the requirements section, use the following
+command:
 
 ```bash
-pandoc --reference-doc doc/templates/trivadis.docx --listings \
---metadata-file=doc/metadata.yml \
---resource-path images \
--o tvd-ldap-doc.docx \
-doc/?x??-*.md
+docker run --rm -v "$PWD":/workdir:z oehrlis/pandoc \
+--metadata-file=doc/metadata_requirements.yml \
+--listings --pdf-engine=xelatex \
+--resource-path=images --filter pandoc-latex-environment \
+--output=O-OCISEC-WS_requirements_de.pdf 0x04_Requirements.md
 ```
 
-- Create Markdown file using a local pandoc installation.
+### Create DOCX Using a Local *Pandoc* Installation
+
+To convert the Markdown documentation into a DOCX file, use the command below:
+
+```bash
+pandoc --listings \
+--metadata-file=doc/metadata.yml \
+--resource-path images \
+-o O-OCISEC-WS_lab_de.docx \
+doc/[0-8]x??-*.md lab/ex??/?x??-*.md doc/9x??-*.md
+```
+
+### Create Markdown File Using a Local *Pandoc* Installation
+
+To generate a single Markdown file from the documentation, run:
 
 ```bash
 pandoc --listings  \
 --metadata-file=doc/metadata.yml \
 --resource-path images \
--o tvd-ldap-doc.md \
-doc/?x??-*.md
+-o O-OCISEC-WS_lab_de.md \
+doc/[0-8]x??-*.md lab/ex??/?x??-*.md doc/9x??-*.md
 ```
 
-- Create HTML file using a local pandoc installation.
+### Create HTML File Using a Local *Pandoc* Installation
+
+To produce an HTML version of the documentation, use the following command:
 
 ```bash
-pandoc -f markdown  --listings \
+pandoc -f markdown --listings \
 --metadata-file=doc/metadata.yml \
 --resource-path images --standalone \
--o tvd-ldap-doc.html --css doc/templates/pandoc.css \
-doc/?x??-*.md
+-o O-OCISEC-WS_lab_de.html --css doc/templates/pandoc.css \
+doc/[0-8]x??-*.md lab/ex??/?x??-*.md doc/9x??-*.md
 ```
 
-![image-20220908110513445](/Users/stefan.oehrli/Development/github/oehrlis/doag2022/images/test.png)
+## Additional Notes
+
+- **Resource Paths:** Always ensure that the `--resource-path` flag is set
+  correctly to include the necessary images, fonts, and other assets during
+  conversion.
+- **Metadata Files:** The `metadata.yml` file is crucial for setting document
+  properties such as the title, author, and fonts. Make sure to update this
+  file as needed for each type of document output.
+- **Pandoc Options:** The `--listings` option is used to format code blocks
+  properly in the output documents. The `--pdf-engine=xelatex` option specifies
+  the use of XeLaTeX for better font support in PDF generation.
+- **Docker vs Local Pandoc:** Depending on your environment, you may choose to
+  use Docker for consistency across different systems or a local Pandoc
+  installation if it is readily available and configured.
+
+By following these instructions, you can easily generate different formats of the
+workshop documentation, ensuring consistency and quality across all outputs.
