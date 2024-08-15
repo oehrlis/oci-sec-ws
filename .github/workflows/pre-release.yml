@@ -42,6 +42,7 @@ jobs:
   check_docs:
     name: Check Markdown
     runs-on: ubuntu-latest
+
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout repository
@@ -133,6 +134,10 @@ jobs:
     needs: [build_lab_doc, build_req_doc] 
     name: Create draft release
     runs-on: ubuntu-latest
+
+    # Ensure the GITHUB_TOKEN has the correct permissions
+    permissions:
+      contents: write
 
     steps:
       # download generated pdf document from artifact
