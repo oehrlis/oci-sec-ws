@@ -166,14 +166,14 @@ jobs:
             ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
 
       - name: Upload release assets
-        uses: actions/upload-release-asset@v1
+        uses: softprops/action-gh-release@v1
         with:
-          upload_url: ${{ steps.release.outputs.upload_url }}
-          asset_path: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
-          asset_name: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
-          asset_content_type: application/pdf
+          files: |
+            ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
+            ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
       
   # Build job
   build_web:
