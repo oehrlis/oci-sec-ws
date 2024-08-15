@@ -40,7 +40,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       # Check Markdown using markdownlint-cli from docker images 06kellyjac/markdownlint-cli
       - name: run markdownlint-cli
         uses: docker://06kellyjac/markdownlint-cli
@@ -57,7 +57,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # Build PDF using docker images oehrlis/pandoc
       - name: run pandoc to build pdf document
@@ -73,7 +73,7 @@ jobs:
       
       # Upload generated pdf document as artifact
       - name: Upload requirement pdf document as artifact 
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
           path: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
@@ -88,7 +88,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       # Create a variable for a list of MD files
       - name: Populate env variables
@@ -117,7 +117,7 @@ jobs:
 
       # Upload generated pdf document as artifact
       - name: Upload Lab pdf document as artifact 
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
           path: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
