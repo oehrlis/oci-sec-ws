@@ -22,6 +22,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fix GitHub Workflow issues, migrate actions to latest version (v4)
 
+### Added
+
+- add permission for *GITHUB_TOKEN*
+
 ## [0.2.0] - 2024-08-15
 
 ### Added
