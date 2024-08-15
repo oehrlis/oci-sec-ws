@@ -1,7 +1,7 @@
 ---
 title: "Lab Umgebung"
 permalink: /doc/lab/
-excerpt: "Einführung in den OCI Workshop (O-OCI-WS)"
+excerpt: "Einführung in den OCI Workshop (O-OCISEC-WS)"
 ---
 <!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD025 -->

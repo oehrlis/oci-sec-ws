@@ -1,6 +1,6 @@
 ---
 permalink: /doc/requirements/
-excerpt: "Einführung in den OCI Workshop (O-OCI-WS)"
+excerpt: "Einführung in den OCI Workshop (O-OCISEC-WS)"
 ---
 <!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD025 -->
@@ -15,7 +15,7 @@ vertiefen. Dazu erhältst Du Zugang zu einer *Oracle Cloud Umgebung*, welche
 Du im Rahmen des Workshops nutzen kannst. Zudem sind die Beispiele und Übungen
 in einem *GitHub* Repository abgelegt und stehen Dir auch nach dem Workshop zu
 Verfügung. Das Repository wird während der *DOAG Konferenz* frei geschaltet und ist
-via [DOAG 2022 O-OCI-WS](https://url.oradba.ch/DOAG22) verfügbar. Falls Du Fragen
+via [DOAG 2022 O-OCISEC-WS](https://url.oradba.ch/DOAG22) verfügbar. Falls Du Fragen
 hast, zögere nicht, am DOAG / SOUG Stand vorbei zu kommen und nach Stefan Oehrli
 oder Martin Berger zu Verlangen.
 

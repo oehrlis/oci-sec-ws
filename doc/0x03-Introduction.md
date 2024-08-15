@@ -1,13 +1,13 @@
 ---
 permalink: /doc/into/
-excerpt: "Einführung in den OCI Workshop (O-OCI-WS)"
+excerpt: "Einführung in den OCI Workshop (O-OCISEC-WS)"
 ---
 <!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD033 -->
 # Workshop Einführung
 
-Der Oracle Cloud (OCI) Kickstart Workshop (O-OCI-WS) bietet die Möglichkeit,
+Der Oracle Cloud (OCI) Kickstart Workshop (O-OCISEC-WS) bietet die Möglichkeit,
 eine Reihe von Aufgaben im Zusammenhang mit Oracle Cloud Infrastructure (OCI) und
 Terraform zu erlernen und zu üben. Nach einer theoretischen Einführung geht es
 ab in die Cloud. In einem ersten Teil bauen wir gemeinsam in der Konsole eine
@@ -19,7 +19,7 @@ mit dem Thema *Infrastructure as Code (IaC)*. In praktischen Übungen konfigurie
 wir Terraform und deployen anschließend unterschiedliche Ressourcen mithilfe von
 Terraform und OCI Stacks.
 
-Der O-OCI-WS Workshop deckt eine Reihe von Verwaltungs- und Betriebsaufgaben im
+Der O-OCISEC-WS Workshop deckt eine Reihe von Verwaltungs- und Betriebsaufgaben im
 Zusammenhang mit Oracle Cloud Infrastructure und Terraform. Dazu gehören insbesondere:
 
 - Manuelle Bereitstellung verschiedener Ressourcen in der Cloud unter anderem

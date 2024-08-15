@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD033 -->
 # Preface {-}
 
-## Über O-OCI-WS {.unlisted .unnumbered}
+## Über O-OCISEC-WS {.unlisted .unnumbered}
 
 Wollten Sie sich schon immer einmal die Möglichkeiten der Oracle Cloud
 Infrastruktur genauer anschauen, haben aber nie Zeit gefunden? Dann ist unser
@@ -45,11 +45,11 @@ dieses Dokument jederzeit ohne Vorankündigung zu überarbeiten.
 
 ## Dokumentinformation  {.unlisted .unnumbered}
 
-- **Document:**          O-OCI-WS Labor- und Übungsleitfaden
+- **Document:**          O-OCISEC-WS Labor- und Übungsleitfaden
 - **Classification:**    public
 - **Status:**            Work in progress
 - **Last changes:**      2022.09.19
-- **Document name:**     O-OCI-WS_lab_de.pdf
+- **Document name:**     O-OCISEC-WS_lab_de.pdf
 
 | Hauptautoren                 | Mitwirkende & Reviewer |
 |------------------------------|------------------------|
@@ -59,9 +59,9 @@ Table: Übersicht der Autoren
 
 ## Revisionshistorie {.unlisted .unnumbered}
 
-| Version | Datum      | Visum | Bemerkung       |
-|---------|------------|-------|-----------------|
-| 0.0.1   | 2022.09.08 | soe   | Initial release |
-| 0.2.1   | 2022.09.18 | soe   | OCI Walkthrough |
+| Version | Datum      | Visum | Bemerkung                          |
+|---------|------------|-------|------------------------------------|
+| 0.1.0   | 2024.04.15 | soe   | Initial release based on DOAG 2022 |
+| 0.x.x   | tbd        | tbd   | tbd                                |
 
 Table: Historie der Änderungen
