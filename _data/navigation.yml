@@ -33,45 +33,32 @@ lab:
       - title: "Lab Umgebung"
         url: /doc/lab/
 
-  - title: Übungen OCI
+  - title: Übungen Cloud Guard
     children:
       - title: "Login"
-        url: /lab/oci-login/
+        url: /lab/cg-login/
       - title: "Netzwerk"
-        url: /lab/oci-network/
+        url: /lab/cg-network/
       - title: "Compute Instance"
-        url: /lab/oci-compute/
-      - title: "Load Balancer"
-        url: /lab/oci-compute-lb/
-      - title: "Block Volume"
-        url: /lab/oci-compute-bv/
-      - title: "DB System"
-        url: /lab/oci-db-system/
-      - title: "Autonomous Database"
-        url: /lab/oci-atp/
-      - title: "OCI-CLI"
-        url: /lab/oci-cli/
+        url: /lab/cg-compute/
 
-  - title: Übungen Terraform
+  - title: Übungen Data Safe
     children:
       - title: "Login"
-        url: /lab/tf-login/
+        url: /lab/ds-login/
       - title: "Netzwerk"
-        url: /lab/tf-network/
+        url: /lab/ds-network/
       - title: "Compute Instance"
-        url: /lab/tf-compute/
-      - title: "Compute Instance Anpassen"
-        url: /lab/tf-compute-adv/
-      - title: "Block Volume"
-        url: /lab/tf-compute-bv/
-      - title: "DB System"
-        url: /lab/tf-db-system/
-      - title: "Autonomous Database"
-        url: /lab/tf-atp/
-      - title: "Module"
-        url: /lab/tf-modules/
-      - title: "OCI Stacks"
-        url: /lab/tf-stacks/
+        url: /lab/ds-compute/
+
+  - title: Übungen Security Zones
+    children:
+      - title: "Login"
+        url: /lab/sz-login/
+      - title: "Netzwerk"
+        url: /lab/sz-network/
+      - title: "Compute Instance"
+        url: /lab/sz-compute/
 
   - title: Extras
     children:
