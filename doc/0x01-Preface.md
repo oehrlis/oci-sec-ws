@@ -5,11 +5,11 @@
 
 Wollten Sie sich schon immer einmal die Möglichkeiten der Oracle Cloud
 Infrastruktur genauer anschauen, haben aber nie Zeit gefunden? Dann ist unser
-Oracle Cloud (OCI) Kickstart Workshop genau das Richtige. Nach einer theoretischen
-Einführung geht es ab in die Cloud. In einem ersten Teil bauen wir gemeinsam in
-der Konsole eine Umgebung bestehenden aus Compute Instanzen und Datenbanken auf.
+Oracle Cloud Infrastructure (OCI) Security Workshop genau das Richtige. Nach
+einer theoretischen Einführung geht es ab in die Cloud. In einem ersten Teil
+bauen wir gemeinsam in der Konsole eine Umgebung bestehenden aus Compute Instanzen und Datenbanken auf.
 Auf Security wird von Beginn weg grossen Wert gelegt und die entsprechenden
-OCI-Komponenten wie Bastion Host und Clo1ud Guard von Beginn weg integriert.
+OCI-Komponenten wie Bastion Host und Cloud Guard von Beginn weg integriert.
 Und weil Freunde ihre Freunde nicht manuell deployen lassen, befassen wir uns
 in einem zweiten Teil mit dem Thema Infrastructure as Code (IaC). In praktischen
 Übungen konfigurieren wir Terraform und deployen anschließend unterschiedliche
@@ -45,10 +45,10 @@ dieses Dokument jederzeit ohne Vorankündigung zu überarbeiten.
 
 ## Dokumentinformation  {.unlisted .unnumbered}
 
-- **Document:**          O-OCISEC-WS Labor- und Übungsleitfaden
+- **Document:**          Labor- und Übungsleitfaden
 - **Classification:**    public
 - **Status:**            Work in progress
-- **Last changes:**      2022.09.19
+- **Last changes:**      2024.08.15
 - **Document name:**     O-OCISEC-WS_lab_de.pdf
 
 | Hauptautoren                 | Mitwirkende & Reviewer |
