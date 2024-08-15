@@ -48,7 +48,7 @@ titlepage-text-color: "000000"
 subtitle-color: 7500C0
 
 # - TOC Config -----------------------------------------------------------------
-toc: true
+toc: false
 toc-own-page: true
 toc-title: Table of Contents
 toc-depth: 2
