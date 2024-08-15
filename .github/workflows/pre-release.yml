@@ -45,7 +45,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       # Check Markdown using markdownlint-cli from docker images 06kellyjac/markdownlint-cli
       - name: run markdownlint-cli
         uses: docker://06kellyjac/markdownlint-cli
@@ -62,7 +62,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Build PDF using docker images oehrlis/pandoc
       - name: run pandoc to build pdf document
@@ -93,7 +93,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Create a variable for a list of MD files
       - name: Populate env variables
