@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.2.9] - 2024-08-16
+  
+### Changed
+
+- replace marvinpinto/action-automatic-releases@latest with softprops/action-gh-release@v2
+
 ## [0.2.8] - 2024-08-16
 
 ### Added
