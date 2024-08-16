@@ -166,7 +166,7 @@ jobs:
             ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
 
       - name: Upload release assets
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: |
             ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
