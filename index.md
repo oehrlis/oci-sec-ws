@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD013 -->
-# # Oracle Cloud Security Workshop
+# Oracle Cloud Security Workshop
 
 Oracle Cloud Infrastructure Security Kickstart Workshop mit
 Oehrli und Berger.
