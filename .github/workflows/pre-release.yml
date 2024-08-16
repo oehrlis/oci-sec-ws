@@ -152,14 +152,18 @@ jobs:
         with:
           name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
 
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      # Create a draft release
+      - name: Create a draft release
+        uses: softprops/action-gh-release@v2
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
+          tag_name: "latest"
+          name: "Development build of documents"
+          draft: true
           prerelease: true
-          title: "Development build of documents"
           files: |
             ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
             ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 # --- EOF -------------------------------------------------------------------

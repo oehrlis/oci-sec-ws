@@ -122,7 +122,7 @@ jobs:
           name: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
           path: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
           
-# - Draft release ------------------------------------------------------------
+# - Build Release --------------------------------------------------------------
 # Job to build a draft release
   tagged-release:
     needs: [build_lab_doc, build_req_doc] 
@@ -145,34 +145,20 @@ jobs:
         with:
           name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
 
-      - id: release
-        name: Check if release does exists
-        uses: cardinalby/git-get-release-action@v1
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-        with: 
-          tag: ${{ github.ref_name }}
-          prerelease: false
-          doNotFailIfNotFound: true
-
-      - uses: "marvinpinto/action-automatic-releases@latest"
-        name: Create new release for $GITHUB_REF_NAME
-        if: ${{ steps.release.outputs.id == '' }}
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
-          files: |
-            ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
-            ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
-
-      - name: Upload release assets
+      # Create or update a release
+      - name: Create or update a release
         uses: softprops/action-gh-release@v2
         with:
+          tag_name: ${{ github.ref_name }}
+          name: "Release ${{ github.ref_name }}"
+          draft: false
+          prerelease: false
           files: |
             ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
             ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
           
       
   # Build job
