@@ -16,6 +16,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.2.8] - 2024-08-16
+
+### Added
+
+- add default config for pages
+  
+### Changed
+
+- update action version
+  
+### Fixed
+
+- fix a couple of topo's
+  
+### Removed
+
+- Removed logo from template configuration
+
 ## [0.2.7] - 2024-08-15
 
 ### Changed
