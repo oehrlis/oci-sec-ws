@@ -44,11 +44,11 @@ baseurl                 : "/oci-sec-ws"
 git_address             : https://github.com/oehrlis/oci-sec-ws
 git_edit_address        : https://github.com/oehrlis/oci-sec-ws/blob/main
 repository              : "oehrlis/oci-sec-ws"
-teaser                  : " " # remove logo /images/logo_500x300.png
-logo                    : " " # remove logo /images/logo.png
+teaser                  : # remove logo /images/logo_500x300.png
+logo                    : # remove logo /images/logo.png
 masthead_title          : # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs             : true # true, false (default)
-enable_copy_code_button: true
+enable_copy_code_button : true
 words_per_minute        : 200
 atom_feed:
   path                  : # blank (default) uses feed.xml
@@ -92,10 +92,10 @@ defaults:
     values:
       layout: "single"
       classes: wide
-      author_profile: true
+      author_profile: false
       read_time: true
       comments: true
-      share: true
+      share: false
       related: true
       sidebar:
         nav: "lab"
