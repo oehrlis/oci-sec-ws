@@ -29,7 +29,7 @@ docker run --rm -v "$PWD":/workdir:z oehrlis/pandoc \
 --metadata-file=doc/metadata.yml \
 --listings --pdf-engine=xelatex \
 --resource-path=images --filter pandoc-latex-environment \
---output=O-OCISEC-WS_lab_de.pdf doc/[0-8]x??-*.md lab/ex??/?x??-*.md doc/9x??-*.md
+--output=OCI-SEC-WS_lab_de.pdf doc/[0-8]x??-*.md lab/ex??/?x??-*.md doc/9x??-*.md
 ```
 
 ### Create Requirements PDF Using a Docker Container
@@ -42,7 +42,7 @@ docker run --rm -v "$PWD":/workdir:z oehrlis/pandoc \
 --metadata-file=doc/metadata_requirements.yml \
 --listings --pdf-engine=xelatex \
 --resource-path=images --filter pandoc-latex-environment \
---output=O-OCISEC-WS_requirements_de.pdf 0x04_Requirements.md
+--output=OCI-SEC-WS_requirements_de.pdf 0x04_Requirements.md
 ```
 
 ### Create DOCX Using a Local *Pandoc* Installation
@@ -53,7 +53,7 @@ To convert the Markdown documentation into a DOCX file, use the command below:
 pandoc --listings \
 --metadata-file=doc/metadata.yml \
 --resource-path images \
--o O-OCISEC-WS_lab_de.docx \
+-o OCI-SEC-WS_lab_de.docx \
 doc/[0-8]x??-*.md lab/ex??/?x??-*.md doc/9x??-*.md
 ```
 
@@ -65,7 +65,7 @@ To generate a single Markdown file from the documentation, run:
 pandoc --listings  \
 --metadata-file=doc/metadata.yml \
 --resource-path images \
--o O-OCISEC-WS_lab_de.md \
+-o OCI-SEC-WS_lab_de.md \
 doc/[0-8]x??-*.md lab/ex??/?x??-*.md doc/9x??-*.md
 ```
 
@@ -77,7 +77,7 @@ To produce an HTML version of the documentation, use the following command:
 pandoc -f markdown --listings \
 --metadata-file=doc/metadata.yml \
 --resource-path images --standalone \
--o O-OCISEC-WS_lab_de.html --css doc/templates/pandoc.css \
+-o OCI-SEC-WS_lab_de.html --css doc/templates/pandoc.css \
 doc/[0-8]x??-*.md lab/ex??/?x??-*.md doc/9x??-*.md
 ```
 

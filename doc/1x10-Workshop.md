@@ -1,51 +1,103 @@
 <!-- markdownlint-disable MD025 -->
+<!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD051 -->
 <!-- markdownlint-configure-file { "MD013": { "tables": false } } -->
-# Übungen
+# Exercises
 
-Die Übungen sind in einzelnen Verzeichnissen gruppiert und können Teilweise
-unabhängig voneinander durchgeführt werden. Jede Übung enthält mindestens eine kurze
-Beschreibung der Aufgaben sowie eine Lösung. Darüber hinaus sind Skripte, etc.
-Bestandteil jeder Übung. Für Übungen, bei denen Software (Oracle Binaries, Patch)
-oder Code aus anderen Git-Repositories benötigt wird, verweisen wir entsprechend
-darauf. Alle Übungen stehen auch via GitHub Repository
-[oehrlis/doag2022](https://github.com/oehrlis/doag2022) zur Verfügung.
+The exercises are grouped into individual directories and can be completed independently. Each exercise includes a brief description of the tasks as well as a solution. Additionally, scripts and other necessary resources are included with each exercise. For exercises that require software (Oracle binaries, patches) or code from other Git repositories, we provide the necessary references. All exercises are also available via the GitHub repository [oehrlis/oci-sec-ws](https://github.com/oehrlis/oci-sec-ws).
 
-## Einführung
+## Introduction
 
-| ID | Thema                                    | Beschreibung                                             | Dauer |
-|----|------------------------------------------|----------------------------------------------------------|-------|
-| 01 | [Architektur](#architektur)              | Übersicht der OCI Architektur für den Walkthrough.       | 10    |
-| 02 | [OCI Login](#oci-konsole-login)          | Erstes Login in Oracle Cloud Infrastructure (OCI)        | 15    |
+| ID  | Topic                            | Description                                             | Duration |
+|-----|----------------------------------|---------------------------------------------------------|----------|
+| 01  | [Architecture](#architektur)     | Overview of the OCI architecture for the walkthrough.    | 10 min   |
+| 02  | [OCI Login](#oci-konsole-login)  | First login to Oracle Cloud Infrastructure (OCI).        | 15 min   |
 
-Table: Workshop Übungen zum Thema Einführung
+**Table:** Workshop exercises for the introduction section.
 
-## OCI Walkthrough
+## Oracle Cloud Guard
 
-| ID | Thema                                                         | Beschreibung                                                | Dauer |
-|----|---------------------------------------------------------------|-------------------------------------------------------------|-------|
-| 03 | [Netzwerk](#vcn-basics)                                       | Konfiguration von Virtual Cloud Networks                    | 15    |
-| 04 | [Compute Instance](#simple-compute-instance)                  | Konfiguration einer Compute Instance                        | 15    |
-| 04 | [Compute Load Balancer](#compute-instances-mit-load-balancer) | Konfiguration von Compute Instances mit einem Load Balancer | 20    |
-| 04 | [Compute Block Volume](#compute-instance-mit-block-volume)    | Konfiguration von Block Volumes für eine Compute Instance   | 20    |
-| 05 | [DB System](#database-system)                                 | Konfiguration eines DB Systems                              | 30    |
-| 06 | [Autonomous](#autonomous-database)                            | Konfiguration einer Autonomous Databases                    | 30    |
-| 07 | [Object Store](#object-storage)                               | Konfiguration von Object Storages                           | 15    |
+| ID  | Topic                                                   | Description                                                 | Duration |
+|-----|---------------------------------------------------------|-------------------------------------------------------------|----------|
+| 03  | [Overview](#vcn-basics)                                 | Introduction to Virtual Cloud Networks.                      | 15 min   |
+| 04  | [Setup](#simple-compute-instance)                       | Configuration of a compute instance.                         | 15 min   |
+| 05  | [CIS Scans](#cis-scans)                                 | Performing CIS scans to identify security issues.            | 20 min   |
+| 06  | [Receipes](#receipes)                                   | Managing Cloud Guard security recipes.                       | 20 min   |
+| 07  | [Alerting](#alerting)                                   | Setting up alerting mechanisms for security events.          | 30 min   |
+| 08  | [Events](#events)                                       | Configuring event responses for detected security incidents. | 30 min   |
+| 09  | [Remediation](#remediation)                             | Implementing remediation actions to resolve security issues. | 15 min   |
 
-Table: Workshop Übungen zum Thema OCI Walkthrough
+**Table:** Workshop exercises for Oracle Cloud Guard.
 
-## Terraform Kickstart
+## Oracle Data Safe
 
-| ID | Thema                                                   | Beschreibung                                                   | Dauer |
-|----|---------------------------------------------------------|----------------------------------------------------------------|-------|
-| 09 | [Login](#terraform-konfiguration)                       | Konfiguration Terraform Login und erste Schritte mit Terraform | 10    |
-| 10 | [Netzwerk](#terraform-netzwerk-konfiguration)           | Erstellen und Konfiguration von Virtual Cloud Networks         | 20    |
-| 11 | [Compute Instance](#compute-instance-mit-terraform)     | Erstellen von Compute Instances                                | 20    |
-| 12 | [Compute Instance Anpassen](#compute-instance-anpassen) | Anpassung von Compute Instances                                | 20    |
-| 13 | [Compute Block Volume](#block-volume-mit-terraform)     | Konfiguration von Block Volumes für eine Compute Instance      | 20    |
-| 14 | [DB System](#block-volume-mit-terraform)                | Konfiguration eines DB Systems                                 | 20    |
-| 15 | [Autonomous](#autonomous-database-mit-terraform)        | Konfiguration einer Autonomous Databases                       | 20    |
-| 16 | [Modules](#terraform-module)                            | Verwendung von Terraform Modulen                               | 20    |
-| 17 | [OCI Stacks](#oci-stacks)                               | Nutzung von OCI Stacks                                         | 20    |
+| ID  | Topic                                                   | Description                                                   | Duration |
+|-----|---------------------------------------------------------|----------------------------------------------------------------|----------|
+| 10  | [Login](#data-safe-login)                               | Logging into Oracle Data Safe and initial setup.                | 10 min   |
+| 12  | [Register ADP](#data-safe-audit)                         | Configuring auditing in Data Safe for enhanced monitoring.      | 20 min   |
+| 14  | [Security Assessments](#security-assessments)           | Running security assessments to evaluate security posture.      | 20 min   |
+| 15  | [Alerting](#data-safe-alerting)                         | Setting up alerting for data security violations.               | 20 min   |
+| 15  | [SQL Firewall](#data-safe-alerting)                         | Setting up alerting for data security violations.               | 20 min   |
+| 15  | [On-Premises Database](#data-safe-alerting)                         | Setting up alerting for data security violations.               | 20 min   |
+| 13  | [Data Masking](#data-masking)                           | Applying data masking for sensitive data.                       | 20 min   |
 
-Table: Workshop Übungen zum Thema Terraform Kickstart
+**Table:** Workshop exercises for Oracle Data Safe.
+
+## Security Zones
+
+| ID  | Topic                                                   | Description                                                   | Duration |
+|-----|---------------------------------------------------------|----------------------------------------------------------------|----------|
+| 36  | [Overview](#security-zones-overview)                    | Introduction to Security Zones and their purpose.               | 15 min   |
+| 37  | [Zones](#security-zones-setup)                          | Setting up security zones to enforce security policies.         | 20 min   |
+| 38  | [Rulesets](#security-zones-rulesets)                    | Managing rulesets for security zone compliance.                 | 20 min   |
+| 39  | [CIS Benchmarks](#security-zones-cis)                   | Ensuring CIS compliance within Security Zones.                  | 20 min   |
+
+**Table:** Workshop exercises for Security Zones.
+
+## Other Security Topics
+
+| ID  | Topic                                                   | Description                                                   | Duration |
+|-----|---------------------------------------------------------|----------------------------------------------------------------|----------|
+| 20  | [In-Transit Encryption](#in-transit-encryption)         | Implementing in-transit encryption to protect data.             | 20 min   |
+| 21  | [Shielded Instances](#shielded-instances)               | Setting up shielded instances for enhanced security.            | 20 min   |
+| 22  | [Key Management](#key-management)                       | Configuring key management for encryption and security.         | 20 min   |
+
+**Table:** Workshop exercises for Other Security Topics.
+lab:
+
+
+  - title: Cloud Guard
+    children:
+      - title: "Overview"
+        url: /lab/cg-overview/
+      - title: "Enable"
+        url: /lab/cg-enable/
+      - title: "CIS Scans"
+        url: /lab/cg-cis-scans/
+      - title: "Alerting"
+        url: /lab/cg-alerting/
+      - title: "Receipes"
+        url: /lab/cg-receipes/
+      - title: "Remediation"
+        url: /lab/cg-remediation/
+      - title: "Events"
+        url: /lab/cg-events/
+
+  - title: Data Safe
+    children:
+      - title: "Overview"
+        url: /lab/ds-overview/
+      - title: "Setup"
+        url: /lab/ds-setup/
+      - title: "Audit"
+        url: /lab/ds-audit/
+      - title: "Assessments"
+        url: /lab/ds-assessments/
+      - title: "Alerting"
+        url: /lab/ds-alerting/
+      - title: "SQL Firewall"
+        url: /lab/ds-sql-firewall/
+      - title: "Data Masking"
+        url: /lab/ds-data-masking/
+      - title: "On-Premises Database"
+        url: /lab/ds-on-premises-db/

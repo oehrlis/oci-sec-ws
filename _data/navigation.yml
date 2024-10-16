@@ -11,54 +11,83 @@
 # Reference..: --
 # License....: Apache License Version 2.0, January 2004 as shown
 #              at http://www.apache.org/licenses/
-# -----------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
 main:
-  - title: "Einführung"
+  - title: "Introduction"
     url: /doc/into/
-    description: "Einführung in den OCI Security Workshop (O-OCISEC-WS)"
-  - title: "Übungen"
+    description: "Introduction to the OCI Security Workshop (OCI-SEC-WS)"
+  - title: "Exercises"
     url: /lab/
-    description: "Labor und Übungen"
+    description: "Lab and Exercises"
   - title: "Extras"
     url: /others/
-    description: "Links, PDF und weiteres"
+    description: "Links, PDFs, and More"
 
 lab:
-  - title: Einführung
+  - title: Introduction
     children:
-      - title: "Einführung"
+      - title: "Introduction"
         url: /doc/into/
-      - title: "Anforderungen"
+      - title: "Requirements"
         url: /doc/requirements/
-      - title: "Lab Umgebung"
+      - title: "Lab Environment"
         url: /doc/lab/
 
-  - title: Übungen Cloud Guard
+  - title: Cloud Guard
     children:
-      - title: "Login"
-        url: /lab/cg-login/
-      - title: "Netzwerk"
-        url: /lab/cg-network/
-      - title: "Compute Instance"
-        url: /lab/cg-compute/
+      - title: "Overview"
+        url: /lab/cg-overview/
+      - title: "Enable"
+        url: /lab/cg-enable/
+      - title: "CIS Scans"
+        url: /lab/cg-cis-scans/
+      - title: "Alerting"
+        url: /lab/cg-alerting/
+      - title: "Receipes"
+        url: /lab/cg-receipes/
+      - title: "Remediation"
+        url: /lab/cg-remediation/
+      - title: "Events"
+        url: /lab/cg-events/
 
-  - title: Übungen Data Safe
+  - title: Data Safe
     children:
-      - title: "Login"
-        url: /lab/ds-login/
-      - title: "Netzwerk"
-        url: /lab/ds-network/
-      - title: "Compute Instance"
-        url: /lab/ds-compute/
+      - title: "Overview"
+        url: /lab/ds-overview/
+      - title: "Setup"
+        url: /lab/ds-setup/
+      - title: "Audit"
+        url: /lab/ds-audit/
+      - title: "Assessments"
+        url: /lab/ds-assessments/
+      - title: "Alerting"
+        url: /lab/ds-alerting/
+      - title: "SQL Firewall"
+        url: /lab/ds-sql-firewall/
+      - title: "Data Masking"
+        url: /lab/ds-data-masking/
+      - title: "On-Premises Database"
+        url: /lab/ds-on-premises-db/
 
-  - title: Übungen Security Zones
+  - title: Security Zones
     children:
-      - title: "Login"
-        url: /lab/sz-login/
-      - title: "Netzwerk"
-        url: /lab/sz-network/
-      - title: "Compute Instance"
-        url: /lab/sz-compute/
+      - title: "Overview"
+        url: /lab/sz-overview/
+      - title: "Zones"
+        url: /lab/sz-zones/
+      - title: "Rulesets"
+        url: /lab/sz-rulesets/
+      - title: "CIS Benchmarks"
+        url: /lab/sz-cis-bench/
+
+  - title: Other Topics
+    children:
+      - title: "In-Transit"
+        url: /lab/sz-in-transit/
+      - title: "Shielded Instances"
+        url: /lab/sz-shielded/
+      - title: "Key Management"
+        url: /lab/sz-key-mgmt/
 
   - title: Extras
     children:
