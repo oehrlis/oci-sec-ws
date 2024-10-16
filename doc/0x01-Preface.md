@@ -1,67 +1,47 @@
 <!-- markdownlint-disable MD033 -->
 # Preface {-}
 
-## Über O-OCISEC-WS {.unlisted .unnumbered}
+## About the OCI-SEC-WS Workshop {.unlisted .unnumbered}
 
-Wollten Sie sich schon immer einmal die Möglichkeiten der Oracle Cloud
-Infrastruktur genauer anschauen, haben aber nie Zeit gefunden? Dann ist unser
-Oracle Cloud Infrastructure (OCI) Security Workshop genau das Richtige. Nach
-einer theoretischen Einführung geht es ab in die Cloud. In einem ersten Teil
-bauen wir gemeinsam in der Konsole eine Umgebung bestehenden aus Compute Instanzen
-und Datenbanken auf. Auf Security wird von Beginn weg grossen Wert gelegt und die
-entsprechenden OCI-Komponenten wie Bastion Host und Cloud Guard von Beginn weg
-integriert. Und weil Freunde ihre Freunde nicht manuell deployen lassen, befassen
-wir uns in einem zweiten Teil mit dem Thema Infrastructure as Code (IaC). In
-praktischen Übungen konfigurieren wir Terraform und deployen anschließend
-unterschiedliche Ressourcen mithilfe von Terraform und OCI Stacks.
+The *Oracle Cloud Infrastructure Security Workshop* (OCI-SEC-WS) is a hands-on training designed to help IT professionals secure Oracle Cloud environments. Participants will work with key OCI security services like Cloud Guard, Security Zones, and Data Safe, combining theoretical insights with practical exercises. The workshop covers core security concepts and advanced topics such as in-transit encryption, shielded instances, and key management.
 
-## Ausbildungsziele {.unlisted .unnumbered}
+## Training Objectives {.unlisted .unnumbered}
 
-Mit Fokus auf die Oracle Cloud Infrastruktur (OCI), Infrastructure as Code (IaC)
-und Terraform werden unter anderem folgende Themen besprochen: • Übersicht zu
-den aktuellen Möglichkeiten und Resource Typen in OCI
+By the end of the workshop, participants will:
 
-- Manuelle Bereitstellung verschiedener Ressourcen in der Cloud
-- Konfiguration des OCI Clients und Terraform
-- Bereitstellen einfacher Terraform Konfigurationen in OCI
-- Bereitstellen komplexe Umgebungen mit Terraform Modulen
-- OCI Button deployment ganzer Infrastrukturen mithilfe von OCI Stacks.
+- Gain practical experience with OCI security tools like **Cloud Guard**, **Data Safe**, and **Security Zones**.
+- Learn to manage security recipes, perform CIS scans, and handle alerts with **Cloud Guard**.
+- Configure **Data Safe** for auditing, data masking, and security assessments.
+- Manage **Security Zones** and ensure compliance with security standards.
+- Understand key topics like **in-transit encryption**, **shielded instances**, and **key management**.
+- Apply their knowledge in a secure lab environment for real-world OCI projects.
 
-Der Workshop wird mit umfangreichen Übungen und Beispielen ergänzt.
+## Copyright and License {.unlisted .unnumbered}
 
-## Copyright und Lizenz {.unlisted .unnumbered}
+All terms that are recognized trademarks or service marks have been written in capital letters. All trademarks are the property of their respective owners.
 
-Alle Begriffe, bei denen es sich um bekannte Marken oder Dienstleistungsmarken
-handelt, wurden in Großbuchstaben geschrieben. Alle Warenzeichen sind Eigentum
-der jeweiligen Inhaber.
-
-Die Autoren und der Herausgeber übernehmen keine Haftung oder Verantwortung
-gegenüber einer für Verluste oder Schäden, die sich aus den in diesem Werk
-enthaltenen Informationen in diesem Werk entstanden sind. Dieses Werk kann
-Ungenauigkeiten oder typografische Fehler enthalten und geben ausschließlich die
-Meinung der Autoren wieder. Änderungen werden von Zeit zu Zeit ohne Vorankündigung
-an diesem Dokument vorgenommen. Die Autoren behalten sich das sich das Recht vor,
-dieses Dokument jederzeit ohne Vorankündigung zu überarbeiten.
+The authors and publisher assume no liability or responsibility for any losses or damages arising from the information contained in this document. This work may contain inaccuracies or typographical errors and reflects solely the opinions of the authors. Changes may be made to this document from time to time without prior notice. The authors reserve the right to revise this document at any time without prior notice.
 
 ## Dokumentinformation  {.unlisted .unnumbered}
 
-- **Document:**          Labor- und Übungsleitfaden
+- **Document:**          Oracle Cloud Infrastructure Security - The Practical Workshop
 - **Classification:**    public
 - **Status:**            Work in progress
-- **Last changes:**      2024.08.15
-- **Document name:**     O-OCISEC-WS_lab_de.pdf
+- **Last changes:**      2024.10.16
+- **Document name:**     OCI-SEC-WS_lab_de.pdf
 
-| Hauptautoren                 | Mitwirkende & Reviewer |
-|------------------------------|------------------------|
-| Stefan Oehrli, Martin Berger |                        |
+| Main Authors                 | Contributors & Reviewers |
+|------------------------------|--------------------------|
+| Stefan Oehrli, Martin Berger |                          |
 
-Table: Übersicht der Autoren
+Table: Overview of Authors
 
-## Revisionshistorie {.unlisted .unnumbered}
+## Revision History {.unlisted .unnumbered}
 
-| Version | Datum      | Visum | Bemerkung                           |
-|---------|------------|-------|-------------------------------------|
-| 0.1.0   | 2024.04.15 | soe   | Initial release based on DOAG 2022  |
-| 0.2.0   | 2024.04.15 | soe   | Add PDF documentation functionality |
+| Version | Date       | Visa | Comment                                           |
+|---------|------------|------|---------------------------------------------------|
+| 0.1.0   | 2024.04.15 | soe  | Initial release based on DOAG 2022                |
+| 0.2.0   | 2024.04.15 | soe  | Add PDF documentation functionality               |
+| 0.3.0   | 2024.10.16 | soe  | Complete revision of the documentation in english |
 
-Table: Historie der Änderungen
+Table: History of Changes
