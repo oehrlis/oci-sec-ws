@@ -65,7 +65,7 @@ The exercises are grouped into individual directories and can be completed indep
 **Table:** Workshop exercises for Other Security Topics.
 lab:
 
-
+```bash
   - title: Cloud Guard
     children:
       - title: "Overview"
@@ -101,3 +101,4 @@ lab:
         url: /lab/ds-data-masking/
       - title: "On-Premises Database"
         url: /lab/ds-on-premises-db/
+```

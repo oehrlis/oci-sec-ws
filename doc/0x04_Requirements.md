@@ -49,6 +49,6 @@ The following resources will be helpful during the *Oracle Cloud Security Worksh
 - Oracle Cloud Infrastructure Documentation [Getting Started](https://docs.oracle.com/en-us/iaas/Content/GSG/Concepts/baremetalintro.htm)
 - Oracle Cloud Infrastructure Documentation [Command Line Interface (CLI)](https://docs.oracle.com/en-us/iaas/Content/API/Concepts/cliconcepts.htm)
 - Oracle Cloud Infrastructure Documentation [Oracle Data Safe](https://docs.oracle.com/en/cloud/paas/data-safe)
-- Center for Internet Security (CIS) [Benchmarks](https://www.cisecurity.org/cis-benchmarks) 
+- Center for Internet Security (CIS) [Benchmarks](https://www.cisecurity.org/cis-benchmarks)
 - Microsoft [Visual Studio Code](https://code.visualstudio.com/)
 - [Excalidraw](https://excalidraw.com/) - A virtual collaborative whiteboard tool
