@@ -16,6 +16,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.3.0] - 2024-10-16
+  
+### Changed
+
+- update index for web page
+- rename agenda slides
+- rewrite *Workshop Introduction* chapter
+
+### Added
+
+- add an agenda planing spreadsheet
+- add first version of agenda slides
+- add QR-Code image for web page
+  
 ## [0.2.9] - 2024-08-16
   
 ### Changed
