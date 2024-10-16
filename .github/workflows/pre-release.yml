@@ -32,7 +32,7 @@ on:
 
 env:
   LANGUAGE: de
-  NAME_PREFIX: O-OCISEC-WS
+  NAME_PREFIX: OCI-SEC-WS
   DOC_FOLDER: doc
   LAB_FOLDER: lab
 
