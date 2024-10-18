@@ -35,7 +35,7 @@ resource "oci_database_autonomous_database" "autonomous_database" {
   data_storage_size_in_gb = var.adb_data_storage_size_in_gb
 
   # Generate a unique DB name using lab name, index, workload type, version, and lab index
-  db_name = upper(format("%s%02d%s%s%02d",local.resource_prefix_shortname,count.index % var.numberOf_labs + 1,, local.db_workload_type, var.adb_version, floor(count.index / var.numberOf_labs + 1)))
+  db_name = upper(format("%s%02d%s%s%02d", local.resource_prefix_shortname, count.index % var.numberOf_labs + 1, local.db_workload_type, var.adb_version, floor(count.index / var.numberOf_labs + 1)))
 
   # Define the database version and workload type (e.g., OLTP, DW, etc.)
   db_version  = var.adb_version
