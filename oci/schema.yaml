@@ -17,19 +17,10 @@
 # License....: Apache License Version 2.0, January 2004 as shown
 #              at http://www.apache.org/licenses/
 # ------------------------------------------------------------------------------
-# MISSING:
-# - Integration of tags
-# - General functional tests for validation
-# ------------------------------------------------------------------------------
-
 title: OCI-SEC-WS Environment
 description: OCI Security Workshop environment configuration for OCI-SEC-WS course.
 stackDescription: Terraform configuration for deploying the OCI-based OCI-SEC-WS workshop environment.
-informationalText: |
-  To connect to the workshop environment, either use SSH or the Apache Guacamole 
-  remote desktop gateway. URLs and credentials for the different environments 
-  will be provided by the instructor. Additional information is available on 
-  the LAB website.
+informationalText: To connect to the lab environment, you have to use the OCI console. URLs and credentials for the different environments will be provided by the instructor. Additional information is available on the LAB website.
 schemaVersion: 1.1.0
 version: "20210830"
 locale: "en"
@@ -39,7 +30,7 @@ locale: "en"
 # ------------------------------------------------------------------------------
 source:
   type: marketplace
-logoUrl: data:image/svg+xml;base64, ...
+logoUrl: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj4KICA8ZGVmcz4KICAgIDxzdHlsZT4KICAgICAgLmNscy0xIHsKICAgICAgICBmaWxsOiAjZmZmOwogICAgICB9CgogICAgICAuY2xzLTIgewogICAgICAgIGZpbGw6ICMxZTI4NDY7CiAgICAgIH0KCiAgICAgIC5jbHMtMyB7CiAgICAgICAgZmlsbDogIzk2MDBmZjsKICAgICAgICBzdHJva2U6ICMwMDE0NjQ7CiAgICAgICAgc3Ryb2tlLW1pdGVybGltaXQ6IDEwOwogICAgICB9CgogICAgICAuY2xzLTQgewogICAgICAgIGZpbGw6ICNjZjAwZmY7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxnIGlkPSJEYXRhX0luZnJhc3RydWN0dXJlIiBkYXRhLW5hbWU9IkRhdGEgSW5mcmFzdHJ1Y3R1cmUiPgogICAgPGc+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTQ3Ny4yNSwyNTYuN2MwLDM4LjIxLTMxLjIzLDY5LjQ0LTY5LjYsNjkuNkgxOTcuNDZhMjkuMTksMjkuMTksMCwwLDAtNTYuNjcsMEg5NS41MkM1NywzMjYuMjQsMjUuNjYsMjk1LDI1LjY2LDI1Ni42MmE2OS41Miw2OS41MiwwLDAsMSw1My41MS02Ny43NCwxMSwxMSwwLDAsMCw4LjMzLTEyLjIyLDEwMiwxMDIsMCwwLDEtMS0xNC4yNkM4Ni41LDEwNiwxMzIuNiw2MC4wNiwxODkuMjYsNjAuMDZBMTAyLjc0LDEwMi43NCwwLDAsMSwyODAsMTE0LjMxYTExLDExLDAsMCwwLDExLjc1LDUuNjEsODAuODMsODAuODMsMCwwLDEsMTUtMS40MSw3OS4xOSw3OS4xOSwwLDAsMSw3Ny4xOCw2MS4wNUExMSwxMSwwLDAsMCwzOTYuMzIsMTg4YTcwLjQzLDcwLjQzLDAsMCwxLDExLS44N0M0NDUuODgsMTg3LjA4LDQ3Ny4yNSwyMTguMzEsNDc3LjI1LDI1Ni43WiIvPgogICAgICA8cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Ik00MDcuMzMsMTY1LjA4Yy0xLjU1LDAtMy4xMiwwLTQuNjguMTJhMTAxLjIyLDEwMS4yMiwwLDAsMC05NS45NC02OC42OSwxMDMsMTAzLDAsMCwwLTExLjI0LjYyQTEyNC43LDEyNC43LDAsMCwwLDE4OS4yNiwzOC4wNkMxMjAuNDcsMzguMDYsNjQuNSw5My44NCw2NC41LDE2Mi40YzAsMi42LjA4LDUuMjIuMjUsNy44NEE5MS4zOCw5MS4zOCwwLDAsMCwzLjY2LDI1Ni42MmMwLDUwLjU2LDQxLjI3LDkxLjY5LDkyLDkxLjY5aDQ4LjVhMjkuMTgsMjkuMTgsMCwwLDAsNDkuOTMsMEg0MDguMjJjNTAuMjQtLjQ3LDkxLTQxLjQ3LDkxLTkxLjZDNDk5LjI1LDIwNi4xOCw0NTgsMTY1LjA4LDQwNy4zMywxNjUuMDhaTTE4MS42NiwzMzcuMzFhMTMuMiwxMy4yLDAsMCwxLTI1LjA3LDAsMTMuMTMsMTMuMTMsMCwwLDEsMS4zNS0xMSwxMy4yMSwxMy4yMSwwLDAsMSwyMi4zNywwLDEzLDEzLDAsMCwxLDIsNi45NEExMy4yNywxMy4yNywwLDAsMSwxODEuNjYsMzM3LjMxWm0yMjYtMTFIMTk3LjQ2YTI5LjE5LDI5LjE5LDAsMCwwLTU2LjY3LDBIOTUuNTJDNTcsMzI2LjI0LDI1LjY2LDI5NSwyNS42NiwyNTYuNjJhNjkuNTIsNjkuNTIsMCwwLDEsNTMuNTEtNjcuNzQsMTEsMTEsMCwwLDAsOC4zMy0xMi4yMiwxMDIsMTAyLDAsMCwxLTEtMTQuMjZDODYuNSwxMDYsMTMyLjYsNjAuMDYsMTg5LjI2LDYwLjA2QTEwMi43NCwxMDIuNzQsMCwwLDEsMjgwLDExNC4zMWExMSwxMSwwLDAsMCwxMS43NSw1LjYxLDgwLjgzLDgwLjgzLDAsMCwxLDE1LTEuNDEsNzkuMTksNzkuMTksMCwwLDEsNzcuMTgsNjEuMDVBMTEsMTEsMCwwLDAsMzk2LjMyLDE4OGE3MC40Myw3MC40MywwLDAsMSwxMS0uODdjMzguNTUsMCw2OS45MiwzMS4yMyw2OS45Miw2OS42MkM0NzcuMjUsMjk0LjkxLDQ0NiwzMjYuMTQsNDA3LjY1LDMyNi4zWiIvPgogICAgPC9nPgogICAgPHJlY3QgY2xhc3M9ImNscy0zIiB4PSIxOS42MyIgeT0iMzg4Ljk2IiB3aWR0aD0iNDc1LjIzIiBoZWlnaHQ9Ijg5LjExIiByeD0iNDMuNzgiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTQ1MS4wOCw0ODlINjQuODVBNTQuODQsNTQuODQsMCwwLDEsMTAuMDcsNDM0LjJ2LTEuNTVhNTQuODQsNTQuODQsMCwwLDEsNTQuNzgtNTQuNzhINDUxLjA4YTU0Ljg0LDU0Ljg0LDAsMCwxLDU0Ljc4LDU0Ljc4djEuNTVBNTQuODQsNTQuODQsMCwwLDEsNDUxLjA4LDQ4OVpNNjQuODUsMzk5Ljg3YTMyLjgxLDMyLjgxLDAsMCwwLTMyLjc4LDMyLjc4djEuNTVBMzIuODIsMzIuODIsMCwwLDAsNjQuODUsNDY3SDQ1MS4wOGEzMi44MiwzMi44MiwwLDAsMCwzMi43OC0zMi43OHYtMS41NWEzMi44MiwzMi44MiwwLDAsMC0zMi43OC0zMi43OFoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTQ0Nyw0MDYuODZhMjYuNiwyNi42LDAsMCwwLTI0LjE3LDE1LjU2SDYzLjE0YTExLDExLDAsMSwwLDAsMjJINDIyLjgyQTI2LjU2LDI2LjU2LDAsMSwwLDQ0Nyw0MDYuODZabTEuMzgsMzdBMTAuNDMsMTAuNDMsMCwwLDEsNDQ3LDQ0NGExMC41NiwxMC41NiwwLDAsMSwwLTIxLjEyLDEwLjQzLDEwLjQzLDAsMCwxLDEuMzguMDksMTAuNTYsMTAuNTYsMCwwLDEsMCwyMC45NFoiLz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtNCIgZD0iTTE4Mi4zLDMzMy4yNWExMy4xOCwxMy4xOCwwLDAsMS0yNS43MSw0LjA2LDEzLjEzLDEzLjEzLDAsMCwxLDEuMzUtMTEsMTMuMjEsMTMuMjEsMCwwLDEsMjIuMzcsMEExMywxMywwLDAsMSwxODIuMywzMzMuMjVaIi8+CiAgICA8Zz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTk5LjE2LDIyM2E2MC43NCw2MC43NCwwLDAsMSwzNy41MSwxOS4xNyw2NC4wNSw2NC4wNSwwLDAsMSwxNS44OCwzNC40OEgyMzUuMzlhNDYuMjgsNDYuMjgsMCwwLDAtMTEuMjItMjMsNDMuNDEsNDMuNDEsMCwwLDAtMjUtMTMuNVoiLz4KICAgICAgPHBhdGggY2xhc3M9ImNscy0yIiBkPSJNMTk5LjE2LDI1OC4wN2EyNiwyNiwwLDAsMSwxMi42Myw3LjYyLDI2Ljc5LDI2Ljc5LDAsMCwxLDYuMDcsMTFoLTE4LjdaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTE5OS4xNiwxNjQuODVjMTYuNjQsMS42Miw0OS45MSw4LjU4LDc3LjEzLDM3LjU1LDI1LjUxLDI3LjE0LDMxLjM2LDU4LjgxLDMyLjY0LDc0LjI2aDE3Yy0xLjI0LTE3LTcuNDktNTQuMTUtMzcuMjktODUuODctMzEuOTItMzQtNzEuMTItNDEuNDEtODkuNDktNDNaIi8+CiAgICAgIDxwYXRoIGNsYXNzPSJjbHMtMiIgZD0iTTE5OS4xNiwyMDEuMTdhODMuMyw4My4zLDAsMCwxLDUxLjY1LDI2LjM0YzE1LjkxLDE3LjM3LDIwLjc0LDM3LjM4LDIyLjE3LDQ5LjE1SDI5MGMtMS40MS0xMy42OC02Ljc5LTM4Ljg0LTI2LjczLTYwLjZhMTAwLjQ4LDEwMC40OCwwLDAsMC02NC4xNS0zMS45NFoiLz4KICAgIDwvZz4KICAgIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTQ1Ny41NSw0MzMuNDJhMTAuNTUsMTAuNTUsMCwwLDEtOS4xOCwxMC40N0ExMC40MywxMC40MywwLDAsMSw0NDcsNDQ0YTEwLjU2LDEwLjU2LDAsMCwxLDAtMjEuMTIsMTAuNDMsMTAuNDMsMCwwLDEsMS4zOC4wOUExMC41NywxMC41NywwLDAsMSw0NTcuNTUsNDMzLjQyWiIvPgogIDwvZz4KPC9zdmc+Cg==
 
 # ------------------------------------------------------------------------------
 # Variable Groups
@@ -70,10 +61,6 @@ variableGroups:
   description: Optional configuration to customize the training environment. 
   variables:
   - label_prefix
-  - webserver_per_lab
-  - adb_per_lab
-  - environment_code
-  - lab_def_password
   - destroy_date
   - show_advanced_lab_conf
   - show_advanced_net_conf
@@ -85,7 +72,11 @@ variableGroups:
 - title: "Advanced LAB Configuration"
   description: Advanced LAB configuration options for customization.
   variables:
+  - environment_code
+  - webserver_per_lab
+  - adb_per_lab
   - ssh_public_key
+  - lab_def_password
   visible: show_advanced_lab_conf
 
 # Advanced VCN Configuration
@@ -95,16 +86,7 @@ variableGroups:
   - vcn_cidr_block
   - lab_domain
   - hosts_file
-  - private_newbits
-  - public_netnum
-  - private_compute_netnum
-  - private_db_netnum
   - custom_dns_servers
-  - lab_dns_hostnum
-  - lab_private_dns
-  - lab_public_dns
-  - inbound_ssh_port
-  - inbound_vpn_port
   visible: show_advanced_net_conf
 
 # Advanced ADB Configuration
@@ -124,7 +106,6 @@ variableGroups:
   description: Customizable options for the webserver instances. 
   variables:
   - webserver_instance_name
-  - host_db19c_image_id
   - webserver_instance_shape
   - webserver_instance_ocpus
   - webserver_instance_memory_in_gbs
@@ -135,8 +116,10 @@ variableGroups:
   description: Variables used by Terraform, not exposed to the user.
   variables:
   - ad_index
-  - defined_tags
   - internet_gateway_enabled
+  - lab_dns_hostnum
+  - lab_private_dns
+  - lab_public_dns
   - log_configuration_source_category
   - log_configuration_source_service
   - log_configuration_source_source_type
@@ -144,25 +127,26 @@ variableGroups:
   - log_retention_duration
   - log_type
   - nat_gateway_enabled
+  - private_compute_netnum
+  - private_db_netnum
+  - private_newbits
+  - public_netnum
   - resource_name
   - service_gateway_enabled
-  - ssh_private_key_path
   - ssh_public_key_path
+  - defined_tags
   - tags
-  - webserver_instance_public_ip
-  - webserver_instance_state
   - webserver_instance_boot_volume_size
+  - webserver_instance_image_id
   - webserver_instance_os
   - webserver_instance_os_version
-  - webserver_instance_image_id
+  - webserver_instance_public_ip
+  - webserver_instance_state
   visible: false
-
 # ------------------------------------------------------------------------------
 # Variables Definitions
 # ------------------------------------------------------------------------------
 variables:
-
-# Tenancy ID (Hidden)
   tenancy_ocid:
     title: Tenancy OCID
     description: The Oracle Cloud Identifier (OCID) for your tenancy.
@@ -170,121 +154,317 @@ variables:
     required: true
     visible: false
 
-# Region
   region:
-    title: OCI Region
-    description: The region in which to create resources.
+    title: ${Messages.solutionsHub.genericVariables.region.title()}
+    description: ${Messages.solutionsHub.genericVariables.region.description()}
     type: oci:identity:region:name
     enum:
-    - eu-frankfurt-1
-    - eu-zurich-1
-    - uk-london-1
-    - us-ashburn-1
+      - eu-frankfurt-1
+      - eu-zurich-1
+      - uk-london-1
+      - us-ashburn-1
     required: true
     visible: true
 
-# Compartment OCID
+# ------------------------------------------------------------------------------
+# - Required Configuration:
+# - Configuration, which has to be specified by the end user
+# ------------------------------------------------------------------------------
   compartment_ocid:
-    title: Compartment OCID
-    description: The OCID of the compartment where resources will be created.
+    title: ${Messages.solutionsHub.genericVariables.compartment.title()}
+    description: ${Messages.solutionsHub.genericVariables.compartment.description()}
     type: oci:identity:compartment:id
     required: true
-    visible: true
+    visibile: true
 
-# Number of Labs
   numberOf_labs:
     title: Number of Labs
-    description: Number of similar lab environments to be created.
+    description: Number of similar lab environments to be created. Default just one environment.
     type: integer
     minimum: 1
     maximum: 50
 
-# Destroy Date
+# ------------------------------------------------------------------------------
+# - Optional Configuration:
+# - Configuration, which has to be specified by the end user
+# ------------------------------------------------------------------------------
+  label_prefix:
+    title: LAB Prefix
+    description: A string that will be prepended to all resources. Is needed to run several trainings at the same time, e.g. in location Zürich and Bern. Default value is none, which will not create any prefix.
+    type: string
+    visible: true
+
   destroy_date:
     title: Destroy Date
-    description: Date by when this OCI stack must be destroyed or deleted. The destroy job checks this value daily at 23:00.
+    description: Date by when this OCI stack has to be destroyed / deleted. The destroy job runs daily at 23:00 and checks for this value.
     pattern: (^[0-9]{4}\.[0-9]{2}\.[0-9]{2}$)
     type: string
     default: "2050.12.31"
 
-# Label Prefix
-  label_prefix:
-    title: Label Prefix
-    description: A string that will be prepended to all resources for easier identification.
-    type: string
+  tag_values:
+    type: oci:identity:tag:value
+    title: Tagging
+    description: Tag value for resource created
+    dependsOn:
+      compartmentId: ${targetCompartment}
+# ------------------------------------------------------------------------------
+# Lab Variables Definitions
+# ------------------------------------------------------------------------------
+  show_advanced_lab_conf:
+    type: boolean
+    title: "Show advanced LAB options?"
+    description: "Shows advanced options, allowing to customize LAB configuration e.g. resource name, LAB code URL, software depot, ssh key and default values for Oracle volumes."
     visible: true
 
-# Webserver Instances Per Lab
+  environment_code:
+    title: Lab Environment Code
+    description: Short code representing the environment (e.g., Lab, Prod, Test), used for resource names and tagging.
+    type: string
+    visible: show_advanced_lab_conf
+
   webserver_per_lab:
     title: Web Servers Per Lab
     description: Number of web servers to create in each lab.
     type: number
-    visible: true
+    visible: show_advanced_lab_conf
 
-# ADB Instances Per Lab
   adb_per_lab:
     title: ADB Instances Per Lab
     description: Number of Autonomous Databases to create in each lab.
     type: number
+    visible: show_advanced_lab_conf
+
+  ssh_public_key:
+    title: SSH Public Key
+    description: The public SSH key for the key-pair that you want to use, if you wish to login to the instances over SSH
+    # renders variable as an SSH key control
+    type: oci:core:ssh:publickey
+    pattern: "((^(ssh-rsa AAAAB3NzaC1yc2|ecdsa-sha2-nistp256 
+AAAAE2VjZHNhLXNoYTItbmlzdHAyNT|ecdsa-sha2-nistp384 
+AAAAE2VjZHNhLXNoYTItbmlzdHAzODQAAAAIbmlzdHAzOD|ecdsa-sha2-nistp521 
+AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1Mj|ssh-ed25519 
+AAAAC3NzaC1lZDI1NTE5|ssh-dss AAAAB3NzaC1kc3)[0-9A-Za-z+\/]+[=]{0,3})( [^,]*)?)
+(,((ssh-rsa AAAAB3NzaC1yc2|ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNT|ecdsa-sha2-nistp384 
+AAAAE2VjZHNhLXNoYTItbmlzdHAzODQAAAAIbmlzdHAzOD|ecdsa-sha2-nistp521 
+AAAAE2VjZHNhLXNoYTItbmlzdHA1MjEAAAAIbmlzdHA1Mj|ssh-ed25519 
+AAAAC3NzaC1lZDI1NTE5|ssh-dss AAAAB3NzaC1kc3)[0-9A-Za-z+\/]+[=]{0,3})( [^,]*)?)*$"
+
+  lab_def_password:
+    title: Default Password
+    description: Default password for administrative accounts (e.g., Windows admin, Oracle DB, directory services) used in the LAB environment.
+    type: password
+    # renders a second field to re-enter the password for confirmation
+    # confirmation: true
+    pattern: "^(?=.*[!@#%^*_+\\-:?.,\\[\\]\\{\\}])(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?!.*[$\\(\\)]).{8,32}$"
+    sensitive: true
+    visible: show_advanced_lab_conf
+
+# ------------------------------------------------------------------------------
+# Network Variables Definitions
+# ------------------------------------------------------------------------------
+  show_advanced_net_conf:
+    type: boolean
+    title: "Show advanced network options?"
+    description: "Shows advanced network options, allowing to customize the VCN, e.g. domain name, host file extention, gateways, custom DNS servers, etc."
+    visible: true  
+
+  vcn_cidr_block:
+    title: CIDR block
+    description: CIDR block for the Virtual Cloud Network (VCN)
+    type: string
+    default: 10.0.0.0/24
+    pattern: ^([0-9]{1,3}\.){3}[0-9]{1,3}\/([0-9]|[1-2][0-9]|3[0-2])$
+    visible: show_advanced_net_conf
+
+  custom_dns_servers:
+    title: Custom DNS server
+    description: List of custom DNS server to configure in the VCN.
+    type: array
+    items:
+      type: string
+      pattern: "^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"
+    minItems: 1
+    uniqueItems: true
+    visible: show_advanced_net_conf
+
+  hosts_file:
+    type: file
+    title: Host File
+    description: Custom host file which will be appended to default host file in /etc/hosts
+    visible: show_advanced_net_conf
+
+# ------------------------------------------------------------------------------
+# Autonomous Database (ADB) Variables Definitions
+# ------------------------------------------------------------------------------
+  show_advanced_adb_conf:
+    type: boolean
+    title: "Show advanced ADB options?"
+    description: "Shows advanced autonomous database (ADB) options, allowing to customize the ADB database, e.g. OCPUs, memory and more."
     visible: true
 
-# Lab Domain
-  lab_domain:
-    title: Lab Domain
-    description: Domain name for the LAB environment.
+  adb_workload:
+    type: enum
+    title: ADB Workload
+    description: >
+      The database workload type. Possible values are OLTP, DW, APEX, AJD. Defaults to OLTP if not provided.
+    visible: show_advanced_adb_conf
+    default: OLTP
+    enum:
+      - OLTP
+      - DW
+      - APEX
+      - AJD
+    error_message: Invalid value for adb_workload. Must be one of OLTP, DW, APEX, AJD.
+    
+  adb_version:
+    type: enum
+    title: ADB Version
+    description: >
+      The database version. Possible values are 23ai, 19c. Defaults to 23ai if not provided.
+    visible: show_advanced_adb_conf
+    default: OLTP
+    enum:
+      - 23ai
+      - 19c
+    error_message: Invalid value for adb_workload. Must be one of 23ai, 19c.
+
+  adb_compute_model:
+    type: enum
+    title: ADB Compute Model
+    description: The compute model to be used. Possible values are 'OCPU' or 'ECPU'.
+    default: ECPU
+    enum:
+      - OCPU
+      - ECPU
+    visible: show_advanced_adb_conf
+
+  adb_data_storage_size_in_gb:
     type: string
+    title: ADB Storage Size
+    description: The size of the data storage for the Autonomous Database in GB.
+    visible: show_advanced_adb_conf
+ 
+  adb_compute_count:
+    type: integer
+    title: ADB CPU Count
+    description: The number of OCPUs or ECPUs to be allocated to the Autonomous Database.
+    visible: show_advanced_adb_conf
+
+  adb_is_dev_tier:
+    type: boolean
+    title: ADB Developer Tier
+    description: Whether the Autonomous Database should be in the development/test tier (true) or production tier (false).
+    visible: show_advanced_adb_conf
+
+# ------------------------------------------------------------------------------
+# Web Server Variables Definitions
+# ------------------------------------------------------------------------------
+  show_advanced_webserver_conf:
+    type: boolean
+    title: "Show advanced webserver options?"
+    description: "Shows advanced webserver options, allowing to customize the webserver, e.g. OCPUs, memory and more."
+    visible: true
+
+  webserver_instance_name:
+    type: string
+    title: Web Server Hostname
+    description: Name part of the webserver hostname. Will be appended by the number.
+    visible: show_advanced_webserver_conf
+
+  webserver_instance_shape:
+    type: oci:core:instanceshape:name
+    title: Select a shape for the web server
+    description: A shape is a template that determines the number of CPUs, amount of memory, and other resources allocated to a newly created instance.
+    dependsOn:
+      compartmentId: compartment_ocid
+    required: true
+    visible: show_advanced_webserver_conf
+
+  webserver_instance_ocpus:
+    type: integer
+    minimum: 1
+    maximum: 64
+    title: Number of OCPUs
+    description: Number of OCPUs allocated to for the web server shape. Can only be specified for a flexible shape. e.g. VM.Standard.E5.Flex or VM.Standard.E5.Flex
+    visible: 
+      and:
+        - and:
+          - show_advanced_webserver_conf
+        - or:
+          - eq:
+            - webserver_instance_shape 
+            - "VM.Standard.E5.Flex"
+          - eq:
+            - webserver_instance_shape 
+            - "VM.Standard.E5.Flex"
+
+  webserver_instance_memory_in_gbs:
+    type: integer
+    minimum: 1
+    maximum: 1024
+    title: Amount of memory (GB)
+    description: Amount of memory allocated to the web server shape. Can only be specified for a flexible shape. e.g. VM.Standard.E5.Flex or VM.Standard.E5.Flex
+    visible:
+      and:
+        - and:
+          - show_advanced_webserver_conf
+        - or:
+          - eq:
+            - webserver_instance_shape 
+            - "VM.Standard.E5.Flex"
+          - eq:
+            - webserver_instance_shape 
+            - "VM.Standard.E5.Flex"
 
 # ------------------------------------------------------------------------------
 # Outputs Definitions
 # ------------------------------------------------------------------------------
+# ------------------------------------------------------------------------------
+# Stack output groups ----------------------------------------------------------
+# ------------------------------------------------------------------------------
+outputGroups:
+  - title: SSH Access
+    description: List of SSH statements to access the bastion hosts of this lab environment. To connect to the bastion host, copy the ssh private key pem content into a file on your machine. Run the following command from the terminal [ssh -i <path to the pem file> opc@<Public IP>] respectively use the ssh command below displayed as SSH Access Strings.
+    outputs:
+      - generated_private_key_pem
+  
+  - title: Additional LAB Information
+    outputs:
+      - generated_lab_password
+
+  - title: LAB Access Information
+    outputs:
+      - access_readme
+
+# ------------------------------------------------------------------------------
+# Stack output -----------------------------------------------------------------
+# ------------------------------------------------------------------------------
 outputs:
-  bastion_public_url:
-    type: list
-    title: Bastion Guacamole URL
-    visible: true
-
-  bastion_public_ip:
-    title: Bastion IP Addresses
-    displayText: The public IP addresses of the bastion servers.
-    type: list
-    visible: true
-
-  bastion_hostname:
-    title: Bastion Hostnames
-    displayText: The hostname of the bastion servers' VNIC primary private IP.
-    type: copyableString
-    visible: true
-
   bastion_ssh_access:
     title: SSH Access Strings
-    displayText: SSH access strings for bastion hosts.
+    displayText: SSH access string for bastion hosts.
     type: csv
-    visible: true
-
-  generated_guacamole_password:
-    type: copyableString
-    sensitive: true
-    title: Guacadmin Password
-    displayText: Default password for Guacadmin.
     visible: true
 
   generated_lab_password:
     type: copyableString
     sensitive: true
-    title: Lab Default Password
-    displayText: Default password for the lab environment users.
+    title: LAB Default Password
+    displayText: Default password used to initialize different user e.g. SYS, SYSTEM, etc
     visible: true
 
-  generated_private_key_pem:
+  region:
     type: string
-    sensitive: true
-    title: Generated Private Key for SSH Access
-    displayText: The private key generated for SSH access.
     visible: true
 
-  access_readme:
-    type: copyableString
-    title: Access README
-    visible: true
+  home_region:
+    type: string
+    visible: false
+
+  vcn_id:  
+    type: string
+    visible: false
+
+# --- EOF ----------------------------------------------------------------------
 
 # --- EOF ----------------------------------------------------------------------
