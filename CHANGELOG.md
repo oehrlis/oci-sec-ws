@@ -34,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add security resource config *security.tf*
 - add subnet resource config *subnet.tf*
 - add dhcp resource config *dhcp.tf*
+- add provider resource config *provider.tf*
 
 ### Changed
 
