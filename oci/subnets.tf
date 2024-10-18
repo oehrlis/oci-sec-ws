@@ -25,16 +25,15 @@
 # through assigned route tables. These subnets use a portion of the VCN's CIDR 
 # block and are linked to public route tables.
 resource "oci_core_subnet" "public_subnet" {
-  count          = var.numberOf_labs # Create one public subnet for each lab
-  compartment_id = oci_identity_compartment.lab-compartment[count.index].id
-  cidr_block     = cidrsubnet(var.vcn_cidr_block, var.private_newbits, var.public_netnum)                                                                            # CIDR block for public subnet
-  display_name   = format("sn-pub-%s-%s-%s-%02d", lower(local.current_region_key), lower(var.environment_code), lower(local.resource_prefix_shortname), count.index) # Subnet name format
-  dns_label      = local.public_dns_label                                                                                                                            # Assign DNS label
-  vcn_id         = oci_core_vcn.vcn[count.index].id
-  route_table_id = oci_core_route_table.public_route_table[count.index].id # Associate with the public route table
-  # Optional: Security lists and DHCP options can be customized if needed
-  # security_list_ids = [oci_core_vcn.vcn[count.index].default_security_list_id]
-  # dhcp_options_id   = oci_core_vcn.vcn[count.index].default_dhcp_options_id
+  count             = var.numberOf_labs # Create one public subnet for each lab
+  compartment_id    = oci_identity_compartment.lab-compartment[count.index].id
+  cidr_block        = cidrsubnet(var.vcn_cidr_block, var.private_newbits, var.public_netnum)                                                                            # CIDR block for public subnet
+  display_name      = format("sn-pub-%s-%s-%s-%02d", lower(local.current_region_key), lower(var.environment_code), lower(local.resource_prefix_shortname), count.index) # Subnet name format
+  dns_label         = local.public_dns_label                                                                                                                            # Assign DNS label
+  vcn_id            = oci_core_vcn.vcn[count.index].id
+  route_table_id    = oci_core_route_table.public_route_table[count.index].id # Associate with the public route table
+  security_list_ids = [oci_core_security_list.public_security_list[count.index].id]
+  dhcp_options_id   = oci_core_dhcp_options.public_dhcp_option[count.index].id
 }
 
 # ------------------------------------------------------------------------------
@@ -52,9 +51,8 @@ resource "oci_core_subnet" "private_compute_subnet" {
   prohibit_public_ip_on_vnic = true                                                                                                                                                   # Disallow public IPs for security
   vcn_id                     = oci_core_vcn.vcn[count.index].id
   route_table_id             = oci_core_route_table.private_route_table[count.index].id # Associate with private route table
-  # Optional: Security lists and DHCP options can be customized if needed
-  # security_list_ids = [oci_core_vcn.vcn[count.index].default_security_list_id]
-  # dhcp_options_id   = oci_core_dhcp_options.private_dhcp_option[count.index].id
+  security_list_ids          = [oci_core_security_list.private_security_list[count.index].id]
+  dhcp_options_id            = oci_core_dhcp_options.private_dhcp_option[count.index].id
 }
 
 # ------------------------------------------------------------------------------
@@ -72,9 +70,8 @@ resource "oci_core_subnet" "private_database_subnet" {
   prohibit_public_ip_on_vnic = true                                                                                                                                                 # Disallow public IPs for security
   vcn_id                     = oci_core_vcn.vcn[count.index].id
   route_table_id             = oci_core_route_table.private_route_table[count.index].id # Associate with private route table
-  # Optional: Security lists and DHCP options can be customized if needed
-  # security_list_ids = [oci_core_vcn.vcn[count.index].default_security_list_id]
-  # dhcp_options_id   = oci_core_dhcp_options.private_dhcp_option[count.index].id
+  security_list_ids          = [oci_core_security_list.public_security_list[count.index].id]
+  dhcp_options_id            = oci_core_dhcp_options.private_dhcp_option[count.index].id
 }
 
 # --- EOF ----------------------------------------------------------------------
