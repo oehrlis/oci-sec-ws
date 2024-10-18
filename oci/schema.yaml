@@ -1,0 +1,290 @@
+# ------------------------------------------------------------------------------
+# OraDBA - Oracle Database Infrastructure and Security, 5630 Muri, Switzerland
+# ------------------------------------------------------------------------------
+# Name.......: schema.yaml
+# Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
+# Editor.....: Stefan Oehrli
+# Date.......: 2024.10.16
+# Revision...: 1.0.0
+# Purpose....: Schema definition for an OCI Stack configuration used in the OCI
+#              security workshop (OCI-SEC-WS). This schema defines all the
+#              input parameters and output variables for deploying resources
+#              in the Oracle Cloud Infrastructure (OCI).
+# Notes......: The configuration contains advanced options for various components 
+#              such as ADB, VCN, and Web Servers, with the ability to customize 
+#              the stack as per requirements.
+# Reference..: --
+# License....: Apache License Version 2.0, January 2004 as shown
+#              at http://www.apache.org/licenses/
+# ------------------------------------------------------------------------------
+# MISSING:
+# - Integration of tags
+# - General functional tests for validation
+# ------------------------------------------------------------------------------
+
+title: OCI-SEC-WS Environment
+description: OCI Security Workshop environment configuration for OCI-SEC-WS course.
+stackDescription: Terraform configuration for deploying the OCI-based OCI-SEC-WS workshop environment.
+informationalText: |
+  To connect to the workshop environment, either use SSH or the Apache Guacamole 
+  remote desktop gateway. URLs and credentials for the different environments 
+  will be provided by the instructor. Additional information is available on 
+  the LAB website.
+schemaVersion: 1.1.0
+version: "20210830"
+locale: "en"
+
+# ------------------------------------------------------------------------------
+# Source and Logo
+# ------------------------------------------------------------------------------
+source:
+  type: marketplace
+logoUrl: data:image/svg+xml;base64, ...
+
+# ------------------------------------------------------------------------------
+# Variable Groups
+# ------------------------------------------------------------------------------
+variableGroups:
+
+# General Configuration
+- title: "General OCI Configuration"
+  description: General configuration for defining the tenancy, user, and region. 
+  visible: false
+  variables:
+  - tenancy_ocid
+  - user_ocid
+  - fingerprint
+  - private_key_path
+
+# Basic Configuration
+- title: "Basic Configuration"
+  description: Minimal configuration to set up the training environment. 
+  visible: true
+  variables:
+  - numberOf_labs
+  - compartment_ocid
+  - region
+
+# Optional Configuration
+- title: "Optional Configuration"
+  description: Optional configuration to customize the training environment. 
+  variables:
+  - label_prefix
+  - webserver_per_lab
+  - adb_per_lab
+  - environment_code
+  - lab_def_password
+  - destroy_date
+  - show_advanced_lab_conf
+  - show_advanced_net_conf
+  - show_advanced_adb_conf
+  - show_advanced_webserver_conf
+  - tag_values
+
+# Advanced LAB Configuration
+- title: "Advanced LAB Configuration"
+  description: Advanced LAB configuration options for customization.
+  variables:
+  - ssh_public_key
+  visible: show_advanced_lab_conf
+
+# Advanced VCN Configuration
+- title: "Advanced VCN Configuration"
+  description: Configuration for Virtual Cloud Network (VCN) customization. 
+  variables:
+  - vcn_cidr_block
+  - lab_domain
+  - hosts_file
+  - private_newbits
+  - public_netnum
+  - private_compute_netnum
+  - private_db_netnum
+  - custom_dns_servers
+  - lab_dns_hostnum
+  - lab_private_dns
+  - lab_public_dns
+  - inbound_ssh_port
+  - inbound_vpn_port
+  visible: show_advanced_net_conf
+
+# Advanced ADB Configuration
+- title: "Advanced ADB Configuration"
+  description: Configuration options for Autonomous Database (ADB) customization.
+  variables:
+  - adb_workload
+  - adb_version
+  - adb_compute_model
+  - adb_compute_count
+  - adb_data_storage_size_in_gb
+  - adb_is_dev_tier
+  visible: show_advanced_adb_conf
+
+# Advanced Webserver Configuration
+- title: "Advanced Webserver Configuration"
+  description: Customizable options for the webserver instances. 
+  variables:
+  - webserver_instance_name
+  - host_db19c_image_id
+  - webserver_instance_shape
+  - webserver_instance_ocpus
+  - webserver_instance_memory_in_gbs
+  visible: show_advanced_webserver_conf
+
+# Extra Variables (Hidden)
+- title: "Extra Variables"
+  description: Variables used by Terraform, not exposed to the user.
+  variables:
+  - ad_index
+  - defined_tags
+  - internet_gateway_enabled
+  - log_configuration_source_category
+  - log_configuration_source_service
+  - log_configuration_source_source_type
+  - log_is_enabled
+  - log_retention_duration
+  - log_type
+  - nat_gateway_enabled
+  - resource_name
+  - service_gateway_enabled
+  - ssh_private_key_path
+  - ssh_public_key_path
+  - tags
+  - webserver_instance_public_ip
+  - webserver_instance_state
+  - webserver_instance_boot_volume_size
+  - webserver_instance_os
+  - webserver_instance_os_version
+  - webserver_instance_image_id
+  visible: false
+
+# ------------------------------------------------------------------------------
+# Variables Definitions
+# ------------------------------------------------------------------------------
+variables:
+
+# Tenancy ID (Hidden)
+  tenancy_ocid:
+    title: Tenancy OCID
+    description: The Oracle Cloud Identifier (OCID) for your tenancy.
+    type: string
+    required: true
+    visible: false
+
+# Region
+  region:
+    title: OCI Region
+    description: The region in which to create resources.
+    type: oci:identity:region:name
+    enum:
+    - eu-frankfurt-1
+    - eu-zurich-1
+    - uk-london-1
+    - us-ashburn-1
+    required: true
+    visible: true
+
+# Compartment OCID
+  compartment_ocid:
+    title: Compartment OCID
+    description: The OCID of the compartment where resources will be created.
+    type: oci:identity:compartment:id
+    required: true
+    visible: true
+
+# Number of Labs
+  numberOf_labs:
+    title: Number of Labs
+    description: Number of similar lab environments to be created.
+    type: integer
+    minimum: 1
+    maximum: 50
+
+# Destroy Date
+  destroy_date:
+    title: Destroy Date
+    description: Date by when this OCI stack must be destroyed or deleted. The destroy job checks this value daily at 23:00.
+    pattern: (^[0-9]{4}\.[0-9]{2}\.[0-9]{2}$)
+    type: string
+    default: "2050.12.31"
+
+# Label Prefix
+  label_prefix:
+    title: Label Prefix
+    description: A string that will be prepended to all resources for easier identification.
+    type: string
+    visible: true
+
+# Webserver Instances Per Lab
+  webserver_per_lab:
+    title: Web Servers Per Lab
+    description: Number of web servers to create in each lab.
+    type: number
+    visible: true
+
+# ADB Instances Per Lab
+  adb_per_lab:
+    title: ADB Instances Per Lab
+    description: Number of Autonomous Databases to create in each lab.
+    type: number
+    visible: true
+
+# Lab Domain
+  lab_domain:
+    title: Lab Domain
+    description: Domain name for the LAB environment.
+    type: string
+
+# ------------------------------------------------------------------------------
+# Outputs Definitions
+# ------------------------------------------------------------------------------
+outputs:
+  bastion_public_url:
+    type: list
+    title: Bastion Guacamole URL
+    visible: true
+
+  bastion_public_ip:
+    title: Bastion IP Addresses
+    displayText: The public IP addresses of the bastion servers.
+    type: list
+    visible: true
+
+  bastion_hostname:
+    title: Bastion Hostnames
+    displayText: The hostname of the bastion servers' VNIC primary private IP.
+    type: copyableString
+    visible: true
+
+  bastion_ssh_access:
+    title: SSH Access Strings
+    displayText: SSH access strings for bastion hosts.
+    type: csv
+    visible: true
+
+  generated_guacamole_password:
+    type: copyableString
+    sensitive: true
+    title: Guacadmin Password
+    displayText: Default password for Guacadmin.
+    visible: true
+
+  generated_lab_password:
+    type: copyableString
+    sensitive: true
+    title: Lab Default Password
+    displayText: Default password for the lab environment users.
+    visible: true
+
+  generated_private_key_pem:
+    type: string
+    sensitive: true
+    title: Generated Private Key for SSH Access
+    displayText: The private key generated for SSH access.
+    visible: true
+
+  access_readme:
+    type: copyableString
+    title: Access README
+    visible: true
+
+# --- EOF ----------------------------------------------------------------------

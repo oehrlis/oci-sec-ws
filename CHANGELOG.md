@@ -46,6 +46,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - updated variable definition *variables.tf*
 - rename *local.tf* to *locals.tf*
+- update OCI Stack schema file *schema.yaml*
 
 ### Fixed
 
