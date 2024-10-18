@@ -131,6 +131,30 @@ variable "lab_domain" {
   default     = "trivadislabs.com"
 }
 
+variable "lab_dns_hostnum" {
+  description = "The host number for the LAB DNS server. This number is used to build the IP address using cidrhost function"
+  type        = number
+  default     = 4
+}
+
+variable "lab_private_dns" {
+  description = "A private DNS IP address for the training environment"
+  type        = string
+  default     = "default"
+}
+
+variable "custom_dns_servers" {
+  description = "List of custom DNS server"
+  type        = list(string)
+  default     = []
+}
+
+variable "lab_public_dns" {
+  description = "A public DNS IP address for the training environment"
+  type        = string
+  default     = "8.8.8.8"
+}
+
 variable "lab_def_password" {
   description = "Default password for administrative accounts (e.g., Windows admin, Oracle DB, directory services) used in the LAB environment."
   type        = string
