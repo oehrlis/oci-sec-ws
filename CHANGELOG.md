@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add adb resource config *adb.tf*
 - add compartment resource config *compartment.tf*
 - add webserver resource config *compute_webserver.tf*
+- add credentials resource config *credentials.tf*
 
 ### Changed
 
