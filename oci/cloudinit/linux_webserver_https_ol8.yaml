@@ -1,0 +1,88 @@
+#cloud-config
+# ------------------------------------------------------------------------------
+# OraDBA - Oracle Database Infrastructure and Security, 5630 Muri, Switzerland
+# ------------------------------------------------------------------------------
+# Name.......: apache_webserver_https_ol8.yaml
+# Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
+# Editor.....: Stefan Oehrli
+# Date.......: 2024.10.18
+# Revision...: --
+# Purpose....: cloud-init configuration file for Apache web server with HTTPS
+# Notes......: This script configures Apache to serve content over HTTP and HTTPS
+#              using a self-signed SSL certificate.
+# Reference..: --
+# License....: Apache License Version 2.0, January 2004 as shown
+#              at http://www.apache.org/licenses/
+# ------------------------------------------------------------------------------
+package_update: true
+package_upgrade: true
+
+# Install Apache and OpenSSL for HTTPS
+packages:
+  - httpd
+  - mod_ssl
+  - openssl
+
+# Enable and start Apache service
+runcmd:
+  - systemctl enable httpd
+  - systemctl start httpd
+
+# Create a simple HTML page for testing HTTP/HTTPS
+write_files:
+  - path: /var/www/html/index.html
+    content: |
+      <!DOCTYPE html>
+      <html>
+      <head>
+          <title>Welcome to Apache!</title>
+      </head>
+      <body>
+          <h1>Hello World</h1>
+          <p>This is a simple HTTP/HTTPS page served by Apache on Oracle Linux 8</p>
+      </body>
+      </html>
+
+# Generate a self-signed SSL certificate for HTTPS
+runcmd:
+  - openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/pki/tls/private/apache-selfsigned.key -out /etc/pki/tls/certs/apache-selfsigned.crt -subj "/CN=localhost"
+  - openssl dhparam -out /etc/pki/tls/certs/dhparam.pem 2048
+
+# Update Apache SSL configuration for HTTPS
+  - |
+    cat <<EOF > /etc/httpd/conf.d/ssl.conf
+    <VirtualHost *:443>
+        ServerAdmin webmaster@localhost
+        DocumentRoot "/var/www/html"
+        ServerName localhost
+
+        SSLEngine on
+        SSLCertificateFile /etc/pki/tls/certs/apache-selfsigned.crt
+        SSLCertificateKeyFile /etc/pki/tls/private/apache-selfsigned.key
+        SSLCertificateChainFile /etc/pki/tls/certs/dhparam.pem
+
+        <FilesMatch "\.(cgi|shtml|phtml|php)$">
+            SSLOptions +StdEnvVars
+        </FilesMatch>
+
+        <Directory "/var/www/cgi-bin">
+            SSLOptions +StdEnvVars
+        </Directory>
+
+        ErrorLog logs/ssl_error_log
+        TransferLog logs/ssl_access_log
+        LogLevel warn
+    </VirtualHost>
+    EOF
+
+# Restart Apache to apply SSL configuration
+  - systemctl restart httpd
+
+# Open firewall for both HTTP and HTTPS traffic (ports 80 and 443)
+  - firewall-cmd --add-service=http --permanent
+  - firewall-cmd --add-service=https --permanent
+  - firewall-cmd --reload
+
+# Final message to show completion
+final_message: "Apache HTTP/HTTPS server is installed and running!"
+# --- EOF -------------------------------------------------------------------

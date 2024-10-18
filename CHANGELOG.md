@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add credentials resource config *credentials.tf*
 - add vcn resource config *vcn.tf*
 - add datasource config *datasource.tf*
+- add cloud-init config file to install and configure apache with and without https
 
 ### Changed
 
