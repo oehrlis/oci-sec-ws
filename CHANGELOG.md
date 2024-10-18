@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add compartment resource config *compartment.tf*
 - add webserver resource config *compute_webserver.tf*
 - add credentials resource config *credentials.tf*
+- add vcn resource config *vcn.tf*
 - add datasource config *datasource.tf*
 
 ### Changed
