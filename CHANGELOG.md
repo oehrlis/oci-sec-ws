@@ -38,6 +38,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add internet gateway resource config *internet_gateway.tf*
 - add home region config *home_region.tf*
 - add local variable config *locals.tf*
+- add vcn logging config *logging.tf*
 
 ### Changed
 
