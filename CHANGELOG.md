@@ -16,6 +16,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [tbd] -
+
+### Added
+
+- add adb resource config *adb.tf*
+
+### Changed
+
+### Fixed
+
+### Removed
+
 ## [0.3.0] - 2024-10-16
   
 ### Changed
