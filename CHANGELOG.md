@@ -37,10 +37,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add provider resource config *provider.tf*
 - add internet gateway resource config *internet_gateway.tf*
 - add home region config *home_region.tf*
+- add local variable config *locals.tf*
 
 ### Changed
 
 - updated variable definition *variables.tf*
+- rename *local.tf* to *locals.tf*
 
 ### Fixed
 
