@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add datasource config *datasource.tf*
 - add cloud-init config file to install and configure apache with and without https
 - add *default_authorized_keys* file and corresponding folder readme
+- add *terraform.tfvars* template
 
 ### Changed
 
