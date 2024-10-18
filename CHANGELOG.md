@@ -32,6 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add *terraform.tfvars* template
 - add subnets resource config *subnets.tf*
 - add security resource config *security.tf*
+- add subnet resource config *subnet.tf*
 
 ### Changed
 
