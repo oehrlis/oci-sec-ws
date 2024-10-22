@@ -12,6 +12,9 @@
 ```BASH
 Allow group grp-oci-sec-ws-lab-00 to use cloud-guard-config in tenancy
 Allow group grp-oci-sec-ws-lab-00 to use cloud-guard-config in tenancy
+Allow group grp-oci-sec-ws-lab-00 to use ons-topics in tenancy
+Allow group grp-oci-sec-ws-lab-00 to manage ons-subscriptions in tenancy
+Allow group grp-oci-sec-ws-lab-00 to manage cloudevents-rules in tenancy
 ```
 
 ## POL-OCI-SEC-WS-LAB-00 - Level Compartment TRAINING
@@ -25,4 +28,6 @@ Allow group grp-oci-sec-ws-lab-00 to manage security-zone in compartment OCI-SEC
 Allow group grp-oci-sec-ws-lab-00 to manage security-recipe in compartment OCI-SEC-WS-LAB-00
 Allow group grp-oci-sec-ws-lab-00 to manage security-zone in compartment OCI-SEC-WS-LAB-00
 Allow group grp-oci-sec-ws-lab-00 to manage security-recipe in compartment OCI-SEC-WS-LAB-00
+Allow group grp-oci-sec-ws-lab-00 to use ons-topic in compartment OCI-SEC-WS-LAB-00
+Allow group grp-oci-sec-ws-lab-00 to manage cloudevents-rules in compartment OCI-SEC-WS-LAB-00
 ```
