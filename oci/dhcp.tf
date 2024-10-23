@@ -4,8 +4,8 @@
 # Name.......: dhcp.tf
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
-# Date.......: 2024.10.17
-# Revision...: 1.0.0
+# Date.......: 2024.10.23
+# Revision...: 0.3.2
 # Purpose....: Define DHCP options for Virtual Cloud Network (VCN) resources in 
 #              the LAB environment. This includes options for both public and 
 #              private subnets, ensuring proper DNS resolution and search domain 
@@ -23,10 +23,10 @@
 # This resource defines the DHCP options for public subnets in each lab environment.
 # The DHCP options specify the DNS server to be used (VCN Local Plus Internet) 
 # and the search domain for instances in public subnets.
-resource "oci_core_dhcp_options" "public_dhcp_option" {
-  count          = var.numberOf_labs                                        # Create one DHCP option for each lab environment
-  compartment_id = oci_identity_compartment.lab-compartment[count.index].id # Compartment for the DHCP option
-  vcn_id         = oci_core_vcn.vcn[count.index].id                         # Associate DHCP option with the VCN
+resource "oci_core_default_dhcp_options" "public_dhcp_option" {
+  count                      = var.numberOf_labs # Create one DHCP option for each lab environment
+  manage_default_resource_id = oci_core_vcn.vcn[count.index].default_dhcp_options_id
+  compartment_id             = oci_identity_compartment.lab-compartment[count.index].id # Compartment for the DHCP option
 
   # Define display name using lab-specific variables such as region, environment, and resource prefix
   display_name = format("dhcp-pub-%s-%s-%s-%02d", lower(local.current_region_key), lower(var.environment_code), lower(local.resource_prefix_shortname), count.index)

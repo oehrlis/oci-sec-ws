@@ -24,6 +24,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - update compartment description
 - change password length to 18 characters
+- use default dhcp option for public network
 
 ### Fixed
 
