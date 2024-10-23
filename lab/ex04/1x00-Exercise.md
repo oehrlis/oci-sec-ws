@@ -26,7 +26,8 @@ We create a Vault to store a Mater encryption key to change the Oracle provide k
 
 ### Tasks {.unlisted .unnumbered}
 
-- Create Vault
+- Create Vault and Master Encryption Key
+- Use Master Encryption Key for new Object Storage bucket
 
 ## Solution
 
@@ -38,7 +39,7 @@ Identity -> Security -> Key Management & Secret Management -> Vault
 
 ### Create Vault and Keys
 
-#### Vault
+#### Vault and Master Encryption Key
 
 1. Create a Vault
 Do NOT create a PRIVATE VAULT. Set name according compartment name, as example vault-oci-sec-ws-lab-00 for compartment OCI-SEC-WS-LAB-00.
@@ -53,10 +54,23 @@ Do NOT create a PRIVATE VAULT. Set name according compartment name, as example v
 
 ![>> step_3](images/screenshot-vault_create_3.jpg)
 
-4. Select Protection Mode _Software_, use Key Shape: Algorithm and Key Shape: Length as per default. _Create Key_.
+4. Select Protection Mode _Software_, use Key Shape: Algorithm and Key Shape: Length as per default. _Create Key_. Do not import any external key.
 
 ![>> step_4](images/screenshot-vault_create_4.jpg)
 
 5. Verify Master Encryption Key is in State _Enabled_.
 
 ![>> step_5](images/screenshot-vault_create_5.jpg)
+
+
+#### Create new Object Storage with MEK
+
+Storage -> Object Storage & Archive Storage -> _Create Bucket_.
+
+Set bucket name, in section _Encryption_ now you can select your Master Encryption Key. Key not visible? Verify compartment and region (Frankfurt).
+
+![>> step_6](images/screenshot-vault_create_6.jpg)
+
+Verify the key is set, you can edit or unassign it.
+
+![>> step_7](images/screenshot-vault_create_7.jpg)

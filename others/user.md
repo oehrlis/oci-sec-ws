@@ -16,6 +16,11 @@ Allow group grp-oci-sec-ws-lab-00 to use ons-topics in tenancy
 Allow group grp-oci-sec-ws-lab-00 to manage ons-subscriptions in tenancy
 Allow group grp-oci-sec-ws-lab-00 to manage cloudevents-rules in tenancy
 Allow group grp-oci-sec-ws-lab-00 to use cloud-shell in tenancy
+Allow group grp-oci-sec-ws-lab-00 to read app-catalog-listing in tenancy
+Allow group grp-oci-sec-ws-lab-00 to manage vaults in tenancy
+Allow group grp-oci-sec-ws-lab-00 to manage keys in tenancy
+Allow group grp-oci-sec-ws-lab-00 to manage secret-family in tenancy
+Allow group grp-oci-sec-ws-lab-00 to use key-delegate in tenancy
 ```
 
 ## POL-OCI-SEC-WS-LAB-00 - Level Compartment TRAINING
@@ -34,4 +39,7 @@ Allow group grp-oci-sec-ws-lab-00 to manage cloudevents-rules in compartment OCI
 Allow group grp-oci-sec-ws-lab-00 to manage vaults in compartment OCI-SEC-WS-LAB-00
 Allow group grp-oci-sec-ws-lab-00 to manage keys in in compartment OCI-SEC-WS-LAB-00 
 Allow group grp-oci-sec-ws-lab-00 to manage secret-family in in compartment OCI-SEC-WS-LAB-00
+Allow group grp-oci-sec-ws-lab-00 to manage instance-family in compartment OCI-SEC-WS-LAB-00
+Allow group grp-oci-sec-ws-lab-00 to use volume-family in compartment OCI-SEC-WS-LAB-00
+Allow group grp-oci-sec-ws-lab-00 to use virtual-network-family in compartment OCI-SEC-WS-LAB-00
 ```
