@@ -337,6 +337,11 @@ variable "webserver_instance_public_ip" {
   default     = false
 }
 
+variable "webserver_private_ip_offset" {
+  description = "The starting offset for webserver private IPs in the subnet"
+  type        = number
+  default     = 10 # Start IP assignment at .10 in the subnet
+}
 # ------------------------------------------------------------------------------
 # Logging Configuration
 # ------------------------------------------------------------------------------
