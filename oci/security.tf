@@ -102,7 +102,7 @@ resource "oci_core_security_list" "private_security_list" {
     description = "Allow outbound DNS traffic"
 
     # Allow outbound traffic on port 80 (HTTP)
-    tcp_options {
+    udp_options {
       min = 53
       max = 53
     }
