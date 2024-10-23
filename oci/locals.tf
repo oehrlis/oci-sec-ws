@@ -4,8 +4,8 @@
 # Name.......: locals.tf
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
-# Date.......: 2024.10.16
-# Revision...: 1.0.0
+# Date.......: 2024.10.23
+# Revision...: 0.3.2
 # Purpose....: Define local variables for this Terraform configuration. These 
 #              local variables simplify resource naming, password generation, 
 #              network settings, and instance-specific configurations for the 
@@ -24,15 +24,17 @@ locals {
   # ----------------------------------------------------------------------------
   # These local variables are used for generic resource management, including 
   # availability domains, resource naming, password generation, and SSH keys.
-  availability_domain       = data.oci_identity_availability_domains.ads.availability_domains[var.ad_index - 1].name                                               # Select the appropriate AD based on index
-  resource_name             = var.resource_name == "" ? data.oci_identity_compartment.lab_compartment.name : var.resource_name                                     # Use compartment name if resource name is not provided
-  resource_name_lower       = lower(local.resource_name)                                                                                                           # Convert resource name to lowercase
-  resource_shortname        = lower(replace(local.resource_name, "-", ""))                                                                                         # Remove dashes and convert to lowercase for shortname
-  resource_prefix_shortname = var.label_prefix == "" ? lower(local.resource_shortname) : format("%s-%s", lower(var.label_prefix), lower(local.resource_shortname)) # Prefix resource shortname if label prefix is set
-  lab_def_password          = var.lab_def_password == "" ? random_password.lab_password.result : var.lab_def_password                                              # Use generated password if not provided
-  ssh_public_key_path       = var.ssh_public_key_path == "" ? "${path.root}/etc/default_authorized_keys" : var.ssh_public_key_path                                 # Default path for SSH public keys
-  ssh_public_key            = var.ssh_public_key == "" ? file(local.ssh_public_key_path) : var.ssh_public_key                                                      # Load SSH public key from file if not provided
-  ssh_authorized_keys       = join("", [local.ssh_public_key, tls_private_key.lab_ssh_key.public_key_openssh])                                                     # Combine public key with generated key
+  availability_domain         = data.oci_identity_availability_domains.ads.availability_domains[var.ad_index - 1].name                                 # Select the appropriate AD based on index
+  resource_name               = var.resource_name == "" ? data.oci_identity_compartment.lab_compartment.name : var.resource_name                       # Use compartment name if resource name is not provided
+  resource_name_prefix        = var.label_prefix == "" ? local.resource_name : format("%s-%s", var.label_prefix, local.resource_name)                  # Prefix resource shortname if label prefix is set
+  resource_name_lower         = lower(local.resource_name)                                                                                             # Convert resource name to lowercase
+  resource_shortname          = lower(replace(local.resource_name, "-", ""))                                                                           # Remove dashes and convert to lowercase for shortname
+  resource_prefix_shortname   = lower(var.label_prefix == "" ? local.resource_shortname : format("%s-%s", var.label_prefix, local.resource_shortname)) # Prefix resource shortname if label prefix is set
+  resource_prefix_compactname = lower(replace(local.resource_name_prefix, "-", ""))                                                                    # Remove dashes and convert to lowercase for shortname
+  lab_def_password            = var.lab_def_password == "" ? random_password.lab_password.result : var.lab_def_password                                # Use generated password if not provided
+  ssh_public_key_path         = var.ssh_public_key_path == "" ? "${path.root}/etc/default_authorized_keys" : var.ssh_public_key_path                   # Default path for SSH public keys
+  ssh_public_key              = var.ssh_public_key == "" ? file(local.ssh_public_key_path) : var.ssh_public_key                                        # Load SSH public key from file if not provided
+  ssh_authorized_keys         = join("", [local.ssh_public_key, tls_private_key.lab_ssh_key.public_key_openssh])                                       # Combine public key with generated key
 
   # ----------------------------------------------------------------------------
   # VCN / Network Specific Local Variables

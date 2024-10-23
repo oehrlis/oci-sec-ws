@@ -29,6 +29,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - use default security list for public network
 - use default routing table for public network
 - update subnets to use default resources in VCN
+- update local variable resource_name, resource_name_lower, resource_shortname, 
+  resource_prefix_shortname
 
 ### Fixed
 
