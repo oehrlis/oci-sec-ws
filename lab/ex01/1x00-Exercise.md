@@ -1,4 +1,3 @@
-<!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD024 -->
 <!-- markdownlint-disable MD033 -->
 
@@ -11,7 +10,9 @@ environment:
 
 - **Compartment:** OCI-SEC-WS-LAB-nn
 - **Region:** Switzerland North (Zurich)
-- **OCI Console URL:** <a href="https://console.eu-zurich-1.oraclecloud.com" target="_blank" rel="noopener">OCI Konsole Zurich - Login</a>
+- **OCI Console URL:**
+  <a href="https://console.eu-zurich-1.oraclecloud.com" target="_blank" rel="noopener">
+  OCI Konsole Zurich - Login</a>
 
 Verify in OCI console you selected the correct region and for Cloud Guard you
 are in your compartment. New resources like recipes, object storage buckets etc.,
@@ -25,7 +26,7 @@ Create a detector recipe to recognize public Object Storage buckets.
 
 ### Tasks {.unlisted .unnumbered}
 
-- Clone existing Oracle managed receipes
+- Clone existing Oracle managed recipe
 - Create a new target to observer your compartment objects
 - Create a object storage bucket and change visibility to public
 - Verify new Cloud Guard alert
@@ -37,7 +38,7 @@ have select the proper compartment in from the dropdown list on left side.
 
 ![>> overview](images/screenshot-cloud-guard-overview.jpg)
 
-### Clone existing Oracle managed receipes
+### Clone existing Oracle managed recipes
 
 From left menu, select _Recipes_ and _Clone_.
 
@@ -49,7 +50,7 @@ Cloud Guard -> Recipes -> Detector recipes
 
 - Change compartment on top to trivadisbdsxsp (root).
 - Select recipe OCI Activity Detector Recipe (Oracle managed) from dropdown list
-- Set name for cloned recipe , as example _OCI Activitiy Detector Recipe - <compartment-name>_
+- Set name for cloned recipe , as example _OCI Activity Detector Recipe - <compartment-name>_
 - Ensure in section Compartment, your compartment is selected.
 
 ![>> step_2](images/screenshot-cloud-guard-clone_step_2.jpg)
@@ -61,7 +62,8 @@ Repeat the steps for the other Oracle managed detector recipes:
 - OCI Configuration Detector Recipe (Oracle managed)
 - OCI Instance Detector Recipe (Oracle managed)
 
-After successful clone, you have recipes for Instance Security, Configuration and Activity.
+After successful clone, you have recipes for Instance Security, Configuration
+and Activity.
 
 #### Clone _Responder_ recipes
 
@@ -70,7 +72,7 @@ Cloud Guard -> Recipes -> Responder recipes
 - Ensure _Responder recipes_ is select from left side menu.
 - Change compartment on top to trivadisbdsxsp (root).
 - Select recipe OCI Activity Detector Recipe (Oracle managed) from dropdown list
-- Set name for cloned recipe , as example _OCI Activitiy Detector Recipe - <compartment-name>_
+- Set name for cloned recipe , as example _OCI Activity Detector Recipe - <compartment-name>_
 - Ensure in section Compartment, your compartment is selected.
 
 ![>> step_3](images/screenshot-cloud-guard-clone_step_3.jpg)
@@ -114,8 +116,10 @@ Press _Next_ at the bottom.
 
 Add basic information and description.
 
-- In Posture and threat monitoring recipes, select the _OCI Configuration Detector Recipe_ you created for your compartment.
-- In Instance Security recipe,  select the _OCI Instance Detector Recipe_ you created for your compartment.
+- In Posture and threat monitoring recipes, select the
+  _OCI Configuration Detector Recipe_ you created for your compartment.
+- In Instance Security recipe,  select the _OCI Instance Detector Recipe_ you
+  created for your compartment.
 - Activate _All compute instances_.
 
 ![>> targets_3](images/screenshot-cloud-guard-clone_targets_3.jpg)
@@ -140,7 +144,8 @@ Storage -> Buckets
 
 #### Create Bucket
 
-Add basic information and description. Ensure you are in the correct compartment. If not, select your compartment in left side dropdown menu.
+Add basic information and description. Ensure you are in the correct compartment.
+If not, select your compartment in left side dropdown menu.
 
 ![>> bucket_1](images/screenshot-cloud-guard-bucket_1.jpg)
 
@@ -184,7 +189,8 @@ Select the alert and press _Remediate_.
 
 ![>> alert_2](images/screenshot-cloud-guard-alert_2.jpg)
 
-Ignore the warning ab out missing permissions as your OCI user is not able to see the policies created on top level.
+Ignore the warning ab out missing permissions as your OCI user is not able to
+see the policies created on top level.
 
 ![>> alert_3](images/screenshot-cloud-guard-alert_3.jpg)
 
