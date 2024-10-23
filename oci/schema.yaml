@@ -101,14 +101,15 @@ variableGroups:
   - adb_is_dev_tier
   visible: show_advanced_adb_conf
 
-# Advanced Webserver Configuration
-- title: "Advanced Webserver Configuration"
-  description: Customizable options for the webserver instances. 
+# Advanced Web Server Configuration
+- title: Advanced Web Server Configuration
+  description: Customizable options for the Web Server instances. 
   variables:
   - webserver_instance_name
   - webserver_instance_shape
   - webserver_instance_ocpus
   - webserver_instance_memory_in_gbs
+  - webserver_private_ip_offset
   visible: show_advanced_webserver_conf
 
 # Extra Variables (Hidden)
@@ -212,8 +213,8 @@ variables:
 # ------------------------------------------------------------------------------
   show_advanced_lab_conf:
     type: boolean
-    title: "Show advanced LAB options?"
-    description: "Shows advanced options, allowing to customize LAB configuration e.g. resource name, LAB code URL, software depot, ssh key and default values for Oracle volumes."
+    title: Show advanced LAB options?
+    description: Shows advanced options, allowing to customize LAB configuration e.g. resource name, LAB code URL, software depot, ssh key and default values for Oracle volumes.
     visible: true
 
   environment_code:
@@ -264,8 +265,8 @@ AAAAC3NzaC1lZDI1NTE5|ssh-dss AAAAB3NzaC1kc3)[0-9A-Za-z+\/]+[=]{0,3})( [^,]*)?)*$
 # ------------------------------------------------------------------------------
   show_advanced_net_conf:
     type: boolean
-    title: "Show advanced network options?"
-    description: "Shows advanced network options, allowing to customize the VCN, e.g. domain name, host file extention, gateways, custom DNS servers, etc."
+    title: Show advanced Network options?
+    description: Shows advanced network options, allowing to customize the VCN, e.g. domain name, host file extention, gateways, custom DNS servers, etc.
     visible: true  
 
   vcn_cidr_block:
@@ -298,8 +299,8 @@ AAAAC3NzaC1lZDI1NTE5|ssh-dss AAAAB3NzaC1kc3)[0-9A-Za-z+\/]+[=]{0,3})( [^,]*)?)*$
 # ------------------------------------------------------------------------------
   show_advanced_adb_conf:
     type: boolean
-    title: "Show advanced ADB options?"
-    description: "Shows advanced autonomous database (ADB) options, allowing to customize the ADB database, e.g. OCPUs, memory and more."
+    title: Show advanced ADB options?
+    description: Shows advanced autonomous database (ADB) options, allowing to customize the ADB database, e.g. OCPUs, memory and more.
     visible: true
 
   adb_workload:
@@ -361,14 +362,14 @@ AAAAC3NzaC1lZDI1NTE5|ssh-dss AAAAB3NzaC1kc3)[0-9A-Za-z+\/]+[=]{0,3})( [^,]*)?)*$
 # ------------------------------------------------------------------------------
   show_advanced_webserver_conf:
     type: boolean
-    title: "Show advanced webserver options?"
-    description: "Shows advanced webserver options, allowing to customize the webserver, e.g. OCPUs, memory and more."
+    title: Show advanced Web Server options?
+    description: Shows advanced Web Server options, allowing to customize the Web Server, e.g. OCPUs, memory and more.
     visible: true
 
   webserver_instance_name:
     type: string
     title: Web Server Hostname
-    description: Name part of the webserver hostname. Will be appended by the number.
+    description: Name part of the Web Server hostname. Will be appended by the number.
     visible: show_advanced_webserver_conf
 
   webserver_instance_shape:
@@ -378,6 +379,13 @@ AAAAC3NzaC1lZDI1NTE5|ssh-dss AAAAB3NzaC1kc3)[0-9A-Za-z+\/]+[=]{0,3})( [^,]*)?)*$
     dependsOn:
       compartmentId: compartment_ocid
     required: true
+    visible: show_advanced_webserver_conf
+
+  webserver_private_ip_offset:
+    type: integer
+    title: Web Server private IP offset
+    description: The starting offset for Web Server private IPs in the subnet
+    default: 10
     visible: show_advanced_webserver_conf
 
   webserver_instance_ocpus:
