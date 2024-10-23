@@ -44,7 +44,7 @@ resource "oci_core_instance" "webserver_instance" {
 
   # VNIC configuration for network settings (assign public or private IP, subnet, etc.)
   create_vnic_details {
-    subnet_id        = oci_core_subnet.private_compute_subnet[floor(count.index / var.numberOf_labs)].id
+    subnet_id        = oci_core_subnet.private_compute_subnet[floor(count.index / var.webserver_per_lab)].id
     assign_public_ip = var.webserver_instance_public_ip
 
     # Calculate the private IP by using the CIDR block and the offset within each lab.
