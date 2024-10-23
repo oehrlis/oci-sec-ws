@@ -30,4 +30,7 @@ Allow group grp-oci-sec-ws-lab-00 to manage security-zone in compartment OCI-SEC
 Allow group grp-oci-sec-ws-lab-00 to manage security-recipe in compartment OCI-SEC-WS-LAB-00
 Allow group grp-oci-sec-ws-lab-00 to use ons-topic in compartment OCI-SEC-WS-LAB-00
 Allow group grp-oci-sec-ws-lab-00 to manage cloudevents-rules in compartment OCI-SEC-WS-LAB-00
+Allow group grp-oci-sec-ws-lab-00 to manage vaults in compartment OCI-SEC-WS-LAB-00
+Allow group grp-oci-sec-ws-lab-00 to manage keys in in compartment OCI-SEC-WS-LAB-00 
+Allow group grp-oci-sec-ws-lab-00 to manage secret-family in in compartment OCI-SEC-WS-LAB-00
 ```
