@@ -4,8 +4,8 @@
 # Name.......: credentials.tf
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
-# Date.......: 2024.10.18
-# Revision...: 1.0.0
+# Date.......: 2024.10.23
+# Revision...: 0.3.2
 # Purpose....: Define and manage credentials for the LAB environment, including 
 #              SSH key generation and secure password creation.
 # Notes......: The SSH key and password are used across multiple resources such
@@ -23,7 +23,7 @@ resource "tls_private_key" "lab_ssh_key" {
 
 # Create a random password for use in the LAB environment.
 resource "random_password" "lab_password" {
-  length  = 16   # Length of the password set to 16 characters.
+  length  = 18   # Length of the password set to 16 characters.
   lower   = true # Include lowercase letters.
   upper   = true # Include uppercase letters.
   numeric = true # Include numbers.
