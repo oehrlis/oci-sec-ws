@@ -24,5 +24,3 @@ darauf. Alle Übungen stehen auch via GitHub Repository
 | 03 | [next lab](lab/ex03)                                       | Konfiguration von Compute Instances mit einem Load Balancer | 99    |
 
 Table: Workshop Übungen zum Thema OCI Security
-
-
