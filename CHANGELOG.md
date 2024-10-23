@@ -25,7 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - adb.tf fix calculation of index for compartment, dbname and naming
-  
+- fix Markdown errors
+
 ### Removed
 
 ## [0.3.1] - 2024-10-16
