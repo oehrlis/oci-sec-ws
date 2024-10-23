@@ -4,8 +4,8 @@
 # Name.......: route.tf
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
-# Date.......: 2024.10.17
-# Revision...: 
+# Date.......: 2024.10.23
+# Revision...: 0.3.2
 # Purpose....: Define routing tables for VCN resources in the LAB environment.
 # Notes......: This file defines routing tables for public and private subnets
 #              in each LAB environment based on the number of labs. It also 
@@ -22,19 +22,16 @@
 # var.numberOf_labs is greater than 0. The route table is associated
 # with the VCN and provides routing rules for internet access via the Internet Gateway.
 # ------------------------------------------------------------------------------
-resource "oci_core_route_table" "public_route_table" {
+resource "oci_core_default_route_table" "public_route_table" {
   # The count determines how many route tables to create, one for each lab.
-  count = var.numberOf_labs
-
+  count                      = var.numberOf_labs
+  manage_default_resource_id = oci_core_vcn.vcn[count.index].default_route_table_id
   # The compartment where the route table will be created.
   compartment_id = oci_identity_compartment.lab-compartment[count.index].id
 
   # The display name for the route table, dynamically constructed based on the
   # current region, environment code, and resource prefix, and the index of the lab.
   display_name = format("rt-public-%s-%s-%s-%02d", lower(local.current_region_key), lower(var.environment_code), lower(local.resource_prefix_shortname), count.index)
-
-  # The VCN (Virtual Cloud Network) to which this route table belongs.
-  vcn_id = oci_core_vcn.vcn[count.index].id
 
   # Freeform tags applied to the route table.
   freeform_tags = var.tags
