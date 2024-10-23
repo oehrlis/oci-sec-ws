@@ -28,7 +28,7 @@ The authors and publisher assume no liability or responsibility for any losses o
 - **Document:**          Oracle Cloud Infrastructure Security - The Practical Workshop
 - **Classification:**    public
 - **Status:**            Work in progress
-- **Last changes:**      2024.10.16
+- **Last changes:**      2024.10.23
 - **Document name:**     OCI-SEC-WS_lab_de.pdf
 
 | Main Authors                 | Contributors & Reviewers |
