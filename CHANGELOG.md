@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - update subnets to use default resources in VCN
 - update local variable resource_name, resource_name_lower, resource_shortname,
   resource_prefix_shortname
+- add enable_delete to the compartment resource
 
 ### Fixed
 
