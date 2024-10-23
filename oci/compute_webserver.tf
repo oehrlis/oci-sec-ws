@@ -25,12 +25,17 @@ resource "oci_core_instance" "webserver_instance" {
   # Assign an availability domain to each instance, cycling through the available ADs
   availability_domain = data.oci_identity_availability_domains.ads.availability_domains[count.index % length(data.oci_identity_availability_domains.ads.availability_domains)].name
 
-  # Assign each instance to the correct lab compartment
-  compartment_id = oci_identity_compartment.lab-compartment[count.index % var.numberOf_labs].id
+  # Determine the lab environment for each instance by using `floor(count.index / var.webserver_per_lab)`.
+  compartment_id = oci_identity_compartment.lab-compartment[floor(count.index / var.webserver_per_lab)].id
 
-  # Set the display name for each instance using a formatted string based on region,
-  # environment code, lab number, and instance name
-  display_name = format("ci-%s-%s-%s-%02d-%s", lower(local.current_region_key), lower(var.environment_code), lower(local.resource_prefix_shortname), count.index % var.numberOf_labs + 1, lower(format("%s%02d", var.webserver_instance_name, floor(count.index / var.numberOf_labs + 1))))
+  # Set the display name for each instance using the lab number and the web server number within that lab.
+  display_name = format("ci-%s-%s-%s-%02d-%s",
+    lower(local.current_region_key),
+    lower(var.environment_code),
+    lower(local.resource_prefix_shortname),
+    floor(count.index / var.webserver_per_lab),                                                   # Lab number (starts from 0)
+    lower(format("%s%02d", var.webserver_instance_name, count.index % var.webserver_per_lab + 1)) # Web server number
+  )
 
   # Set the desired state, tags, and other instance metadata
   state         = var.webserver_instance_state
@@ -39,12 +44,19 @@ resource "oci_core_instance" "webserver_instance" {
 
   # VNIC configuration for network settings (assign public or private IP, subnet, etc.)
   create_vnic_details {
-    subnet_id                 = oci_core_subnet.private_compute_subnet[count.index % var.numberOf_labs].id
-    assign_public_ip          = var.webserver_instance_public_ip
+    subnet_id        = oci_core_subnet.private_compute_subnet[floor(count.index / var.numberOf_labs)].id
+    assign_public_ip = var.webserver_instance_public_ip
+
+    # Calculate the private IP by using the CIDR block and the offset within each lab.
+    private_ip = cidrhost(
+      cidrsubnet(var.vcn_cidr_block, var.private_newbits, var.private_compute_netnum),
+      var.webserver_private_ip_offset + (count.index % var.webserver_per_lab) + 1
+    )
+
     assign_ipv6ip             = "false"
     assign_private_dns_record = "true"
-    display_name              = lower(format("%s%02d-vnic", var.webserver_instance_name, floor(count.index / var.numberOf_labs + 1)))
-    hostname_label            = lower(format("%s%02d", var.webserver_instance_name, floor(count.index / var.numberOf_labs + 1)))
+    display_name              = lower(format("%s%02d-vnic", var.webserver_instance_name, count.index % var.webserver_per_lab + 1))
+    hostname_label            = lower(format("%s%02d", var.webserver_instance_name, count.index % var.webserver_per_lab + 1))
   }
 
   # Disable legacy instance metadata service (IMDS) for security
