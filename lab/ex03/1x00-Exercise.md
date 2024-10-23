@@ -1,5 +1,6 @@
+<!-- markdownlint-disable MD024 -->
+<!-- markdownlint-disable MD029 -->
 <!-- markdownlint-disable MD033 -->
-<!-- markdownlint-disable MD041 -->
 
 # Cloud Guard - Detector and Responder Recipes - Notification
 
@@ -10,15 +11,20 @@ environment:
 
 - **Compartment:** OCI-SEC-WS-LAB-nn
 - **Region:** Switzerland North (Zurich)
-- **OCI Console URL:** <a href="https://console.eu-zurich-1.oraclecloud.com" target="_blank" rel="noopener">OCI Konsole Zurich - Login</a>
+- **OCI Console URL:**
+  <a href="https://console.eu-zurich-1.oraclecloud.com" target="_blank" rel="noopener">
+  OCI Konsole Zurich - Login</a>
 
-Verify in OCI console you selected the correct region and for Cloud Guard you are in your compartment. New resources like recipes, object storage buckets etc. are always created on your compartment.
+Verify in OCI console you selected the correct region and for Cloud Guard you are
+in your compartment. New resources like recipes, object storage buckets etc.,
+are always created on your compartment.
 
 ## Exercise 02
 
 ### Exercise Goals {.unlisted .unnumbered}
 
-Based on the detector settings, we configure the notification to be informed about any issues.
+Based on the detector settings, we configure the notification to be informed
+about any issues.
 
 ### Tasks {.unlisted .unnumbered}
 
@@ -28,7 +34,8 @@ Based on the detector settings, we configure the notification to be informed abo
 
 ## Solution
 
-Login as User XYZ in OCI console. Ensure you have select the proper compartment in from the dropdown list on left side.
+Login as User XYZ in OCI console. Ensure you have select the proper compartment
+in from the dropdown list on left side.
 
 >> Overview
 
@@ -36,7 +43,8 @@ Login as User XYZ in OCI console. Ensure you have select the proper compartment 
 
 #### Create Topic, Subscription and Confirmation
 
-A topic and a subscription is required to enable the notification service based on events.
+A topic and a subscription is required to enable the notification service based
+on events.
 
 1. Developer Services -> Application Integration -> Notifications -> Create Topic
 
@@ -46,7 +54,7 @@ A topic and a subscription is required to enable the notification service based 
 
 ![>> step_2](images/screenshot-cloud-guard-notifications_2.jpg)
 
-3. The state of the new created topic is active. 
+3. The state of the new created topic is active.
 
 ![>> step_3](images/screenshot-cloud-guard-notifications_3.jpg)
 
@@ -55,14 +63,16 @@ A topic and a subscription is required to enable the notification service based 
 ![>> step_4](images/screenshot-cloud-guard-notifications_4.jpg)
 
 5. Select:
+
 - Protocol: Email
-- Email: add your personal mail address, a mail address where you have immediate access for confirmation
+- Email: add your personal mail address, a mail address where you have immediate
+  access for confirmation
 
 Create the subscription and check your inbox.
 
 ![>> step_5](images/screenshot-cloud-guard-notifications_5.jpg)
 
-6. Confirm the subscription
+1. Confirm the subscription
 
 ![>> step_6](images/screenshot-cloud-guard-notifications_6.jpg)
 
@@ -82,7 +92,9 @@ Observability & Management -> Events Service -> Rules -> _Create Rule_.
 
 2. Select Rule Condition.
 
-In section _Rule Conditions_, select _Service Name_ and _Event Type_. Select these event types:
+In section _Rule Conditions_, select _Service Name_ and _Event Type_. Select
+these event types:
+
 - Detected - Problem
 - Dismissed - Problem
 - Remediated - Problem
@@ -90,14 +102,7 @@ In section _Rule Conditions_, select _Service Name_ and _Event Type_. Select the
 ![>> step_2](images/screenshot-cloud-guard-rule_2.jpg)
 
 3. Select Actions
+
 - Action-Type: Notifications
 - Notifications-Compartment: OCI-SEC-WS-LAB-<nn> (your compartment name)
 - Topic: topic-oci-sec-ws-lab-001 (the topic you created)
-
-
-
-
-
-
-
-
