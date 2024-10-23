@@ -36,13 +36,13 @@ Create a detector recipe to recognize public Object Storage buckets.
 Login as User XYZ in OCI console and go to _Cloud Guard Overview_. Ensure you
 have select the proper compartment in from the dropdown list on left side.
 
-![>> overview](images/screenshot-cloud-guard-overview.jpg)
+![>> overview](../../images/screenshot-cloud-guard-overview_ex01.jpg)
 
 ### Clone existing Oracle managed recipes
 
 From left menu, select _Recipes_ and _Clone_.
 
-![>> step_1](images/screenshot-cloud-guard-clone_step_1.jpg)
+![>> step_1](../../images/screenshot-cloud-guard-clone_step_1.jpg)
 
 #### Clone _Detector_ recipes
 
@@ -53,7 +53,7 @@ Cloud Guard -> Recipes -> Detector recipes
 - Set name for cloned recipe , as example _OCI Activity Detector Recipe - <compartment-name>_
 - Ensure in section Compartment, your compartment is selected.
 
-![>> step_2](images/screenshot-cloud-guard-clone_step_2.jpg)
+![>> step_2](../../images/screenshot-cloud-guard-clone_step_2.jpg)
 
 Press _Clone_ at the bottom.
 
@@ -75,7 +75,7 @@ Cloud Guard -> Recipes -> Responder recipes
 - Set name for cloned recipe , as example _OCI Activity Detector Recipe - <compartment-name>_
 - Ensure in section Compartment, your compartment is selected.
 
-![>> step_3](images/screenshot-cloud-guard-clone_step_3.jpg)
+![>> step_3](../../images/screenshot-cloud-guard-clone_step_3.jpg)
 
 Press _Clone_ at the bottom.
 
@@ -86,11 +86,11 @@ your compartment.
 
 Detector recipes:
 
-![>> step_4](images/screenshot-cloud-guard-clone_step_4.jpg)
+![>> step_4](../../images/screenshot-cloud-guard-clone_step_4.jpg)
 
 Responder recipe:
 
-![>> step_5](images/screenshot-cloud-guard-clone_step_5.jpg)
+![>> step_5](../../images/screenshot-cloud-guard-clone_step_5.jpg)
 
 ### Create a new target to observer your compartment objects
 
@@ -98,7 +98,7 @@ In this step, we create a target based on compartment and add the recipes we cre
 
 Cloud Guard -> Configuration -> Targets ->  Create Target
 
-![>> targets_1](images/screenshot-cloud-guard-clone_targets_1.jpg)
+![>> targets_1](../../images/screenshot-cloud-guard-clone_targets_1.jpg)
 
 #### Basic Information
 
@@ -108,7 +108,7 @@ Add basic information and description.
 - Add description
 - Verify compartment is correct according your work compartment.
 
-![>> targets_2](images/screenshot-cloud-guard-clone_targets_2.jpg)
+![>> targets_2](../../images/screenshot-cloud-guard-clone_targets_2.jpg)
 
 Press _Next_ at the bottom.
 
@@ -122,7 +122,7 @@ Add basic information and description.
   created for your compartment.
 - Activate _All compute instances_.
 
-![>> targets_3](images/screenshot-cloud-guard-clone_targets_3.jpg)
+![>> targets_3](../../images/screenshot-cloud-guard-clone_targets_3.jpg)
 
 Press _Next_ at the bottom.
 
@@ -130,7 +130,7 @@ Press _Next_ at the bottom.
 
 AVerify you select the proper recipes based on your compartment.
 
-![>> targets_4](images/screenshot-cloud-guard-clone_targets_4.jpg)
+![>> targets_4](../../images/screenshot-cloud-guard-clone_targets_4.jpg)
 
 Press _Create_ at the bottom. Go back to Cloud Guard Overview page.
 
@@ -140,20 +140,20 @@ In this step, we create am Object Storage bucket and change visibility.
 
 Storage -> Buckets
 
-![>> targets_1](images/screenshot-cloud-guard-clone_targets_1.jpg)
+![>> targets_1](../../images/screenshot-cloud-guard-clone_targets_1.jpg)
 
 #### Create Bucket
 
 Add basic information and description. Ensure you are in the correct compartment.
 If not, select your compartment in left side dropdown menu.
 
-![>> bucket_1](images/screenshot-cloud-guard-bucket_1.jpg)
+![>> bucket_1](../../images/screenshot-cloud-guard-bucket_1.jpg)
 
 Press _Create Bucket_.
 
 - Set Bucket Name to _public-bucket_ and let other settings as per default.
 
-![>> bucket_2](images/screenshot-cloud-guard-bucket_2.jpg)
+![>> bucket_2](../../images/screenshot-cloud-guard-bucket_2.jpg)
 
 Press _Create_ at the bottom.
 
@@ -161,11 +161,11 @@ Press _Create_ at the bottom.
 
 Edit created bucket by click on the three dots -> Edit Visibility.
 
-![>> bucket_3](images/screenshot-cloud-guard-bucket_3.jpg)
+![>> bucket_3](../../images/screenshot-cloud-guard-bucket_3.jpg)
 
 Change visibility to Public. Let checkbox setting as per default.
 
-![>> bucket_4](images/screenshot-cloud-guard-bucket_4.jpg)
+![>> bucket_4](../../images/screenshot-cloud-guard-bucket_4.jpg)
 
 Press _Save Changes_ at the bottom.
 
@@ -173,7 +173,7 @@ Press _Save Changes_ at the bottom.
 
 The bucket is set to public and marked by a yellow triangle.
 
-![>> bucket_5](images/screenshot-cloud-guard-bucket_5.jpg)
+![>> bucket_5](../../images/screenshot-cloud-guard-bucket_5.jpg)
 
 ### Verify new Cloud Guard alert
 
@@ -181,22 +181,22 @@ Verify if the public buckets is recognized by Cloud Guard.
 
 Cloud Guard -> Alerts -> Problems
 
-![>> alert_1](images/screenshot-cloud-guard-alert_1.jpg)
+![>> alert_1](../../images/screenshot-cloud-guard-alert_1.jpg)
 
 #### Remediation
 
 Select the alert and press _Remediate_.
 
-![>> alert_2](images/screenshot-cloud-guard-alert_2.jpg)
+![>> alert_2](../../images/screenshot-cloud-guard-alert_2.jpg)
 
 Ignore the warning ab out missing permissions as your OCI user is not able to
 see the policies created on top level.
 
-![>> alert_3](images/screenshot-cloud-guard-alert_3.jpg)
+![>> alert_3](../../images/screenshot-cloud-guard-alert_3.jpg)
 
 Confirm.
 
-![>> alert_4](images/screenshot-cloud-guard-alert_4.jpg)
+![>> alert_4](../../images/screenshot-cloud-guard-alert_4.jpg)
 
 #### Verification
 
@@ -204,7 +204,7 @@ The visibility for your created Object Storage bucket has changed now to _Privat
 
 Storage -> Buckets
 
-![>> alert_5](images/screenshot-cloud-guard-alert_5.jpg)
+![>> alert_5](../../images/screenshot-cloud-guard-alert_5.jpg)
 
 In Cloud Guard alert view, the state changes after some minutes too.
 
@@ -214,10 +214,10 @@ Cloud Guard -> Alerts -> Problems.
 
 Select your problem and -Mark_as_resolved_.
 
-![>> alert_6](images/screenshot-cloud-guard-alert_6.jpg)
+![>> alert_6](../../images/screenshot-cloud-guard-alert_6.jpg)
 
 Confirm.
 
-![>> alert_7](images/screenshot-cloud-guard-alert_7.jpg)
+![>> alert_7](../../images/screenshot-cloud-guard-alert_7.jpg)
 
 The alert is not longer visible in alert list.

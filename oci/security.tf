@@ -35,10 +35,11 @@ resource "oci_core_default_security_list" "public_security_list" {
   # ------------------------------------------------------------------------------
   # Egress Rules (Outbound Traffic)
   # ------------------------------------------------------------------------------
+  # Egress rule for all traffic (within VCN and through NAT Gateway)
   egress_security_rules {
-    protocol    = "all"              # Allow all protocols
-    destination = var.vcn_cidr_block # Allow all traffic within the VCN's CIDR block
-    description = "Allow all outbound traffic within the subnet"
+    protocol    = "all"
+    destination = "0.0.0.0/0" # Allow all outbound traffic
+    description = "Allow all outbound traffic"
   }
   egress_security_rules {
     protocol    = "6"                           # TCP protocol
@@ -88,15 +89,27 @@ resource "oci_core_security_list" "private_security_list" {
   # ------------------------------------------------------------------------------
   # Egress Rules (Outbound Traffic)
   # ------------------------------------------------------------------------------
+  # Egress rule for all traffic (within VCN and through NAT Gateway)
   egress_security_rules {
-    protocol    = "all"              # Allow all protocols
-    destination = var.vcn_cidr_block # Allow all traffic within the VCN's CIDR block
-    description = "Allow all outbound traffic within the subnet"
+    protocol    = "all"
+    destination = local.anywhere # Allow all outbound traffic
+    description = "Allow all outbound traffic"
   }
 
   egress_security_rules {
-    protocol    = "6"         # TCP protocol
-    destination = "0.0.0.0/0" # Allow outbound traffic to all destinations
+    protocol    = "17"           # UDP protocol
+    destination = local.anywhere # Allow outbound traffic to all destinations
+    description = "Allow outbound DNS traffic"
+
+    # Allow outbound traffic on port 80 (HTTP)
+    tcp_options {
+      min = 53
+      max = 53
+    }
+  }
+  egress_security_rules {
+    protocol    = "6"            # TCP protocol
+    destination = local.anywhere # Allow outbound traffic to all destinations
     description = "Allow outbound HTTP traffic"
 
     # Allow outbound traffic on port 80 (HTTP)
@@ -107,8 +120,8 @@ resource "oci_core_security_list" "private_security_list" {
   }
 
   egress_security_rules {
-    protocol    = "6"         # TCP protocol
-    destination = "0.0.0.0/0" # Allow outbound traffic to all destinations
+    protocol    = "6"            # TCP protocol
+    destination = local.anywhere # Allow outbound traffic to all destinations
     description = "Allow outbound HTTPS traffic"
 
     # Allow outbound traffic on port 443 (HTTPS)
@@ -121,11 +134,13 @@ resource "oci_core_security_list" "private_security_list" {
   # ------------------------------------------------------------------------------
   # Ingress Rules (Inbound Traffic)
   # ------------------------------------------------------------------------------
+  # Ingress rule for VCN internal communication
   ingress_security_rules {
     protocol    = "all"              # Allow all protocols
-    source      = var.vcn_cidr_block # Allow inbound traffic from within the VCN
-    description = "Allow all inbound traffic within the subnet"
+    source      = var.vcn_cidr_block # Allow all inbound traffic within the VCN
+    description = "Allow all inbound traffic within the VCN"
   }
+
 }
 
 # --- EOF ----------------------------------------------------------------------

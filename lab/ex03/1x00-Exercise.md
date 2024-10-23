@@ -48,19 +48,19 @@ on events.
 
 1. Developer Services -> Application Integration -> Notifications -> Create Topic
 
-![>> step_1](images/screenshot-cloud-guard-notifications_1.jpg)
+![>> step_1](../../images/screenshot-cloud-guard-notifications_1.jpg)
 
 2. Add details, _Create_.
 
-![>> step_2](images/screenshot-cloud-guard-notifications_2.jpg)
+![>> step_2](../../images/screenshot-cloud-guard-notifications_2.jpg)
 
 3. The state of the new created topic is active.
 
-![>> step_3](images/screenshot-cloud-guard-notifications_3.jpg)
+![>> step_3](../../images/screenshot-cloud-guard-notifications_3.jpg)
 
 4. View the details, click on topic name. Create a new Subscription: _Create Subscription_.
 
-![>> step_4](images/screenshot-cloud-guard-notifications_4.jpg)
+![>> step_4](../../images/screenshot-cloud-guard-notifications_4.jpg)
 
 5. Select:
 
@@ -70,13 +70,13 @@ on events.
 
 Create the subscription and check your inbox.
 
-![>> step_5](images/screenshot-cloud-guard-notifications_5.jpg)
+![>> step_5](../../images/screenshot-cloud-guard-notifications_5.jpg)
 
 1. Confirm the subscription
 
-![>> step_6](images/screenshot-cloud-guard-notifications_6.jpg)
+![>> step_6](../../images/screenshot-cloud-guard-notifications_6.jpg)
 
-![>> step_7](images/screenshot-cloud-guard-notifications_7.jpg)
+![>> step_7](../../images/screenshot-cloud-guard-notifications_7.jpg)
 
 ### Create Rule
 
@@ -88,7 +88,7 @@ Observability & Management -> Events Service -> Rules -> _Create Rule_.
 
 1. Set Display Name and Description, as example _rule-oci-sec-ws-lab-00-cloudguard_.
 
-![>> step_1](images/screenshot-cloud-guard-rule_1.jpg)
+![>> step_1](../../images/screenshot-cloud-guard-rule_1.jpg)
 
 2. Select Rule Condition.
 
@@ -99,7 +99,7 @@ these event types:
 - Dismissed - Problem
 - Remediated - Problem
 
-![>> step_2](images/screenshot-cloud-guard-rule_2.jpg)
+![>> step_2](../../images/screenshot-cloud-guard-rule_2.jpg)
 
 3. Select Actions
 
