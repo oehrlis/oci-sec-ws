@@ -9,12 +9,12 @@ If not explicitly stated, the exercises are usually performed on the following
 environment:
 
 - **Compartment:** OCI-SEC-WS-LAB-nn
-- **Region:** Switzerland North (Zurich)
+- **Region:** Germany Central (Frankfurt)
 - **OCI Console URL:**
-  <a href="https://console.eu-zurich-1.oraclecloud.com" target="_blank" rel="noopener">
+  <a href="https://console.eu-frankfurt-1.oraclecloud.com" target="_blank" rel="noopener">
   OCI Konsole Zurich - Login</a>
 
-Verify in OCI console you selected the correct region and for Cloud Guard you are
+Verify in OCI console you selected the correct region and for Vault you are
 in your compartment. New resources like recipes, object storage buckets etc.,
 are always created on your compartment.
 

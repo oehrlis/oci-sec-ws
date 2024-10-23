@@ -15,6 +15,7 @@ Allow group grp-oci-sec-ws-lab-00 to use cloud-guard-config in tenancy
 Allow group grp-oci-sec-ws-lab-00 to use ons-topics in tenancy
 Allow group grp-oci-sec-ws-lab-00 to manage ons-subscriptions in tenancy
 Allow group grp-oci-sec-ws-lab-00 to manage cloudevents-rules in tenancy
+Allow group grp-oci-sec-ws-lab-00 to use cloud-shell in tenancy
 ```
 
 ## POL-OCI-SEC-WS-LAB-00 - Level Compartment TRAINING
