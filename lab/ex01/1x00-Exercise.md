@@ -1,5 +1,6 @@
+<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD024 -->
 <!-- markdownlint-disable MD033 -->
-<!-- markdownlint-disable MD041 -->
 
 # Cloud Guard - Detector and Responder Recipes - Manual Remediation
 
@@ -12,7 +13,9 @@ environment:
 - **Region:** Switzerland North (Zurich)
 - **OCI Console URL:** <a href="https://console.eu-zurich-1.oraclecloud.com" target="_blank" rel="noopener">OCI Konsole Zurich - Login</a>
 
-Verify in OCI console you selected the correct region and for Cloud Guard you are in your compartment. New resources like recipes, object storage buckets etc. are always created on your compartment.
+Verify in OCI console you selected the correct region and for Cloud Guard you
+are in your compartment. New resources like recipes, object storage buckets etc.,
+are always created on your compartment.
 
 ## Exercise 01
 
@@ -27,24 +30,24 @@ Create a detector recipe to recognize public Object Storage buckets.
 - Create a object storage bucket and change visibility to public
 - Verify new Cloud Guard alert
 
-
 ## Solution
 
-Login as User XYZ in OCI console and go to _Cloud Guard Overview_. Ensure you have select the proper compartment in from the dropdown list on left side.
+Login as User XYZ in OCI console and go to _Cloud Guard Overview_. Ensure you
+have select the proper compartment in from the dropdown list on left side.
 
 ![>> overview](images/screenshot-cloud-guard-overview.jpg)
 
 ### Clone existing Oracle managed receipes
 
-From left menu, select _Recipes_ and _Clone_. 
+From left menu, select _Recipes_ and _Clone_.
 
 ![>> step_1](images/screenshot-cloud-guard-clone_step_1.jpg)
 
-#### Clone _Detector_ recipes.
+#### Clone _Detector_ recipes
 
 Cloud Guard -> Recipes -> Detector recipes
 
-- Change compartment on top to trivadisbdsxsp (root). 
+- Change compartment on top to trivadisbdsxsp (root).
 - Select recipe OCI Activity Detector Recipe (Oracle managed) from dropdown list
 - Set name for cloned recipe , as example _OCI Activitiy Detector Recipe - <compartment-name>_
 - Ensure in section Compartment, your compartment is selected.
@@ -54,17 +57,18 @@ Cloud Guard -> Recipes -> Detector recipes
 Press _Clone_ at the bottom.
 
 Repeat the steps for the other Oracle managed detector recipes:
+
 - OCI Configuration Detector Recipe (Oracle managed)
 - OCI Instance Detector Recipe (Oracle managed)
 
 After successful clone, you have recipes for Instance Security, Configuration and Activity.
 
-#### Clone _Responder_ recipes.
+#### Clone _Responder_ recipes
 
 Cloud Guard -> Recipes -> Responder recipes
 
 - Ensure _Responder recipes_ is select from left side menu.
-- Change compartment on top to trivadisbdsxsp (root). 
+- Change compartment on top to trivadisbdsxsp (root).
 - Select recipe OCI Activity Detector Recipe (Oracle managed) from dropdown list
 - Set name for cloned recipe , as example _OCI Activitiy Detector Recipe - <compartment-name>_
 - Ensure in section Compartment, your compartment is selected.
@@ -75,7 +79,8 @@ Press _Clone_ at the bottom.
 
 ### Verify cloned recipes
 
-After cloning, you must have three detector recipes and one responder recipes on your compartment.
+After cloning, you must have three detector recipes and one responder recipes on
+your compartment.
 
 Detector recipes:
 
@@ -83,19 +88,18 @@ Detector recipes:
 
 Responder recipe:
 
-
 ![>> step_5](images/screenshot-cloud-guard-clone_step_5.jpg)
 
-
 ### Create a new target to observer your compartment objects
+
 In this step, we create a target based on compartment and add the recipes we created.
 
 Cloud Guard -> Configuration -> Targets ->  Create Target
 
 ![>> targets_1](images/screenshot-cloud-guard-clone_targets_1.jpg)
 
-
 #### Basic Information
+
 Add basic information and description.
 
 - Set target name according compartment, as example _cg-tgt-oci-sec-ws-lab-00_.
@@ -107,35 +111,36 @@ Add basic information and description.
 Press _Next_ at the bottom.
 
 #### Configuration
+
 Add basic information and description.
 
 - In Posture and threat monitoring recipes, select the _OCI Configuration Detector Recipe_ you created for your compartment.
 - In Instance Security recipe,  select the _OCI Instance Detector Recipe_ you created for your compartment.
-- Activate _All compute instances_. 
+- Activate _All compute instances_.
 
 ![>> targets_3](images/screenshot-cloud-guard-clone_targets_3.jpg)
 
 Press _Next_ at the bottom.
 
 #### Review
+
 AVerify you select the proper recipes based on your compartment.
 
 ![>> targets_4](images/screenshot-cloud-guard-clone_targets_4.jpg)
 
 Press _Create_ at the bottom. Go back to Cloud Guard Overview page.
 
-
 ### Create a object storage bucket and change visibility to public
+
 In this step, we create am Object Storage bucket and change visibility.
 
 Storage -> Buckets
 
 ![>> targets_1](images/screenshot-cloud-guard-clone_targets_1.jpg)
 
-
 #### Create Bucket
-Add basic information and description. Ensure you are in the correct compartment. If not, select your compartment in left side dropdown menu.
 
+Add basic information and description. Ensure you are in the correct compartment. If not, select your compartment in left side dropdown menu.
 
 ![>> bucket_1](images/screenshot-cloud-guard-bucket_1.jpg)
 
@@ -148,31 +153,34 @@ Press _Create Bucket_.
 Press _Create_ at the bottom.
 
 #### Edit Visibility
+
 Edit created bucket by click on the three dots -> Edit Visibility.
 
 ![>> bucket_3](images/screenshot-cloud-guard-bucket_3.jpg)
 
-Change visbility to Public. Let checkbox setting as per default.
+Change visibility to Public. Let checkbox setting as per default.
 
 ![>> bucket_4](images/screenshot-cloud-guard-bucket_4.jpg)
 
 Press _Save Changes_ at the bottom.
 
-
 #### Verification
+
 The bucket is set to public and marked by a yellow triangle.
 
 ![>> bucket_5](images/screenshot-cloud-guard-bucket_5.jpg)
 
 ### Verify new Cloud Guard alert
-Verify if the public buckets is recognized by Cloud Guard. 
+
+Verify if the public buckets is recognized by Cloud Guard.
 
 Cloud Guard -> Alerts -> Problems
 
 ![>> alert_1](images/screenshot-cloud-guard-alert_1.jpg)
 
 #### Remediation
-Select the alert and press _Remediate_. 
+
+Select the alert and press _Remediate_.
 
 ![>> alert_2](images/screenshot-cloud-guard-alert_2.jpg)
 
@@ -207,10 +215,3 @@ Confirm.
 ![>> alert_7](images/screenshot-cloud-guard-alert_7.jpg)
 
 The alert is not longer visible in alert list.
-
-
-
-
-
-
-
