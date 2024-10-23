@@ -4,8 +4,8 @@
 # Name.......: logging.tf
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
-# Date.......: 2024.10.17
-# Revision...: 1.0.0
+# Date.......: 2024.10.23
+# Revision...: 0.3.2
 # Purpose....: Define OCI Log Group and logs for subnets in the LAB environment.
 #              This includes logs for public, private compute, and private 
 #              database subnets.
@@ -40,29 +40,25 @@ resource "oci_logging_log_group" "log_group" {
 # This resource defines logs for the public subnet in each lab environment. 
 # The log captures data and activities associated with the public subnet.
 resource "oci_logging_log" "log_public_subnet" {
-  count = var.numberOf_labs # Create one log per public subnet in each lab environment
+  count = var.numberOf_labs
 
-  # Define display name for the log, including region, environment, and subnet.
   display_name = format("lg-sn-pub-%s-%s-%s-%02d", lower(local.current_region_key), lower(var.environment_code), lower(local.resource_prefix_shortname), count.index)
-
-  # Associate the log with the log group
   log_group_id = oci_logging_log_group.log_group[count.index].id
-  log_type     = var.log_type # Set the log type (e.g., SERVICE or CUSTOM)
+  log_type     = var.log_type
 
-  # Configuration settings for the log, including the source (public subnet).
   configuration {
     source {
-      category    = var.log_configuration_source_category         # Set source category
-      resource    = oci_core_subnet.public_subnet[count.index].id # Resource being logged (public subnet)
-      service     = var.log_configuration_source_service          # Service generating logs
-      source_type = var.log_configuration_source_source_type      # Source type for the log
+      category    = var.log_configuration_source_category
+      resource    = oci_core_subnet.public_subnet[count.index].id
+      service     = var.log_configuration_source_service
+      source_type = var.log_configuration_source_source_type
     }
-    compartment_id = oci_identity_compartment.lab-compartment[count.index].id # Compartment for the log
+    compartment_id = oci_identity_compartment.lab-compartment[count.index].id
   }
 
-  freeform_tags      = var.tags                   # Apply tags to the log
-  is_enabled         = var.log_is_enabled         # Enable or disable the log
-  retention_duration = var.log_retention_duration # Set log retention duration
+  freeform_tags      = var.tags
+  is_enabled         = var.log_is_enabled
+  retention_duration = var.log_retention_duration
 }
 
 # ------------------------------------------------------------------------------
