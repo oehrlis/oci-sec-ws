@@ -4,8 +4,8 @@
 # Name.......: compartment.tf
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
-# Date.......: 2024.10.18
-# Revision...: 1.0.0
+# Date.......: 2024.10.23
+# Revision...: 0.3.2
 # Purpose....: Create and configure lab compartments for the LAB environment.
 #              This file also gathers existing resource information for use in
 #              the environment setup, such as compartment OCIDs.
@@ -29,11 +29,11 @@ resource "oci_identity_compartment" "lab-compartment" {
   compartment_id = var.compartment_ocid
 
   # A description of each compartment, including environment code and lab index.
-  description = format("%s Compartment for %s environment %02d (%d/%d)", upper(var.environment_code), upper(local.resource_name), count.index, count.index + 1, var.numberOf_labs)
+  description = format("%s Compartment for %s environment %02d (%d/%d)", upper(var.environment_code), upper(local.resource_name_prefix), count.index, count.index + 1, var.numberOf_labs)
 
   # The name of each compartment, which is a combination of the resource name,
   # environment code, and lab index.
-  name = format("%s-%s-%02d", upper(local.resource_name), upper(var.environment_code), count.index)
+  name = format("%s-%s-%02d", upper(local.resource_name_prefix), upper(var.environment_code), count.index)
 
   # Freeform tags for tagging resources with additional metadata.
   freeform_tags = var.tags
