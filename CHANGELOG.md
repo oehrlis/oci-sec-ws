@@ -28,11 +28,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add comments to logging resource configuration
 - use default security list for public network
 - use default routing table for public network
+- update subnets to use default resources in VCN
 
 ### Fixed
 
-- adb.tf fix calculation of index for compartment, dbname and naming
+- adb.tf fix calculation of index for compartment, db name and naming
 - fix Markdown errors
+- fix subnet assignments for the security lists
 
 ### Removed
 

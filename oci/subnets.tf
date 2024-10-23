@@ -4,8 +4,8 @@
 # Name.......: subnets.tf
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
-# Date.......: 2024.10.17
-# Revision...: 1.0.0
+# Date.......: 2024.10.23
+# Revision...: 0.3.2
 # Purpose....: Define public and private subnets for Virtual Cloud Network (VCN) 
 #              resources in the LAB environment. Includes subnets for public 
 #              access, private compute resources, and private databases.
@@ -31,9 +31,9 @@ resource "oci_core_subnet" "public_subnet" {
   display_name      = format("sn-pub-%s-%s-%s-%02d", lower(local.current_region_key), lower(var.environment_code), lower(local.resource_prefix_shortname), count.index) # Subnet name format
   dns_label         = local.public_dns_label                                                                                                                            # Assign DNS label
   vcn_id            = oci_core_vcn.vcn[count.index].id
-  route_table_id    = oci_core_route_table.public_route_table[count.index].id # Associate with the public route table
-  security_list_ids = [oci_core_security_list.public_security_list[count.index].id]
-  dhcp_options_id   = oci_core_dhcp_options.public_dhcp_option[count.index].id
+  route_table_id    = oci_core_default_route_table.public_route_table[count.index].id # Associate with the public route table
+  security_list_ids = [oci_core_default_security_list.public_security_list[count.index].id]
+  dhcp_options_id   = oci_core_default_dhcp_options.public_dhcp_option[count.index].id
 }
 
 # ------------------------------------------------------------------------------
@@ -70,7 +70,7 @@ resource "oci_core_subnet" "private_database_subnet" {
   prohibit_public_ip_on_vnic = true                                                                                                                                                 # Disallow public IPs for security
   vcn_id                     = oci_core_vcn.vcn[count.index].id
   route_table_id             = oci_core_route_table.private_route_table[count.index].id # Associate with private route table
-  security_list_ids          = [oci_core_security_list.public_security_list[count.index].id]
+  security_list_ids          = [oci_core_security_list.private_security_list[count.index].id]
   dhcp_options_id            = oci_core_dhcp_options.private_dhcp_option[count.index].id
 }
 
