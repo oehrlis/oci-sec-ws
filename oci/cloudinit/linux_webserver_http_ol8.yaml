@@ -21,9 +21,23 @@ packages:
   - httpd
 
 # Enable and start Apache service
+# runcmd:
+#   - systemctl enable httpd
+#   - systemctl start httpd
 runcmd:
-  - systemctl enable httpd
-  - systemctl start httpd
+  - date >> /var/log/cloud-init-debug.log
+  - echo "Starting HTTPD enable" >> /var/log/cloud-init-debug.log
+  - systemctl enable httpd || echo "Failed to enable httpd" >> /var/log/cloud-init-debug.log
+  - date >> /var/log/cloud-init-debug.log
+  - echo "Starting HTTPD service" >> /var/log/cloud-init-debug.log
+  - systemctl start httpd || echo "Failed to start httpd" >> /var/log/cloud-init-debug.log
+  - date >> /var/log/cloud-init-debug.log
+  - echo "Opening firewall port 80" >> /var/log/cloud-init-debug.log
+  - systemctl start firewalld || echo "Failed to start firewalld" >> /var/log/cloud-init-debug.log
+  - firewall-cmd --add-service=http --permanent || echo "Failed to add firewall rule" >> /var/log/cloud-init-debug.log
+  - firewall-cmd --reload || echo "Failed to reload firewall" >> /var/log/cloud-init-debug.log
+  - date >> /var/log/cloud-init-debug.log
+
 
 # Create a simple HTML page for testing HTTP
 write_files:
