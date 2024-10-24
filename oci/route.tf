@@ -31,7 +31,7 @@ resource "oci_core_default_route_table" "public_route_table" {
 
   # The display name for the route table, dynamically constructed based on the
   # current region, environment code, and resource prefix, and the index of the lab.
-  display_name = format("rt-public-%s-%s-%s-%02d", lower(local.current_region_key), lower(var.environment_code), lower(local.resource_prefix_shortname), count.index)
+  display_name = format("rt-pub-%s-%s-%s-%02d", lower(local.current_region_key), lower(var.environment_code), lower(local.resource_prefix_shortname), count.index)
 
   # Freeform tags applied to the route table.
   freeform_tags = var.tags
@@ -71,7 +71,7 @@ resource "oci_core_route_table" "private_route_table" {
 
   # The display name for the route table, dynamically constructed based on the
   # current region, environment code, and resource prefix, and the index of the lab.
-  display_name = format("rt-private-%s-%s-%s-%02d", lower(local.current_region_key), lower(var.environment_code), lower(local.resource_prefix_shortname), count.index)
+  display_name = format("rt-prv-%s-%s-%s-%02d", lower(local.current_region_key), lower(var.environment_code), lower(local.resource_prefix_shortname), count.index)
 
   # The VCN (Virtual Cloud Network) to which this route table belongs.
   vcn_id = oci_core_vcn.vcn[count.index].id
