@@ -74,3 +74,35 @@ Set bucket name, in section _Encryption_ now you can select your Master Encrypti
 Verify the key is set, you can edit or unassign it.
 
 ![>> step_7](images/screenshot-vault_create_7.jpg)
+
+#### Create new Object Storage with a Master Encrytion Key
+
+Storage -> Object Storage & Archive Storage -> _Create Bucket_.
+
+Set bucket name, in section _Encryption_ now you can select your Master Encryption Key. Key not visible? Verify compartment and region (Frankfurt).
+
+![>> step_6](images/screenshot-vault_create_6.jpg)
+
+Verify the key is set, you can edit or unassign it.
+
+![>> step_7](images/screenshot-vault_create_7.jpg)
+
+#### Change Compute Instance Boot Volume with a Master Encrytion Key
+
+Compute -> Instances -> Webserver 01 (as example: ci-fra-lab-ocisecws-00-webserver01).
+
+Under resources, select the Boot volume name attached to the compute instance.
+
+![>> step_8](images/screenshot-vault_create_8.jpg)
+
+Assign a new MEK.
+
+![>> step_9](images/screenshot-vault_create_9.jpg)
+
+Select your created Vault and Master Encrption Key. _Assign_. The Boot Volume will be updated and the key set.
+
+![>> step_10](images/screenshot-vault_create_10.jpg)
+
+
+
+
