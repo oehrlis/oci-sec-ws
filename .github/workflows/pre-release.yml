@@ -126,7 +126,34 @@ jobs:
         with:
           name: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
           path: ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf 
-          
+
+# - Build lab documentation ----------------------------------------------------
+  # Job to build the lab and exercise guide
+  build_oci_stack:
+    needs: check_docs
+    name: Build OCI Stack
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Check if the oci folder exists
+      - name: Verify OCI folder existence
+        run: ls -la
+
+      # Create a zip file of the oci folder
+      - name: Create ZIP file of OCI folder
+        run: zip -r "${{ github.repository }}_stack.zip" oci
+      
+        # Upload generated pdf document as artifact
+      - name: Upload Lab pdf document as artifact 
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.repository }}_stack.zip
+          path: ${{ github.repository }}_stack.zip 
+
 # - Draft release ------------------------------------------------------------
 # Job to build a draft release
   pre-release:
@@ -150,14 +177,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
-
-      # Check if the oci folder exists
-      - name: Verify OCI folder existence
-        run: ls -la
-
-      # Create a zip file of the oci folder
-      - name: Create ZIP file of OCI folder
-        run: zip -r "${{ github.repository }}_stack.zip" oci
 
       # Upload the zip file as an artifact
       - name: Upload OCI zip file as artifact
