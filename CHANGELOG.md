@@ -16,6 +16,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.4.1] - 2024-10-25
+
+### Changed
+
+- update action verify terraform configuration
+
+### Fixed
+
+- fix terraform lint issues
+
 ## [0.4.0] - 2024-10-25
 
 ### Added
