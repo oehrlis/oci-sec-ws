@@ -4,10 +4,10 @@
 # Name.......: tagged-release.yaml 
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
-# Date.......: 2024.08.15
+# Date.......: 2024.10.25
 # Revision...: 
 # Purpose....: GitHub action to create a tagged release
-# Notes......: --
+# Notes......: Extended to zip the ./oci folder and add it to artifacts
 # Reference..: https://github.com/DavidAnson/markdownlint
 # ------------------------------------------------------------------------------
 name: Doc and web tagged release
@@ -129,6 +129,7 @@ jobs:
     name: Create a tagged release
     runs-on: ubuntu-latest
 
+    # Ensure the GITHUB_TOKEN has the correct permissions
     permissions:
       contents: write
 
@@ -145,6 +146,17 @@ jobs:
         with:
           name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
 
+      # Create a zip file of the ./oci folder
+      - name: Create ZIP file of OCI folder
+        run: zip -r "${{ github.repository }}_stack.zip" ./oci
+
+      # Upload the zip file as an artifact
+      - name: Upload OCI zip file as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.repository }}_stack.zip
+          path: ${{ github.repository }}_stack.zip
+
       # Create or update a release
       - name: Create or update a release
         uses: softprops/action-gh-release@v2
@@ -156,10 +168,9 @@ jobs:
           files: |
             ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
             ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
+            ${{ github.repository }}_stack.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-          
       
   # Build job
   build_web:
@@ -184,6 +195,13 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
+          path: others
+
+      # download generated requirements pdf document from artifact
+      - name: Get OCI stack from artifact store
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ github.repository }}_stack.zip
           path: others
 
       # Remove special syntax in Markdown files
