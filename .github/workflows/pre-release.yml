@@ -139,25 +139,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Check if the oci folder exists
-      - name: Verify OCI folder existence
-        run: ls -la
-
       # Create a zip file of the oci folder
       - name: Create ZIP file of OCI folder
-        run: zip -r "${{ github.repository }}_stack.zip" oci
-      
-        # Upload generated pdf document as artifact
-      - name: Upload Lab pdf document as artifact 
+        run: zip -r "${{ github.event.repository.name }}_stack.zip" oci
+
+      # Upload the generated ZIP file as an artifact
+      - name: Upload OCI ZIP file as artifact 
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ github.repository }}_stack.zip
-          path: ${{ github.repository }}_stack.zip 
+          name: ${{ github.event.repository.name }}_stack.zip
+          path: ${{ github.event.repository.name }}_stack.zip
 
 # - Draft release ------------------------------------------------------------
 # Job to build a draft release
   pre-release:
-    needs: [build_lab_doc, build_req_doc] 
+    needs: [build_lab_doc, build_req_doc, build_oci_stack] 
     name: Create draft release
     runs-on: ubuntu-latest
 
