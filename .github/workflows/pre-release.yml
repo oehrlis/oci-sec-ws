@@ -215,8 +215,8 @@ jobs:
       - name: Upload OCI zip file as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ github.repository }}_stack.zip
-          path: ${{ github.repository }}_stack.zip
+          name: ${{ github.event.repository.name }}_stack.zip
+          path: ${{ github.event.repository.name }}_stack.zip
 
       # Create a draft release
       - name: Create a draft release
@@ -229,7 +229,7 @@ jobs:
           files: |
             ${{ env.NAME_PREFIX }}_lab_${{ env.LANGUAGE }}.pdf
             ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
-            ${{ github.repository }}_stack.zip
+            ${{ github.event.repository.name }}_stack.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
