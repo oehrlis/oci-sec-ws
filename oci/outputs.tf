@@ -17,6 +17,33 @@
 # ------------------------------------------------------------------------------
 
 # ------------------------------------------------------------------------------
+# Generic Outputs
+# ------------------------------------------------------------------------------
+output "comments" {
+  value = "Completing the resource provisioning, especially the OS configuration of the compute instances, may take some time, as this process relies on cloud-init after the stack has been deployed."
+}
+
+output "lab_url" {
+  description = "Lab Workshop URL."
+  value       = "http://code.oradba.ch/oci-sec-ws"
+}
+
+output "lab_source_code" {
+  description = "Lab source code URL."
+  value       = "https://github.com/oehrlis/oci-sec-ws"
+}
+
+output "deployed_to_region" {
+  description = "The OCI region where the lab resources have beendeployed to."
+  value       = var.region
+}
+
+output "created_lab_environments" {
+  description = "The number of created lab environments."
+  value       = var.numberOf_labs
+}
+
+# ------------------------------------------------------------------------------
 # General Lab Environment Outputs
 # ------------------------------------------------------------------------------
 # Outputs for Lab compartments and VCNs. These provide the identifiers and 
@@ -49,6 +76,10 @@ output "generated_private_key_pem" {
 output "generated_lab_password" {
   value     = local.lab_def_password
   sensitive = true
+}
+
+output "generated_private_key_file" {
+  value = file("${path.root}/etc/id_rsa")
 }
 
 # ------------------------------------------------------------------------------
