@@ -21,6 +21,11 @@ resource "tls_private_key" "lab_ssh_key" {
   rsa_bits  = 2048  # Key size of 2048 bits, providing a secure key.
 }
 
+
+resource "local_sensitive_file" "lab_ssh_key_file" {
+  content  = tls_private_key.lab_ssh_key.private_key_pem
+  filename = "${path.root}/etc/id_rsa"
+}
 # Create a random password for use in the LAB environment.
 resource "random_password" "lab_password" {
   length  = 18   # Length of the password set to 16 characters.
