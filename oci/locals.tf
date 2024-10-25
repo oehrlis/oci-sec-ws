@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.23
-# Revision...: 0.3.2
+# Revision...: 0.4.0
 # Purpose....: Define local variables for this Terraform configuration. These 
 #              local variables simplify resource naming, password generation, 
 #              network settings, and instance-specific configurations for the 

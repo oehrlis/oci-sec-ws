@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.16
-# Revision...: 
+# Revision...: 0.4.0
 # Purpose....: Define IAM resources for the LAB environment.
 # Notes......: 
 # Reference..: --
