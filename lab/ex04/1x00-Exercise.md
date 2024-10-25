@@ -3,6 +3,7 @@
 <!-- markdownlint-disable MD033 -->
 
 # Key Management
+
 ## Environments {.unlisted .unnumbered}
 
 If not explicitly stated, the exercises are usually performed on the following
@@ -22,7 +23,8 @@ are always created on your compartment.
 
 ### Exercise Goals {.unlisted .unnumbered}
 
-We create a Vault to store a Mater encryption key to change the Oracle provide key on Object storage object to a Customer Manage Key.
+We create a Vault to store a Mater encryption key to change the Oracle provide
+key on Object storage object to a Customer Manage Key.
 
 ### Tasks {.unlisted .unnumbered}
 
@@ -36,13 +38,13 @@ in from the dropdown list on left side.
 
 Identity -> Security -> Key Management & Secret Management -> Vault
 
-
 ### Create Vault and Keys
 
 #### Vault and Master Encryption Key
 
 1. Create a Vault
-Do NOT create a PRIVATE VAULT. Set name according compartment name, as example vault-oci-sec-ws-lab-00 for compartment OCI-SEC-WS-LAB-00.
+Do NOT create a PRIVATE VAULT. Set name according compartment name, as example
+*vault-oci-sec-ws-lab-00* for compartment *OCI-SEC-WS-LAB-00*.
 
 ![>> step_1](../../images/screenshot-vault_create_1.jpg)
 
@@ -50,24 +52,25 @@ Do NOT create a PRIVATE VAULT. Set name according compartment name, as example v
 
 ![>> step_2](../../images/screenshot-vault_create_2.jpg)
 
-3. Select th created Vault to add a Master Encryption Key. _Create Key_.
+3. Select th created Vault to add a Master Encryption Key. *Create Key*.
 
 ![>> step_3](../../images/screenshot-vault_create_3.jpg)
 
-4. Select Protection Mode _Software_, use Key Shape: Algorithm and Key Shape: Length as per default. _Create Key_. Do not import any external key.
+4. Select Protection Mode *Software*, use Key Shape: Algorithm and Key Shape:
+   Length as per default. *Create Key*. Do not import any external key.
 
 ![>> step_4](../../images/screenshot-vault_create_4.jpg)
 
-5. Verify Master Encryption Key is in State _Enabled_.
+1. Verify Master Encryption Key is in State *Enabled*.
 
 ![>> step_5](../../images/screenshot-vault_create_5.jpg)
 
-
 #### Create new Object Storage with MEK
 
-Storage -> Object Storage & Archive Storage -> _Create Bucket_.
+Storage -> Object Storage & Archive Storage -> *Create Bucket*.
 
-Set bucket name, in section _Encryption_ now you can select your Master Encryption Key. Key not visible? Verify compartment and region (Frankfurt).
+Set bucket name, in section *Encryption* now you can select your Master
+Encryption Key. Key not visible? Verify compartment and region (Frankfurt).
 
 ![>> step_6](../../images/screenshot-vault_create_6.jpg)
 
@@ -77,9 +80,10 @@ Verify the key is set, you can edit or unassign it.
 
 #### Create new Object Storage with a Master Encrytion Key
 
-Storage -> Object Storage & Archive Storage -> _Create Bucket_.
+Storage -> Object Storage & Archive Storage -> *Create Bucket*.
 
-Set bucket name, in section _Encryption_ now you can select your Master Encryption Key. Key not visible? Verify compartment and region (Frankfurt).
+Set bucket name, in section *Encryption* now you can select your Master
+Encryption Key. Key not visible? Verify compartment and region (Frankfurt).
 
 ![>> step_6](../../images/screenshot-vault_create_6.jpg)
 
@@ -99,10 +103,7 @@ Assign a new MEK.
 
 ![>> step_9](../../images/screenshot-vault_create_9.jpg)
 
-Select your created Vault and Master Encrption Key. _Assign_. The Boot Volume will be updated and the key set.
+Select your created Vault and Master Encrption Key. *Assign*. The Boot Volume
+will be updated and the key set.
 
 ![>> step_10](../../images/screenshot-vault_create_10.jpg)
-
-
-
-
