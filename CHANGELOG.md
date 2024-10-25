@@ -16,7 +16,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-## [0.3.2] - 2024-10-23
+## [0.4.0] - 2024-10-25
+
+### Added
+
+- add terraform configuration to create lab users, groups and policies
+- added ex04 text
+- add logo to terraform stack
+- update build job to create stack
+
+### Changed
+
+- update description to show resources are created using terraform
+- enhance stack output
+- fix markdown errors
+- move images to the central image folder
+
+## [0.3.2] - 2024-10-24
 
 ### Added
 
@@ -40,8 +56,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - adb.tf fix calculation of index for compartment, db name and naming
 - fix Markdown errors
 - fix subnet assignments for the security lists
-
-### Removed
 
 ## [0.3.1] - 2024-10-16
 
