@@ -36,7 +36,7 @@ resource "oci_identity_compartment" "lab-compartment" {
   name = format("%s-%s-%02d", upper(local.resource_name_prefix), upper(var.environment_code), count.index)
 
   # enables to delete the compartment using terraform
-  enable_delete = true
+  # enable_delete = true
 
   # Freeform tags for tagging resources with additional metadata.
   freeform_tags = var.tags
