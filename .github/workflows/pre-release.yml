@@ -151,9 +151,13 @@ jobs:
         with:
           name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
 
-      # Create a zip file of the ./oci folder
+      # Check if the oci folder exists
+      - name: Verify OCI folder existence
+        run: ls -la
+
+      # Create a zip file of the oci folder
       - name: Create ZIP file of OCI folder
-        run: zip -r "${{ github.repository }}_stack.zip" ./oci
+        run: zip -r "${{ github.repository }}_stack.zip" oci
 
       # Upload the zip file as an artifact
       - name: Upload OCI zip file as artifact
