@@ -52,6 +52,43 @@ jobs:
         with:
           args: .
 
+  # - Verify Terraform Configuration --------------------------------------------
+  # Job to verify the Terraform configuration in the oci folder
+  check_terraform:
+    name: Verify Terraform Configuration
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Setup Terraform
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_wrapper: false
+
+      # Initialize the Terraform configuration
+      - name: Initialize Terraform
+        working-directory: oci
+        run: terraform init
+
+      # Validate the Terraform configuration
+      - name: Validate Terraform
+        working-directory: oci
+        run: terraform validate
+
+      # Install tflint for linting Terraform files
+      - name: Install TFLint
+        run: |
+          curl -sL https://raw.githubusercontent.com/terraform-linters/tflint/master/install_linux.sh | bash
+
+      # Run TFLint to lint Terraform files
+      - name: Lint Terraform
+        working-directory: oci
+        run: tflint -c ${{ github.workspace }}/oci/.tflint.hcl
+
 # - Build requirements documentation -------------------------------------------
   # Job to build the requirements documentation
   build_req_doc:
@@ -130,7 +167,7 @@ jobs:
 # - Build lab documentation ----------------------------------------------------
   # Job to build the lab and exercise guide
   build_oci_stack:
-    needs: check_docs
+    needs: check_terraform
     name: Build OCI Stack
     runs-on: ubuntu-latest
 
