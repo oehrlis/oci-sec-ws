@@ -24,7 +24,7 @@
 # for this configuration, including the OCI provider, TLS provider, and Random 
 # provider. Each provider has a specified version to ensure compatibility.
 terraform {
-  required_version = ">= 1.0.0" # Ensure that Terraform version 1.0.0 or higher is used
+  required_version = ">= 1.0.0" # Ensures that Terraform version 1.0.0 or higher is used
 
   required_providers {
     oci = { # OCI provider to manage Oracle Cloud Infrastructure resources
@@ -32,10 +32,16 @@ terraform {
       version = ">= 4.0.0"
     }
     tls = { # TLS provider to manage TLS keys and certificates
+      source  = "hashicorp/tls"
       version = ">= 4.0.0"
     }
     random = { # Random provider to generate random values for resources (e.g., passwords)
+      source  = "hashicorp/random"
       version = ">= 3.5.0"
+    }
+    local = { # Local provider to manage local files and directories
+      source  = "hashicorp/local"
+      version = ">= 2.0.0" # Specify the version according to your requirements
     }
   }
 
@@ -46,6 +52,7 @@ terraform {
   #   address       = ""  # Specify the backend address
   # }
 }
+
 
 # ------------------------------------------------------------------------------
 # Primary OCI Provider Configuration

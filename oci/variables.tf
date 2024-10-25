@@ -62,12 +62,6 @@ variable "resource_name" {
   default     = ""
 }
 
-variable "destroy_date" {
-  description = "Date by which this OCI stack should be destroyed. Automated jobs will check this value daily."
-  type        = string
-  default     = ""
-}
-
 variable "defined_tags" {
   description = "Predefined tags for the resources, used for scheduling or governance purposes."
   type        = map(any)
@@ -81,12 +75,6 @@ variable "tags" {
   description = "Freeform key-value pairs used to tag OCI resources."
   type        = map(any)
   default     = {}
-}
-
-variable "ad_index" {
-  description = "Index used to specify the availability domain for placing compute instances and other resources."
-  type        = number
-  default     = 1
 }
 
 # ------------------------------------------------------------------------------

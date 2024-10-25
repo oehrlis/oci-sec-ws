@@ -50,7 +50,7 @@ output "created_lab_environments" {
 # names for the key resources in each LAB environment.
 output "lab_compartment" {
   description = "List of Lab Compartments."
-  value       = oci_identity_compartment.lab-compartment.*.name
+  value       = [for compartment in oci_identity_compartment.lab-compartment : compartment.name]
 }
 
 output "vcn_id" {

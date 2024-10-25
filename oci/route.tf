@@ -113,7 +113,7 @@ resource "oci_core_route_table" "private_route_table" {
     # The content block defines the Service Gateway route rule.
     content {
       # Destination for the route rule: the CIDR block for Oracle Services.
-      destination = lookup(data.oci_core_services.all_oci_services[0].services[0], "cidr_block")
+      destination = data.oci_core_services.all_oci_services[0].services[0].cidr_block
 
       # Destination type is SERVICE_CIDR_BLOCK, meaning this rule applies to OCI services.
       destination_type = "SERVICE_CIDR_BLOCK"

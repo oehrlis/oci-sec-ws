@@ -62,7 +62,6 @@ variableGroups:
   description: Optional configuration to customize the training environment. 
   variables:
   - label_prefix
-  - destroy_date
   - ssh_public_key
   - show_advanced_lab_conf
   - show_advanced_net_conf
@@ -117,7 +116,6 @@ variableGroups:
 - title: "Extra Variables"
   description: Variables used by Terraform, not exposed to the user.
   variables:
-  - ad_index
   - internet_gateway_enabled
   - lab_dns_hostnum
   - lab_private_dns
@@ -195,13 +193,6 @@ variables:
     description: A string that will be prepended to all resources. Is needed to run several trainings at the same time, e.g. in location Zürich and Bern. Default value is none, which will not create any prefix.
     type: string
     visible: true
-
-  destroy_date:
-    title: Destroy Date
-    description: Date by when this OCI stack has to be destroyed / deleted. The destroy job runs daily at 23:00 and checks for this value.
-    pattern: (^[0-9]{4}\.[0-9]{2}\.[0-9]{2}$)
-    type: string
-    default: "2050.12.31"
 
   tag_values:
     type: oci:identity:tag:value
