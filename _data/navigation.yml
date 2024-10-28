@@ -33,27 +33,22 @@ lab:
       - title: "Lab Environment"
         url: /doc/lab/
 
+  - title: Basic OCI Security
+    children:
+      - title: "Key Management"
+        url: /lab/bs-keymgmt/
+
   - title: Cloud Guard
     children:
-      - title: "Overview"
-        url: /lab/cg-overview/
-      - title: "Enable"
-        url: /lab/cg-enable/
-      - title: "CIS Scans"
-        url: /lab/cg-cis-scans/
-      - title: "Alerting"
-        url: /lab/cg-alerting/
-      - title: "Receipes"
-        url: /lab/cg-receipes/
-      - title: "Remediation"
-        url: /lab/cg-remediation/
-      - title: "Events"
-        url: /lab/cg-events/
+      - title: "Manual Remediation"
+        url: /lab/cg-man-rem/
+      - title: "Auto Remediation"
+        url: /lab/cg-auto-rem/
+      - title: "Notification"
+        url: /lab/cg-notification/
 
   - title: Data Safe
     children:
-      - title: "Overview"
-        url: /lab/ds-overview/
       - title: "Setup"
         url: /lab/ds-setup/
       - title: "Audit"
@@ -66,28 +61,13 @@ lab:
         url: /lab/ds-sql-firewall/
       - title: "Data Masking"
         url: /lab/ds-data-masking/
-      - title: "On-Premises Database"
-        url: /lab/ds-on-premises-db/
 
-  - title: Security Zones
+  - title: Security Zones and WAF
     children:
-      - title: "Overview"
-        url: /lab/sz-overview/
       - title: "Zones"
         url: /lab/sz-zones/
-      - title: "Rulesets"
-        url: /lab/sz-rulesets/
-      - title: "CIS Benchmarks"
-        url: /lab/sz-cis-bench/
-
-  - title: Other Topics
-    children:
-      - title: "In-Transit"
-        url: /lab/sz-in-transit/
-      - title: "Shielded Instances"
-        url: /lab/sz-shielded/
-      - title: "Key Management"
-        url: /lab/sz-key-mgmt/
+      - title: "WAF"
+        url: /lab/sz-waf/
 
   - title: Extras
     children:

@@ -36,10 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - update metadata for Cloud Guard - Detector and Responder Recipes - Manual Remediation
 - update metadata for Cloud Guard - Detector and Responder Recipes - Auto Remediation
 - update metadata for Cloud Guard - Detector and Responder Recipes - Notification
-  
-### Fixed
-
-### Removed
+- update navigation
 
 ## [0.4.2] - 2024-10-25
 
