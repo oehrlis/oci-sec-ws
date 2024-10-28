@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Reorder Agenda
+- moved user.md to 9x96-Appendix-F_Manual_Lab_Users.md
   
 ### Fixed
 
