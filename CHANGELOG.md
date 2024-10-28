@@ -34,6 +34,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - translate link chapter
 - translate readme for *Workshop Extras*
 - update metadata for Cloud Guard - Detector and Responder Recipes - Manual Remediation
+- update metadata for Cloud Guard - Detector and Responder Recipes - Auto Remediation
   
 ### Fixed
 

@@ -1,8 +1,13 @@
+---
+title: "Auto Remediation"
+permalink: /lab/cg-auto-rem/
+excerpt: "Cloud Guard configure detector and responder recipes with auto remediation"
+---
 <!-- markdownlint-disable MD024 -->
-<!-- markdownlint-disable MD029 -->
+<!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD033 -->
 
-# Cloud Guard - Detector and Responder Recipes - Notification
+# Cloud Guard - Detector and Responder Recipes - Auto Remediation
 
 ## Environments {.unlisted .unnumbered}
 
@@ -13,96 +18,117 @@ environment:
 - **Region:** Germany Central (Frankfurt)
 - **OCI Console URL:**
   <a href="https://console.eu-frankfurt-1.oraclecloud.com" target="_blank" rel="noopener">
-  OCI Konsole Zurich - Login</a>
+  OCI Console Frankfurt - Login</a>
 
-Verify in OCI console you selected the correct region and for Cloud Guard you are
-in your compartment. New resources like recipes, object storage buckets etc.,
+Verify in OCI console you selected the correct region and for Cloud Guard you
+are in your compartment. New resources like recipes, object storage buckets etc.,
 are always created on your compartment.
 
 ## Exercise 02
 
 ### Exercise Goals {.unlisted .unnumbered}
 
-Based on the detector settings, we configure the notification to be informed
-about any issues.
+We use the detector settings from exercise 01, enable the responder recipe to
+auto resolve the problem of a public bucket. If enabled, any public bucket
+visibility is changed by Cloud Guard to private automatically.
 
 ### Tasks {.unlisted .unnumbered}
 
-- Create Topic, and Subscription
-- Create Rule
-- Verify with a Public Bucket the behavior
+- Add Responder recipe to Target
+- Enable Auto resolve
+- Verify auto resolving by creating an additional bucket and set visibility to
+  Public
 
 ## Solution
 
-Login as User XYZ in OCI console. Ensure you have select the proper compartment
-in from the dropdown list on left side.
+Login as User XYZ in OCI console and go to _Cloud Guard Overview_. Ensure you
+have select the proper compartment in from the dropdown list on left side.
 
->> Overview
+![>> overview](../../images/screenshot-cloud-guard-overview_ex02.jpg)
 
-### Enable Auto Resolve Notification by Topic
+### Enable Auto Resolve
 
-#### Create Topic, Subscription and Confirmation
+#### Add Responder recipe to Target
 
-A topic and a subscription is required to enable the notification service based
-on events.
+We must add the responder recipe to target configuration.
 
-1. Developer Services -> Application Integration -> Notifications -> Create Topic
+Cloud Guard -> Configuration -> Targets
 
-![>> step_1](../../images/screenshot-cloud-guard-notifications_1.jpg)
+![>> step_1](../../images/screenshot-cloud-guard-auto-resolve_1.jpg)
 
-2. Add details, _Create_.
+Select your created target an scroll at the bottom.
 
-![>> step_2](../../images/screenshot-cloud-guard-notifications_2.jpg)
+![>> step_2](../../images/screenshot-cloud-guard-auto-resolve_2.jpg)
 
-3. The state of the new created topic is active.
+In section _Configuration_ und _Responder recipes_, add recipe. Select your
+responder receive from dropdown list and press _Add recipes_. Do not select the
+Oracle managed recipe as you have no privileges there to change any settings.
 
-![>> step_3](../../images/screenshot-cloud-guard-notifications_3.jpg)
+![>> step_3](../../images/screenshot-cloud-guard-auto-resolve_3.jpg)
 
-4. View the details, click on topic name. Create a new Subscription: _Create Subscription_.
+#### Enable Auto resolve
 
-![>> step_4](../../images/screenshot-cloud-guard-notifications_4.jpg)
+Select the fresh added Responder recipe. Edit the entry for _Make Bucket Private_
+by click on the three dots and _Edit_.
 
-5. Select:
+![>> step_4](../../images/screenshot-cloud-guard-auto-resolve_4.jpg)
 
-- Protocol: Email
-- Email: add your personal mail address, a mail address where you have immediate
-  access for confirmation
+You can ignore the alert about privileges as these settings are done on top
+compartment level. We set condition
 
-Create the subscription and check your inbox.
+- In section _Setting_, activated _Execute automatically_.
+- Enable checkbox to confirm the execution.
+- Set Conditional Group for parameter region to eu-zurich_1
 
-![>> step_5](../../images/screenshot-cloud-guard-notifications_5.jpg)
+![>> step_5](../../images/screenshot-cloud-guard-auto-resolve_5.jpg)
+![>> step_6](../../images/screenshot-cloud-guard-auto-resolve_6.jpg)
 
-1. Confirm the subscription
+Press _Save_ at the bottom.
 
-![>> step_6](../../images/screenshot-cloud-guard-notifications_6.jpg)
+#### Verify Auto-Resolve by Creating a Public Bucket
 
-![>> step_7](../../images/screenshot-cloud-guard-notifications_7.jpg)
+Repeat the steps from the previous lab to create a new bucket.
 
-### Create Rule
+#### Create Bucket
 
-#### Create Topic, Subscription and Confirmation
+Add basic information and description. Call it _private_bucket_. Ensure you are
+in the correct compartment. If not, select your compartment in left side dropdown
+menu.
 
-We create a rule based on Cloud Guard changes.
+Press _Create Bucket_.
 
-Observability & Management -> Events Service -> Rules -> _Create Rule_.
+- Set Bucket Name to _public-bucket_ and let other settings as per default.
 
-1. Set Display Name and Description, as example _rule-oci-sec-ws-lab-00-cloudguard_.
+![>> step7](../../images/screenshot-cloud-guard-auto-resolve_7.jpg)
 
-![>> step_1](../../images/screenshot-cloud-guard-rule_1.jpg)
+Press _Create_ at the bottom.
 
-2. Select Rule Condition.
+#### Edit Visibility
 
-In section _Rule Conditions_, select _Service Name_ and _Event Type_. Select
-these event types:
+Edit created bucket by click on the three dots on bucket line -> Edit Visibility.
 
-- Detected - Problem
-- Dismissed - Problem
-- Remediated - Problem
+![>> step_8](../../images/screenshot-cloud-guard-auto-resolve_8.jpg)
 
-![>> step_2](../../images/screenshot-cloud-guard-rule_2.jpg)
+Press _Save Changes_ at the bottom.
 
-3. Select Actions
+#### Verification
 
-- Action-Type: Notifications
-- Notifications-Compartment: OCI-SEC-WS-LAB-<nn> (your compartment name)
-- Topic: topic-oci-sec-ws-lab-001 (the topic you created)
+The bucket is set to public and marked by a yellow triangle.
+
+![>> step_9](../../images/screenshot-cloud-guard-auto-resolve_9.jpg)
+
+#### Verify Auto Resolving
+
+After a couple of seconds, you can verify the Responder activity. There are two
+new entries to make the bucket private Cloud Guard -> Alerts -> Responder activity
+
+![>> step_10](../../images/screenshot-cloud-guard-auto-resolve_10.jpg)
+
+#### Verification
+
+The visibility for your created Object Storage bucket has automatically changed
+now to Private.
+
+Storage -> Buckets
+
+![>> step_11](../../images/screenshot-cloud-guard-auto-resolve_11.jpg)
