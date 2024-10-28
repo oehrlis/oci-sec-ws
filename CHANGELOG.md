@@ -30,6 +30,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - rework the chapter *Exercises Overview* and update doc metadata
 - reorder the chapter *Key Management* and update doc metadata
 - translate download chapter
+- translate link chapter
   
 ### Fixed
 
