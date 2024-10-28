@@ -1,4 +1,10 @@
-<!-- markdownlint-disable MD033 -->
+---
+title: "Zones"
+permalink: /lab/sz-zones/
+excerpt: "Security Zones"
+---
+<!-- markdownlint-disable MD024 -->
+<!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD041 -->
 
 # Introduction to the LAB environment

@@ -1,3 +1,10 @@
+---
+title: "WAF"
+permalink: /lab/sz-waf/
+excerpt: "Web Application Firewall"
+---
+<!-- markdownlint-disable MD024 -->
+<!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
 

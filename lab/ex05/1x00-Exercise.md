@@ -1,3 +1,10 @@
+---
+title: "Setup"
+permalink: /lab/ds-setup/
+excerpt: "Data Safe setup and configuration"
+---
+<!-- markdownlint-disable MD024 -->
+<!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
 
