@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - reorder the chapter *Key Management* and update doc metadata
 - translate download chapter
 - translate link chapter
+- translate readme for *Workshop Extras*
   
 ### Fixed
 

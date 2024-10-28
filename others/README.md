@@ -1,7 +1,7 @@
 ---
 title: "Workshop Extras"
 permalink: /others/
-excerpt: "Extras zum OCI-SEC-WS Workshop"
+excerpt: "Extras for the OCI-SEC-WS Workshop"
 ---
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD033 -->
