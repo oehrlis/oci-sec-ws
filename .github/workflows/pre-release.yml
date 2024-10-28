@@ -211,12 +211,11 @@ jobs:
         with:
           name: ${{ env.NAME_PREFIX }}_requirements_${{ env.LANGUAGE }}.pdf
 
-      # Upload the zip file as an artifact
-      - name: Upload OCI zip file as artifact
-        uses: actions/upload-artifact@v4
+      # download generated requirements pdf document from artifact
+      - name: Get OCI stack zip file from artifact store
+        uses: actions/download-artifact@v4
         with:
           name: ${{ github.event.repository.name }}_stack.zip
-          path: ${{ github.event.repository.name }}_stack.zip
 
       # Create a draft release
       - name: Create a draft release
