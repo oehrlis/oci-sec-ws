@@ -1,8 +1,14 @@
+---
+title: "Notification"
+permalink: /lab/cg-notification/
+excerpt: "Cloud Guard configure detector and responder recipes notification"
+---
 <!-- markdownlint-disable MD024 -->
+<!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD029 -->
 <!-- markdownlint-disable MD033 -->
 
-# Key Management
+# Cloud Guard - Detector and Responder Recipes - Notification
 
 ## Environments {.unlisted .unnumbered}
 
@@ -13,9 +19,9 @@ environment:
 - **Region:** Germany Central (Frankfurt)
 - **OCI Console URL:**
   <a href="https://console.eu-frankfurt-1.oraclecloud.com" target="_blank" rel="noopener">
-  OCI Konsole Zurich - Login</a>
+  OCI Console Frankfurt - Login</a>
 
-Verify in OCI console you selected the correct region and for Vault you are
+Verify in OCI console you selected the correct region and for Cloud Guard you are
 in your compartment. New resources like recipes, object storage buckets etc.,
 are always created on your compartment.
 
@@ -23,87 +29,86 @@ are always created on your compartment.
 
 ### Exercise Goals {.unlisted .unnumbered}
 
-We create a Vault to store a Mater encryption key to change the Oracle provide
-key on Object storage object to a Customer Manage Key.
+Based on the detector settings, we configure the notification to be informed
+about any issues.
 
 ### Tasks {.unlisted .unnumbered}
 
-- Create Vault and Master Encryption Key
-- Use Master Encryption Key for new Object Storage bucket
+- Create Topic, and Subscription
+- Create Rule
+- Verify with a Public Bucket the behavior
 
 ## Solution
 
 Login as User XYZ in OCI console. Ensure you have select the proper compartment
 in from the dropdown list on left side.
 
-Identity -> Security -> Key Management & Secret Management -> Vault
+>> Overview
 
-### Create Vault and Keys
+### Enable Auto Resolve Notification by Topic
 
-#### Vault and Master Encryption Key
+#### Create Topic, Subscription and Confirmation
 
-1. Create a Vault
-Do NOT create a PRIVATE VAULT. Set name according compartment name, as example
-*vault-oci-sec-ws-lab-00* for compartment *OCI-SEC-WS-LAB-00*.
+A topic and a subscription is required to enable the notification service based
+on events.
 
-![>> step_1](../../images/screenshot-vault_create_1.jpg)
+1. Developer Services -> Application Integration -> Notifications -> Create Topic
 
-2. Verify  create Vault is in state Active.
+![>> step_1](../../images/screenshot-cloud-guard-notifications_1.jpg)
 
-![>> step_2](../../images/screenshot-vault_create_2.jpg)
+2. Add details, _Create_.
 
-3. Select th created Vault to add a Master Encryption Key. *Create Key*.
+![>> step_2](../../images/screenshot-cloud-guard-notifications_2.jpg)
 
-![>> step_3](../../images/screenshot-vault_create_3.jpg)
+3. The state of the new created topic is active.
 
-4. Select Protection Mode *Software*, use Key Shape: Algorithm and Key Shape:
-   Length as per default. *Create Key*. Do not import any external key.
+![>> step_3](../../images/screenshot-cloud-guard-notifications_3.jpg)
 
-![>> step_4](../../images/screenshot-vault_create_4.jpg)
+4. View the details, click on topic name. Create a new Subscription: _Create Subscription_.
 
-1. Verify Master Encryption Key is in State *Enabled*.
+![>> step_4](../../images/screenshot-cloud-guard-notifications_4.jpg)
 
-![>> step_5](../../images/screenshot-vault_create_5.jpg)
+5. Select:
 
-#### Create new Object Storage with MEK
+- Protocol: Email
+- Email: add your personal mail address, a mail address where you have immediate
+  access for confirmation
 
-Storage -> Object Storage & Archive Storage -> *Create Bucket*.
+Create the subscription and check your inbox.
 
-Set bucket name, in section *Encryption* now you can select your Master
-Encryption Key. Key not visible? Verify compartment and region (Frankfurt).
+![>> step_5](../../images/screenshot-cloud-guard-notifications_5.jpg)
 
-![>> step_6](../../images/screenshot-vault_create_6.jpg)
+1. Confirm the subscription
 
-Verify the key is set, you can edit or unassign it.
+![>> step_6](../../images/screenshot-cloud-guard-notifications_6.jpg)
 
-![>> step_7](../../images/screenshot-vault_create_7.jpg)
+![>> step_7](../../images/screenshot-cloud-guard-notifications_7.jpg)
 
-#### Create new Object Storage with a Master Encrytion Key
+### Create Rule
 
-Storage -> Object Storage & Archive Storage -> *Create Bucket*.
+#### Create Topic, Subscription and Confirmation
 
-Set bucket name, in section *Encryption* now you can select your Master
-Encryption Key. Key not visible? Verify compartment and region (Frankfurt).
+We create a rule based on Cloud Guard changes.
 
-![>> step_6](../../images/screenshot-vault_create_6.jpg)
+Observability & Management -> Events Service -> Rules -> _Create Rule_.
 
-Verify the key is set, you can edit or unassign it.
+1. Set Display Name and Description, as example _rule-oci-sec-ws-lab-00-cloudguard_.
 
-![>> step_7](../../images/screenshot-vault_create_7.jpg)
+![>> step_1](../../images/screenshot-cloud-guard-rule_1.jpg)
 
-#### Change Compute Instance Boot Volume with a Master Encrytion Key
+2. Select Rule Condition.
 
-Compute -> Instances -> Webserver 01 (as example: ci-fra-lab-ocisecws-00-webserver01).
+In section _Rule Conditions_, select _Service Name_ and _Event Type_. Select
+these event types:
 
-Under resources, select the Boot volume name attached to the compute instance.
+- Detected - Problem
+- Dismissed - Problem
+- Remediated - Problem
 
-![>> step_8](../../images/screenshot-vault_create_8.jpg)
+![>> step_2](../../images/screenshot-cloud-guard-rule_2.jpg)
 
-Assign a new MEK.
+3. Select Actions
 
-![>> step_9](../../images/screenshot-vault_create_9.jpg)
-
-Select your created Vault and Master Encrption Key. *Assign*. The Boot Volume
-will be updated and the key set.
-
-![>> step_10](../../images/screenshot-vault_create_10.jpg)
+- Action-Type: Notifications
+- Notifications-Compartment: OCI-SEC-WS-LAB-<nn> (your compartment name)
+- Topic: topic-oci-sec-ws-lab-001 (the topic you created)
