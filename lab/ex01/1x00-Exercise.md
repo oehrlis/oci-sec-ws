@@ -1,7 +1,14 @@
+---
+title: "Key Management"
+permalink: /lab/bs-keymgmt/
+excerpt: "Goal: Create a Vault to store a master encryption key, enabling the switch from Oracle-provided keys to customer-managed keys for object storage."
+---
 <!-- markdownlint-disable MD024 -->
+<!-- markdownlint-disable MD025 -->
+<!-- markdownlint-disable MD029 -->
 <!-- markdownlint-disable MD033 -->
 
-# Cloud Guard - Detector and Responder Recipes - Manual Remediation
+# Key Management
 
 ## Environments {.unlisted .unnumbered}
 
@@ -12,212 +19,97 @@ environment:
 - **Region:** Germany Central (Frankfurt)
 - **OCI Console URL:**
   <a href="https://console.eu-frankfurt-1.oraclecloud.com" target="_blank" rel="noopener">
-  OCI Konsole Zurich - Login</a>
+  OCI Console Frankfurt - Login</a>
 
-Verify in OCI console you selected the correct region and for Cloud Guard you
-are in your compartment. New resources like recipes, object storage buckets etc.,
+Verify in OCI console you selected the correct region and for Vault you are
+in your compartment. New resources like recipes, object storage buckets etc.,
 are always created on your compartment.
 
-## Exercise 01
+## Exercise 02
 
 ### Exercise Goals {.unlisted .unnumbered}
 
-Create a detector recipe to recognize public Object Storage buckets.
+We create a Vault to store a Mater encryption key to change the Oracle provide
+key on Object storage object to a Customer Manage Key.
 
 ### Tasks {.unlisted .unnumbered}
 
-- Clone existing Oracle managed recipe
-- Create a new target to observer your compartment objects
-- Create a object storage bucket and change visibility to public
-- Verify new Cloud Guard alert
+- Create Vault and Master Encryption Key
+- Use Master Encryption Key for new Object Storage bucket
 
 ## Solution
 
-Login as User XYZ in OCI console and go to _Cloud Guard Overview_. Ensure you
-have select the proper compartment in from the dropdown list on left side.
+Login as User XYZ in OCI console. Ensure you have select the proper compartment
+in from the dropdown list on left side.
 
-![>> overview](../../images/screenshot-cloud-guard-overview_ex01.jpg)
+Identity -> Security -> Key Management & Secret Management -> Vault
 
-### Clone existing Oracle managed recipes
+### Create Vault and Keys
 
-From left menu, select _Recipes_ and _Clone_.
+#### Vault and Master Encryption Key
 
-![>> step_1](../../images/screenshot-cloud-guard-clone_step_1.jpg)
+1. Create a Vault
+Do NOT create a PRIVATE VAULT. Set name according compartment name, as example
+*vault-oci-sec-ws-lab-00* for compartment *OCI-SEC-WS-LAB-00*.
 
-#### Clone _Detector_ recipes
+![>> step_1](../../images/screenshot-vault_create_1.jpg)
 
-Cloud Guard -> Recipes -> Detector recipes
+2. Verify  create Vault is in state Active.
 
-- Change compartment on top to trivadisbdsxsp (root).
-- Select recipe OCI Activity Detector Recipe (Oracle managed) from dropdown list
-- Set name for cloned recipe , as example _OCI Activity Detector Recipe - <compartment-name>_
-- Ensure in section Compartment, your compartment is selected.
+![>> step_2](../../images/screenshot-vault_create_2.jpg)
 
-![>> step_2](../../images/screenshot-cloud-guard-clone_step_2.jpg)
+3. Select th created Vault to add a Master Encryption Key. *Create Key*.
 
-Press _Clone_ at the bottom.
+![>> step_3](../../images/screenshot-vault_create_3.jpg)
 
-Repeat the steps for the other Oracle managed detector recipes:
+4. Select Protection Mode *Software*, use Key Shape: Algorithm and Key Shape:
+   Length as per default. *Create Key*. Do not import any external key.
 
-- OCI Configuration Detector Recipe (Oracle managed)
-- OCI Instance Detector Recipe (Oracle managed)
+![>> step_4](../../images/screenshot-vault_create_4.jpg)
 
-After successful clone, you have recipes for Instance Security, Configuration
-and Activity.
+1. Verify Master Encryption Key is in State *Enabled*.
 
-#### Clone _Responder_ recipes
+![>> step_5](../../images/screenshot-vault_create_5.jpg)
 
-Cloud Guard -> Recipes -> Responder recipes
+#### Create new Object Storage with MEK
 
-- Ensure _Responder recipes_ is select from left side menu.
-- Change compartment on top to trivadisbdsxsp (root).
-- Select recipe OCI Activity Detector Recipe (Oracle managed) from dropdown list
-- Set name for cloned recipe , as example _OCI Activity Detector Recipe - <compartment-name>_
-- Ensure in section Compartment, your compartment is selected.
+Storage -> Object Storage & Archive Storage -> *Create Bucket*.
 
-![>> step_3](../../images/screenshot-cloud-guard-clone_step_3.jpg)
+Set bucket name, in section *Encryption* now you can select your Master
+Encryption Key. Key not visible? Verify compartment and region (Frankfurt).
 
-Press _Clone_ at the bottom.
+![>> step_6](../../images/screenshot-vault_create_6.jpg)
 
-### Verify cloned recipes
+Verify the key is set, you can edit or unassign it.
 
-After cloning, you must have three detector recipes and one responder recipes on
-your compartment.
+![>> step_7](../../images/screenshot-vault_create_7.jpg)
 
-Detector recipes:
+#### Create new Object Storage with a Master Encrytion Key
 
-![>> step_4](../../images/screenshot-cloud-guard-clone_step_4.jpg)
+Storage -> Object Storage & Archive Storage -> *Create Bucket*.
 
-Responder recipe:
+Set bucket name, in section *Encryption* now you can select your Master
+Encryption Key. Key not visible? Verify compartment and region (Frankfurt).
 
-![>> step_5](../../images/screenshot-cloud-guard-clone_step_5.jpg)
+![>> step_6](../../images/screenshot-vault_create_6.jpg)
 
-### Create a new target to observer your compartment objects
+Verify the key is set, you can edit or unassign it.
 
-In this step, we create a target based on compartment and add the recipes we created.
+![>> step_7](../../images/screenshot-vault_create_7.jpg)
 
-Cloud Guard -> Configuration -> Targets ->  Create Target
+#### Change Compute Instance Boot Volume with a Master Encrytion Key
 
-![>> targets_1](../../images/screenshot-cloud-guard-clone_targets_1.jpg)
+Compute -> Instances -> Webserver 01 (as example: ci-fra-lab-ocisecws-00-webserver01).
 
-#### Basic Information
+Under resources, select the Boot volume name attached to the compute instance.
 
-Add basic information and description.
+![>> step_8](../../images/screenshot-vault_create_8.jpg)
 
-- Set target name according compartment, as example _cg-tgt-oci-sec-ws-lab-00_.
-- Add description
-- Verify compartment is correct according your work compartment.
+Assign a new MEK.
 
-![>> targets_2](../../images/screenshot-cloud-guard-clone_targets_2.jpg)
+![>> step_9](../../images/screenshot-vault_create_9.jpg)
 
-Press _Next_ at the bottom.
+Select your created Vault and Master Encrption Key. *Assign*. The Boot Volume
+will be updated and the key set.
 
-#### Configuration
-
-Add basic information and description.
-
-- In Posture and threat monitoring recipes, select the
-  _OCI Configuration Detector Recipe_ you created for your compartment.
-- In Instance Security recipe,  select the _OCI Instance Detector Recipe_ you
-  created for your compartment.
-- Activate _All compute instances_.
-
-![>> targets_3](../../images/screenshot-cloud-guard-clone_targets_3.jpg)
-
-Press _Next_ at the bottom.
-
-#### Review
-
-AVerify you select the proper recipes based on your compartment.
-
-![>> targets_4](../../images/screenshot-cloud-guard-clone_targets_4.jpg)
-
-Press _Create_ at the bottom. Go back to Cloud Guard Overview page.
-
-### Create a object storage bucket and change visibility to public
-
-In this step, we create am Object Storage bucket and change visibility.
-
-Storage -> Buckets
-
-![>> targets_1](../../images/screenshot-cloud-guard-clone_targets_1.jpg)
-
-#### Create Bucket
-
-Add basic information and description. Ensure you are in the correct compartment.
-If not, select your compartment in left side dropdown menu.
-
-![>> bucket_1](../../images/screenshot-cloud-guard-bucket_1.jpg)
-
-Press _Create Bucket_.
-
-- Set Bucket Name to _public-bucket_ and let other settings as per default.
-
-![>> bucket_2](../../images/screenshot-cloud-guard-bucket_2.jpg)
-
-Press _Create_ at the bottom.
-
-#### Edit Visibility
-
-Edit created bucket by click on the three dots -> Edit Visibility.
-
-![>> bucket_3](../../images/screenshot-cloud-guard-bucket_3.jpg)
-
-Change visibility to Public. Let checkbox setting as per default.
-
-![>> bucket_4](../../images/screenshot-cloud-guard-bucket_4.jpg)
-
-Press _Save Changes_ at the bottom.
-
-#### Verification
-
-The bucket is set to public and marked by a yellow triangle.
-
-![>> bucket_5](../../images/screenshot-cloud-guard-bucket_5.jpg)
-
-### Verify new Cloud Guard alert
-
-Verify if the public buckets is recognized by Cloud Guard.
-
-Cloud Guard -> Alerts -> Problems
-
-![>> alert_1](../../images/screenshot-cloud-guard-alert_1.jpg)
-
-#### Remediation
-
-Select the alert and press _Remediate_.
-
-![>> alert_2](../../images/screenshot-cloud-guard-alert_2.jpg)
-
-Ignore the warning ab out missing permissions as your OCI user is not able to
-see the policies created on top level.
-
-![>> alert_3](../../images/screenshot-cloud-guard-alert_3.jpg)
-
-Confirm.
-
-![>> alert_4](../../images/screenshot-cloud-guard-alert_4.jpg)
-
-#### Verification
-
-The visibility for your created Object Storage bucket has changed now to _Private_.
-
-Storage -> Buckets
-
-![>> alert_5](../../images/screenshot-cloud-guard-alert_5.jpg)
-
-In Cloud Guard alert view, the state changes after some minutes too.
-
-#### Mark Problem as Resolved
-
-Cloud Guard -> Alerts -> Problems.
-
-Select your problem and -Mark_as_resolved_.
-
-![>> alert_6](../../images/screenshot-cloud-guard-alert_6.jpg)
-
-Confirm.
-
-![>> alert_7](../../images/screenshot-cloud-guard-alert_7.jpg)
-
-The alert is not longer visible in alert list.
+![>> step_10](../../images/screenshot-vault_create_10.jpg)

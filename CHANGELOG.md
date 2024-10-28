@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - moved user.md to 9x96-Appendix-F_Manual_Lab_Users.md
 - rework the chapter *Lab Overview* and update doc metadata
 - rework the chapter *Exercises Overview* and update doc metadata
+- reorder the chapter *Key Management* and update doc metadata
   
 ### Fixed
 
