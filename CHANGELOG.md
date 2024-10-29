@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.6.4] - 2024-10-29
+
+### Fixed
+
+- change ssh_public_key in schema.yaml
+
 ## [0.6.3] - 2024-10-29
 
 ### Added
