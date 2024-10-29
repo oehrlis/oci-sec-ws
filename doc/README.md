@@ -29,7 +29,7 @@ docker run --rm -v "$PWD":/workdir:z oehrlis/pandoc \
 --metadata-file=doc/metadata.yml \
 --listings --pdf-engine=xelatex \
 --resource-path=images --filter pandoc-latex-environment \
---output=OCI-SEC-WS_lab_de.pdf doc/[0-8]x??-*.md lab/ex??/?x??-*.md doc/9x??-*.md
+--output=OCI-SEC-WS_lab_en.pdf doc/[0-8]x??-*.md lab/ex??/?x??-*.md doc/9x??-*.md
 ```
 
 ### Create Requirements PDF Using a Docker Container
@@ -42,7 +42,7 @@ docker run --rm -v "$PWD":/workdir:z oehrlis/pandoc \
 --metadata-file=doc/metadata_requirements.yml \
 --listings --pdf-engine=xelatex \
 --resource-path=images --filter pandoc-latex-environment \
---output=OCI-SEC-WS_requirements_de.pdf 0x04_Requirements.md
+--output=OCI-SEC-WS_requirements_en.pdf 0x04_Requirements.md
 ```
 
 ### Create DOCX Using a Local *Pandoc* Installation
