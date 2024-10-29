@@ -21,7 +21,7 @@ on:
   workflow_dispatch:
 
 env:
-  LANGUAGE: de
+  LANGUAGE: en
   NAME_PREFIX: OCI-SEC-WS
   DOC_FOLDER: doc
   LAB_FOLDER: lab
