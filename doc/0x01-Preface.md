@@ -29,7 +29,7 @@ The authors and publisher assume no liability or responsibility for any losses o
 - **Classification:**    public
 - **Status:**            Work in progress
 - **Last changes:**      2024.10.23
-- **Document name:**     OCI-SEC-WS_lab_de.pdf
+- **Document name:**     OCI-SEC-WS_lab_en.pdf
 
 | Main Authors                 | Contributors & Reviewers |
 |------------------------------|--------------------------|
