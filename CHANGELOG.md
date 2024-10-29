@@ -14,6 +14,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- fixed links for deploy to Oracle cloud
+
 ### Removed
 
 ## [0.6.1] - 2024-10-29
