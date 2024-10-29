@@ -26,6 +26,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - rewrite index and main readme files
 - change lang in pandoc meta file
 
+### Fixed
+
+- add correct links in workshop overview
+- add correct links in workshop readme
+
 ## [0.5.0] - 2024-10-28
 
 ### Added
