@@ -24,7 +24,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - change language of github workflow and docs
 - rewrite index and main readme files
-  
+- change lang in pandoc meta file
+
 ## [0.5.0] - 2024-10-28
 
 ### Added
