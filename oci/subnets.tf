@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.23
-# Revision...: 0.6.2
+# Revision...: 0.6.3
 # Purpose....: Define public and private subnets for Virtual Cloud Network (VCN) 
 #              resources in the LAB environment. Includes subnets for public 
 #              access, private compute resources, and private databases.

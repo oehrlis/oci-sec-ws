@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.16
-# Revision...: 0.6.2
+# Revision...: 0.6.3
 # Purpose....: Define provider configurations for the Terraform environment. 
 #              This includes the OCI provider for Oracle Cloud Infrastructure 
 #              resources, as well as other necessary providers (TLS, random) 

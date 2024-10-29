@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.23
-# Revision...: 0.6.2
+# Revision...: 0.6.3
 # Purpose....: Define DHCP options for Virtual Cloud Network (VCN) resources in 
 #              the LAB environment. This includes options for both public and 
 #              private subnets, ensuring proper DNS resolution and search domain 
