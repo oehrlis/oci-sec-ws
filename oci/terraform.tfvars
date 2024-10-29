@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.18
-# Revision...: 0.6.1
+# Revision...: 0.6.2
 # Purpose....: Define variable values for the terraform module for setting up the 
 #              TVDLAB environment. The variables are organized for clarity and 
 #              easier customization with inline comments for each setting.
