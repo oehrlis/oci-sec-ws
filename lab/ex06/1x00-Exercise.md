@@ -7,7 +7,7 @@ excerpt: "Security Zones"
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD041 -->
 
-# Introduction to the LAB environment
+# Security Zones
 
 ## Environments {.unlisted .unnumbered}
 

@@ -8,7 +8,7 @@ excerpt: "Web Application Firewall"
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
 
-# Introduction to the LAB environment
+# Web Application Firewall (WAF)
 
 ## Environments {.unlisted .unnumbered}
 

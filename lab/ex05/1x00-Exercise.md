@@ -8,7 +8,7 @@ excerpt: "Data Safe setup and configuration"
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
 
-# Introduction to the LAB environment
+# Data Safe
 
 ## Environments {.unlisted .unnumbered}
 
