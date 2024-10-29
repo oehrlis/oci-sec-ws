@@ -8,6 +8,7 @@ Stefan Oehrli and Martin Berger.
 
 - [Introduction](./doc/0x03-Introduction.md) to the environment and the workshop
 - [Requirements](./doc/0x04_Requirements.md) to the workshop requirements
+- [Lab Environment](./doc/0x08-Lab_env.md) of the workshop
 - [Exercises](./lab/README.md) for the OCI Security Workshop
 - [Extras](./others/README.md) with links, references, and exercise materials as PDFs
 
@@ -32,4 +33,4 @@ have a solid understanding of OCI security best practices.
 - **14:45 - 16:00**: **Security Zones / Web Application Firewall** - Overview, Zone Management, Rulesets, and CIS Compliance
 - **16:00 - 16:30**: **Wrap-Up** - Additional Resources, Next Steps, and Farewell
 
-The lab environment is available as a Terraform configuration in the GitHub repository [oehrlis/oci-sec-ws](https://github.com/oehrlis/oci-sec-ws/tree/main/oci), or as an OCI stack [oci-sec-ws_stack.zip](https://github.com/oehrlis/oci-sec-ws/releases/download/v0.6.2/oci-sec-ws_stack.zip). You can also deploy it directly through [![Deploy to OCI](./images/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?tenant=trivadisbdsxsp&region=eu-frankfurt-1&zipUrl=https://github.com/oehrlis/oci-sec-ws/releases/download/v0.6.2/oci-sec-ws_stack.zip).
+The lab environment is available as a Terraform configuration in the GitHub repository [oehrlis/oci-sec-ws](https://github.com/oehrlis/oci-sec-ws/tree/main/oci), or as an OCI stack [oci-sec-ws_stack.zip](https://github.com/oehrlis/oci-sec-ws/releases/download/v0.6.3/oci-sec-ws_stack.zip). You can also deploy it directly through [![Deploy to OCI](./images/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?tenant=trivadisbdsxsp&region=eu-frankfurt-1&zipUrl=https://github.com/oehrlis/oci-sec-ws/releases/download/v0.6.3/oci-sec-ws_stack.zip).
