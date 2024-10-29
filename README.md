@@ -6,7 +6,8 @@
 Welcome to the Oracle Cloud Infrastructure Security Kickstart Workshop with  
 Stefan Oehrli and Martin Berger.
 
-- [Introduction](./doc/README.md) to the environment and the workshop
+- [Introduction](./doc/0x03-Introduction.md) to the environment and the workshop
+- [Requirements](./doc/0x04_Requirements.md) to the workshop requirements
 - [Exercises](./lab/README.md) for the OCI Security Workshop
 - [Extras](./others/README.md) with links, references, and exercise materials as PDFs
 

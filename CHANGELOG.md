@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - fixed links for deploy to Oracle cloud
 - fixed links in index file for workshop webpage
+- fix links in main readme for github repo
 
 ### Removed
 
