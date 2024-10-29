@@ -40,3 +40,5 @@ oci/*.zip
 oci/.terraform.lock.hcl
 .ideas/_includes/topnav copy 3.html
 .ideas/_includes/topnav copy.html
+oci/etc/id_rsa_oci-sec-ws
+oci/etc/id_rsa_oci-sec-ws.pub
