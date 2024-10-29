@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.23
-# Revision...: 0.6.0
+# Revision...: 0.6.1
 # Purpose....: Define security lists for Virtual Cloud Network (VCN) resources 
 #              in the LAB environment, including rules for public and private 
 #              subnets to allow or restrict traffic.
