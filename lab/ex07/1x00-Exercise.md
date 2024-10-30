@@ -254,7 +254,7 @@ A popup-window occurs. If there is no window, two possible reasons for:
 
  _Next_.
 
- Protections: Enabkle checkbox and _Add request protection rule_.
+ Protections: Enable checkbox and _Add request protection rule_.
 
 ![>> step_4](../../images/screenshot-waf-setup_4.jpg)
 
@@ -262,7 +262,8 @@ Set a name for the rule, as action name select _Pre-configured 401 Response Code
 
 ![>> step_5](../../images/screenshot-waf-setup_5.jpg)
 
-Scroll down to section _Protection capabilities_, enable the checkbox for the protection capabiliies contain XSS. Scroll down and click _Choose protection capabilities_ to add the select capabilities to the rule.
+Scroll down to section _Protection capabilities_, click on _Choose protection capabilities_ to add XSS components.
+
 
 ![>> step_6](../../images/screenshot-waf-setup_6.jpg)
 
