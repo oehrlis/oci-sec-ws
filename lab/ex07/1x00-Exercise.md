@@ -36,7 +36,7 @@ We install a Load Balancer and WAF do detect XSS.
 
 - Setup Cloud Shell for private Network
 - Install http Server on Compute Instances
-- Setup Load Balancer
+- Setup Public Load Balancer
 - Setup Web Application Firewall
 
 ## Solution
@@ -87,12 +87,11 @@ chmod 600 id_rsa
 
 Login in first compute instance webserver as user opc. Use the private key from above to connect.
 
-ssh opc@10.0.0.75
-
+```
 --login as user opc
-$ who
-opc      pts/0        2024-05-30 09:26 (213.200.199.39)
- 
+ssh opc@10.0.0.75
+```
+
  ```
 --http / php package installation
 $ sudo dnf install httpd php -y
@@ -116,7 +115,7 @@ Create HTML Index Page and XSS PHP Page in /var/www/html
 $ sudo vi /var/www/html/index.php
 
 <?php
-echo "Autoscale Hostname: " . gethostname();
+echo "OCI Hostname: " . gethostname();
 ?>
 ```
 
@@ -147,9 +146,77 @@ $ sudo vi /var/www/html/xss_demo.php
 </body>
 </html>
 ```
+Test runing webserver. This command returns the hostname.
+```
+curl http://localhost
+```
 
-Repeat the step for second webserver.
+Repeat the steps for second webserver.
 
 
-### Setup Load Balancer
+### Setup Public Load Balancer
 
+Create a Public Load Balancer in Public Subnet with the two webservers as backend, attention: health check must set to http (as https as per default). 
+Verify that backend checks run to green (ok) after a while.
+
+_Networking_ -> _Load Balancer_ -> _Create Load Balancer_
+
+![>> step_6](../../images/screenshot-loadbalancer-setup_6.jpg)
+
+Add details:
+- set name
+- let visibility type as PUBLIC
+
+![>> step_7](../../images/screenshot-loadbalancer-setup_7.jpg)
+
+Scroll down and set:
+- Virtual Cloud network
+- Your public subnet
+
+![>> step_8](../../images/screenshot-loadbalancer-setup_8.jpg)
+
+_Next_.
+
+Choose backends: 
+- select backend servers and add ylouzr compute instances
+
+Select your two webserver and add them to the list. Let port as is. Do ot change other settings.
+
+![>> step_9](../../images/screenshot-loadbalancer-setup_9.jpg)
+
+_Next_.
+
+Configure listtener:
+- Change type of traffic to HTTP. Do not change other settings.
+
+![>> step_10](../../images/screenshot-loadbalancer-setup_10.jpg)
+
+_Next_.
+
+Manage Logging:
+- Do not change settings.
+
+![>> step_11](../../images/screenshot-loadbalancer-setup_11.jpg)
+
+_Next_.
+
+Review and create:
+- verify settings
+![>> step_12](../../images/screenshot-loadbalancer-setup_12.jpg)
+
+
+_Submit_.
+
+The load balancer is created, wait until completed. Now you can see the load balancer public IP in overview in
+section Load balancer information. The overall health changes to ok.
+
+![>> step_13](../../images/screenshot-loadbalancer-setup_13.jpg)
+
+Verify reachability in a new web browser window - URL: http://<your public load balancer ip>. Whenever the browser is refreshed, the webserver changes
+from webserver01 to webserver02 and vice versa.
+
+![>> step_14](../../images/screenshot-loadbalancer-setup_14.jpg)
+
+Same when using xss_demo.php as target URL: http://<your public load balancer ip>/xss_demo-php.
+
+![>> step_15](../../images/screenshot-loadbalancer-setup_15.jpg)
