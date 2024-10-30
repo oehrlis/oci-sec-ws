@@ -220,3 +220,12 @@ from webserver01 to webserver02 and vice versa.
 Same when using xss_demo.php as target URL: http://<your public load balancer ip>/xss_demo-php.
 
 ![>> step_15](../../images/screenshot-loadbalancer-setup_15.jpg)
+
+Test XSS-Injection by type in text box: <script>alert('XSS');</script> - or use the direct URL http://129.159.106.151/xss_demo.php?name=<script>alert('XSS');</script>.
+
+A popup-window occurs. If there is no window, two possible reasons for:
+
+- company network where such URLs are blocked by DNS
+- popup-blocker enabled
+ 
+ ![>> step_16](../../images/screenshot-loadbalancer-setup_16.jpg)
