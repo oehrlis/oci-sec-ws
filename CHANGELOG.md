@@ -10,9 +10,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- lab for security zones
+- slides for security zones
+
 ### Changed
 
 ### Fixed
+
+- fixed markdown errors
 
 ### Removed
 
