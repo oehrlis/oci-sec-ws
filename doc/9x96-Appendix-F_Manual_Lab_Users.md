@@ -23,6 +23,9 @@ Allow group grp-oci-sec-ws-lab-00 to manage secret-family in tenancy
 Allow group grp-oci-sec-ws-lab-00 to use key-delegate in tenancy
 Allow group grp-oci-sec-ws-lab-00 to manage floating-ips in tenancy
 Allow group grp-oci-sec-ws-lab-00 to manage load-balancers in tenancy
+Allow group grp-oci-sec-ws-lab-00 to manage waas-family in tenancy
+Allow group grp-oci-sec-ws-lab-00 to manage web-app-firewall in tenancy
+Allow group grp-oci-sec-ws-lab-00 to manage waf-policy in tenancy
 ```
 
 ## POL-OCI-SEC-WS-LAB-00 - Level Compartment TRAINING
@@ -46,4 +49,5 @@ Allow group grp-oci-sec-ws-lab-00 to use volume-family in compartment OCI-SEC-WS
 Allow group grp-oci-sec-ws-lab-00 to use virtual-network-family in compartment OCI-SEC-WS-LAB-00
 Allow group grp-oci-sec-ws-lab-00 to manage load-balancers in compartment OCI-SEC-WS-LAB-00
 Allow group grp-oci-sec-ws-lab-00 to manage security-lists in compartment OCI-SEC-WS-LAB-00
+Allow group grp-oci-sec-ws-lab-00 to manage vcns in compartment MGB-OCI-SEC-WS-LAB-00
 ```

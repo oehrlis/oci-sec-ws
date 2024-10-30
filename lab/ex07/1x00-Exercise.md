@@ -38,6 +38,7 @@ We install a Load Balancer and WAF do detect XSS.
 - Install http Server on Compute Instances
 - Setup Public Load Balancer
 - Setup Web Application Firewall
+- Verify WAF
 
 ## Solution
 
@@ -229,3 +230,77 @@ A popup-window occurs. If there is no window, two possible reasons for:
 - popup-blocker enabled
  
  ![>> step_16](../../images/screenshot-loadbalancer-setup_16.jpg)
+
+
+ ### Setup Web Application Firewall
+
+ _Identity & Security_ -> _Web Application Firewall_ -> _Create WAF policy_.
+
+ Basic information: Set a name, do not change the actions.
+
+![>> step_1](../../images/screenshot-waf-setup_1.jpg)
+
+ _Next_.
+
+ Access control: Do NOT enable the checkbox.
+
+![>> step_2](../../images/screenshot-waf-setup_2.jpg)
+
+ _Next_.
+
+ Rate limiting: Do NOT enable the checkbox.
+
+![>> step_3](../../images/screenshot-waf-setup_3.jpg)
+
+ _Next_.
+
+ Protections: Enabkle checkbox and _Add request protection rule_.
+
+![>> step_4](../../images/screenshot-waf-setup_4.jpg)
+
+Set a name for the rule, as action name select _Pre-configured 401 Response Code Action_.
+
+![>> step_5](../../images/screenshot-waf-setup_5.jpg)
+
+Scroll down to section _Protection capabilities_, enable the checkbox for the protection capabiliies contain XSS. Scroll down and click _Choose protection capabilities_ to add the select capabilities to the rule.
+
+![>> step_6](../../images/screenshot-waf-setup_6.jpg)
+
+Click on button _Add request protection rule_ at the bottom to add selected rule action and protection capabilities.
+
+![>> step_7](../../images/screenshot-waf-setup_7.jpg)
+
+ _Next_.
+
+Select enforcement point: select Load Balancer created above.
+
+![>> step_8](../../images/screenshot-waf-setup_8.jpg)
+
+ _Next_.
+
+ Review and create: click on _Create WAF policy_. Wait a moment until policy and firewall rule are created.
+
+![>> step_9](../../images/screenshot-waf-setup_9.jpg)
+
+### Verify WAF
+
+Open web browser with URL http://<your public load balancer ip>/xss_demo-php. Enter the code snippet into the text box nd click on _Submit_.
+
+```
+<script>alert('XSS');</script>
+```
+![>> step_10](../../images/screenshot-waf-setup_10.jpg)
+
+
+An error occurs.
+
+![>> step_11](../../images/screenshot-waf-setup_11.jpg)
+
+
+Optional:
+- try to change error message with a own text
+
+
+
+
+
