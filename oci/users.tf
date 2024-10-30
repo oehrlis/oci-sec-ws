@@ -81,9 +81,16 @@ resource "oci_identity_policy" "lab_root_policy" {
     format("Allow group %s to manage vaults in tenancy", oci_identity_group.lab_root_group.name),
     format("Allow group %s to manage keys in tenancy", oci_identity_group.lab_root_group.name),
     format("Allow group %s to manage secret-family in tenancy", oci_identity_group.lab_root_group.name),
-    format("Allow group %s to use key-delegate in tenancy", oci_identity_group.lab_root_group.name)
+    format("Allow group %s to use key-delegate in tenancy", oci_identity_group.lab_root_group.name),
+
+    format("Allow group %s to use floating-ips in tenancy", oci_identity_group.lab_root_group.name),
+    format("Allow group %s to use load-balancers in tenancy", oci_identity_group.lab_root_group.name),
+    format("Allow group %s to use waas-family in tenancy", oci_identity_group.lab_root_group.name),
+    format("Allow group %s to use web-app-firewall in tenancy", oci_identity_group.lab_root_group.name),
+    format("Allow group %s to use waf-policy in tenancy", oci_identity_group.lab_root_group.name)
   ]
 }
+
 # Create the policy 'lab_policy' to allow managing all resources in compartment 
 resource "oci_identity_policy" "lab_policy" {
   provider = oci.home # Specifies the OCI provider in the home region.
@@ -110,7 +117,10 @@ resource "oci_identity_policy" "lab_policy" {
     format("Allow group %s to manage secret-family in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
     format("Allow group %s to manage instance-family in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
     format("Allow group %s to use volume-family in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
-    format("Allow group %s to use virtual-network-family in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name)
+    format("Allow group %s to use virtual-network-family in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
+    format("Allow group %s to use load-balancers in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
+    format("Allow group %s to use security-lists in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
+    format("Allow group %s to use vcns in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name)
   ]
 }
 

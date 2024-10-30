@@ -15,6 +15,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- update policies for WAF
+
 ### Fixed
 
 - fixed markdown errors
