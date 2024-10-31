@@ -10,8 +10,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+### Changed
+
+### Fixed
+
+### Removed
+
+## [0.7.0] - 2024-10-31
+
+### Added
+
 - lab for security zones
 - slides for security zones
+- add ingress_security_rules for port 80
 
 ### Changed
 

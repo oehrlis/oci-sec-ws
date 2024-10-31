@@ -69,6 +69,17 @@ resource "oci_core_default_security_list" "public_security_list" {
   # Ingress Rules (Inbound Traffic) - Define as needed
   # ------------------------------------------------------------------------------
   # Add additional ingress rules if needed for public access (e.g., SSH, HTTP, etc.)
+  ingress_security_rules {
+    protocol    = "6"         # TCP protocol
+    source      = "0.0.0.0/0" # Allow inbound traffic from all sources
+    description = "Allow outbound HTTP traffic"
+
+    # Allow inbound traffic on port 80 (HTTP)
+    tcp_options {
+      min = 80
+      max = 80
+    }
+  }
 }
 
 # ------------------------------------------------------------------------------
