@@ -31,7 +31,7 @@ locals {
   lab_def_password          = var.lab_def_password == "" ? random_password.lab_password.result : var.lab_def_password                                # Use generated password if not provided
   ssh_public_key_path       = var.ssh_public_key_path == "" ? "${path.root}/etc/default_authorized_keys" : var.ssh_public_key_path                   # Default path for SSH public keys
   ssh_public_key            = var.ssh_public_key == "" ? file(local.ssh_public_key_path) : var.ssh_public_key                                        # Load SSH public key from file if not provided
-  ssh_authorized_keys       = join("", [local.ssh_public_key, tls_private_key.lab_ssh_key.public_key_openssh])                                       # Combine public key with generated key
+  ssh_authorized_keys       = join("", [tls_private_key.lab_ssh_key.public_key_openssh, file(local.ssh_public_key_path), local.ssh_public_key])      # Combine public key with generated key
 
   # ----------------------------------------------------------------------------
   # VCN / Network Specific Local Variables

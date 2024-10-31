@@ -27,6 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - update policies for WAF
+- merge ssh keys including default ones ssh_authorized_keys
 
 ### Fixed
 
