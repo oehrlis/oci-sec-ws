@@ -39,12 +39,4 @@ data "oci_core_images" "oracle_images" {
   sort_by                  = "TIMECREATED"                     # Sort the images by creation time to get the latest image.
 }
 
-# Attempt to retrieve the tag namespace called "schedule" in the specified compartment
-# This may return an error if the namespace does not exist, so we use `try` to handle it gracefully.
-data "oci_identity_tag_namespace" "schedule" {
-  compartment_id = var.compartment_id # The compartment where the tag namespace should exist
-  name           = "schedule"         # The name of the tag namespace we're trying to retrieve
-}
-
-
 # --- EOF ----------------------------------------------------------------------

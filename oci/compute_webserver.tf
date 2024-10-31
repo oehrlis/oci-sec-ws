@@ -39,15 +39,8 @@ resource "oci_core_instance" "webserver_instance" {
 
   # Set the desired state, tags, and other instance metadata
   state         = var.webserver_instance_state
+  defined_tags  = var.defined_tags
   freeform_tags = var.tags
-
-  # Use `try` with `defined_tags` to handle missing namespace cases.
-  defined_tags = try(
-    {
-      data.oci_identity_tag_namespace.schedule.name = var.defined_tags
-    },
-    {} # Fallback to an empty map if the namespace is unavailable
-  )
 
   # VNIC configuration for network settings (assign public or private IP, subnet, etc.)
   create_vnic_details {

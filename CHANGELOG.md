@@ -10,12 +10,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- add datasource to search the *schedule* namespace
-
 ### Changed
 
 - Update deploy to oci url and remove tenancy as well region
-- Conditionaly set *defined_tags*
 
 ### Fixed
 
