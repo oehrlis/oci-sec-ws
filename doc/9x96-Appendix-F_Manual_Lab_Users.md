@@ -50,4 +50,7 @@ Allow group grp-oci-sec-ws-lab-00 to use virtual-network-family in compartment O
 Allow group grp-oci-sec-ws-lab-00 to manage load-balancers in compartment OCI-SEC-WS-LAB-00
 Allow group grp-oci-sec-ws-lab-00 to manage security-lists in compartment OCI-SEC-WS-LAB-00
 Allow group grp-oci-sec-ws-lab-00 to manage vcns in compartment MGB-OCI-SEC-WS-LAB-00
+Allow group grp-oci-sec-ws-lab-00 to manage security-lists in compartment MGB-OCI-SEC-WS-LAB-00
+Allow group grp-oci-sec-ws-lab-00 to manage virtual-network-family in compartment MGB-OCI-SEC-WS-LAB-00
+Allow group grp-oci-sec-ws-lab-00 to manage security-lists in compartment MGB-OCI-SEC-WS-LAB-00
 ```
