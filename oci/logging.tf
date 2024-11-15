@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.23
-# Revision...: 0.7.0
+# Revision...: 0.8.0
 # Purpose....: Define OCI Log Group and logs for subnets in the LAB environment.
 #              This includes logs for public, private compute, and private 
 #              database subnets.

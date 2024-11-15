@@ -12,11 +12,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update deploy to oci url and remove tenancy as well region
-
 ### Fixed
 
 ### Removed
+
+## [0.8.0] - 2024-11-15
+
+### Added
+
+- add Data Safe slide deck
+  
+### Changed
+
+- Update deploy to oci url and remove tenancy as well region
+- remove default value for defined tag e.g. the scheduling tag as this is not
+  generally available
 
 ## [0.7.0] - 2024-10-31
 

@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.16
-# Revision...: 0.7.0
+# Revision...: 0.8.0
 # Purpose....: Define variables for the terraform module for setting up the 
 #              TVDLAB environment. Variables control the configuration of OCI 
 #              resources such as Virtual Cloud Networks (VCN), Compute Instances, 
@@ -65,10 +65,7 @@ variable "resource_name" {
 variable "defined_tags" {
   description = "Predefined tags for the resources, used for scheduling or governance purposes."
   type        = map(any)
-  default = {
-    "Schedule.Weekend" = "0,0,0,0,0,0,0,0,*,*,*,*,*,*,*,*,*,*,*,*,0,0,0,0",
-    "Schedule.WeekDay" = "0,0,0,0,0,*,1,1,1,1,1,1,1,1,1,1,1,1,*,*,0,0,0,0"
-  }
+  default     = {}
 }
 
 variable "tags" {

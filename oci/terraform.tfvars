@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.18
-# Revision...: 0.7.0
+# Revision...: 0.8.0
 # Purpose....: Define variable values for the terraform module for setting up the 
 #              TVDLAB environment. The variables are organized for clarity and 
 #              easier customization with inline comments for each setting.
@@ -35,8 +35,8 @@
 # Define Lab schedule for:
 # - weekends: off 20:00-09:00, allow 09:00-20:00
 # - week day: off 20:00-06:00, allow 06:00-08:00, on 08:00-18:00, allow 18:00-19:00
-defined_tags            = { "Schedule.Weekend" = "0,0,0,0,0,0,0,0,*,*,*,*,*,*,*,*,*,*,*,*,0,0,0,0",
-                            "Schedule.WeekDay" = "0,0,0,0,0,*,*,1,1,1,1,1,1,1,1,1,1,1,*,*,0,0,0,0" }
+# defined_tags            = { "Schedule.Weekend" = "0,0,0,0,0,0,0,0,*,*,*,*,*,*,*,*,*,*,*,*,0,0,0,0",
+#                             "Schedule.WeekDay" = "0,0,0,0,0,*,*,1,1,1,1,1,1,1,1,1,1,1,*,*,0,0,0,0" }
 # Define Lab schedule for:
 # - weekends: off 20:00-09:00, allow 09:00-20:00
 # - week day: off 20:00-06:00, allow 06:00-20:00
