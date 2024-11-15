@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.8.1] - 2024-11-15
+
+### Fixed
+
+- fix issue with id_rsa dummy file
+  
 ## [0.8.0] - 2024-11-15
 
 ### Added
