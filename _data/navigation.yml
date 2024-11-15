@@ -36,16 +36,16 @@ lab:
   - title: Basic OCI Security
     children:
       - title: "Key Management"
-        url: /lab/bs-keymgmt/
+        url: /lab/bs-key-management/
 
   - title: Cloud Guard
     children:
       - title: "Manual Remediation"
-        url: /lab/cg-man-rem/
+        url: /lab/cg-manual-remediation/
       - title: "Auto Remediation"
-        url: /lab/cg-auto-rem/
+        url: /lab/cg-auto-remediationediationediation/
       - title: "Notification"
-        url: /lab/cg-notification/
+        url: /lab/cg-notification-setup/
 
   - title: Data Safe
     children:

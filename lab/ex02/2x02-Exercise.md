@@ -1,41 +1,33 @@
 ---
-title: "Manual Remediation"
-permalink: /lab/cg-man-rem/
-excerpt: "Cloud Guard configure detector and responder recipes with manual remediation"
+title: "Cloud Guard"
+permalink: /lab/cg-manual-remediation/
+excerpt: "Configure manual remediation for detected security risks."
 ---
 <!-- markdownlint-disable MD024 -->
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD033 -->
 
-# Cloud Guard - Detector and Responder Recipes - Manual Remediation
+## Exercise 02: Manual Remediation
 
-## Environments {.unlisted .unnumbered}
+In this exercise, we will configure Cloud Guard to detect public Object Storage buckets by creating a custom detector recipe. You will also set up a target to monitor your compartment and test the configuration by creating a public bucket.
 
-If not explicitly stated, the exercises are usually performed on the following
-environment:
+### Objectives
 
-- **Compartment:** OCI-SEC-WS-LAB-nn
+- Clone an existing Oracle-managed detector recipe.
+- Create a new target to monitor objects in your compartment.
+- Create an Object Storage bucket and set its visibility to public.
+- Verify that Cloud Guard generates an alert for the public bucket.
+
+## Environment {.unlisted .unnumbered}
+
+Perform this exercise within the following environment:
+
+- **Compartment:** `OCI-SEC-WS-LAB-nn`
 - **Region:** Germany Central (Frankfurt)
-- **OCI Console URL:**
-  <a href="https://console.eu-frankfurt-1.oraclecloud.com" target="_blank" rel="noopener">
-  OCI Console Frankfurt - Login</a>
+- **OCI Console URL:**  
+  [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com){:target="_blank" rel="noopener"}
 
-Verify in OCI console you selected the correct region and for Cloud Guard you
-are in your compartment. New resources like recipes, object storage buckets etc.,
-are always created on your compartment.
-
-## Exercise 01
-
-### Exercise Goals {.unlisted .unnumbered}
-
-Create a detector recipe to recognize public Object Storage buckets.
-
-### Tasks {.unlisted .unnumbered}
-
-- Clone existing Oracle managed recipe
-- Create a new target to observer your compartment objects
-- Create a object storage bucket and change visibility to public
-- Verify new Cloud Guard alert
+Ensure you are in the correct compartment and region. New resources, such as Cloud Shell configurations and ADB access settings, should be created within your designated compartment.
 
 ## Solution
 
@@ -227,3 +219,17 @@ Confirm.
 ![>> alert_7](../../images/screenshot-cloud-guard-alert_7.jpg)
 
 The alert is not longer visible in alert list.
+
+## Summary
+
+In this exercise, you:
+
+- Cloned an Oracle-managed detector recipe in Cloud Guard.
+- Created a new target to observe and monitor resources in your compartment.
+- Configured an Object Storage bucket with public visibility.
+- Verified that Cloud Guard generated an alert for the public bucket, indicating successful detection.
+
+You are now ready to continue with the next exercise, where you will explore further Cloud Guard configurations.
+
+- **Previous Exercise:** [Exercise 01: Key Management](#exercise-01-key-management)
+- **Next Exercise:** [Exercise 03: Auto Remediation](#exercise-03-auto-remediation)

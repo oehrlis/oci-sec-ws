@@ -1,43 +1,34 @@
 ---
-title: "WAF"
+title: "Security Zones"
 permalink: /lab/sz-waf/
-excerpt: "Web Application Firewall"
+excerpt: "Set up and test the Web Application Firewall to protect applications from threats."
 ---
 <!-- markdownlint-disable MD024 -->
-<!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
 
-# Web Application Firewall (WAF)
+## Exercise 13: Setup WAF for XSS Detection
 
-## Environments {.unlisted .unnumbered}
+In this exercise, you will configure a Web Application Firewall (WAF) in Oracle Cloud Infrastructure (OCI) to detect cross-site scripting (XSS) attacks. You will set up a Load Balancer and WAF to protect an HTTP server running on compute instances in a private network.
 
-If not explicitly stated, the exercises are usually performed on the following
-environment:
+### Objectives
 
-- **Compartment:** OCI-SEC-WS-LAB-nn
+- Configure Cloud Shell for access to the private network.
+- Install an HTTP server on compute instances.
+- Set up a public Load Balancer.
+- Configure the Web Application Firewall (WAF).
+- Test the WAF configuration to verify XSS detection.
+
+## Environment {.unlisted .unnumbered}
+
+Perform this exercise within the following environment:
+
+- **Compartment:** `OCI-SEC-WS-LAB-nn`
 - **Region:** Germany Central (Frankfurt)
-- **OCI Console URL:**
-  <a href="https://console.eu-frankfurt-1.oraclecloud.com" target="_blank" rel="noopener">
-  OCI Console Frankfurt - Login</a>
+- **OCI Console URL:**  
+  [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com){:target="_blank" rel="noopener"}
 
-Verify in OCI console you selected the correct region and for Security Zone you
-are in your compartment. New resources like recipes, object storage buckets etc.,
-are always created on your compartment.
-
-## Exercise 07 - Setup WAF for XSS Detection
-
-### Exercise Goals {.unlisted .unnumbered}
-
-We install a Load Balancer and WAF do detect XSS.
-
-### Tasks {.unlisted .unnumbered}
-
-- Setup Cloud Shell for private Network
-- Install http Server on Compute Instances
-- Setup Public Load Balancer
-- Setup Web Application Firewall
-- Verify WAF
+Ensure you are in the correct compartment and region. New resources, such as Cloud Shell configurations and ADB access settings, should be created within your designated compartment.
 
 ## Solution
 
@@ -320,3 +311,18 @@ An error occurs.
 Optional:
 
 - try to change error message with a own text
+
+## Summary
+
+In this exercise, you:
+
+- Configured Cloud Shell to connect to the private network.
+- Installed an HTTP server on compute instances.
+- Set up a public Load Balancer to route traffic.
+- Configured a Web Application Firewall (WAF) to detect and block XSS attacks.
+- Verified that the WAF successfully detected XSS attempts.
+
+You have now completed the WAF setup and are ready to continue exploring other security features in OCI.
+
+- **Previous Exercise:** [Exercise 12: Create Security Zone](#exercise-12-create-security-zone)
+- **Next Exercise:** [Workshop Overview](#workshop-overview)

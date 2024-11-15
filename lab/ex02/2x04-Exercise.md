@@ -1,42 +1,32 @@
 ---
-title: "Notification"
-permalink: /lab/cg-notification/
-excerpt: "Cloud Guard configure detector and responder recipes notification"
+title: "Cloud Guard"
+permalink: /lab/cg-notification-setup/
+excerpt: "Set up notifications to monitor and alert on security-related events."
 ---
 <!-- markdownlint-disable MD024 -->
-<!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD029 -->
 <!-- markdownlint-disable MD033 -->
 
-# Cloud Guard - Detector and Responder Recipes - Notification
+## Exercise 04: Notification Setup
 
-## Environments {.unlisted .unnumbered}
+In this exercise, you will configure notifications in Cloud Guard to receive alerts about detected security issues. Using the existing detector settings, you'll set up notifications to be informed of any potential vulnerabilities or policy violations.
 
-If not explicitly stated, the exercises are usually performed on the following
-environment:
+### Objectives
 
-- **Compartment:** OCI-SEC-WS-LAB-nn
+- Create a notification topic and subscription.
+- Set up a rule to trigger notifications.
+- Test the notification by creating a public Object Storage bucket and verifying the alert.
+
+## Environment {.unlisted .unnumbered}
+
+Perform this exercise within the following environment:
+
+- **Compartment:** `OCI-SEC-WS-LAB-nn`
 - **Region:** Germany Central (Frankfurt)
-- **OCI Console URL:**
-  <a href="https://console.eu-frankfurt-1.oraclecloud.com" target="_blank" rel="noopener">
-  OCI Console Frankfurt - Login</a>
+- **OCI Console URL:**  
+  [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com){:target="_blank" rel="noopener"}
 
-Verify in OCI console you selected the correct region and for Cloud Guard you are
-in your compartment. New resources like recipes, object storage buckets etc.,
-are always created on your compartment.
-
-## Exercise 02
-
-### Exercise Goals {.unlisted .unnumbered}
-
-Based on the detector settings, we configure the notification to be informed
-about any issues.
-
-### Tasks {.unlisted .unnumbered}
-
-- Create Topic, and Subscription
-- Create Rule
-- Verify with a Public Bucket the behavior
+Ensure you are in the correct compartment and region. New resources, such as Cloud Shell configurations and ADB access settings, should be created within your designated compartment.
 
 ## Solution
 
@@ -112,3 +102,16 @@ these event types:
 - Action-Type: Notifications
 - Notifications-Compartment: OCI-SEC-WS-LAB-<nn> (your compartment name)
 - Topic: topic-oci-sec-ws-lab-001 (the topic you created)
+
+## Summary
+
+In this exercise, you:
+
+- Created a notification topic and subscription for Cloud Guard alerts.
+- Configured a rule to send notifications based on specific detector findings.
+- Verified the setup by creating a public bucket and receiving the corresponding alert.
+
+You are now ready to continue with the next exercise to deepen your understanding of Data Safe configurations.
+
+- **Previous Exercise:** [Exercise 03: Auto Remediation](#exercise-03-auto-remediation)
+- **Next Exercise:** [Exercise 05: Data Safe Configuration](#data-safe-configuration)

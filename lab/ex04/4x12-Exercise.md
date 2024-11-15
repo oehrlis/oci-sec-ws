@@ -1,41 +1,31 @@
 ---
-title: "Zones"
+title: "Security Zones"
 permalink: /lab/sz-zones/
-excerpt: "Security Zones"
+excerpt: "Configure Security Zones to enforce compliance and security policies."
 ---
 <!-- markdownlint-disable MD024 -->
-<!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
 
-# Security Zones
+## Exercise 12: Create Security Zone
 
-## Environments {.unlisted .unnumbered}
+In this exercise, you will create a Security Zone in Oracle Cloud Infrastructure (OCI) to enforce security policies and explore the restrictions applied to resources created within the zone.
 
-If not explicitly stated, the exercises are usually performed on the following
-environment:
+### Objectives
 
-- **Compartment:** OCI-SEC-WS-LAB-nn
+- Set up a Security Zone in OCI.
+- Test the Security Zone by creating an Object Storage bucket to observe enforced limitations.
+
+## Environment {.unlisted .unnumbered}
+
+Perform this exercise within the following environment:
+
+- **Compartment:** `OCI-SEC-WS-LAB-nn`
 - **Region:** Germany Central (Frankfurt)
-- **OCI Console URL:**
-  <a href="https://console.eu-frankfurt-1.oraclecloud.com" target="_blank" rel="noopener">
-  OCI Console Frankfurt - Login</a>
+- **OCI Console URL:**  
+  [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com){:target="_blank" rel="noopener"}
 
-Verify in OCI console you selected the correct region and for Security Zone you are
-in your compartment. New resources like recipes, object storage buckets etc.,
-are always created on your compartment.
-
-## Exercise 06 - Create Security Zone
-
-### Exercise Goals {.unlisted .unnumbered}
-
-We create Security Zone to verify the limitations for OCI resources when create
-inside such a zone.
-
-### Tasks {.unlisted .unnumbered}
-
-- Create Security Zone
-- Create an Object Storage bucket
+Ensure you are in the correct compartment and region. New resources, such as Cloud Shell configurations and ADB access settings, should be created within your designated compartment.
 
 ## Solution
 
@@ -103,3 +93,15 @@ the Violations after successful creation. Is the public bucket detected? If not,
 grab a coffee and come back in a few minutes.
 
 >> step_10
+
+## Summary
+
+In this exercise, you:
+
+- Created a Security Zone to enforce OCI security policies.
+- Attempted to create an Object Storage bucket within the Security Zone, observing any restrictions and limitations.
+
+You are now ready to continue with the next exercise, where you will configure and test the Web Application Firewall (WAF) for enhanced application security.
+
+- **Previous Exercise:** [Exercise 11: SQL Firewall](#exercise-11-sql-firewall)
+- **Next Exercise:** [Exercise 13: Web Application Firewall (WAF)](#exercise-13-setup-waf-for-xss-detection)
