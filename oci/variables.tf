@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.16
-# Revision...: 0.8.1
+# Revision...: 0.8.2
 # Purpose....: Define variables for the terraform module for setting up the 
 #              TVDLAB environment. Variables control the configuration of OCI 
 #              resources such as Virtual Cloud Networks (VCN), Compute Instances, 

@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.17
-# Revision...: 0.8.1
+# Revision...: 0.8.2
 # Purpose....: Define NAT Gateway resources for the Virtual Cloud Network (VCN) 
 #              in the LAB environment. NAT Gateway allows instances in the private 
 #              subnet to access the internet without exposing them to inbound traffic.

@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.16
-# Revision...: 0.8.1
+# Revision...: 0.8.2
 # Purpose....: Define and organize the output values for the Terraform configuration.
 #              These outputs include the OCIDs for compartments, VCNs, Autonomous 
 #              Databases (ADB), and webserver instances in the LAB environment.

@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.8.2] - 2024-11-15
+
+### Fixed
+
+- fix wrong default value for ADB version. Set it to 23ai
+
 ## [0.8.1] - 2024-11-15
 
 ### Fixed

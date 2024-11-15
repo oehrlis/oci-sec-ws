@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.16
-# Revision...: 0.8.1
+# Revision...: 0.8.2
 # Purpose....: Schema definition for an OCI Stack configuration used in the OCI
 #              security workshop (OCI-SEC-WS). This schema defines all the
 #              input parameters and output variables for deploying resources
@@ -311,7 +311,7 @@ variables:
     description: >
       The database version. Possible values are 23ai, 19c. Defaults to 23ai if not provided.
     visible: show_advanced_adb_conf
-    default: OLTP
+    default: 23ai
     enum:
       - 23ai
       - 19c
