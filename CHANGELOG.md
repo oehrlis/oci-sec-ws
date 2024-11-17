@@ -16,6 +16,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.9.0] - 2024-11-17
+
+### Added
+
+- add draft version of Data Safe exercise 05 Data Safe Configuration and Register ADB
+- add draft version of Data Safe exercise 06 Assess Database Configurations
+- add draft version of Data Safe exercise 07 Assess Database Users
+- add draft version of Data Safe exercise 08 Audit Database Activity
+- add draft version of Data Safe exercise 09 Generate Alerts
+- add draft version of Data Safe exercise 10 Discover Sensitive Data
+- add draft version of Data Safe exercise 11 SQL Firewall
+
+### Changed
+
+- Consolidate section about *Environment*
+- Consolidate structure of each exercise to include introduction, objectives
+  and summary with links to previous and next exercise
+- update workshop overview
+- Update navigation to cover all exercises
+- reorganize chapters / folders of exercises
+
+### Fixed
+
+- misc MD errors
+
+### Removed
+
+- remove unused folders
+
 ## [0.8.2] - 2024-11-15
 
 ### Fixed
