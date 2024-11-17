@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.23
-# Revision...: 0.10.3
+# Revision...: 0.10.4
 # Purpose....: Create and configure lab compartments for the LAB environment.
 #              This file also gathers existing resource information for use in
 #              the environment setup, such as compartment OCIDs.
