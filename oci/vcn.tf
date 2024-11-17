@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.18
-# Revision...: 0.8.2
+# Revision...: 0.9.0
 # Purpose....: Define Virtual Cloud Network (VCN) resources for the LAB environment.
 #              This creates one VCN per lab, each with its own CIDR block, DNS label,
 #              and associated tags.
