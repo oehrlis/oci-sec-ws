@@ -131,15 +131,26 @@ jobs:
       - name: Populate env variables
         run: |
           echo "MD_FILES=$(printf '%s ' ${{ env.DOC_FOLDER }}/[0-8]x??-*.md ${{ env.LAB_FOLDER }}/ex??/?x??-*.md ${{ env.DOC_FOLDER }}/9x??-*.md)" >> $GITHUB_ENV
+
       # Update the image base folder to match image page during pandoc build
       - name: Preparing Markdown files for pandoc (fix image path, remove front matter,...)
         run: |
           for i in $MD_FILES ;do
             echo "process file $i"
+            # Fix image paths for pandoc
             sed -i 's|\(./\)*../../images/|images/|' $i
+          
+            # Remove front matter from the Markdown files
             sed -i '1{/^---$/!q;};1,/^---$/d' $i
+          
+            # Remove inline attributes like {: .class}
             sed -i 's/{:.*}$//'  $i
+          
+            # Remove Jekyll-specific blocks for pandoc
+            # This removes everything between <!-- For Jekyll --> and <!-- End Jekyll -->
+            sed -i '/<!-- For Jekyll -->/,/<!-- End Jekyll -->/d' $i
           done
+
       # Build PDF using docker images oehrlis/pandoc
       - name: run pandoc to build pdf document
         uses: docker://oehrlis/pandoc
@@ -260,13 +271,22 @@ jobs:
           path: others
 
       # Remove special syntax in Markdown files
-      - name: Remove special syntax in Markdown files
+      - name: Prepare Markdown for Jekyll
         run: |
           for i in $(find . -name "*.md"); do
             echo "process file $i"
+          
+            # Remove unnecessary attributes
             sed -i 's|{.unlisted .unnumbered}||' $i
             sed -i 's|{-}||' $i
             sed -i '/^:::/d' $i
+
+            # Remove Pandoc-specific blocks
+            sed -i '/<!-- For Pandoc -->/,/<!-- For Jekyll -->/d' $i
+
+            # Uncomment Jekyll-specific blocks
+            sed -i 's/<!-- Jekyll -->//g' $i
+            sed -i 's/<!-- End Jekyll -->//g' $i
           done
 
       - name: Build with Jekyll
