@@ -6,7 +6,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.18
-# Revision...: 0.10.2
+# Revision...: 0.10.3
 # Purpose....: cloud-init configuration file for Apache web server (HTTP only)
 # Notes......: This script configures Apache to serve HTTP content on port 80.
 # Reference..: --
