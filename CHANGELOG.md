@@ -16,11 +16,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
-## [0.9.1] - 2024-11-17
+## [0.10.0] - 2024-11-17
 
 ### Added
 
 - add MD13 exception in workshop exercise files
+- add pandoc and jekll specific links in exercises
+- add sed commands to process pandoc and jekll specific links in github actions
 
 ### Changed
 
