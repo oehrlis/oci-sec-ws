@@ -33,7 +33,7 @@ lab:
       - title: "Lab Environment"
         url: /doc/lab/
       - title: "Workshop Overview"
-        url: /doc/workshop/
+        url: /lab/
 
   - title: OCI Setup
     children:
