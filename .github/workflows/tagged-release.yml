@@ -283,6 +283,9 @@ jobs:
 
             # Remove Pandoc-specific blocks
             sed -i '/<!-- For Pandoc -->/,/<!-- For Jekyll -->/d' $i
+            
+            # Remove Markdown specific comments
+            sed -i '/<!-- markdownlint-/d' $i
 
             # Uncomment Jekyll-specific blocks
             sed -i 's/<!-- Jekyll -->//g' $i
