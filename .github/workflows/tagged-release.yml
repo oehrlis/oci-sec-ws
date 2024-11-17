@@ -287,6 +287,8 @@ jobs:
             # Uncomment Jekyll-specific blocks
             sed -i 's/<!-- Jekyll -->//g' $i
             sed -i 's/<!-- End Jekyll -->//g' $i
+            sed -i 's/<!-- //g' $i
+            sed -i 's/-->//g' $i
           done
 
       - name: Build with Jekyll
