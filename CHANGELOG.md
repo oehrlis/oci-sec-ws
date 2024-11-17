@@ -16,6 +16,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.9.1] - 2024-11-17
+
+### Added
+
+### Changed
+
+### Fixed
+
+- add `{.unlisted .unnumbered}` to the **Solution** and **Summary** heading
+  
+### Removed
+
 ## [0.9.0] - 2024-11-17
 
 ### Added
