@@ -32,6 +32,13 @@ lab:
         url: /doc/requirements/
       - title: "Lab Environment"
         url: /doc/lab/
+      - title: "Workshop Overview"
+        url: /doc/workshop/
+
+  - title: OCI Setup
+    children:
+      - title: "Getting Started with OCI"
+        url: /lab/oci-setup/
 
   - title: Basic OCI Security
     children:
@@ -43,30 +50,33 @@ lab:
       - title: "Manual Remediation"
         url: /lab/cg-manual-remediation/
       - title: "Auto Remediation"
-        url: /lab/cg-auto-remediationediationediation/
-      - title: "Notification"
+        url: /lab/cg-auto-remediationediation/
+      - title: "Notification Setup"
         url: /lab/cg-notification-setup/
 
   - title: Data Safe
     children:
-      - title: "Setup"
-        url: /lab/ds-setup/
-      - title: "Audit"
+      - title: "Configuration and Register"
+        url: /lab/ds-config/
+      - title: "Assess DB Configurations"
+        url: /lab/ds-config-assess/
+      - title: "Assess DB Users"
+        url: /lab/ds-user-assess/
+      - title: "Audit DB Activity"
         url: /lab/ds-audit/
-      - title: "Assessments"
-        url: /lab/ds-assessments/
-      - title: "Alerting"
-        url: /lab/ds-alerting/
+      - title: "Alerts Setup"
+        url: /lab/ds-alerts/
+      - title: "Discover Sensitive Data"
+        url: /lab/ds-sensitive/
       - title: "SQL Firewall"
         url: /lab/ds-sql-firewall/
-      - title: "Data Masking"
-        url: /lab/ds-data-masking/
 
-  - title: Security Zones and WAF
+
+  - title: Security Zones
     children:
-      - title: "Zones"
+      - title: "Create Security Zone"
         url: /lab/sz-zones/
-      - title: "WAF"
+      - title: "Setup WAF"
         url: /lab/sz-waf/
 
   - title: Extras
