@@ -16,6 +16,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [] - 2024-11-17
+
+### Fixed
+
+- Remove duplicates in titles of jekll pages. Adjust metadata
+- fix link to workshop overview
+  
 ## [0.10.2] - 2024-11-17
 
 ### Fixed
