@@ -3,6 +3,7 @@ title: "Data Safe"
 permalink: /lab/ds-audit/
 excerpt: "Monitor and audit database activity for enhanced security visibility."
 ---
+<!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD024 -->
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD041 -->
@@ -25,8 +26,7 @@ Perform this exercise within the following environment:
 
 - **Compartment:** `OCI-SEC-WS-LAB-nn`
 - **Region:** Germany Central (Frankfurt)
-- **OCI Console URL:**  
-  [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com)
+- **OCI Console URL:** [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com){:target="_blank" rel="noopener"}
 
 Ensure you are in the correct compartment and region. New resources, such as
 Cloud Shell configurations and ADB access settings, should be created within

@@ -27,8 +27,7 @@ Perform this exercise within the following environment:
 
 - **Compartment:** `OCI-SEC-WS-LAB-nn`
 - **Region:** Germany Central (Frankfurt)
-- **OCI Console URL:**  
-   [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com){:target="_blank" rel="noopener"}
+- **OCI Console URL:** [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com){:target="_blank" rel="noopener"}
 
 Ensure you are in the correct compartment and region. New resources, such as
 Cloud Shell configurations and ADB access settings, should be created within
