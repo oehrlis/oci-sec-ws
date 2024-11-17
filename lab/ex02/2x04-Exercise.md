@@ -9,13 +9,17 @@ excerpt: "Set up notifications to monitor and alert on security-related events."
 
 ## Exercise 04: Notification Setup
 
-In this exercise, you will configure notifications in Cloud Guard to receive alerts about detected security issues. Using the existing detector settings, you'll set up notifications to be informed of any potential vulnerabilities or policy violations.
+In this exercise, you will configure notifications in Cloud Guard to receive
+alerts about detected security issues. Using the existing detector settings,
+you'll set up notifications to be informed of any potential vulnerabilities or
+policy violations.
 
 ### Objectives
 
 - Create a notification topic and subscription.
 - Set up a rule to trigger notifications.
-- Test the notification by creating a public Object Storage bucket and verifying the alert.
+- Test the notification by creating a public Object Storage bucket and verifying
+  the alert.
 
 ## Environment {.unlisted .unnumbered}
 
@@ -24,9 +28,11 @@ Perform this exercise within the following environment:
 - **Compartment:** `OCI-SEC-WS-LAB-nn`
 - **Region:** Germany Central (Frankfurt)
 - **OCI Console URL:**  
-  [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com){:target="_blank" rel="noopener"}
+  [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com)
 
-Ensure you are in the correct compartment and region. New resources, such as Cloud Shell configurations and ADB access settings, should be created within your designated compartment.
+Ensure you are in the correct compartment and region. New resources, such as
+Cloud Shell configurations and ADB access settings, should be created within
+your designated compartment.
 
 ## Solution
 
@@ -109,9 +115,11 @@ In this exercise, you:
 
 - Created a notification topic and subscription for Cloud Guard alerts.
 - Configured a rule to send notifications based on specific detector findings.
-- Verified the setup by creating a public bucket and receiving the corresponding alert.
+- Verified the setup by creating a public bucket and receiving the corresponding
+  alert.
 
-You are now ready to continue with the next exercise to deepen your understanding of Data Safe configurations.
+You are now ready to continue with the next exercise to deepen your understanding
+of Data Safe configurations.
 
 - **Previous Exercise:** [Exercise 03: Auto Remediation](#exercise-03-auto-remediation)
-- **Next Exercise:** [Exercise 05: Data Safe Configuration](#data-safe-configuration)
+- **Next Exercise:** [Exercise 05: Data Safe Configuration and Register ADB](#exercise-05-configuration-and-register-adb)

@@ -9,12 +9,15 @@ excerpt: "Configure Security Zones to enforce compliance and security policies."
 
 ## Exercise 12: Create Security Zone
 
-In this exercise, you will create a Security Zone in Oracle Cloud Infrastructure (OCI) to enforce security policies and explore the restrictions applied to resources created within the zone.
+In this exercise, you will create a Security Zone in Oracle Cloud Infrastructure
+(OCI) to enforce security policies and explore the restrictions applied to
+resources created within the zone.
 
 ### Objectives
 
 - Set up a Security Zone in OCI.
-- Test the Security Zone by creating an Object Storage bucket to observe enforced limitations.
+- Test the Security Zone by creating an Object Storage bucket to observe
+  enforced limitations.
 
 ## Environment {.unlisted .unnumbered}
 
@@ -23,9 +26,11 @@ Perform this exercise within the following environment:
 - **Compartment:** `OCI-SEC-WS-LAB-nn`
 - **Region:** Germany Central (Frankfurt)
 - **OCI Console URL:**  
-  [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com){:target="_blank" rel="noopener"}
+  [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com)
 
-Ensure you are in the correct compartment and region. New resources, such as Cloud Shell configurations and ADB access settings, should be created within your designated compartment.
+Ensure you are in the correct compartment and region. New resources, such as
+Cloud Shell configurations and ADB access settings, should be created within
+your designated compartment.
 
 ## Solution
 
@@ -99,9 +104,11 @@ grab a coffee and come back in a few minutes.
 In this exercise, you:
 
 - Created a Security Zone to enforce OCI security policies.
-- Attempted to create an Object Storage bucket within the Security Zone, observing any restrictions and limitations.
+- Attempted to create an Object Storage bucket within the Security Zone,
+  observing any restrictions and limitations.
 
-You are now ready to continue with the next exercise, where you will configure and test the Web Application Firewall (WAF) for enhanced application security.
+You are now ready to continue with the next exercise, where you will configure
+and test the Web Application Firewall (WAF) for enhanced application security.
 
 - **Previous Exercise:** [Exercise 11: SQL Firewall](#exercise-11-sql-firewall)
 - **Next Exercise:** [Exercise 13: Web Application Firewall (WAF)](#exercise-13-setup-waf-for-xss-detection)

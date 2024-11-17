@@ -9,13 +9,17 @@ excerpt: "ClAutomate responses to detected security vulnerabilities."
 
 ## Exercise 03: Auto Remediation
 
-In this exercise, you will enable auto-remediation in Cloud Guard to automatically resolve issues with public Object Storage buckets. Building on the detector settings from the previous exercise, you will configure a responder recipe to change the visibility of public buckets to private automatically.
+In this exercise, you will enable auto-remediation in Cloud Guard to automatically
+resolve issues with public Object Storage buckets. Building on the detector
+settings from the previous exercise, you will configure a responder recipe to
+change the visibility of public buckets to private automatically.
 
 ### Objectives
 
 - Add a responder recipe to the target.
 - Enable auto-remediation to automatically resolve public bucket issues.
-- Test the setup by creating a new bucket and setting its visibility to public, verifying that Cloud Guard automatically changes it to private.
+- Test the setup by creating a new bucket and setting its visibility to public,
+- verifying that Cloud Guard automatically changes it to private.
 
 ## Environment {.unlisted .unnumbered}
 
@@ -24,9 +28,11 @@ Perform this exercise within the following environment:
 - **Compartment:** `OCI-SEC-WS-LAB-nn`
 - **Region:** Germany Central (Frankfurt)
 - **OCI Console URL:**  
-  [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com){:target="_blank" rel="noopener"}
+  [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com)
 
-Ensure you are in the correct compartment and region. New resources, such as Cloud Shell configurations and ADB access settings, should be created within your designated compartment.
+Ensure you are in the correct compartment and region. New resources, such as
+Cloud Shell configurations and ADB access settings, should be created within
+your designated compartment.
 
 ## Solution
 
@@ -128,9 +134,11 @@ In this exercise, you:
 
 - Added a responder recipe to your Cloud Guard target.
 - Enabled auto-remediation to handle public bucket visibility issues.
-- Tested auto-remediation by creating a public bucket and verifying that Cloud Guard automatically set it to private.
+- Tested auto-remediation by creating a public bucket and verifying that Cloud
+  Guard automatically set it to private.
 
-You are now ready to continue with the next exercise, where you will configure Cloud Guard notifications for security alerts.
+You are now ready to continue with the next exercise, where you will configure
+Cloud Guard notifications for security alerts.
 
 - **Previous Exercise:** [Exercise 02: Manual Remediation](#exercise-02-manual-remediation)
 - **Next Exercise:** [Exercise 04: Notification Setup](#exercise-04-notification-setup)

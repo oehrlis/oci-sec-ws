@@ -9,7 +9,9 @@ excerpt: "Configure manual remediation for detected security risks."
 
 ## Exercise 02: Manual Remediation
 
-In this exercise, we will configure Cloud Guard to detect public Object Storage buckets by creating a custom detector recipe. You will also set up a target to monitor your compartment and test the configuration by creating a public bucket.
+In this exercise, we will configure Cloud Guard to detect public Object Storage
+buckets by creating a custom detector recipe. You will also set up a target to
+monitor your compartment and test the configuration by creating a public bucket.
 
 ### Objectives
 
@@ -25,9 +27,11 @@ Perform this exercise within the following environment:
 - **Compartment:** `OCI-SEC-WS-LAB-nn`
 - **Region:** Germany Central (Frankfurt)
 - **OCI Console URL:**  
-  [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com){:target="_blank" rel="noopener"}
+  [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com)
 
-Ensure you are in the correct compartment and region. New resources, such as Cloud Shell configurations and ADB access settings, should be created within your designated compartment.
+Ensure you are in the correct compartment and region. New resources, such as
+Cloud Shell configurations and ADB access settings, should be created within
+your designated compartment.
 
 ## Solution
 
@@ -48,7 +52,8 @@ Cloud Guard -> Recipes -> Detector recipes
 
 - Change compartment on top to trivadisbdsxsp (root).
 - Select recipe OCI Activity Detector Recipe (Oracle managed) from dropdown list
-- Set name for cloned recipe , as example _OCI Activity Detector Recipe - <compartment-name>_
+- Set name for cloned recipe , as example _OCI Activity Detector Recipe -
+  <compartment-name>_
 - Ensure in section Compartment, your compartment is selected.
 
 ![>> step_2](../../images/screenshot-cloud-guard-clone_step_2.jpg)
@@ -70,7 +75,8 @@ Cloud Guard -> Recipes -> Responder recipes
 - Ensure _Responder recipes_ is select from left side menu.
 - Change compartment on top to trivadisbdsxsp (root).
 - Select recipe OCI Activity Detector Recipe (Oracle managed) from dropdown list
-- Set name for cloned recipe , as example _OCI Activity Detector Recipe - <compartment-name>_
+- Set name for cloned recipe , as example _OCI Activity Detector Recipe -
+  <compartment-name>_
 - Ensure in section Compartment, your compartment is selected.
 
 ![>> step_3](../../images/screenshot-cloud-guard-clone_step_3.jpg)
@@ -92,7 +98,8 @@ Responder recipe:
 
 ### Create a new target to observer your compartment objects
 
-In this step, we create a target based on compartment and add the recipes we created.
+In this step, we create a target based on compartment and add the recipes we
+created.
 
 Cloud Guard -> Configuration -> Targets ->  Create Target
 
@@ -227,9 +234,11 @@ In this exercise, you:
 - Cloned an Oracle-managed detector recipe in Cloud Guard.
 - Created a new target to observe and monitor resources in your compartment.
 - Configured an Object Storage bucket with public visibility.
-- Verified that Cloud Guard generated an alert for the public bucket, indicating successful detection.
+- Verified that Cloud Guard generated an alert for the public bucket, indicating
+  successful detection.
 
-You are now ready to continue with the next exercise, where you will explore further Cloud Guard configurations.
+You are now ready to continue with the next exercise, where you will explore
+further Cloud Guard configurations.
 
 - **Previous Exercise:** [Exercise 01: Key Management](#exercise-01-key-management)
 - **Next Exercise:** [Exercise 03: Auto Remediation](#exercise-03-auto-remediation)

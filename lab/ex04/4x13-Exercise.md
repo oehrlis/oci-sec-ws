@@ -9,7 +9,10 @@ excerpt: "Set up and test the Web Application Firewall to protect applications f
 
 ## Exercise 13: Setup WAF for XSS Detection
 
-In this exercise, you will configure a Web Application Firewall (WAF) in Oracle Cloud Infrastructure (OCI) to detect cross-site scripting (XSS) attacks. You will set up a Load Balancer and WAF to protect an HTTP server running on compute instances in a private network.
+In this exercise, you will configure a Web Application Firewall (WAF) in Oracle
+Cloud Infrastructure (OCI) to detect cross-site scripting (XSS) attacks. You
+will set up a Load Balancer and WAF to protect an HTTP server running on compute
+instances in a private network.
 
 ### Objectives
 
@@ -26,9 +29,11 @@ Perform this exercise within the following environment:
 - **Compartment:** `OCI-SEC-WS-LAB-nn`
 - **Region:** Germany Central (Frankfurt)
 - **OCI Console URL:**  
-  [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com){:target="_blank" rel="noopener"}
+  [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com)
 
-Ensure you are in the correct compartment and region. New resources, such as Cloud Shell configurations and ADB access settings, should be created within your designated compartment.
+Ensure you are in the correct compartment and region. New resources, such as
+Cloud Shell configurations and ADB access settings, should be created within
+your designated compartment.
 
 ## Solution
 
@@ -322,7 +327,8 @@ In this exercise, you:
 - Configured a Web Application Firewall (WAF) to detect and block XSS attacks.
 - Verified that the WAF successfully detected XSS attempts.
 
-You have now completed the WAF setup and are ready to continue exploring other security features in OCI.
+You have now completed the WAF setup and are ready to continue exploring other
+security features in OCI.
 
 - **Previous Exercise:** [Exercise 12: Create Security Zone](#exercise-12-create-security-zone)
 - **Next Exercise:** [Workshop Overview](#workshop-overview)

@@ -9,7 +9,9 @@ excerpt: "Create and manage encryption keys within a customer-managed key vault.
 
 ## Exercise 01: Key Management
 
-In this exercise, we will set up a Vault to store a master encryption key, allowing us to replace the Oracle-provided key for an Object Storage bucket with a customer-managed key.
+In this exercise, we will set up a Vault to store a master encryption key,
+allowing us to replace the Oracle-provided key for an Object Storage bucket
+with a customer-managed key.
 
 ### Objectives
 
@@ -23,9 +25,11 @@ Perform this exercise within the following environment:
 - **Compartment:** `OCI-SEC-WS-LAB-nn`
 - **Region:** Germany Central (Frankfurt)
 - **OCI Console URL:**  
-  [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com){:target="_blank" rel="noopener"}
+  [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com)
 
-Ensure you are in the correct compartment and region. New resources, such as Cloud Shell configurations and ADB access settings, should be created within your designated compartment.
+Ensure you are in the correct compartment and region. New resources, such as
+Cloud Shell configurations and ADB access settings, should be created within
+your designated compartment.
 
 ## Solution
 
@@ -110,9 +114,11 @@ In this exercise, you:
 
 - Created a Vault to securely store encryption keys.
 - Generated a master encryption key within the Vault.
-- Applied the master encryption key to a new Object Storage bucket, enabling customer-managed encryption.
+- Applied the master encryption key to a new Object Storage bucket, enabling
+  customer-managed encryption.
 
-You are now ready to continue with the next exercise, where you will configure Cloud Guard for manual remediation of security alerts.
+You are now ready to continue with the next exercise, where you will configure
+Cloud Guard for manual remediation of security alerts.
 
 - **Previous Exercise:** [Exercise 00: Getting Started with OCI](#exercise-00-getting-started-with-oci)
-- **Next Exercise:** [Exercise 02: Manual Remediation](#manual-remediation)
+- **Next Exercise:** [Exercise 02: Manual Remediation](#exercise-02-manual-remediation)
