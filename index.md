@@ -2,8 +2,10 @@
 title: ""
 permalink: /
 ---
-<!-- markdownlint-disable MD033 -->
+
 <!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD025 -->
+<!-- markdownlint-disable MD033 -->
 
 # Oracle Cloud Security Workshop
 
