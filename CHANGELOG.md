@@ -20,13 +20,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- add MD13 exception in workshop exercise files
+
 ### Changed
+
+- Change workshop table in readme.md
+- add `{:target="_blank" rel="noopener"}` to the environment link for OCI
+- change wording for OCI Button link
 
 ### Fixed
 
 - add `{.unlisted .unnumbered}` to the **Solution** and **Summary** heading
   
 ### Removed
+
+- remove metadata header in 1x10-Workshop
 
 ## [0.9.0] - 2024-11-17
 
