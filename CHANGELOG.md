@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.10.5] - 2024-11-17
+
+### Fixed
+
+- fix metadata of index.md
+  
 ## [0.10.4] - 2024-11-17
 
 ### Fixed
