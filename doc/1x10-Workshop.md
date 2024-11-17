@@ -1,8 +1,3 @@
----
-title: "Workshop"
-permalink: /doc/workshop/
-excerpt: "Introduction to the OCI Security Workshop (OCI-SEC-WS)"
----
 <!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD025 -->
 <!-- markdownlint-disable MD051 -->
