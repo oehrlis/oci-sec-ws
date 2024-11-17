@@ -48,5 +48,12 @@ In this exercise, you:
 You are now ready to continue with the next exercise, where you will explore data
 discovery to identify sensitive data within your database.
 
+<!-- For Pandoc -->
 - **Previous Exercise:** [Exercise 08: Audit Database Activity](#exercise-08-database-activity)
 - **Next Exercise:** [Exercise 10: Discover Sensitive Data](#exercise-10-discover-sensitive-data)
+
+<!-- For Jekyll -->
+<!-- 
+- **Previous Exercise:** [Exercise 08: Audit Database Activity](../ex03/3x08-Exercise.md)
+- **Next Exercise:** [Exercise 10: Discover Sensitive Data](../ex03/3x10-Exercise.md)
+-->

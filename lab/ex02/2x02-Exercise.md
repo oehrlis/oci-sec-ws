@@ -240,5 +240,12 @@ In this exercise, you:
 You are now ready to continue with the next exercise, where you will explore
 further Cloud Guard configurations.
 
+<!-- For Pandoc -->
 - **Previous Exercise:** [Exercise 01: Key Management](#exercise-01-key-management)
 - **Next Exercise:** [Exercise 03: Auto Remediation](#exercise-03-auto-remediation)
+
+<!-- For Jekyll -->
+<!-- 
+- **Previous Exercise:** [Exercise 01: Key Management](../ex01/1x01-Exercise.md)
+- **Next Exercise:** [Exercise 03: Auto Remediation](../ex02/2x03-Exercise.md)
+-->

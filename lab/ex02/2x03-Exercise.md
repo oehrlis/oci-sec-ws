@@ -140,5 +140,12 @@ In this exercise, you:
 You are now ready to continue with the next exercise, where you will configure
 Cloud Guard notifications for security alerts.
 
+<!-- For Pandoc -->
 - **Previous Exercise:** [Exercise 02: Manual Remediation](#exercise-02-manual-remediation)
 - **Next Exercise:** [Exercise 04: Notification Setup](#exercise-04-notification-setup)
+
+<!-- For Jekyll -->
+<!-- 
+- **Previous Exercise:** [Exercise 02: Manual Remediation](../ex02/2x02-Exercise.md)
+- **Next Exercise:** [Exercise 04: Notification Setup](../ex02/2x04-Exercise.md)
+-->

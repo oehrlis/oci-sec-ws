@@ -146,5 +146,12 @@ In this exercise, you:
 You are now ready to continue with the next exercise to expand your skills in
 OCI security.
 
+<!-- For Pandoc -->
 - **Previous Exercise:** [Workshop Overview](#workshop-overview)
 - **Next Exercise:** [Exercise 01: Key Management](#exercise-01-key-management)
+
+<!-- For Jekyll -->
+<!-- 
+- **Previous Exercise:** [Workshop Overview](../README.md)
+- **Next Exercise:** [Exercise 01: Key Management](../ex01/1x01-Exercise.md)
+-->

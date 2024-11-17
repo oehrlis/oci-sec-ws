@@ -330,5 +330,12 @@ In this exercise, you:
 You have now completed the WAF setup and are ready to continue exploring other
 security features in OCI.
 
+<!-- For Pandoc -->
 - **Previous Exercise:** [Exercise 12: Create Security Zone](#exercise-12-create-security-zone)
 - **Next Exercise:** [Workshop Overview](#workshop-overview)
+
+<!-- For Jekyll -->
+<!-- 
+- **Previous Exercise:** [Exercise 12: Create Security Zone](../ex04/4x12-Exercise.md)
+- **Next Exercise:** [Workshop Overview](../README.md)
+-->

@@ -110,5 +110,12 @@ In this exercise, you:
 You are now ready to continue with the next exercise, where you will configure
 and test the Web Application Firewall (WAF) for enhanced application security.
 
+<!-- For Pandoc -->
 - **Previous Exercise:** [Exercise 11: SQL Firewall](#exercise-11-sql-firewall)
 - **Next Exercise:** [Exercise 13: Web Application Firewall (WAF)](#exercise-13-setup-waf-for-xss-detection)
+
+<!-- For Jekyll -->
+<!-- 
+- **Previous Exercise:** [Exercise 11: SQL Firewall](../ex03/3x11-Exercise.md)
+- **Next Exercise:** [Exercise 13: Web Application Firewall (WAF)](../ex04/4x13-Exercise.md)
+-->

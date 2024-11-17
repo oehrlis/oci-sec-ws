@@ -121,5 +121,12 @@ In this exercise, you:
 You are now ready to continue with the next exercise to deepen your understanding
 of Data Safe configurations.
 
+<!-- For Pandoc -->
 - **Previous Exercise:** [Exercise 03: Auto Remediation](#exercise-03-auto-remediation)
 - **Next Exercise:** [Exercise 05: Data Safe Configuration and Register ADB](#exercise-05-configuration-and-register-adb)
+
+<!-- For Jekyll -->
+<!-- 
+- **Previous Exercise:** [Exercise 03: Auto Remediation](../ex02/2x03-Exercise.md)
+- **Next Exercise:** [Exercise 05: Data Safe Configuration and Register ADB](../ex03/3x05-Exercise.md)
+-->

@@ -45,5 +45,12 @@ In this exercise, you:
 You are now ready to continue with the next exercise, where you will explore how
 to assess database configurations for compliance and best practices.
 
+<!-- For Pandoc -->
 - **Previous Exercise:** [Exercise 04: Notification Setup](#exercise-04-notification-setup)
 - **Next Exercise:** [Exercise 06: Assess Database Configurations](#exercise-06-assess-database-configurations)
+
+<!-- For Jekyll -->
+<!-- 
+- **Previous Exercise:** [Exercise 04: Notification Setup](../ex02/2x04-Exercise.md)
+- **Next Exercise:** [Exercise 06: Assess Database Configurations](../ex03/3x06-Exercise.md)
+-->

@@ -47,5 +47,12 @@ In this exercise, you:
 You are now ready to continue with the next exercise, where you will configure
 the SQL Firewall to control and monitor SQL queries within the database.
 
+<!-- For Pandoc -->
 - **Previous Exercise:** [Exercise 09: Generate Alerts](#exercise-09-generate-alerts)
 - **Next Exercise:** [Exercise 11: SQL Firewall](#exercise-11-sql-firewall)
+
+<!-- For Jekyll -->
+<!-- 
+- **Previous Exercise:** [Exercise 09: Generate Alerts](../ex03/3x09-Exercise.md)
+- **Next Exercise:** [Exercise 11: SQL Firewall](../ex03/3x11-Exercise.md)
+-->

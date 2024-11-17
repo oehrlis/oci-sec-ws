@@ -48,5 +48,12 @@ You have now completed the Data Safe exercises, enhancing your database security
 capabilities. Continue to explore other security features in Oracle Cloud
 Infrastructure.
 
+<!-- For Pandoc -->
 - **Previous Exercise:** [Exercise 10: Discover Sensitive Data](#exercise-10-discover-sensitive-data)
 - **Next Exercise:** [Exercise 12: Security Zones](#exercise-12-create-security-zone)
+
+<!-- For Jekyll -->
+<!-- 
+- **Previous Exercise:** [Exercise 10: Discover Sensitive Data](../ex03/3x10-Exercise.md)
+- **Next Exercise:** [Exercise 12: Security Zones](../ex04/4x12-Exercise.md)
+-->

@@ -120,5 +120,12 @@ In this exercise, you:
 You are now ready to continue with the next exercise, where you will configure
 Cloud Guard for manual remediation of security alerts.
 
+<!-- For Pandoc -->
 - **Previous Exercise:** [Exercise 00: Getting Started with OCI](#exercise-00-getting-started-with-oci)
 - **Next Exercise:** [Exercise 02: Manual Remediation](#exercise-02-manual-remediation)
+
+<!-- For Jekyll -->
+<!-- 
+- **Previous Exercise:** [Exercise 00: Getting Started with OCI](../ex00/1x00-Exercise.md)
+- **Next Exercise:** [Exercise 02: Manual Remediation](../ex02/2x02-Exercise.md)
+-->

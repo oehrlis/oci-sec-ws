@@ -45,5 +45,12 @@ In this exercise, you:
 You are now ready to continue with the next exercise, where you will configure
 alerts to stay informed about critical database events.
 
+<!-- For Pandoc -->
 - **Previous Exercise:** [Exercise 07: Assess Database Users](#exercise-07-assess-database-users)
 - **Next Exercise:** [Exercise 09: Generate Alerts](#exercise-09-generate-alerts)
+
+<!-- For Jekyll -->
+<!-- 
+- **Previous Exercise:** [Exercise 07: Assess Database Users](../ex03/3x07-Exercise.md)
+- **Next Exercise:** [Exercise 09: Generate Alerts](../ex03/3x09-Exercise.md)
+-->

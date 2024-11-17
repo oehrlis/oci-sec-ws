@@ -45,5 +45,12 @@ In this exercise, you:
 You are now ready to continue with the next exercise, where you will learn how
 to audit database activity to enhance monitoring and security.
 
+<!-- For Pandoc -->
 - **Previous Exercise:** [Exercise 06: Assess Database Configurations](#exercise-06-assess-database-configurations)
 - **Next Exercise:** [Exercise 08: Audit Database Activity](#exercise-08-audit-database-activity)
+
+<!-- For Jekyll -->
+<!-- 
+- **Previous Exercise:** [Exercise 06: Assess Database Configurations](../ex03/3x06-Exercise.md)
+- **Next Exercise:** [Exercise 08: Audit Database Activity](../ex03/3x08-Exercise.md)
+-->

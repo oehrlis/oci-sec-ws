@@ -45,5 +45,12 @@ In this exercise, you:
 You are now ready to continue with the next exercise, where you will assess
 database users to further strengthen your security posture.
 
+<!-- For Pandoc -->
 - **Previous Exercise:** [Exercise 05: Data Safe Configuration and Register ADB](#exercise-05-configuration-and-register-adb)
 - **Next Exercise:** [Exercise 07: Assess Database Users](#exercise-07-assess-database-users)
+
+<!-- For Jekyll -->
+<!-- 
+- **Previous Exercise:** [Exercise 05: Data Safe Configuration and Register ADB](../ex03/3x05-Exercise.md)
+- **Next Exercise:** [Exercise 07: Assess Database Users](../ex03/3x07-Exercise.md)
+-->
