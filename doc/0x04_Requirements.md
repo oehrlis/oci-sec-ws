@@ -1,4 +1,5 @@
 ---
+title: ""
 permalink: /doc/requirements/
 excerpt: "Requirements for the OCI Security Workshop (OCI-SEC-WS)"
 ---

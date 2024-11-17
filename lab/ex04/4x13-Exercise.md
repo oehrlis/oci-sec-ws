@@ -1,5 +1,5 @@
 ---
-title: "Security Zones"
+title: ""
 permalink: /lab/sz-waf/
 excerpt: "Set up and test the Web Application Firewall to protect applications from threats."
 ---

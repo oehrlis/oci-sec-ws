@@ -1,4 +1,5 @@
 ---
+title: ""
 permalink: /doc/into/
 excerpt: "Introduction to the OCI Security Workshop (OCI-SEC-WS)"
 ---

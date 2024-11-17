@@ -1,5 +1,5 @@
 ---
-title: "Data Safe"
+title: ""
 permalink: /lab/ds-sql-firewall/
 excerpt: "Implement SQL Firewall to manage and restrict SQL execution within the database."
 ---

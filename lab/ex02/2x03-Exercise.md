@@ -1,5 +1,5 @@
 ---
-title: "Cloud Guard"
+title: ""
 permalink: /lab/cg-auto-remediationediation/
 excerpt: "ClAutomate responses to detected security vulnerabilities."
 ---

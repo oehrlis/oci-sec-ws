@@ -1,5 +1,5 @@
 ---
-title: "Cloud Guard"
+title: ""
 permalink: /lab/cg-manual-remediation/
 excerpt: "Configure manual remediation for detected security risks."
 ---

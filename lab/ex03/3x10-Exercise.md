@@ -1,5 +1,5 @@
 ---
-title: "Data Safe"
+title: ""
 permalink: /lab/ds-sensitive/
 excerpt: "Identify and classify sensitive data within the database using Oracle Data Safe."
 ---

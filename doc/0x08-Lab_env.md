@@ -1,5 +1,5 @@
 ---
-title: "Lab Environment"
+title: ""
 permalink: /doc/lab/
 excerpt: "Introduction to the OCI Security Workshop (OCI-SEC-WS)"
 ---

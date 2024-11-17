@@ -1,5 +1,5 @@
 ---
-title: "Data Safe"
+title: ""
 permalink: /lab/ds-alerts/
 excerpt: "Configure and generate alerts based on Oracle Data Safe findings."
 ---

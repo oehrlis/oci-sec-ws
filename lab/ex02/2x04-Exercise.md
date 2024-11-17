@@ -1,5 +1,5 @@
 ---
-title: "Cloud Guard"
+title: ""
 permalink: /lab/cg-notification-setup/
 excerpt: "Set up notifications to monitor and alert on security-related events."
 ---

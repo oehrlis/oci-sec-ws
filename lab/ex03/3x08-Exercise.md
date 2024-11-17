@@ -1,5 +1,5 @@
 ---
-title: "Data Safe"
+title: ""
 permalink: /lab/ds-audit/
 excerpt: "Monitor and audit database activity for enhanced security visibility."
 ---

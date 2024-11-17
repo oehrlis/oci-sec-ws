@@ -1,5 +1,5 @@
 ---
-title: "Basic OCI Security"
+title: ""
 permalink: /lab/bs-key-management/
 excerpt: "Create and manage encryption keys within a customer-managed key vault."
 ---

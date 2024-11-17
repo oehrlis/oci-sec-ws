@@ -1,5 +1,5 @@
 ---
-title: "Data Safe"
+title: ""
 permalink: /lab/ds-config/
 excerpt: "Initial setup of Oracle Data Safe, including registration of an Autonomous Database."
 ---

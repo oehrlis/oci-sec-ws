@@ -1,5 +1,5 @@
 ---
-title: "Data Safe"
+title: ""
 permalink: /lab/ds-config-assess/
 excerpt: "Use Oracle Data Safe to assess database configurations for compliance."
 ---

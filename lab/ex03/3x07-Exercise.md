@@ -1,5 +1,5 @@
 ---
-title: "Data Safe"
+title: ""
 permalink: /lab/ds-user-assess/
 excerpt: "Review and analyze database user accounts with Oracle Data Safe."
 ---

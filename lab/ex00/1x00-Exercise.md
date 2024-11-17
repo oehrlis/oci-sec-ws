@@ -1,5 +1,5 @@
 ---
-title: "OCI Setup"
+title: ""
 permalink: /lab/oci-setup/
 excerpt: "Introduction to OCI, including an overview of the architecture and first login."
 ---

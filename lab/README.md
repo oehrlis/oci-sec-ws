@@ -7,7 +7,6 @@ excerpt: "Workshop Overview of the OCI Security Workshop (OCI-SEC-WS)"
 <!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD051 -->
 <!-- markdownlint-configure-file { "MD013": { "tables": false } } -->
-# Workshop Overview
 
 The exercises are structured to guide participants through various security
 configurations and best practices on Oracle Cloud Infrastructure. Each exercise

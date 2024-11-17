@@ -1,5 +1,5 @@
 ---
-title: "Security Zones"
+title: ""
 permalink: /lab/sz-zones/
 excerpt: "Configure Security Zones to enforce compliance and security policies."
 ---
