@@ -33,7 +33,7 @@ Ensure you are in the correct compartment and region. New resources, such as
 Cloud Shell configurations and ADB access settings, should be created within
 your designated compartment.
 
-## Solution
+## Solution {.unlisted .unnumbered}
 
 Login as User XYZ in OCI console and go to _Cloud Guard Overview_. Ensure you
 have select the proper compartment in from the dropdown list on left side.
@@ -227,7 +227,7 @@ Confirm.
 
 The alert is not longer visible in alert list.
 
-## Summary
+## Summary {.unlisted .unnumbered}
 
 In this exercise, you:
 

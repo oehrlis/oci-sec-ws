@@ -34,7 +34,7 @@ Ensure you are in the correct compartment and region. New resources, such as
 Cloud Shell configurations and ADB access settings, should be created within
 your designated compartment.
 
-## Solution
+## Solution {.unlisted .unnumbered}
 
 ### Step 1: First Login to OCI Console
 
@@ -136,7 +136,7 @@ Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
 SQL>
 ```
 
-## Summary
+## Summary {.unlisted .unnumbered}
 
 In this exercise, you:
 

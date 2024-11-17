@@ -35,7 +35,7 @@ Ensure you are in the correct compartment and region. New resources, such as
 Cloud Shell configurations and ADB access settings, should be created within
 your designated compartment.
 
-## Solution
+## Solution {.unlisted .unnumbered}
 
 Login as User XYZ in OCI console. Ensure you have select the proper compartment
 in from the dropdown list on left side.
@@ -317,7 +317,7 @@ Optional:
 
 - try to change error message with a own text
 
-## Summary
+## Summary {.unlisted .unnumbered}
 
 In this exercise, you:
 

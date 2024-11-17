@@ -32,9 +32,9 @@ Ensure you are in the correct compartment and region. New resources, such as
 Cloud Shell configurations and ADB access settings, should be created within
 your designated compartment.
 
-## Solution
+## Solution {.unlisted .unnumbered}
 
-## Summary
+## Summary {.unlisted .unnumbered}
 
 In this exercise, you:
 

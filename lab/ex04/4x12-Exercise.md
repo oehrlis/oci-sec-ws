@@ -32,7 +32,7 @@ Ensure you are in the correct compartment and region. New resources, such as
 Cloud Shell configurations and ADB access settings, should be created within
 your designated compartment.
 
-## Solution
+## Solution {.unlisted .unnumbered}
 
 Login as User XYZ in OCI console and go to _Security & Identity_ ->
 _Security Zones_. Ensure you have select the proper compartment in from the
@@ -99,7 +99,7 @@ grab a coffee and come back in a few minutes.
 
 >> step_10
 
-## Summary
+## Summary {.unlisted .unnumbered}
 
 In this exercise, you:
 
