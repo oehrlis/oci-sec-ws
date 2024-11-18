@@ -43,3 +43,5 @@ oci/.terraform.lock.hcl
 oci/etc/id_rsa_oci-sec-ws
 oci/etc/id_rsa_oci-sec-ws.pub
 oci/etc/default_authorized_keys.local
+oci/etc/id_rsa_lab
+oci/etc/id_rsa_lab.pub
