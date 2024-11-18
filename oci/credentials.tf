@@ -34,6 +34,11 @@ resource "random_password" "lab_password" {
   numeric = true # Include numbers.
   special = true # Include special characters.
 
+  min_lower   = 1 # minimum of lowercase alphabet characters in the result.
+  min_upper   = 1 # minimum of uppercase alphabet characters in the result.
+  min_numeric = 1 # minimum of numeric characters in the result.
+  min_special = 1 # minimum of special characters in the result.
+
   # Override the default special characters allowed in the password to include
   # only specific symbols for compatibility.
   override_special = ".-_+"
