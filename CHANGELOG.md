@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.10.6] - 2024-11-18
+
+### Changed
+
+- add minimum limits for random password
+  
 ## [0.10.5] - 2024-11-17
 
 ### Fixed
