@@ -120,6 +120,8 @@ resource "oci_identity_policy" "lab_policy" {
     format("Allow group %s to use virtual-network-family in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
     format("Allow group %s to use load-balancers in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
     format("Allow group %s to use security-lists in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
+    format("Allow group %s to read autonomous-databases in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
+    format("Allow group %s to inspect autonomous-databases in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
     format("Allow group %s to use vcns in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name)
   ]
 }
