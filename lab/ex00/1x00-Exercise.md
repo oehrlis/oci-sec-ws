@@ -62,11 +62,171 @@ Databases, and more.
    for the shell to initialize.
 
 2. **Test Basic Commands**  
-   - Check current user details:
+   - Check current Object Storage Namespace
   
      ```bash
-     oci iam user get --user-id $OCI_CLI_USER_ID
+     oci os ns get
      ```
+3. **Create Private Network for Cloud Shell**
+   To be able to connect from OCI Clud Shell to the Autonomous Database,
+   private network connection is required.
+
+   Select _Private network definition list_.
+
+![Cloud Shell 01](../../images/cloud-shell-private-network-01.jpg)
+
+Click on _Create private network definition_.
+
+![Cloud Shell 02](../../images/cloud-shell-private-network-02.jpg)
+
+It is importmant to create the cloud shell network for
+the private subnet.
+Set:
+- Name: A simple name to identify the cloud shell network
+- VCN in Compartment: Select your lab VCN, if the list is empty, verfy the proper compartment is selected.
+- Subnet in Compartment: Select your lab subnet starting with sn-prv-comp-fra, if the list is empty, verfy the proper compartment is selected.
+- Use as actve network: Enable checkbox
+
+![Cloud Shell 03](../../images/cloud-shell-private-network-03.jpg)
+
+Create the private network definition. When the network is created, you can
+close the window.
+
+![Cloud Shell 04](../../images/cloud-shell-private-network-04.jpg)
+
+On top bar of the cloud shell, the new network is active.
+
+![Cloud Shell 05](../../images/cloud-shell-private-network-05.jpg)
+
+### Step 3: Configure Autonomus Database ACL to allow Cloud Shell connections
+
+Get our Cloud Shell IP address. When no value is returned, the
+wrong network is active. Example for cloud shell IP address 138.2.168.154.
+
+The IP adress is used in next steps.
+
+```bash
+$ curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
+138.2.168.154
+```
+
+In OCI Console, add thos IP addess in Autonomus Database Access Control List.
+
+Oracle Database > Autonomous Database.
+
+Select your Autonomus Database by a click on the display name.
+
+![ADB Connect 01](../../images/cloud-shell-adb-connect-01.jpg)
+
+In dashboard, click on the link to edit the Access control list.
+
+![ADB Connect 02](../../images/cloud-shell-adb-connect-02.jpg)
+
+There is always an entry for a VCN, we add another entry by click on _Add access control rule_.
+
+![ADB Connect 03](../../images/cloud-shell-adb-connect-03.jpg)
+
+- IP notation type: IP address
+- Values: your Cloud Shell IP address from above output, as example 138.2.168.154
+
+Click on _Save_ to store the settings.
+
+![ADB Connect 04](../../images/cloud-shell-adb-connect-04.jpg)
+
+### Step 4: Download ADB Wallet and connect to the Autonomous Database
+
+Go back to your Cloud Shell, ensure the private network is active.
+
+List your Autnomous Database in your compartment. Replace the filter for compartment by your compartment name. Example for compartment
+
+Example for compartment MGB-DEV-OCI-SEC-WS-LAB-00, an OCID is returned:
+
+```bash
+oci db autonomous-database list --compartment-id $(
+    oci iam compartment list --all --compartment-id-in-subtree true | jq -r '.data[] | select(.name == "MGB-DEV-OCI-SEC-WS-LAB-00") | .id'
+) | jq -r '.data[].id'
+
+```
+
+Create a new directory, change into this directory.
+
+```bash
+$ mkdir my_wallet && cd my_wallet
+```
+
+Download the Autonomous Database wallet, use the ADB OCID from query above. Example:
+
+```bash
+$ oci db autonomous-database generate-wallet --autonomous-database-id ocid1.autonomousdatabase.oc1.eu-frankfurt-1.antheljtsijhdmqawkm7y2bpzwohbeyoxrf5zl2bydkx6isqxwkjii3zunka --file my-wallet.zip --password Oracle123
+Downloading file  [####################################]  100%
+```
+
+A file is created locally in Cloud Shell. Extract the file.
+
+```bash
+$ unzip my-wallet.zip 
+Archive:  my-wallet.zip
+  inflating: ewallet.pem             
+  inflating: README                  
+  inflating: cwallet.sso             
+  inflating: tnsnames.ora            
+  inflating: truststore.jks          
+  inflating: ojdbc.properties        
+  inflating: sqlnet.ora              
+  inflating: ewallet.p12             
+  inflating: keystore.jks            
+```
+
+Change parameter in sqlnet.ora file with your path:
+
+```bash
+sed -i "s|?\(/network/admin\)|$(pwd)|" sqlnet.ora
+```
+
+Verify the file, your path should be inserted, as example:
+```bash
+WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/home/lab_mgb_de/my_wallet")))
+```
+
+Get the connect alias for TPURGENT connect, example:
+
+```bash
+$ grep -o '^[^ ]*tpurgent' tnsnames.ora
+mgbdevocisecws00atp23ai01_tpurgent
+```
+
+Set TNS_ADMIN variable.
+
+```bash
+$ export TNS_ADMIN=$(pwd)
+```
+
+Connect by sqlplus, use the alias from above. Example:
+
+
+```bash
+$ sqlplus admin@mgbdevocisecws00atp23ai01_tpurgent
+
+SQL*Plus: Release 19.0.0.0.0 - Production on Wed Nov 20 15:31:48 2024
+Version 19.10.0.0.0
+
+Copyright (c) 1982, 2021, Oracle.  All rights reserved.
+
+Enter password: 
+Last Successful login time: Mon Nov 18 2024 22:14:53 +00:00
+
+Connected to:
+Oracle Database 23ai Enterprise Edition Release 23.0.0.0.0 - Production
+Version 23.6.0.24.10
+
+SQL>
+```
+
+
+================= BIS HIER ==========================================
+
+
+
 
    - List available compartments:
 
