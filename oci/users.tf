@@ -82,7 +82,6 @@ resource "oci_identity_policy" "lab_root_policy" {
     format("Allow group %s to manage keys in tenancy", oci_identity_group.lab_root_group.name),
     format("Allow group %s to manage secret-family in tenancy", oci_identity_group.lab_root_group.name),
     format("Allow group %s to use key-delegate in tenancy", oci_identity_group.lab_root_group.name),
-
     format("Allow group %s to use floating-ips in tenancy", oci_identity_group.lab_root_group.name),
     format("Allow group %s to use load-balancers in tenancy", oci_identity_group.lab_root_group.name),
     format("Allow group %s to use waas-family in tenancy", oci_identity_group.lab_root_group.name),
