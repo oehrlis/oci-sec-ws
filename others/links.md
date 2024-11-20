@@ -7,8 +7,8 @@ This section contains links and references related to the OCI workshop.
 ### Miscellaneous
 
 - Source code for the workshop materials: [oehrlis/oci-sec-ws](https://github.com/oehrlis/oci-sec-ws)
-- OCI Stack v0.10.7 for the workshop: [oci-sec-ws_stack.zip](https://github.com/oehrlis/oci-sec-ws/releases/download/v0.10.7/oci-sec-ws_stack.zip)
-- Deploy Lab Environment to Oracle Cloud [![Deploy to OCI](../images/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/oehrlis/oci-sec-ws/releases/download/v0.10.7/oci-sec-ws_stack.zip)
+- OCI Stack v0.10.8 for the workshop: [oci-sec-ws_stack.zip](https://github.com/oehrlis/oci-sec-ws/releases/download/v0.10.8/oci-sec-ws_stack.zip)
+- Deploy Lab Environment to Oracle Cloud [![Deploy to OCI](../images/deploy-to-oracle-cloud.svg)](https://cloud.oracle.com/resourcemanager/stacks/create?zipUrl=https://github.com/oehrlis/oci-sec-ws/releases/download/v0.10.8/oci-sec-ws_stack.zip)
 
 ### Oracle
 

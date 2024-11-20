@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.16
-# Revision...: 0.10.7
+# Revision...: 0.10.8
 # Purpose....: Define the web server compute resources for the LAB environment.
 #              This includes the NGINX/Apache web server configuration distributed
 #              across multiple lab environments using the specified instance settings.

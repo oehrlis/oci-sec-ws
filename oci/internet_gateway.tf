@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.17
-# Revision...: 0.10.7
+# Revision...: 0.10.8
 # Purpose....: Define Internet Gateway (IGW) resources for Virtual Cloud Network 
 #              (VCN) resources in the LAB environment. This allows outbound 
 #              internet access for instances within the VCN.

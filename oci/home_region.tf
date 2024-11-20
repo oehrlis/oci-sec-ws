@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.16
-# Revision...: 0.10.7
+# Revision...: 0.10.8
 # Purpose....: Retrieve the home region details from the tenancy in Oracle Cloud 
 #              Infrastructure (OCI). This includes the home region name and key 
 #              as well as the current region's name and key based on the provided 
