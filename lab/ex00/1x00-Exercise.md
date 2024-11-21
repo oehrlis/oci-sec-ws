@@ -130,10 +130,13 @@ There is always an entry for a VCN, we add another entry by click on _Add access
 
 - IP notation type: IP address
 - Values: your Cloud Shell IP address from above output, as example 138.2.168.154
+- In addition to the IP address of the cloud shell, also add your client IP address. To do this, click the *Add my IP address* button.
+
+![ADB Connect 04](../../images/ex00_adb_access01.png)
 
 Click on _Save_ to store the settings.
 
-![ADB Connect 04](../../images/cloud-shell-adb-connect-04.jpg)
+![ADB Connect 05](../../images/cloud-shell-adb-connect-05.jpg)
 
 ### Step 4: Download ADB Wallet and Connect
 
