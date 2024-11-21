@@ -42,12 +42,9 @@ Oracle Database -> Data Safe -> Database Security -> Security assessment
 
 ### Step 2: Set a Baseline
 
-
 DOAG24_Schulung
 
-
 grant read any table on schema sh to public;
-
 
 ## Summary {.unlisted .unnumbered}
 
