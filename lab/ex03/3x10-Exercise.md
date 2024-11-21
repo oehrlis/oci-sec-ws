@@ -35,12 +35,6 @@ your designated compartment.
 
 ## Solution {.unlisted .unnumbered}
 
-Here’s the draft solution for **Exercise 10: Discover Sensitive Data**:
-
----
-
-## Solution {.unlisted .unnumbered}
-
 ### Step 1: Run a Data Discovery Scan in Oracle Data Safe
 
 1. **Access the Data Safe Dashboard**:
@@ -61,8 +55,6 @@ Here’s the draft solution for **Exercise 10: Discover Sensitive Data**:
    - Review the job configuration and click **Start**.
    - Monitor the progress of the scan on the **Job Details** page.
 
----
-
 ### Step 2: Review the Results
 
 1. **Access the Completed Scan Report**:
@@ -80,8 +72,6 @@ Here’s the draft solution for **Exercise 10: Discover Sensitive Data**:
 
 4. **Export the Report** (Optional):
    - If required, export the discovery scan results in **PDF** or **CSV** format for further review or compliance reporting.
-
----
 
 ### Optional: Plan for Data Protection
 

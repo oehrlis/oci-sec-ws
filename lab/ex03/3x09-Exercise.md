@@ -50,8 +50,6 @@ your designated compartment.
    - Add or confirm the notification endpoint (e.g., email address or OCI Notification Service topic) where alerts will be sent.
    - Save your changes.
 
----
-
 ### Step 2: Set Up Rules to Trigger Alerts for Specific Database Events
 
 1. **Go to Alert Rules**:
@@ -69,8 +67,6 @@ your designated compartment.
 
 3. **Save the Rule**:
    - Ensure the rule is active and associated with the target ADB.
-
----
 
 ### Step 3: Test the Alerting Mechanism
 

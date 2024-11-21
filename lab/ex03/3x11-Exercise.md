@@ -35,12 +35,6 @@ your designated compartment.
 
 ## Solution {.unlisted .unnumbered}
 
-Here’s the draft solution for **Exercise 11: SQL Firewall**:
-
----
-
-## Solution {.unlisted .unnumbered}
-
 ### Step 1: Set Up the SQL Firewall in Oracle Data Safe
 
 1. **Access the Data Safe Dashboard**:
@@ -56,8 +50,6 @@ Here’s the draft solution for **Exercise 11: SQL Firewall**:
    - Click **Generate Profile** to create a baseline of SQL activity for the target database.
    - Select the duration for collecting SQL activity (e.g., 1 hour, 1 day).
    - Wait for the profile generation to complete.
-
----
 
 ### Step 2: Define Rules to Allow or Block Specific SQL Statements
 
@@ -75,8 +67,6 @@ Here’s the draft solution for **Exercise 11: SQL Firewall**:
 
 3. **Save the Rule**:
    - Ensure the rule is active and associated with the target database.
-
----
 
 ### Step 3: Test the SQL Firewall by Executing Queries
 

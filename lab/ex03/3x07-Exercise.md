@@ -35,12 +35,6 @@ your designated compartment.
 
 ## Solution {.unlisted .unnumbered}
 
-Here’s the draft solution for **Exercise 07: Assess Database Users**:
-
----
-
-## Solution {.unlisted .unnumbered}
-
 ### Step 1: View the Overview Page for User Assessment
 
 1. Navigate to the **Data Safe Dashboard** in the OCI Console.
@@ -54,9 +48,9 @@ Here’s the draft solution for **Exercise 07: Assess Database Users**:
      - Risk level distribution (e.g., High, Medium, Low).
      - User categories (e.g., Admin Users, Privileged Users).
 
-4. Note the summary of potential security risks related to user accounts.
+   ![User Assessment](../../images/data_safe_user_assessment01.png)
 
----
+4. Note the summary of potential security risks related to user accounts.
 
 ### Step 2: Analyze Users in the Latest User Assessment
 
@@ -65,24 +59,47 @@ Here’s the draft solution for **Exercise 07: Assess Database Users**:
 2. Review the list of users and their associated risk levels:
    - Focus on users flagged with **High Risk** or **Medium Risk**.
 
+   ![User Assessment Details](../../images/ex07_user_assessment_details01.png)
+
 3. For each flagged user, analyze the following details:
    - **Privileges**: Review the specific roles and grants assigned to the user.
    - **Login Activity**: Check the last login time and ensure it aligns with expected usage.
    - **Account Status**: Identify users with default passwords, expired passwords, or locked accounts.
 
-4. Document findings, highlighting users or privileges that require further action.
-
----
-
 ### Step 3: Change Users and Entitlements on the Target Database
 
-1. Access your target database using a SQL client or Cloud Shell.
+Either modify your target database via SQL worksheet, Cloud Shell or both.
 
-2. Modify user accounts or privileges to simulate a change:
+1. Download and install HR sample schema using cloud shell
+
+   - Download the Sample Schemas
+
+   ```bash
+   cd $HOME
+   export TNS_ADMIN=$HOME/my_wallet
+   git clone https://github.com/oracle/db-sample-schemas.git
+   ```
+
+   - Set environment variable to connect to the ADB
+  
+   ```bash
+   export TNS_ADMIN=$HOME/my_wallet
+   export ADB_SERVICE=$(grep -o '^[^ ]*tpurgent' $HOME/my_wallet/tnsnames.ora)
+   ```
+
+   - Install **human_resources** demo Schema use the default LAB password
+
+   ```bash
+   cd $HOME/db-sample-schemas/human_resources
+   sql admin@$ADB_SERVICE @hr_install.sql
+   ```
+
+2. Access your target database using a SQL worksheet and modify user accounts or privileges to simulate a change:
+
    - Example 1: Grant an additional role to a user:
 
      ```sql
-     GRANT DBA TO hr;
+     GRANT select any table TO hr;
      ```
 
    - Example 2: Unlock a user account:
@@ -91,16 +108,12 @@ Here’s the draft solution for **Exercise 07: Assess Database Users**:
      ALTER USER hr ACCOUNT UNLOCK;
      ```
 
-   - Example 3: Create a new test user:
+   - Example 3: Create a new test user with 
 
      ```sql
-     CREATE USER test_user IDENTIFIED BY password123;
+     CREATE USER test_user NO AUTHENTICATION;
      GRANT CREATE SESSION TO test_user;
      ```
-
-3. Save and apply the changes.
-
----
 
 ### Step 4: Refresh the Latest User Assessment
 
@@ -109,15 +122,19 @@ Here’s the draft solution for **Exercise 07: Assess Database Users**:
 2. Click **Refresh Assessment** for your target database.
    - Wait for the refresh to complete.
 
+   ![Refresh User Assessment](../../images/ex07_ds_refresh01.png)
+
 3. Review the updated User Assessment Report:
    - Ensure the changes made in Step 3 are reflected.
    - Check for any new findings or risks introduced by the changes.
 
----
+   ![Review User Assessment Details](../../images/ex07_user_assessment_details02.png)
 
 ### Step 5: Compare the Latest User Assessment with the Initial User Assessment
 
-1. From the User Assessments page, select the **Comparison** option.
+1. From the User Assessments page, select the **Comparison assessments** option.
+
+   ![Compare User Assessment](../../images/ex07_user_assessment_details02.png)
 
 2. Compare the latest assessment with the initial assessment:
    - Identify differences in:

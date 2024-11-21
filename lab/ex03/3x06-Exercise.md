@@ -34,56 +34,50 @@ your designated compartment.
 
 ## Solution {.unlisted .unnumbered}
 
-Login as User XYZ in OCI console. Ensure you have select the proper compartment in from the dropdown list on left side.
-
-### Step 1: Explore Security Assessment
-
-Oracle Database -> Data Safe -> Database Security -> Security assessment
-
-### Step 2: Set a Baseline
-
-DOAG24_Schulung
-
-grant read any table on schema sh to public;
-
-Here is the draft solution for **Exercise 06: Assess Database Configurations**, covering the requested steps:
-
-## Solution {.unlisted .unnumbered}
-
 ### Step 1: Explore Security Assessment
 
 1. Navigate to the **Oracle Data Safe Dashboard** in the OCI Console.
    - Go to **Data Safe** -> **Security Assessments**.
 
-    ![>> step_1](../../images/ex06_ds_sec_assessment01.png)
-
-2. Open tab **Target Summary** and select the Security Assessment for your Autonomous Database (ADB).
+2. View the overview of the Security Assessment for your Autonomous Database (ADB).
    - Select the target ADB you registered in the previous exercises.
    - Explore the summary metrics such as:
      - Total findings (e.g., high, medium, low risks).
      - Configuration compliance score.
 
-3. Click on the latest assessment report for the ADB to review the detailed findings.
-   - Observe categories such as **user privileges**, **configuration settings**, and **security controls**.
+    ![>> step_1](../../images/ex06_ds_sec_assessment01.png)
+
+3. Go to the tab **Target summary** and click on the latest assessment report for the ADB to review the detailed findings.
+   - Observe categories such as **Privileges and roles**, **Database configuration**, and **Auditing**.
    - Note any highlighted risks or warnings in the findings.
+
+    ![Target summary](../../images/ex06_ds_sec_assessment02.png)
+
+    ![Security Assessment Details](../../images/ex06_ds_sec_assessment03.png)
 
 ### Step 2: Adjust the Risk Level of a Risk Finding
 
 1. From the **Security Assessment Report**, identify a **risk finding** that you want to adjust.
-   - For example: "Default Administrator Account Enabled."
+   - For example: *Users with Grant Option*
 
 2. Click on the finding to view its details.
    - Note the current **risk level** (e.g., high, medium, or low).
 
+      ![Security Assessment Details](../../images/ex06_ds_sec_details01.png)
+
 3. Adjust the **risk level**:
    - Click on **Edit Risk** or **Adjust Risk Level**.
-   - Select a new risk level (e.g., from "High" to "Medium") and provide a justification for the change (e.g., "Business policy exception").
+   - Select a new risk level (e.g., from "Low" to "Medium") and provide a justification for the change (e.g., "Compliance Requirement ").
+
+      ![Adjust Risk Level for Users with Grant Option](../../images/ex06_ds_sec_details02.png)
 
 4. Save the changes.
 
 ### Step 3: Set Baseline
 
-1. Go back to the **Security Assessment Dashboard** and select your ADB target.
+1. Go back to the top of the page of the latest assessment report for the ADB.
+
+   ![Security Assessment Details](../../images/ex06_ds_sec_assessment03.png)
 
 2. Click on **Set Baseline**:
    - The baseline captures the current configuration and security settings as a reference point.
@@ -91,24 +85,31 @@ Here is the draft solution for **Exercise 06: Assess Database Configurations**, 
 3. Confirm the baseline creation.
    - This baseline will be used for future comparisons to identify any deviations.
 
+   ![Set Security Assessment Baseline](../../images/ex06_ds_set_baseline01.png)
+
 ### Step 4: Create a Risk on the Target Database
 
 1. Simulate a security risk by modifying a configuration on the target ADB.
-   - For example:
-     - Enable a **default user account** (e.g., `HR`) or
-     - Alter a **critical parameter** (e.g., disable auditing).
+2. Access the SQL worksheet in Database Actions. If your session has expired, sign in again as the ADMIN user.
+3. If needed, clear the worksheet and the Script Output tab.
+4. On the worksheet, enter the following command:
 
-2. Document the change and note how it could introduce a risk to the system.
+   ```SQL
+   GRANT alter any role TO public;
+   CREATE USER scott IDENTIFIED BY NO AUTHENTICATION;
+   ```
 
-3. Ensure the change is saved and applied on the target database.
+   ![Create a Risk using SQL worksheet](../../images/ex06_ds_risk01.png)
 
 ### Step 5: Refresh the Latest Security Assessment and Analyze the Results
 
-1. Navigate back to the **Security Assessments** section in the Data Safe Dashboard.
+1. Navigate back the top of the page of the latest assessment report for the ADB.
 
 2. Click **Refresh Assessment**:
    - Wait for the assessment to complete.
    - The new assessment should reflect the risk you introduced in Step 4.
+
+   ![Refresh Security Assessment](../../images/ex06_ds_refresh01.png)
 
 3. Analyze the updated assessment report:
    - Look for the new risk findings created by your changes.

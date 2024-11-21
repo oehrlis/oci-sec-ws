@@ -34,12 +34,6 @@ your designated compartment.
 
 ## Solution {.unlisted .unnumbered}
 
-Here’s the draft solution for **Exercise 08: Audit Database Activity**:
-
----
-
-## Solution {.unlisted .unnumbered}
-
 ### Step 1: Enable and Configure Auditing in Oracle Data Safe
 
 1. **Access the Data Safe Dashboard**:
@@ -61,8 +55,6 @@ Here’s the draft solution for **Exercise 08: Audit Database Activity**:
 
 4. **Save the Configuration**:
    - Ensure that the appropriate audit policies are applied to the database for logging key activities.
-
----
 
 ### Step 2: Review and Analyze Database Activity Logs
 
