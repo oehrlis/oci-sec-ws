@@ -38,8 +38,8 @@ your designated compartment.
 ### Step 1: First Login to OCI Console
 
 1. **Access the OCI Console**  
-   Go to [Oracle Cloud Console](https://cloud.oracle.com/). Log in with your
-   credentials.
+   Go to [Oracle Cloud Console](https://www.oracle.com/cloud/sign-in.html). Log in with your
+   credentials. Tenancy name, user name and password are provided by teacher team.
 
 2. **Explore the Console Dashboard**  
    Familiarize yourself with the main console sections:
@@ -81,7 +81,7 @@ Click on _Create private network definition_.
 ![Cloud Shell 02](../../images/cloud-shell-private-network-02.jpg)
 
 It is importmant to create the cloud shell network for
-the private subnet.
+the **private subnet**.
 Set:
 
 - Name: A simple name to identify the cloud shell network
@@ -96,7 +96,8 @@ close the window.
 
 ![Cloud Shell 04](../../images/cloud-shell-private-network-04.jpg)
 
-On top bar of the cloud shell, the new network is active.
+On top bar of the cloud shell, the new network is active. This requires a couple of seconds, please
+be patient.
 
 ![Cloud Shell 05](../../images/cloud-shell-private-network-05.jpg)
 
@@ -112,11 +113,12 @@ $ curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
 138.2.168.154
 ```
 
-In OCI Console, add thos IP addess in Autonomus Database Access Control List.
+In OCI Console, add this returned IP addess in Autonomus Database Access Control List.
 
-Oracle Database > Autonomous Database.
+Go to Oracle Database > Autonomous Database.
 
-Select your Autonomus Database by a click on the display name.
+Select your Autonomus Database by a click on the display name. Verify, correct compartment
+is selected.
 
 ![ADB Connect 01](../../images/cloud-shell-adb-connect-01.jpg)
 
@@ -141,12 +143,14 @@ Go back to your Cloud Shell, ensure the private network is active.
 
 List your Autonomous Database in your compartment. Replace the filter for compartment by your compartment name. Example for compartment
 
-Example for compartment MGB-DEV-OCI-SEC-WS-LAB-00, an OCID is returned:
+Example for compartment MGB-DEV-OCI-SEC-WS-LAB-00, an OCID is returned, this OCID is used to get the ADB
+connection wallet.
 
 ```bash
 oci db autonomous-database list --compartment-id $(
     oci iam compartment list --all --compartment-id-in-subtree true | jq -r '.data[] | select(.name == "MGB-DEV-OCI-SEC-WS-LAB-00") | .id'
 ) | jq -r '.data[].id'
+ocid1.autonomousdatabase.oc1.eu-frankfurt-1.antheljtsijhdmqawkm7y2bpzwohbeyoxrf5zl2bydkx6isqxwkjii987651234
 
 ```
 
@@ -156,10 +160,10 @@ Create a new directory, change into this directory.
 mkdir my_wallet && cd my_wallet
 ```
 
-Download the Autonomous Database wallet, use the ADB OCID from query above. Example:
+Download the Autonomous Database wallet, use the ADB OCID from query above. Define the output filename and the wallet password. Example:
 
 ```bash
-oci db autonomous-database generate-wallet --autonomous-database-id ocid1.autonomousdatabase.oc1.eu-frankfurt-1.antheljtsijhdmqawkm7y2bpzwohbeyoxrf5zl2bydkx6isqxwkjii3zunka --file my-wallet.zip --password Oracle123
+oci db autonomous-database generate-wallet --autonomous-database-id ocid1.autonomousdatabase.oc1.eu-frankfurt-1.antheljtsijhdmqawkm7y2bpzwohbeyoxrf5zl2bydkx6isqxwkjii987651234 --file my-wallet.zip --password Oracle123
 Downloading file  [####################################]  100%
 ```
 
@@ -188,6 +192,7 @@ sed -i "s|?\(/network/admin\)|$(pwd)|" sqlnet.ora
 Verify the file, your path should be inserted, as example:
 
 ```bash
+$ cat sqlnet.ora
 WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/home/lab_mgb_de/my_wallet")))
 ```
 
@@ -221,73 +226,6 @@ Connected to:
 Oracle Database 23ai Enterprise Edition Release 23.0.0.0.0 - Production
 Version 23.6.0.24.10
 
-SQL>
-```
-
-- List available compartments:
-
- ```bash
- oci iam compartment list --all
- ```
-
-**Example Output:**
-
-```text
-User details loaded successfully.
-Compartment list:
-- OCI-SEC-WS-LAB-01
-- OCI-SEC-WS-LAB-02
-...
-```
-
-### Step 3: Accessing the Autonomous Database (ADB)
-
-1. **Navigate to Autonomous Databases**  
-   Go to **Oracle Database** > **Autonomous Transaction Processing** or
-   **Autonomous Data Warehouse**.
-
-2. **Select Your Database Instance**  
-   Click on your ADB instance to view its details, including connection strings,
-   CPU usage, and storage information.
-
-3. **Download Wallet for Database Connection**  
-   - Click **DB Connection** and select **Download Wallet**.
-   - Enter a password to secure the wallet file and save it.
-
-**Example Output:**
-
-```text
-Wallet downloaded successfully to Wallet_<DB_NAME>.zip.
-```
-
-### Step 4: Configuring Access to Autonomous Database
-
-1. **Upload Wallet to Cloud Shell**  
-   Use the Cloud Shell upload feature to upload the wallet if it's on your local
-   machine.
-
-2. **Set Up Environment Variables**  
-   Unzip the wallet and set environment variables:
-
-   ```bash
-   mkdir -p wallet
-   unzip Wallet_<DB_NAME>.zip -d wallet
-   export TNS_ADMIN=wallet
-   ```
-
-3. **Test Database Connection**  
-   Use `sqlplus` or `sqlcl` to connect:
-
-   ```bash
-   sqlplus admin@<DB_SERVICE>
-   ```
-
-**Example Output:**
-
-```plaintext
-Connected to:
-Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
-...
 SQL>
 ```
 
