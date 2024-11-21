@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.16
-# Revision...: 0.12.1
+# Revision...: 0.12.2
 # Purpose....: Define IAM resources for the LAB environment.
 # Notes......: 
 # Reference..: --
@@ -76,6 +76,7 @@ resource "oci_identity_policy" "lab_root_policy" {
     format("Allow group %s to use ons-topics in tenancy", oci_identity_group.lab_root_group.name),
     format("Allow group %s to manage ons-subscriptions in tenancy", oci_identity_group.lab_root_group.name),
     format("Allow group %s to manage cloudevents-rules in tenancy", oci_identity_group.lab_root_group.name),
+    format("Allow group %s to inspect compartments in tenancy", oci_identity_group.lab_root_group.name),
     format("Allow group %s to use cloud-shell in tenancy", oci_identity_group.lab_root_group.name),
     format("Allow group %s to read app-catalog-listing in tenancy", oci_identity_group.lab_root_group.name),
     format("Allow group %s to manage vaults in tenancy", oci_identity_group.lab_root_group.name),
@@ -110,8 +111,6 @@ resource "oci_identity_policy" "lab_policy" {
     format("Allow group %s to manage security-recipe in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
     format("Allow group %s to manage security-zone in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
     format("Allow group %s to manage security-recipe in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
-    format("Allow group %s to use ons-topic in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
-    format("Allow group %s to manage cloudevents-rules in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
     format("Allow group %s to manage vaults in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
     format("Allow group %s to manage keys in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
     format("Allow group %s to manage secret-family in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
@@ -123,11 +122,18 @@ resource "oci_identity_policy" "lab_policy" {
     format("Allow group %s to manage autonomous-databases in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
     format("Allow group %s to manage data-safe-family in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
     format("Allow group %s to manage dashboards-family in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
-    format("Allow group %s to manage ons-topic in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
+    format("Allow group %s to manage ons-topics in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
     format("Allow group %s to manage cloudevents-rules in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
     format("Allow group %s to manage alarms in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
     format("Allow group %s to read metrics in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
-    format("Allow group %s to use vcns in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name)
+    format("Allow group %s to use streams in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
+    format("Allow group %s to use vcns in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
+    format("Allow service cloudguard to manage instance-family in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
+    format("Allow service cloudguard to manage object-family in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
+    format("Allow service cloudguard to manage buckets in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
+    format("Allow service cloudguard to manage users in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
+    format("Allow service cloudguard to manage policies in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
+    format("Allow service cloudguard to manage keys in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name)
   ]
 }
 

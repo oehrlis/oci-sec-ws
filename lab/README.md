@@ -21,7 +21,7 @@ resources and scripts.
 | 01 | Basic OCI Security | [Key Management](./ex01/1x01-Exercise.md)                           | Create and manage encryption keys within a customer-managed key vault.               | 30 min   |
 | 02 | Cloud Guard        | [Manual Remediation](./ex02/2x02-Exercise.md)                       | Configure manual remediation for detected security risks.                            | 45 min   |
 | 03 | Cloud Guard        | [Auto Remediation](./ex02/2x03-Exercise.md)                         | Automate responses to detected security vulnerabilities.                             | 40 min   |
-| 04 | Cloud Guard        | [Notification Setup](./ex02/2x03-Exercise.md)                       | Set up notifications to monitor and alert on security-related events.                | 25 min   |
+| 04 | Cloud Guard        | [Notification Setup](./ex02/2x04-Exercise.md)                       | Set up notifications to monitor and alert on security-related events.                | 25 min   |
 | 05 | Data Safe          | [Data Safe Configuration and Register ADB](./ex03/3x05-Exercise.md) | Initial setup of Oracle Data Safe, including registration of an Autonomous Database. | 10 min   |
 | 06 | Data Safe          | [Assess Database Configurations](./ex03/3x05-Exercise.md)           | Use Oracle Data Safe to assess database configurations for compliance.               | 10 min   |
 | 07 | Data Safe          | [Assess Database Users](./ex03/3x06-Exercise.md)                    | Review and analyze database user accounts with Oracle Data Safe.                     | 10 min   |

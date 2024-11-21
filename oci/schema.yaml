@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.16
-# Revision...: 0.12.1
+# Revision...: 0.12.2
 # Purpose....: Schema definition for an OCI Stack configuration used in the OCI
 #              security workshop (OCI-SEC-WS). This schema defines all the
 #              input parameters and output variables for deploying resources

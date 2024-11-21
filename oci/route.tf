@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.23
-# Revision...: 0.12.1
+# Revision...: 0.12.2
 # Purpose....: Define routing tables for VCN resources in the LAB environment.
 # Notes......: This file defines routing tables for public and private subnets
 #              in each LAB environment based on the number of labs. It also 

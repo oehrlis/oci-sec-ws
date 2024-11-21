@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.23
-# Revision...: 0.12.1
+# Revision...: 0.12.2
 # Purpose....: Define OCI Log Group and logs for subnets in the LAB environment.
 #              This includes logs for public, private compute, and private 
 #              database subnets.
@@ -53,7 +53,7 @@ resource "oci_logging_log" "log_public_subnet" {
       service     = var.log_configuration_source_service
       source_type = var.log_configuration_source_source_type
     }
-    compartment_id = oci_identity_compartment.lab-compartment[count.index].id
+    compartment_id = oci_identity_compartment.lab-compartment[count.index].id # Compartment for the log
   }
 
   freeform_tags      = var.tags
