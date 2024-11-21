@@ -1,7 +1,7 @@
 ---
 title: ""
 permalink: /lab/oci-setup/
-excerpt: "Introduction to OCI, including an overview of the architecture and first login."
+excerpt: "Learn to navigate Oracle Cloud Infrastructure (OCI), explore Cloud Shell, and configure Autonomous Database (ADB) access."
 ---
 <!-- markdownlint-disable MD013 -->
 <!-- markdownlint-disable MD024 -->
@@ -10,15 +10,13 @@ excerpt: "Introduction to OCI, including an overview of the architecture and fir
 
 ## Exercise 00: Getting Started with OCI
 
-This exercise introduces participants to the Oracle Cloud Infrastructure (OCI)
-environment. You will log in, navigate the OCI console, explore the Cloud Shell,
-and configure access to the Autonomous Database (ADB).
+In this exercise, you will explore the Oracle Cloud Infrastructure (OCI) environment. This includes logging in, navigating the OCI Console, using the Cloud Shell, and configuring network and database access to the Autonomous Database (ADB).
 
 ### Objectives
 
-- Log in to the OCI console and navigate the environment.
-- Explore the OCI Cloud Shell.
-- Test access to the Autonomous Database (ADB).
+- Log in to the OCI Console and explore its interface.
+- Access and use the OCI Cloud Shell for basic tasks.
+- Verify connectivity to the Autonomous Database (ADB).
 - Configure network and database access for ADB.
 
 ## Environment {.unlisted .unnumbered}
@@ -29,14 +27,13 @@ Perform this exercise within the following environment:
 - **Region:** Germany Central (Frankfurt)
 - **OCI Console URL:** [OCI Console Frankfurt - Login](https://console.eu-frankfurt-1.oraclecloud.com){:target="_blank" rel="noopener"}
 
-Ensure you are in the correct compartment and region. New resources, such as
-Cloud Shell configurations and ADB access settings, should be created within
-your designated compartment.
+Verify that you are in the correct compartment and region. Any new resources, including Cloud Shell configurations and ADB access settings, should be created within the specified compartment.
 
 ## Solution {.unlisted .unnumbered}
 
 ### Step 1: First Login to OCI Console
 
+<<<<<<< HEAD
 1. **Access the OCI Console**  
    Go to [Oracle Cloud Console](https://www.oracle.com/cloud/sign-in.html). Log in with your
    credentials. Tenancy name, user name and password are provided by teacher team.
@@ -47,16 +44,30 @@ your designated compartment.
      and Databases.
    - **Resource Summary**: Overview of resources within your compartment.
    - **Quick Actions**: Shortcuts to commonly used tasks like creating instances.
+=======
+1. Log in to the **[Oracle Cloud Console](https://cloud.oracle.com/)** with your assigned credentials.
+2. Familiarize yourself with the main console features:
+   - **Navigation Menu**: Provides access to services such as Compute, Networking, Storage, and Databases.
+   - **Resource Summary**: Displays an overview of resources in your compartment.
+   - **Quick Actions**: Offers shortcuts for frequently used tasks like creating instances.
+>>>>>>> 0fe82d2 (update ex00)
 
 ![Cloud Console](../../images/ex00_cloudconsole01.png)
 
 ### Step 2: Using the Cloud Shell
 
-1. **Open Cloud Shell**  
-   Click on the Cloud Shell icon in the top-right corner of the console. Wait
-   for the shell to initialize.
+1. Open the **Cloud Shell** from the top-right corner of the OCI Console.
 
-2. **Test Basic Commands**  
+2. Explore basic Cloud Shell commands:
+
+   ```bash
+   # Verify the active user
+   whoami
+
+   # List the current files and directories
+   ls -la
+   ```
+
    - Check current Object Storage Namespace
   
      ```bash
@@ -102,25 +113,25 @@ be patient.
 
 ![Cloud Shell 05](../../images/cloud-shell-private-network-05.jpg)
 
-### Step 3: Configure Autonomous Database ACL to allow Cloud Shell connections
+### Step 3: Configure Autonomous Database ACL
 
-Get our Cloud Shell IP address. When no value is returned, the
-wrong network is active. Example for cloud shell IP address 138.2.168.154.
+1. Retrieve your **Cloud Shell IP address**:
 
-The IP adress is used in next steps.
+   ```bash
+   curl ifconfig.me
+   ```
 
-```bash
-curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
-```
+   - Example output: `138.2.168.154`.
+   - If no value is returned, it indicates that the wrong network is active.
 
-Example output
+2. Add your Cloud Shell IP address to the **Access Control List (ACL)** of the ADB instance.
 
-```bash
-lab_soe_de@cloudshell:~ (eu-frankfurt-1)$ curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
-138.2.168.154
-```
-
+<<<<<<< HEAD
 In OCI Console, add this returned IP addess in Autonomus Database Access Control List.
+=======
+   **Steps**:
+In OCI Console, add thos IP addess in Autonomus Database Access Control List.
+>>>>>>> 0fe82d2 (update ex00)
 
 Go to Oracle Database > Autonomous Database.
 
@@ -144,7 +155,7 @@ Click on _Save_ to store the settings.
 
 ![ADB Connect 04](../../images/cloud-shell-adb-connect-04.jpg)
 
-### Step 4: Download ADB Wallet and connect to the Autonomous Database
+### Step 4: Download ADB Wallet and Connect
 
 Go back to your Cloud Shell, ensure the private network is active.
 
@@ -256,12 +267,12 @@ SQL>
 
 In this exercise, you:
 
-- Logged into the OCI Console and explored its features.
-- Familiarized yourself with the Cloud Shell and basic commands.
-- Accessed and configured the Autonomous Database (ADB).
+- Logged in to the OCI Console and explored its features.
+- Used the Cloud Shell for basic commands and configurations.
+- Configured network access to connect to the Autonomous Database (ADB).
+- Downloaded the ADB Wallet and successfully connected to the database using `sqlplus`.
 
-You are now ready to continue with the next exercise to expand your skills in
-OCI security.
+You are now ready to proceed to the next exercise, where you will explore key management and advanced OCI security features.
 
 <!-- For Pandoc -->
 - **Previous Exercise:** [Workshop Overview](#workshop-overview)
