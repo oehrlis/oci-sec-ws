@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fix link in lab overview for exercise 03 Notification
 - Fix issues with *cloudguard* notification add privileges
+- Fix Markdown errors
 
 ## [0.12.2] - 2024-11-21
 
