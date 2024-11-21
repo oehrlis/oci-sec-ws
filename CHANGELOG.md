@@ -29,6 +29,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - simplify code to allow easier copy past of code
 - finalizing exercise 05
 
+### Fixed
+
+- markdown errors in exercise 01
+
 ### Removed
 
 - remove legacy section in exercise 00
