@@ -20,8 +20,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-- Fix issues with cloudguard auto remediation add privileges for service cloudguard
-  
+- Fix issues with *cloudguard* auto remediation add privileges for service *cloudguard*
+- Fix Markdown errors
+
 ## [0.12.1] - 2024-11-21
 
 ### Fixed
