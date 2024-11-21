@@ -246,6 +246,23 @@ Version 23.6.0.24.10
 SQL>
 ```
 
+### Step 5: Test ADB Actions
+
+Go to Oracle Database -> Autonomous Database.
+
+Select your Autonomous Database by a click on the display name. Verify, correct compartment
+is selected.
+
+![ADB Connect 01](../../images/cloud-shell-adb-connect-01.jpg)
+
+On the top click on the left button **Database Actions** and select **SQL**.
+
+![ADB SQL Action](../../images/ex00_adb_action.png)
+
+Start the SQL Worksheet and run a test query.
+
+![ADB SQL Worksheet](../../images/ex00_adb_sqltool01.png)
+
 ## Summary {.unlisted .unnumbered}
 
 In this exercise, you:
