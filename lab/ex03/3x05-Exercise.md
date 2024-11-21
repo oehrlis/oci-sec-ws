@@ -40,25 +40,25 @@ Oracle Database -> Data Safe - Database Security -> Overview
 
 1. Start the *Autonomous Database* registration wizard.
 
-![>> step_1](../../images/ex05_ds_register01.png)
+    ![>> step_1](../../images/ex05_ds_register01.png)
 
 2. Select the *Autonomous Database* for your compartment, as example compartment *SOE-DEV-OCI-SEC-WS-LAB-00*.
 
-![>> step_2](../../images/ex05_ds_register02.png)
+    ![>> step_2](../../images/ex05_ds_register02.png)
 
 3. Proceed to next step by selecting next and finalize registration
 
-![>> step_3](../../images/ex05_ds_register03.png)
+    ![>> step_3](../../images/ex05_ds_register03.png)
 
 4. Registration of *Autonomous Database* will take a while
 
-![>> step_4](../../images/ex05_ds_register04.png)
+    ![>> step_4](../../images/ex05_ds_register04.png)
 
 5. As soon as the *Autonomous Database* is registered it is visible in the dashboard
 
-Oracle Database -> Data Safe - Database Security -> Dashboard
+    Oracle Database -> Data Safe - Database Security -> Dashboard
 
-![>> step_5](../../images/ex05_ds_register05.png)
+    ![>> step_5](../../images/ex05_ds_register05.png)
 
 ## Summary {.unlisted .unnumbered}
 
