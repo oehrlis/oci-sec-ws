@@ -34,6 +34,21 @@ your designated compartment.
 
 ## Solution {.unlisted .unnumbered}
 
+Login as User XYZ in OCI console. Ensure you have select the proper compartment in from the dropdown list on left side.
+
+### Step 1: Explore Security Assessment
+
+Oracle Database -> Data Safe -> Database Security -> Security assessment
+
+### Step 2: Set a Baseline
+
+
+DOAG24_Schulung
+
+
+grant read any table on schema sh to public;
+
+
 ## Summary {.unlisted .unnumbered}
 
 In this exercise, you:
