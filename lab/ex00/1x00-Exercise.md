@@ -33,26 +33,13 @@ Verify that you are in the correct compartment and region. Any new resources, in
 
 ### Step 1: First Login to OCI Console
 
-<<<<<<< HEAD
-1. **Access the OCI Console**  
-   Go to [Oracle Cloud Console](https://www.oracle.com/cloud/sign-in.html). Log in with your
-   credentials. Tenancy name, user name and password are provided by teacher team.
-
-2. **Explore the Console Dashboard**  
-   Familiarize yourself with the main console sections:
-   - **Navigation Menu**: Access services such as Compute, Networking, Storage,
-     and Databases.
-   - **Resource Summary**: Overview of resources within your compartment.
-   - **Quick Actions**: Shortcuts to commonly used tasks like creating instances.
-=======
 1. Log in to the **[Oracle Cloud Console](https://cloud.oracle.com/)** with your assigned credentials.
 2. Familiarize yourself with the main console features:
    - **Navigation Menu**: Provides access to services such as Compute, Networking, Storage, and Databases.
    - **Resource Summary**: Displays an overview of resources in your compartment.
    - **Quick Actions**: Offers shortcuts for frequently used tasks like creating instances.
->>>>>>> 0fe82d2 (update ex00)
 
-![Cloud Console](../../images/ex00_cloudconsole01.png)
+   ![Cloud Console](../../images/ex00_cloudconsole01.png)
 
 ### Step 2: Using the Cloud Shell
 
@@ -86,11 +73,11 @@ Verify that you are in the correct compartment and region. Any new resources, in
 
    Select _Private network definition list_.
 
-![Cloud Shell 01](../../images/cloud-shell-private-network-01.jpg)
+   ![Cloud Shell 01](../../images/cloud-shell-private-network-01.jpg)
 
-Click on _Create private network definition_.
+   Click on _Create private network definition_.
 
-![Cloud Shell 02](../../images/cloud-shell-private-network-02.jpg)
+   ![Cloud Shell 02](../../images/cloud-shell-private-network-02.jpg)
 
 It is important to create the cloud shell network for
 the private subnet.
@@ -126,16 +113,9 @@ be patient.
 
 2. Add your Cloud Shell IP address to the **Access Control List (ACL)** of the ADB instance.
 
-<<<<<<< HEAD
-In OCI Console, add this returned IP addess in Autonomus Database Access Control List.
-=======
-   **Steps**:
-In OCI Console, add thos IP addess in Autonomus Database Access Control List.
->>>>>>> 0fe82d2 (update ex00)
-
 Go to Oracle Database > Autonomous Database.
 
-Select your Autonomus Database by a click on the display name. Verify, correct compartment
+Select your Autonomous Database by a click on the display name. Verify, correct compartment
 is selected.
 
 ![ADB Connect 01](../../images/cloud-shell-adb-connect-01.jpg)
