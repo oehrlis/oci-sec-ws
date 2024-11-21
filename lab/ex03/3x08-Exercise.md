@@ -34,16 +34,74 @@ your designated compartment.
 
 ## Solution {.unlisted .unnumbered}
 
+Here’s the draft solution for **Exercise 08: Audit Database Activity**:
+
+---
+
+## Solution {.unlisted .unnumbered}
+
+### Step 1: Enable and Configure Auditing in Oracle Data Safe
+
+1. **Access the Data Safe Dashboard**:
+   - Navigate to **Data Safe** → **Audit** in the OCI Console.
+
+2. **Enable Auditing for the Target Database**:
+   - Select the target Autonomous Database (ADB) from the list.
+   - If auditing is not already enabled, follow these steps:
+     - Click **Enable Auditing**.
+     - Confirm that audit data collection is enabled for the selected database.
+
+3. **Configure Audit Policies**:
+   - Go to the **Audit Policies** tab in the Data Safe interface.
+   - Enable specific audit policies for your ADB:
+     - **Login/Logout Events**: Tracks user sessions.
+     - **Privilege Usage**: Captures the use of system or object privileges.
+     - **Data Manipulation (DML)**: Logs INSERT, UPDATE, and DELETE operations.
+     - **Schema Changes**: Monitors CREATE, DROP, and ALTER statements.
+
+4. **Save the Configuration**:
+   - Ensure that the appropriate audit policies are applied to the database for logging key activities.
+
+---
+
+### Step 2: Review and Analyze Database Activity Logs
+
+1. **Access the Audit Reports**:
+   - Navigate to **Data Safe** → **Audit Reports**.
+
+2. **Filter Logs by Criteria**:
+   - Use the filters to view specific activities, such as:
+     - **Time Period**: Specify a date and time range for recent activities.
+     - **Users**: Focus on actions performed by specific users.
+     - **Events**: Filter for particular event types, such as failed logins or schema changes.
+
+3. **Analyze Audit Logs**:
+   - Review details of the audit logs, including:
+     - **Event Type**: Type of action performed (e.g., login, DML operations).
+     - **User**: Who performed the action.
+     - **Timestamp**: When the action occurred.
+     - **Object Affected**: Database objects involved in the operation.
+
+4. **Identify Suspicious Activities**:
+   - Look for anomalies or risks, such as:
+     - Unusual login attempts from unexpected IP addresses.
+     - Privilege escalation events.
+     - Unauthorized schema changes.
+
+5. **Generate an Audit Report**:
+   - Create a custom audit report for your findings:
+     - Select specific events and users.
+     - Export the report in PDF or CSV format for further analysis.
+
 ## Summary {.unlisted .unnumbered}
 
 In this exercise, you:
 
-- Configured auditing in Oracle Data Safe to track database activities.
-- Reviewed activity logs to gain insights into user actions and enhance security
-- monitoring.
+- Enabled and configured auditing for your Autonomous Database in Oracle Data Safe.
+- Applied audit policies to track key database activities, such as logins, privilege usage, and schema changes.
+- Reviewed and analyzed database activity logs to monitor user actions and identify potential security risks.
 
-You are now ready to continue with the next exercise, where you will configure
-alerts to stay informed about critical database events.
+You are now ready to proceed to the next exercise, where you will explore additional Oracle Data Safe features, such as generating alerts and notifications.
 
 <!-- For Pandoc -->
 - **Previous Exercise:** [Exercise 07: Assess Database Users](#exercise-07-assess-database-users)
