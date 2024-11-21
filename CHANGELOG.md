@@ -16,6 +16,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.12.0] - 2024-11-21
+
+### Added
+
+- add privilege *manage ons-topic* to compartment specific policy
+- add privilege *manage cloudevents-rules* to compartment specific policy
+- add privilege *manage alarms* to compartment specific policy
+- add privilege *read metrics* to compartment specific policy
+- add draft version for exercise 06
+- add draft version for exercise 07
+- add draft version for exercise 08
+- add draft version for exercise 09
+- add draft version for exercise 10
+- add draft version for exercise 11
+
 ## [0.11.0] - 2024-11-21
 
 ### Added
