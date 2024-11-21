@@ -197,39 +197,47 @@ Archive:  my-wallet.zip
 Change parameter in sqlnet.ora file with your path:
 
 ```bash
-sed -i "s|?\(/network/admin\)|$(pwd)|" sqlnet.ora
+sed -i "s|?\(/network/admin\)|$(pwd)|" $HOME/my_wallet/sqlnet.ora
 ```
 
 Verify the file using `cat sqlnet.ora`, your path should be inserted, as example:
 
 ```bash
-$ cat sqlnet.ora
+$ cat $HOME/my_wallet/sqlnet.ora
 WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/home/lab_mgb_de/my_wallet")))
 ```
 
 Get the connect alias for TPURGENT connect, example:
 
 ```bash
-grep -o '^[^ ]*tpurgent' tnsnames.ora
+grep -o '^[^ ]*tpurgent' $HOME/my_wallet/tnsnames.ora
 ```
 
 Example output:
 
 ```bash
-lab_mgb_de@cloudshell:my_wallet (eu-frankfurt-1)$ grep -o '^[^ ]*tpurgent' tnsnames.ora
+lab_mgb_de@cloudshell:my_wallet (eu-frankfurt-1)$ grep -o '^[^ ]*tpurgent' $HOME/my_wallet/tnsnames.ora
 mgbdevocisecws00atp23ai01_tpurgent
 ```
 
-Set TNS_ADMIN variable.
+Set TNS_ADMIN and ADB_SERVICE variable.
 
 ```bash
-export TNS_ADMIN=$(pwd)
+export TNS_ADMIN=$HOME/my_wallet
+export ADB_SERVICE=$(grep -o '^[^ ]*tpurgent' $HOME/my_wallet/tnsnames.ora)
 ```
 
-Connect by sqlplus, use the alias from above. Example:
+Add the variable to the profile
 
 ```bash
-sqlplus admin@mgbdevocisecws00atp23ai01_tpurgent
+echo "export TNS_ADMIN=$TNS_ADMIN" >> $HOME/.bash_profile
+echo "export ADB_SERVICE=$ADB_SERVICE" >> $HOME/.bash_profile
+```
+
+Connect by sqlplus, use the alias or ADB_SERVICE variable from above. Example:
+
+```bash
+sqlplus admin@$ADB_SERVICE
 
 SQL*Plus: Release 19.0.0.0.0 - Production on Wed Nov 20 15:31:48 2024
 Version 19.10.0.0.0
