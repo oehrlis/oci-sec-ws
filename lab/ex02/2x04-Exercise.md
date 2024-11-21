@@ -117,7 +117,6 @@ Storage -> Object Storage -> Buckets
 
 Change the visibility and verify if you get a notification by mail.
 
-
 ## Summary {.unlisted .unnumbered}
 
 In this exercise, you:

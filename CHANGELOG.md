@@ -14,14 +14,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-### Removed
-
 ## [0.12.3] - 2024-11-21 - WIP
+
+### Added
+
+- add images for adb sql action
+- add step 5 Test ADB Actions in exercise 0
+- add privilege *manage load-balancers*
+  
+### Changed
+
+- add information for client IP
 
 ### Fixed
 
 - Fix link in lab overview for exercise 03 Notification
 - Fix issues with *cloudguard* notification add privileges
+- Fix Markdown errors
+
+### Removed
 
 ## [0.12.2] - 2024-11-21
 
