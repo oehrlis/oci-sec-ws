@@ -142,7 +142,6 @@ Press _Create_ at the bottom. Go back to Cloud Guard Overview page.
 
 In this step, we create am Object Storage bucket and change visibility.
 
-
 #### Create Bucket
 
 Add basic information and description. Ensure you are in the correct compartment.
@@ -193,7 +192,7 @@ Select the alert entry by click on the bucket name to see the details and press 
 ![>> alert_2](../../images/screenshot-cloud-guard-alert_2.jpg)
 
 Ignore the warning ab out missing permissions as your OCI user is not able to
-see the policies created on top level compartment. 
+see the policies created on top level compartment.
 
 ![>> alert_3](../../images/screenshot-cloud-guard-alert_3.jpg)
 
