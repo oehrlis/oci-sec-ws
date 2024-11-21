@@ -121,6 +121,7 @@ resource "oci_identity_policy" "lab_policy" {
     format("Allow group %s to use security-lists in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
     format("Allow group %s to manage autonomous-databases in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
     format("Allow group %s to manage data-safe-family in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
+    format("Allow group %s to manage dashboards-family in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name),
     format("Allow group %s to use vcns in compartment %s", oci_identity_group.lab_groups[count.index].name, oci_identity_compartment.lab-compartment[count.index].name)
   ]
 }
