@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - add images for adb sql action
+- add step 5 Test ADB Actions in exercise 0
   
 ### Changed
 
