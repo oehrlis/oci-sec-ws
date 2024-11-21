@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.23
-# Revision...: 0.10.8
+# Revision...: 0.11.0
 # Purpose....: Define Autonomous Database (ADB) resources for the LAB environment.
 # Notes......: This resource creates Autonomous Databases (ADB) across multiple 
 #              labs using the specified configuration, such as compute count,
