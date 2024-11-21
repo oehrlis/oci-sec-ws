@@ -36,7 +36,7 @@ your designated compartment.
 Login as User XYZ in OCI console. Ensure you have select the proper compartment
 in from the dropdown list on left side.
 
-Identity -> Security -> Key Management & Secret Management -> Vault
+Go to Identity -> Security -> Key Management & Secret Management -> Vault
 
 ### Create Vault and Keys
 
@@ -48,11 +48,11 @@ Do NOT create a PRIVATE VAULT. Set name according compartment name, as example
 
 ![>> step_1](../../images/screenshot-vault_create_1.jpg)
 
-2. Verify  create Vault is in state Active.
+2. Verify  create Vault is in state Active. Be patient.
 
 ![>> step_2](../../images/screenshot-vault_create_2.jpg)
 
-3. Select th created Vault to add a Master Encryption Key. *Create Key*.
+3. Select the created Vault to add a Master Encryption Key. *Create Key*.
 
 ![>> step_3](../../images/screenshot-vault_create_3.jpg)
 
@@ -61,26 +61,13 @@ Do NOT create a PRIVATE VAULT. Set name according compartment name, as example
 
 ![>> step_4](../../images/screenshot-vault_create_4.jpg)
 
-1. Verify Master Encryption Key is in State *Enabled*.
+5. Verify Master Encryption Key is in State *Enabled*.
 
 ![>> step_5](../../images/screenshot-vault_create_5.jpg)
 
-#### Create new Object Storage with MEK
+#### Create new Object Storage with a customer managed Master Encrytion Key
 
-Storage -> Object Storage & Archive Storage -> *Create Bucket*.
-
-Set bucket name, in section *Encryption* now you can select your Master
-Encryption Key. Key not visible? Verify compartment and region (Frankfurt).
-
-![>> step_6](../../images/screenshot-vault_create_6.jpg)
-
-Verify the key is set, you can edit or unassign it.
-
-![>> step_7](../../images/screenshot-vault_create_7.jpg)
-
-#### Create new Object Storage with a Master Encrytion Key
-
-Storage -> Object Storage & Archive Storage -> *Create Bucket*.
+Go to Storage -> Object Storage & Archive Storage -> *Create Bucket*.
 
 Set bucket name, in section *Encryption* now you can select your Master
 Encryption Key. Key not visible? Verify compartment and region (Frankfurt).
@@ -93,7 +80,7 @@ Verify the key is set, you can edit or unassign it.
 
 #### Change Compute Instance Boot Volume with a Master Encrytion Key
 
-Compute -> Instances -> Webserver 01 (as example: ci-fra-lab-ocisecws-00-webserver01).
+Go to Compute -> Instances -> Webserver 01 (as example: ci-fra-lab-ocisecws-00-webserver01).
 
 Under resources, select the Boot volume name attached to the compute instance.
 
