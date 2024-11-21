@@ -105,10 +105,11 @@ echo "OCI Hostname: " . gethostname();
 ?>
 ```
 
-Save and close the file with 
+Save and close the file with
+
 - esc
-- : 
-- wq 
+- :
+- wq
 sequence.
 
 ```BASH
@@ -142,10 +143,11 @@ $ sudo vi /var/www/html/xss_demo.php
 </html>
 ```
 
-Save and close the file with 
+Save and close the file with
+
 - esc
-- : 
-- wq 
+- :
+- wq
 sequence.
 
 Test running webserver. This command returns the hostname.
@@ -224,11 +226,11 @@ health changes to ok.
 ![>> step_13](../../images/screenshot-loadbalancer-setup_13.jpg)
 
 Verify reachability in a new web browser window - URL:
-http://your public load balancer ip/index.php. Whenever the browser is refreshed, the webserver changes from webserver01 to webserver02 and vice versa.
+<http://your> public load balancer ip/index.php. Whenever the browser is refreshed, the webserver changes from webserver01 to webserver02 and vice versa.
 
 ![>> step_14](../../images/screenshot-loadbalancer-setup_14.jpg)
 
-Same when using xss_demo.php as target URL: http://your public load balancer ip/xss_demo-php.
+Same when using xss_demo.php as target URL: <http://your> public load balancer ip/xss_demo-php.
 
 ![>> step_15](../../images/screenshot-loadbalancer-setup_15.jpg)
 
