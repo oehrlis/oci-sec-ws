@@ -108,7 +108,7 @@ Either modify your target database via SQL worksheet, Cloud Shell or both.
      ALTER USER hr ACCOUNT UNLOCK;
      ```
 
-   - Example 3: Create a new test user with 
+   - Example 3: Create a new test user with
 
      ```sql
      CREATE USER test_user NO AUTHENTICATION;
