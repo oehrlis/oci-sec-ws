@@ -80,14 +80,19 @@ Here’s the draft solution for **Exercise 07: Assess Database Users**:
 
 2. Modify user accounts or privileges to simulate a change:
    - Example 1: Grant an additional role to a user:
+
      ```sql
      GRANT DBA TO hr;
      ```
+
    - Example 2: Unlock a user account:
+
      ```sql
      ALTER USER hr ACCOUNT UNLOCK;
      ```
+
    - Example 3: Create a new test user:
+
      ```sql
      CREATE USER test_user IDENTIFIED BY password123;
      GRANT CREATE SESSION TO test_user;

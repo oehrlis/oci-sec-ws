@@ -35,11 +35,6 @@ Cloud Shell configurations and ADB access settings, should be created within
 your designated compartment.
 
 ## Solution {.unlisted .unnumbered}
-Here’s the draft solution for **Exercise 09: Generate Alerts**:
-
----
-
-## Solution {.unlisted .unnumbered}
 
 ### Step 1: Configure Alert Settings in Oracle Data Safe
 
@@ -82,11 +77,14 @@ Here’s the draft solution for **Exercise 09: Generate Alerts**:
 1. **Simulate a Database Event**:
    - Perform an action on the target database that should trigger the alert.
      - Example 1: Attempt a failed login using an invalid user/password combination:
+
        ```bash
        sqlplus invalid_user/invalid_password@your_database_alias
        ```
+
      - Example 2: Make a schema change such as creating a new table:
-       ```sql
+
+      ```sql
        CREATE TABLE test_table (id NUMBER);
        ```
 

@@ -82,22 +82,27 @@ Here’s the draft solution for **Exercise 11: SQL Firewall**:
 
 1. **Connect to the Target Database**:
    - Use a SQL client (e.g., SQL*Plus or SQL Developer) or the OCI Cloud Shell to connect to the database:
+
      ```bash
      sqlplus admin@your_database_alias
      ```
 
 2. **Test Allowed Queries**:
    - Execute queries that are explicitly allowed by your SQL Firewall rules:
+
      ```sql
      SELECT * FROM employees;
      ```
+
    - Confirm that these queries are executed successfully.
 
 3. **Test Blocked Queries**:
    - Execute queries that should be blocked based on your rules:
+
      ```sql
      DELETE FROM sensitive_table WHERE id = 1;
      ```
+
    - Verify that the query is blocked, and an error or log entry is generated.
 
 4. **Verify Logs and Alerts**:
