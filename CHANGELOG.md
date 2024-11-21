@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
-## [0.12.3] - 2024-11-21 - WIP
+## [0.13.0] - 2024-11-22
 
 ### Added
 
@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add privilege *manage load-balancers*
 - add privileges for WAF config
 - add images for ex06
+- update draft version of ex05-11
 
 ### Changed
 
