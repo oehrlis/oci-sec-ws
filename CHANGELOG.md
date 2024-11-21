@@ -16,6 +16,49 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.12.1] - 2024-11-21
+
+### Fixed
+
+- fix missing privilege *manage cloud-guard-family in tenancy*
+  
+## [0.12.0] - 2024-11-21
+
+### Added
+
+- add privilege *manage ons-topic* to compartment specific policy
+- add privilege *manage cloudevents-rules* to compartment specific policy
+- add privilege *manage alarms* to compartment specific policy
+- add privilege *read metrics* to compartment specific policy
+- add draft version for exercise 06
+- add draft version for exercise 07
+- add draft version for exercise 08
+- add draft version for exercise 09
+- add draft version for exercise 10
+- add draft version for exercise 11
+
+## [0.11.0] - 2024-11-21
+
+### Added
+
+- add privilege to manage *data-safe-family*
+- add image for exercise 00
+- add images for exercise 05
+
+### Changed
+
+- simplify code to allow easier copy past of code
+- finalizing exercise 05
+- review spelling, typos and comprehensibility of exercise 05
+
+### Fixed
+
+- markdown errors in exercise 01
+
+### Removed
+
+- remove legacy section in exercise 00
+
 ## [0.10.8] - 2024-11-18
 
 ### Fixed

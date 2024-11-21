@@ -35,12 +35,109 @@ your designated compartment.
 
 ## Solution {.unlisted .unnumbered}
 
+Here’s the draft solution for **Exercise 07: Assess Database Users**:
+
+---
+
+## Solution {.unlisted .unnumbered}
+
+### Step 1: View the Overview Page for User Assessment
+
+1. Navigate to the **Data Safe Dashboard** in the OCI Console.
+   - Go to **Data Safe** → **User Assessments**.
+
+2. Select your target Autonomous Database (ADB).
+
+3. View the **User Assessment Overview Page**:
+   - Review key metrics, including:
+     - Total users.
+     - Risk level distribution (e.g., High, Medium, Low).
+     - User categories (e.g., Admin Users, Privileged Users).
+
+4. Note the summary of potential security risks related to user accounts.
+
+---
+
+### Step 2: Analyze Users in the Latest User Assessment
+
+1. Open the latest **User Assessment Report** for your target ADB.
+
+2. Review the list of users and their associated risk levels:
+   - Focus on users flagged with **High Risk** or **Medium Risk**.
+
+3. For each flagged user, analyze the following details:
+   - **Privileges**: Review the specific roles and grants assigned to the user.
+   - **Login Activity**: Check the last login time and ensure it aligns with expected usage.
+   - **Account Status**: Identify users with default passwords, expired passwords, or locked accounts.
+
+4. Document findings, highlighting users or privileges that require further action.
+
+---
+
+### Step 3: Change Users and Entitlements on the Target Database
+
+1. Access your target database using a SQL client or Cloud Shell.
+
+2. Modify user accounts or privileges to simulate a change:
+   - Example 1: Grant an additional role to a user:
+
+     ```sql
+     GRANT DBA TO hr;
+     ```
+
+   - Example 2: Unlock a user account:
+
+     ```sql
+     ALTER USER hr ACCOUNT UNLOCK;
+     ```
+
+   - Example 3: Create a new test user:
+
+     ```sql
+     CREATE USER test_user IDENTIFIED BY password123;
+     GRANT CREATE SESSION TO test_user;
+     ```
+
+3. Save and apply the changes.
+
+---
+
+### Step 4: Refresh the Latest User Assessment
+
+1. Navigate back to **User Assessments** in the Data Safe Dashboard.
+
+2. Click **Refresh Assessment** for your target database.
+   - Wait for the refresh to complete.
+
+3. Review the updated User Assessment Report:
+   - Ensure the changes made in Step 3 are reflected.
+   - Check for any new findings or risks introduced by the changes.
+
+---
+
+### Step 5: Compare the Latest User Assessment with the Initial User Assessment
+
+1. From the User Assessments page, select the **Comparison** option.
+
+2. Compare the latest assessment with the initial assessment:
+   - Identify differences in:
+     - New users added.
+     - Changes in user privileges or roles.
+     - Updated risk levels for existing users.
+
+3. Document the comparison results:
+   - Highlight any deviations or additional risks introduced by the changes.
+   - Evaluate whether corrective actions are needed to mitigate risks.
+
 ## Summary {.unlisted .unnumbered}
 
 In this exercise, you:
 
-- Conducted a user assessment with Oracle Data Safe to review roles and privileges.
-- Identified potential security risks associated with database user accounts.
+- Explored the User Assessment overview to review key metrics and user risk distributions.
+- Analyzed the users and privileges in the latest user assessment report.
+- Simulated changes to users and entitlements on the target database.
+- Refreshed the user assessment to capture updates and identify new risks.
+- Compared the latest user assessment with the initial assessment to evaluate deviations and ensure compliance.
 
 You are now ready to continue with the next exercise, where you will learn how
 to audit database activity to enhance monitoring and security.
