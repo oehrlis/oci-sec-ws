@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.12.2] - 2024-11-21
+
+### Fixed
+
+- Fix issues with cloudguard auto remediation add privileges for service cloudguard
+  
 ## [0.12.1] - 2024-11-21
 
 ### Fixed
