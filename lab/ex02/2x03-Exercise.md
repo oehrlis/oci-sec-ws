@@ -79,8 +79,8 @@ compartment level. We set condition
 - List: Custom List
 - Value: eu-frankfurt-1
 
-
 ![>> step_5](../../images/screenshot-cloud-guard-auto-resolve_5.jpg)
+
 ![>> step_6](../../images/screenshot-cloud-guard-auto-resolve_6.jpg)
 
 Press _Save_ at the bottom.
@@ -95,7 +95,7 @@ Add basic information and description. Call it _private_bucket_. Ensure you are
 in the correct compartment. If not, select your compartment in left side dropdown
 menu.
 
-Go to Storage -> Object Storage & Archive Storage -> *Create Bucket*.
+Go to Storage -> Object Storage & Archive Storage -> _Create Bucket_.
 
 - Set Bucket Name to _private-bucket_ and let other settings as per default.
 

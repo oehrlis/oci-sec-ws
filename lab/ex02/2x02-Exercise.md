@@ -212,7 +212,6 @@ In Cloud Guard alert view, the state changes after a couple of seconds too.
 
 The alert is not longer visible in alert list.
 
-
 ## Summary {.unlisted .unnumbered}
 
 In this exercise, you:
