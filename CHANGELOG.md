@@ -16,6 +16,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.11.0] - 2024-11-21
+
+### Added
+
+- add privilege to manage *data-safe-family*
+- add image for exercise 00
+- add images for exercise 05
+
+### Changed
+
+- simplify code to allow easier copy past of code
+- finalizing exercise 05
+
+### Removed
+
+- remove legacy section in exercise 00
+
 ## [0.10.8] - 2024-11-18
 
 ### Fixed
