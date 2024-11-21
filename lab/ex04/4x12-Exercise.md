@@ -40,13 +40,15 @@ dropdown list on left side.
 
 ### Create Security Zone
 
+Identity & Security -> Security Zones
+
 In dashboard, _Create Security Zone_.
 
 ![>> step_1](../../images/screenshot-security-zone_1.jpg)
 
 Name the resource, as example in style: security-zone-<compartment name>. As
 example: security-zone-mbg-oci-sec-ws-lab-00. Add a description and click on
-_Create Security Zone_.
+**Create Security Zone**.
 
 ![>> step_2](../../images/screenshot-security-zone_2.jpg)
 
@@ -54,9 +56,7 @@ Verify the new associated compartment.
 
 ![>> step_3](../../images/screenshot-security-zone_3.jpg)
 
-In _Security Zones_ -> _Recipes_, verify the associated Maximum Security Recipe
-
-- 20200914
+In _Security Zones_ -> _Recipes_, verify the associated Maximum Security Recipe automatically attached.
 
 ![>> step_4](../../images/screenshot-security-zone_4.jpg)
 

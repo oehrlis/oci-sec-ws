@@ -48,39 +48,20 @@ compute instances. As example 10.0.0.75 and 10.0.0.76.
 ![>> step_1](../../images/screenshot-loadbalancer-setup_1.jpg)
 
 On top of OCI Console, verify region is Germany Central (Frankfurt), open a
-Cloud Shell.
+Cloud Shell. Enusre private network from exercise 01 is activated.
 
-![>> step_2](../../images/screenshot-loadbalancer-setup_2.jpg)
-
-When prompted for network, use private network.
-
-![>> step 3](../../images/screenshot-loadbalancer-setup_3.jpg)
-
-Create a new private network definition:
-
-- Name: set a name according your compartment, as example
-  cloud-shell-private-network-definition
-- VCN: set VCN from your compartment
-- Subent: use subnet which contains the term *lab*, as example
-- Checkbox: enable *Use as active network*
-
-Click on *Create*.
-
-![>> step_4](../../images/screenshot-loadbalancer-setup_4.jpg)
-
-Close the private network definition list and be patient, your Cloud Shell is
-connected to the network. You can verify on top of the Cloud Shell when connected
-properly.
-
-![>> step_5](../../images/screenshot-loadbalancer-setup_5.jpg)
-
-In Cloud Shell, create a new directory and download Private SSH Key.
+In Cloud Shell, create a new directory and download Private SSH Key from OCI
+object storage.
 
 ```BASH
+-- create directory
 mkdir ssh
 cd ssh
-wget <URL provided by trainer>
-ln -s <filename> id_rsa
+
+--get key 
+wget https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Dec-iebNrGgpe_KhXMkugnekpAOQHl-jAUGJMlgpqngKmSP8iqMKdLXu8hT0Wsru/n/trivadisbdsxsp/b/DOAG-2024/o/id_rsa
+
+-- set permissions
 chmod 600 id_rsa
 ```
 
@@ -91,7 +72,8 @@ above to connect.
 
 ```BASH
 --login as user opc
-ssh opc@10.0.0.75
+cd $HOME/ssh
+ssh -i id_rsa opc@10.0.0.75
 ```
 
 ```BASH
@@ -116,14 +98,24 @@ Create HTML Index Page and XSS PHP Page in /var/www/html
 --create index.php file
 $ sudo vi /var/www/html/index.php
 
+--copy & paste the lines below to file
+
 <?php
 echo "OCI Hostname: " . gethostname();
 ?>
 ```
 
+Save and close the file with 
+- esc
+- : 
+- wq 
+sequence.
+
 ```BASH
 --create xss demo file
 $ sudo vi /var/www/html/xss_demo.php
+
+--copy & paste the lines below to file
 
 <!DOCTYPE html>
 <html lang="en">
@@ -150,6 +142,12 @@ $ sudo vi /var/www/html/xss_demo.php
 </html>
 ```
 
+Save and close the file with 
+- esc
+- : 
+- wq 
+sequence.
+
 Test running webserver. This command returns the hostname.
 
 ```BASH
@@ -164,7 +162,7 @@ Create a Public Load Balancer in Public Subnet with the two webservers as
 backend, attention: health check must set to http (as https as per default).
 Verify that backend checks run to green (ok) after a while.
 
-*Networking* -> *Load Balancer* -> *Create Load Balancer*
+Networking -> Load Balancer -> Create Load Balancer
 
 ![>> step_6](../../images/screenshot-loadbalancer-setup_6.jpg)
 
@@ -197,7 +195,7 @@ other settings.
 
 Configure listener:
 
-- Change type of traffic to HTTP. Do not change other settings.
+- Change type of traffic type to HTTP. Do not change other settings.Port is automatically changed to 80 now.
 
 ![>> step_10](../../images/screenshot-loadbalancer-setup_10.jpg)
 
@@ -206,6 +204,7 @@ Configure listener:
 Manage Logging:
 
 - Do not change settings.
+- Verify your compartment is selected in dropdown list
 
 ![>> step_11](../../images/screenshot-loadbalancer-setup_11.jpg)
 
@@ -225,17 +224,16 @@ health changes to ok.
 ![>> step_13](../../images/screenshot-loadbalancer-setup_13.jpg)
 
 Verify reachability in a new web browser window - URL:
-http://<your public load balancer ip>. Whenever the browser is refreshed, the
-webserver changes from webserver01 to webserver02 and vice versa.
+http://your public load balancer ip/index.php. Whenever the browser is refreshed, the webserver changes from webserver01 to webserver02 and vice versa.
 
 ![>> step_14](../../images/screenshot-loadbalancer-setup_14.jpg)
 
-Same when using xss_demo.php as target URL: http://<your public load balancer ip>/xss_demo-php.
+Same when using xss_demo.php as target URL: http://your public load balancer ip/xss_demo-php.
 
 ![>> step_15](../../images/screenshot-loadbalancer-setup_15.jpg)
 
 Test XSS-Injection by type in text box: <script>alert('XSS');</script> - or use
-the direct URL <http://129.159.106.151/xss_demo.php?name=><script>alert('XSS');</script>.
+the direct URL , as example <http://129.159.106.151/xss_demo.php?name=><script>alert('XSS');</script>.
 
 A popup-window occurs. If there is no window, two possible reasons for:
 
