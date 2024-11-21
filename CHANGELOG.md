@@ -21,7 +21,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - add images for adb sql action
 - add step 5 Test ADB Actions in exercise 0
 - add privilege *manage load-balancers*
-  
+- add privileges for WAF config
+
 ### Changed
 
 - add information for client IP
