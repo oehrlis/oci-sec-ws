@@ -48,12 +48,7 @@ your designated compartment.
    - **Resource Summary**: Overview of resources within your compartment.
    - **Quick Actions**: Shortcuts to commonly used tasks like creating instances.
 
-**Example Output:**
-
-```text
-OCI Console loaded successfully, with options for Compute, Storage, Networking,
-Databases, and more.
-```
+![Cloud Console](../../images/ex00_cloudconsole01.png)
 
 ### Step 2: Using the Cloud Shell
 
@@ -68,6 +63,12 @@ Databases, and more.
      oci os ns get
      ```
 
+   - Check environment variables for OCI_CS e.g. User ID, Hosts etc.
+  
+     ```bash
+     env |grep -i oci_cs
+     ```
+
 3. **Create Private Network for Cloud Shell**
    To be able to connect from OCI Clud Shell to the Autonomous Database,
    private network connection is required.
@@ -80,8 +81,8 @@ Click on _Create private network definition_.
 
 ![Cloud Shell 02](../../images/cloud-shell-private-network-02.jpg)
 
-It is importmant to create the cloud shell network for
-the **private subnet**.
+It is important to create the cloud shell network for
+the private subnet.
 Set:
 
 - Name: A simple name to identify the cloud shell network
@@ -101,7 +102,7 @@ be patient.
 
 ![Cloud Shell 05](../../images/cloud-shell-private-network-05.jpg)
 
-### Step 3: Configure Autonomus Database ACL to allow Cloud Shell connections
+### Step 3: Configure Autonomous Database ACL to allow Cloud Shell connections
 
 Get our Cloud Shell IP address. When no value is returned, the
 wrong network is active. Example for cloud shell IP address 138.2.168.154.
@@ -109,7 +110,13 @@ wrong network is active. Example for cloud shell IP address 138.2.168.154.
 The IP adress is used in next steps.
 
 ```bash
-$ curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
+curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
+```
+
+Example output
+
+```bash
+lab_soe_de@cloudshell:~ (eu-frankfurt-1)$ curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
 138.2.168.154
 ```
 
@@ -163,14 +170,24 @@ mkdir my_wallet && cd my_wallet
 Download the Autonomous Database wallet, use the ADB OCID from query above. Define the output filename and the wallet password. Example:
 
 ```bash
-oci db autonomous-database generate-wallet --autonomous-database-id ocid1.autonomousdatabase.oc1.eu-frankfurt-1.antheljtsijhdmqawkm7y2bpzwohbeyoxrf5zl2bydkx6isqxwkjii987651234 --file my-wallet.zip --password Oracle123
-Downloading file  [####################################]  100%
+oci db autonomous-database generate-wallet --autonomous-database-id ocid1.autonomousdatabase.oc1.eu-frankfurt-1.antheljtsijhdmqawkm7y2bpzwohbeyoxrf5zl2bydkx6isqxwkjii3zunka --file my-wallet.zip --password Oracle123
+```
+
+Example output:
+
+```bash
+lab_soe_de@cloudshell:my_wallet (eu-frankfurt-1)$ oci db autonomous-database generate-wallet --autonomous-database-id ocid1.autonomousdatabase.oc1.eu-frankfurt-1.antheljtsijhdmqaqffwlx66juwm2ognwnpr2jkoluhkmh3m62u66altm2ja --file my-wallet.zip --password Oracle123
 ```
 
 A file is created locally in Cloud Shell. Extract the file.
 
 ```bash
 unzip my-wallet.zip 
+```
+
+Example output:
+
+```bash
 Archive:  my-wallet.zip
   inflating: ewallet.pem             
   inflating: README                  
@@ -189,7 +206,7 @@ Change parameter in sqlnet.ora file with your path:
 sed -i "s|?\(/network/admin\)|$(pwd)|" sqlnet.ora
 ```
 
-Verify the file, your path should be inserted, as example:
+Verify the file using `cat sqlnet.ora`, your path should be inserted, as example:
 
 ```bash
 $ cat sqlnet.ora
@@ -200,6 +217,12 @@ Get the connect alias for TPURGENT connect, example:
 
 ```bash
 grep -o '^[^ ]*tpurgent' tnsnames.ora
+```
+
+Example output:
+
+```bash
+lab_mgb_de@cloudshell:my_wallet (eu-frankfurt-1)$ grep -o '^[^ ]*tpurgent' tnsnames.ora
 mgbdevocisecws00atp23ai01_tpurgent
 ```
 
