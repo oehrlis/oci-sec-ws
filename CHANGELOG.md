@@ -28,6 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - simplify code to allow easier copy past of code
 - finalizing exercise 05
+- review spelling, typos and comprehensibility of exercise 05
 
 ### Fixed
 
