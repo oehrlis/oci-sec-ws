@@ -203,27 +203,16 @@ Confirm.
 
 #### Verification
 
-After some minutes, the visibility for your created Object Storage bucket has changed back to _Private_.
+After some seconds, the visibility for your created Object Storage bucket has changed back to _Private_.
 
 Storage -> Object Storage -> Buckets
 
 ![>> alert_5](../../images/screenshot-cloud-guard-alert_5.jpg)
 
-In Cloud Guard alert view, the state changes after some minutes too.
-
-#### Mark Problem as Resolved
-
-Identity & Security -> Cloud Guard -> Alerts -> Problems.
-
-Select your problem and mark entry as resolved by clicking on button _Mark as_resolved_.
-
-![>> alert_6](../../images/screenshot-cloud-guard-alert_6.jpg)
-
-Confirm.
-
-![>> alert_7](../../images/screenshot-cloud-guard-alert_7.jpg)
+In Cloud Guard alert view, the state changes after a couple of seconds too.
 
 The alert is not longer visible in alert list.
+
 
 ## Summary {.unlisted .unnumbered}
 

@@ -47,7 +47,7 @@ have select the proper compartment in from the dropdown list on left side.
 
 We must add the responder recipe to target configuration.
 
-Cloud Guard -> Configuration -> Targets
+Identity & Security -> Cloud Guard -> Configuration -> Targets
 
 ![>> step_1](../../images/screenshot-cloud-guard-auto-resolve_1.jpg)
 
@@ -56,7 +56,7 @@ Select your created target an scroll at the bottom.
 ![>> step_2](../../images/screenshot-cloud-guard-auto-resolve_2.jpg)
 
 In section _Configuration_ und _Responder recipes_, add recipe. Select your
-responder receive from dropdown list and press _Add recipes_. Do not select the
+responder recipe from dropdown list and press _Add recipes_. Do not select the
 Oracle managed recipe as you have no privileges there to change any settings.
 
 ![>> step_3](../../images/screenshot-cloud-guard-auto-resolve_3.jpg)
@@ -73,7 +73,12 @@ compartment level. We set condition
 
 - In section _Setting_, activated _Execute automatically_.
 - Enable checkbox to confirm the execution.
-- Set Conditional Group for parameter region to eu-zurich_1
+- Set Conditional Group for parameter region to **eu-frankfurt-1**
+- Parameter: Region
+- Operator: In
+- List: Custom List
+- Value: eu-frankfurt-1
+
 
 ![>> step_5](../../images/screenshot-cloud-guard-auto-resolve_5.jpg)
 ![>> step_6](../../images/screenshot-cloud-guard-auto-resolve_6.jpg)
@@ -90,9 +95,9 @@ Add basic information and description. Call it _private_bucket_. Ensure you are
 in the correct compartment. If not, select your compartment in left side dropdown
 menu.
 
-Press _Create Bucket_.
+Go to Storage -> Object Storage & Archive Storage -> *Create Bucket*.
 
-- Set Bucket Name to _public-bucket_ and let other settings as per default.
+- Set Bucket Name to _private-bucket_ and let other settings as per default.
 
 ![>> step7](../../images/screenshot-cloud-guard-auto-resolve_7.jpg)
 
@@ -100,7 +105,7 @@ Press _Create_ at the bottom.
 
 #### Edit Visibility
 
-Edit created bucket by click on the three dots on bucket line -> Edit Visibility.
+Edit created bucket from above by click on the three dots on bucket line -> Edit Visibility. Change it to public.
 
 ![>> step_8](../../images/screenshot-cloud-guard-auto-resolve_8.jpg)
 
@@ -115,16 +120,18 @@ The bucket is set to public and marked by a yellow triangle.
 #### Verify Auto Resolving
 
 After a couple of seconds, you can verify the Responder activity. There are two
-new entries to make the bucket private Cloud Guard -> Alerts -> Responder activity
+new entries to make the bucket private.
+
+Identity & Security -> Cloud Guard -> Alerts -> Responder activity
 
 ![>> step_10](../../images/screenshot-cloud-guard-auto-resolve_10.jpg)
 
 #### Verification
 
-The visibility for your created Object Storage bucket has automatically changed
+The visibility for your Object Storage bucket has automatically changed
 now to Private.
 
-Storage -> Buckets
+Storage -> Object Storage -> Buckets
 
 ![>> step_11](../../images/screenshot-cloud-guard-auto-resolve_11.jpg)
 

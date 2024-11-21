@@ -39,8 +39,6 @@ your designated compartment.
 Login as User XYZ in OCI console. Ensure you have select the proper compartment
 in from the dropdown list on left side.
 
->> Overview
-
 ### Enable Auto Resolve Notification by Topic
 
 #### Create Topic, Subscription and Confirmation
@@ -48,23 +46,23 @@ in from the dropdown list on left side.
 A topic and a subscription is required to enable the notification service based
 on events.
 
-1. Developer Services -> Application Integration -> Notifications -> Create Topic
+Developer Services -> Application Integration -> Notifications -> Create Topic
 
 ![>> step_1](../../images/screenshot-cloud-guard-notifications_1.jpg)
 
-2. Add details, _Create_.
+Add details, _Create_.
 
 ![>> step_2](../../images/screenshot-cloud-guard-notifications_2.jpg)
 
-3. The state of the new created topic is active.
+The state of the new created topic is active.
 
 ![>> step_3](../../images/screenshot-cloud-guard-notifications_3.jpg)
 
-4. View the details, click on topic name. Create a new Subscription: _Create Subscription_.
+View the details, click on topic name. Create a new Subscription: _Create Subscription_.
 
 ![>> step_4](../../images/screenshot-cloud-guard-notifications_4.jpg)
 
-5. Select:
+Select:
 
 - Protocol: Email
 - Email: add your personal mail address, a mail address where you have immediate
@@ -74,7 +72,7 @@ Create the subscription and check your inbox.
 
 ![>> step_5](../../images/screenshot-cloud-guard-notifications_5.jpg)
 
-1. Confirm the subscription
+Confirm the subscription
 
 ![>> step_6](../../images/screenshot-cloud-guard-notifications_6.jpg)
 
@@ -88,11 +86,11 @@ We create a rule based on Cloud Guard changes.
 
 Observability & Management -> Events Service -> Rules -> _Create Rule_.
 
-1. Set Display Name and Description, as example _rule-oci-sec-ws-lab-00-cloudguard_.
+Set Display Name and Description, as example _rule-oci-sec-ws-lab-00-cloudguard_.
 
 ![>> step_1](../../images/screenshot-cloud-guard-rule_1.jpg)
 
-2. Select Rule Condition.
+Select Rule Condition.
 
 In section _Rule Conditions_, select _Service Name_ and _Event Type_. Select
 these event types:
@@ -103,11 +101,22 @@ these event types:
 
 ![>> step_2](../../images/screenshot-cloud-guard-rule_2.jpg)
 
-3. Select Actions
+Select Actions
 
 - Action-Type: Notifications
 - Notifications-Compartment: OCI-SEC-WS-LAB-<nn> (your compartment name)
 - Topic: topic-oci-sec-ws-lab-001 (the topic you created)
+
+![>> step_3](../../images/screenshot-cloud-guard-rule_3.jpg)
+
+### Test
+
+#### Change the visibility of an Object Storage bucket to public
+
+Storage -> Object Storage -> Buckets
+
+Change the visibility and verify if you get a notification by mail.
+
 
 ## Summary {.unlisted .unnumbered}
 
