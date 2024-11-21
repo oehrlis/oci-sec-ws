@@ -16,6 +16,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Removed
 
+## [0.12.1] - 2024-11-21
+
+### Fixed
+
+- fix missing privilege *manage cloud-guard-family in tenancy*
+  
 ## [0.12.0] - 2024-11-21
 
 ### Added
