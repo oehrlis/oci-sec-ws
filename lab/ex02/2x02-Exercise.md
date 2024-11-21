@@ -35,7 +35,7 @@ your designated compartment.
 
 ## Solution {.unlisted .unnumbered}
 
-Login as User XYZ in OCI console and go to _Cloud Guard Overview_. Ensure you
+Login as User XYZ in OCI console and go to _Security_ -_Cloud Guard Overview_. Ensure you
 have select the proper compartment in from the dropdown list on left side.
 
 ![>> overview](../../images/screenshot-cloud-guard-overview_ex01.jpg)
@@ -51,9 +51,8 @@ From left menu, select _Recipes_ and _Clone_.
 Cloud Guard -> Recipes -> Detector recipes
 
 - Change compartment on top to trivadisbdsxsp (root).
-- Select recipe OCI Activity Detector Recipe (Oracle managed) from dropdown list
-- Set name for cloned recipe , as example _OCI Activity Detector Recipe -
-  <compartment-name>_
+- Select recipe **OCI Activity Detector Recipe (Oracle managed)**from dropdown list
+- Set name for cloned recipe , as example **OCI Activity Detector Recipe comp-oci-ws-sec-ws-lab-00**.
 - Ensure in section Compartment, your compartment is selected.
 
 ![>> step_2](../../images/screenshot-cloud-guard-clone_step_2.jpg)
@@ -63,7 +62,7 @@ Press _Clone_ at the bottom.
 Repeat the steps for the other Oracle managed detector recipes:
 
 - OCI Configuration Detector Recipe (Oracle managed)
-- OCI Instance Detector Recipe (Oracle managed)
+- OCI Instance Security Detector Recipe (Oracle managed)
 
 After successful clone, you have recipes for Instance Security, Configuration
 and Activity.
@@ -98,16 +97,16 @@ Responder recipe:
 
 ### Create a new target to observer your compartment objects
 
-In this step, we create a target based on compartment and add the recipes we
-created.
+In this step, we create a target based in your compartment and add the recipes we
+created. Ensure, your compartment is selected in panel left.
 
-Cloud Guard -> Configuration -> Targets ->  Create Target
+Identity & Security -> Cloud Guard -> Configuration -> Targets ->  Create Target
 
 ![>> targets_1](../../images/screenshot-cloud-guard-clone_targets_1.jpg)
 
 #### Basic Information
 
-Add basic information and description.
+Add basic information and description. Use the recipes you created for your compartment.
 
 - Set target name according compartment, as example _cg-tgt-oci-sec-ws-lab-00_.
 - Add description
@@ -133,7 +132,7 @@ Press _Next_ at the bottom.
 
 #### Review
 
-AVerify you select the proper recipes based on your compartment.
+Verify you select the proper recipes based on your compartment.
 
 ![>> targets_4](../../images/screenshot-cloud-guard-clone_targets_4.jpg)
 
@@ -143,14 +142,13 @@ Press _Create_ at the bottom. Go back to Cloud Guard Overview page.
 
 In this step, we create am Object Storage bucket and change visibility.
 
-Storage -> Buckets
-
-![>> targets_1](../../images/screenshot-cloud-guard-clone_targets_1.jpg)
 
 #### Create Bucket
 
 Add basic information and description. Ensure you are in the correct compartment.
 If not, select your compartment in left side dropdown menu.
+
+Go to Storage -> Object Storage -> Buckets
 
 ![>> bucket_1](../../images/screenshot-cloud-guard-bucket_1.jpg)
 
@@ -182,20 +180,20 @@ The bucket is set to public and marked by a yellow triangle.
 
 ### Verify new Cloud Guard alert
 
-Verify if the public buckets is recognized by Cloud Guard.
+Identity & Security -> Cloud Guard -> Alerts -> Problems
 
-Cloud Guard -> Alerts -> Problems
+Verify if the public buckets is recognized by Cloud Guard. Yiu see an entry with risk level **Critical**.
 
 ![>> alert_1](../../images/screenshot-cloud-guard-alert_1.jpg)
 
 #### Remediation
 
-Select the alert and press _Remediate_.
+Select the alert entry by click on the bucket name to see the details and press _Remediate_.
 
 ![>> alert_2](../../images/screenshot-cloud-guard-alert_2.jpg)
 
 Ignore the warning ab out missing permissions as your OCI user is not able to
-see the policies created on top level.
+see the policies created on top level compartment. 
 
 ![>> alert_3](../../images/screenshot-cloud-guard-alert_3.jpg)
 
@@ -205,9 +203,9 @@ Confirm.
 
 #### Verification
 
-The visibility for your created Object Storage bucket has changed now to _Private_.
+After some minutes, the visibility for your created Object Storage bucket has changed back to _Private_.
 
-Storage -> Buckets
+Storage -> Object Storage -> Buckets
 
 ![>> alert_5](../../images/screenshot-cloud-guard-alert_5.jpg)
 
@@ -215,9 +213,9 @@ In Cloud Guard alert view, the state changes after some minutes too.
 
 #### Mark Problem as Resolved
 
-Cloud Guard -> Alerts -> Problems.
+Identity & Security -> Cloud Guard -> Alerts -> Problems.
 
-Select your problem and -Mark_as_resolved_.
+Select your problem and mark entry as resolved by clicking on button _Mark as_resolved_.
 
 ![>> alert_6](../../images/screenshot-cloud-guard-alert_6.jpg)
 

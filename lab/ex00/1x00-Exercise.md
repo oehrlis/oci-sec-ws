@@ -115,7 +115,7 @@ $ curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'
 
 In OCI Console, add this returned IP addess in Autonomus Database Access Control List.
 
-Go to Oracle Database > Autonomous Database.
+Go to Oracle Database -> Autonomous Database.
 
 Select your Autonomus Database by a click on the display name. Verify, correct compartment
 is selected.
