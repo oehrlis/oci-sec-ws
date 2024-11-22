@@ -41,16 +41,16 @@ your designated compartment.
 ### Step 1: Configure Alert Settings in Oracle Data Safe
 
 1. **Access the Data Safe Dashboard**:
-   - Navigate to **Data Safe** → **Alerts** in the OCI Console.
+   - Navigate to **Data Safe** -> **Alerts** in the OCI Console.
 
-2. **Enable Alerts for the Target Database**:
-   - Select the target Autonomous Database (ADB) from the list.
-   - If alerts are not already enabled, click **Enable Alerts** to activate the alerting mechanism for the database.
+   ![Audit Alerts](../../images/ex09_audit_alerts01.png)
 
-3. **Define Notification Settings**:
+2. **Define Notification Settings**:
    - Navigate to the **Notification Settings** section.
    - Add or confirm the notification endpoint (e.g., email address or OCI Notification Service topic) where alerts will be sent.
    - Save your changes.
+
+   ![Audit Notification](../../images/ex09_audit_alerts01.png)
 
 ### Step 2: Set Up Rules to Trigger Alerts for Specific Database Events
 
