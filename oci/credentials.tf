@@ -5,7 +5,7 @@
 # Author.....: Stefan Oehrli (oes) stefan.oehrli@oradba.ch
 # Editor.....: Stefan Oehrli
 # Date.......: 2024.10.23
-# Revision...: 0.13.1
+# Revision...: 0.14.0
 # Purpose....: Define and manage credentials for the LAB environment, including 
 #              SSH key generation and secure password creation.
 # Notes......: The SSH key and password are used across multiple resources such
