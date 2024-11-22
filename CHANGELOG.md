@@ -16,10 +16,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.14.2] - 2024-11-22
 
+### Added
+
+- add images for exercise 08
+
 ### Changed
 
 - replace intro slides with new contact information
 - change format for download version
+- rewrite exercise 08
+
+### Fixed
+
+- fix code in exercise 06
 
 ## [0.14.1] - 2024-11-22
 
