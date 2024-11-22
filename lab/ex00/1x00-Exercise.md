@@ -209,6 +209,12 @@ echo "export TNS_ADMIN=$TNS_ADMIN" >> $HOME/.bash_profile
 echo "export ADB_SERVICE=$ADB_SERVICE" >> $HOME/.bash_profile
 ```
 
+Navigate to the **Autonomous Database information** page and select **More actions** - **Administrator password** to set respectively reset your ADB password.
+
+![ADB More Actions](../../images/ex00_adbinfo01.png)
+
+![ADB Password Reset](../../images/ex00_adbpwd01.png)
+
 Connect by sqlplus, use the alias or ADB_SERVICE variable from above. Example:
 
 ```bash
