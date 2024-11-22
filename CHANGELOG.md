@@ -14,6 +14,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+## [0.14.0] - 2024-11-22
+
+### Added
+
+- add image pwd reset ADB
+- add workshop PDF
+
+### Changed
+
+- simplify OS commands in exercise 00
+
+### Fixed
+
 ## [0.13.1] - 2024-11-22
 
 ### Fixed
