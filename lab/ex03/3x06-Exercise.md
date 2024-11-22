@@ -98,7 +98,7 @@ your designated compartment.
 
    ```SQL
    GRANT alter any role TO public;
-   CREATE USER scott IDENTIFIED BY NO AUTHENTICATION;
+   CREATE USER scott NO AUTHENTICATION;
    ```
 
    ![Create a Risk using SQL worksheet](../../images/ex06_ds_risk01.png)
