@@ -38,6 +38,8 @@ Verify that you are in the correct compartment and region. Any new resources, in
    - **Navigation Menu**: Provides access to services such as Compute, Networking, Storage, and Databases.
    - **Resource Summary**: Displays an overview of resources in your compartment.
    - **Quick Actions**: Offers shortcuts for frequently used tasks like creating instances.
+3. Navigate to the **Oracle Database** - **Autonomous Transaction Processing**
+   - set the compartment to your compartment **OCI-SEC-WS-LAB-nn**
 
    ![Cloud Console](../../images/ex00_cloudconsole01.png)
 
@@ -55,17 +57,15 @@ Verify that you are in the correct compartment and region. Any new resources, in
    ls -la
    ```
 
-   - Check current Object Storage Namespace
-  
-     ```bash
-     oci os ns get
-     ```
+   ```bash
+   # Check current Object Storage Namespace
+   oci os ns get
+   ```
 
-   - Check environment variables for OCI_CS e.g. User ID, Hosts etc.
-  
-     ```bash
-     env |grep -i oci_cs
-     ```
+   ```bash
+   # Check environment variables for OCI_CS e.g. User ID, Hosts etc.
+   env |grep -i oci_cs
+   ```
 
 3. **Create Private Network for Cloud Shell**
    To be able to connect from OCI Clud Shell to the Autonomous Database,
@@ -144,57 +144,40 @@ Go back to your Cloud Shell, ensure the private network is active.
 
 List your Autonomous Database in your compartment. Replace the filter for compartment by your compartment name. Example for compartment
 
-Example for compartment MGB-DEV-OCI-SEC-WS-LAB-00, an OCID is returned, this OCID is used to get the ADB
+Example for compartment OCI-SEC-WS-LAB-00, an OCID is returned, this OCID is used to get the ADB
 connection wallet.
 
 ```bash
-oci db autonomous-database list --compartment-id $(
-    oci iam compartment list --all --compartment-id-in-subtree true | jq -r '.data[] | select(.name == "MGB-DEV-OCI-SEC-WS-LAB-00") | .id'
-) | jq -r '.data[].id'
-ocid1.autonomousdatabase.oc1.eu-frankfurt-1.antheljtsijhdmqawkm7y2bpzwohbeyoxrf5zl2bydkx6isqxwkjii987651234
-
+export MY_COMPARTMENT="OCI-SEC-WS-LAB-00"
+export MY_ADBOCID=$(
+    oci db autonomous-database list --compartment-id $(
+        oci iam compartment list --all --compartment-id-in-subtree true | \
+        jq -r --arg COMPARTMENT "$MY_COMPARTMENT" '.data[] | select(.name == $COMPARTMENT) | .id'
+    ) | jq -r '.data[].id'
+)
 ```
 
 Create a new directory, change into this directory.
 
 ```bash
-mkdir my_wallet && cd my_wallet
+mkdir -p $HOME/my_wallet && cd $HOME/my_wallet
 ```
 
 Download the Autonomous Database wallet, use the ADB OCID from query above. Define the output filename and the wallet password. Example:
 
 ```bash
-oci db autonomous-database generate-wallet --autonomous-database-id ocid1.autonomousdatabase.oc1.eu-frankfurt-1.antheljtsijhdmqawkm7y2bpzwohbeyoxrf5zl2bydkx6isqxwkjii3zunka --file my-wallet.zip --password Oracle123
-```
-
-Example output:
-
-```bash
-lab_soe_de@cloudshell:my_wallet (eu-frankfurt-1)$ oci db autonomous-database generate-wallet --autonomous-database-id ocid1.autonomousdatabase.oc1.eu-frankfurt-1.antheljtsijhdmqaqffwlx66juwm2ognwnpr2jkoluhkmh3m62u66altm2ja --file my-wallet.zip --password Oracle123
+echo $MY_ADBOCID
+oci db autonomous-database generate-wallet --autonomous-database-id $MY_ADBOCID \
+--file $HOME/my_wallet/my-wallet.zip --password Oracle123
 ```
 
 A file is created locally in Cloud Shell. Extract the file.
 
 ```bash
-unzip my-wallet.zip 
+unzip $HOME/my_wallet/my-wallet.zip -d $HOME/my_wallet
 ```
 
-Example output:
-
-```bash
-Archive:  my-wallet.zip
-  inflating: ewallet.pem             
-  inflating: README                  
-  inflating: cwallet.sso             
-  inflating: tnsnames.ora            
-  inflating: truststore.jks          
-  inflating: ojdbc.properties        
-  inflating: sqlnet.ora              
-  inflating: ewallet.p12             
-  inflating: keystore.jks            
-```
-
-Change parameter in sqlnet.ora file with your path:
+Change parameter in *sqlnet.ora* file with your path:
 
 ```bash
 sed -i "s|?\(/network/admin\)|$(pwd)|" $HOME/my_wallet/sqlnet.ora
@@ -203,21 +186,13 @@ sed -i "s|?\(/network/admin\)|$(pwd)|" $HOME/my_wallet/sqlnet.ora
 Verify the file using `cat sqlnet.ora`, your path should be inserted, as example:
 
 ```bash
-$ cat $HOME/my_wallet/sqlnet.ora
-WALLET_LOCATION = (SOURCE = (METHOD = file) (METHOD_DATA = (DIRECTORY="/home/lab_mgb_de/my_wallet")))
+cat $HOME/my_wallet/sqlnet.ora
 ```
 
 Get the connect alias for TPURGENT connect, example:
 
 ```bash
 grep -o '^[^ ]*tpurgent' $HOME/my_wallet/tnsnames.ora
-```
-
-Example output:
-
-```bash
-lab_mgb_de@cloudshell:my_wallet (eu-frankfurt-1)$ grep -o '^[^ ]*tpurgent' $HOME/my_wallet/tnsnames.ora
-mgbdevocisecws00atp23ai01_tpurgent
 ```
 
 Set TNS_ADMIN and ADB_SERVICE variable.
@@ -235,6 +210,12 @@ echo "export ADB_SERVICE=$ADB_SERVICE" >> $HOME/.bash_profile
 ```
 
 Connect by sqlplus, use the alias or ADB_SERVICE variable from above. Example:
+
+```bash
+sqlplus admin@$ADB_SERVICE
+```
+
+Example Output:
 
 ```bash
 sqlplus admin@$ADB_SERVICE
