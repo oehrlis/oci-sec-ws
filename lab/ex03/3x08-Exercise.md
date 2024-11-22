@@ -39,50 +39,68 @@ your designated compartment.
 ### Step 1: Enable and Configure Auditing in Oracle Data Safe
 
 1. **Access the Data Safe Dashboard**:
-   - Navigate to **Data Safe** → **Audit** in the OCI Console.
+   - Navigate to **Data Safe** -> **Activity Auditing** in the OCI Console.
 
 2. **Enable Auditing for the Target Database**:
    - Select the target Autonomous Database (ADB) from the list.
    - If auditing is not already enabled, follow these steps:
-     - Click **Enable Auditing**.
+     - Click **Start audit trails**.
      - Confirm that audit data collection is enabled for the selected database.
+
+   ![Activity Auditing Overview in Compartment](../../images/ex08_enable_audit01.png)
+
+   ![Start Audit Trail](../../images/ex08_enable_audit02.png)
 
 3. **Configure Audit Policies**:
    - Go to the **Audit Policies** tab in the Data Safe interface.
-   - Enable specific audit policies for your ADB:
+   - Select your specific **Autonomous Database**
+   - Optionally initiate **Retrieve** to get the latest audit policies from your database
+   - Select **Update and provision** to enable specific audit policies for your ADB:
      - **Login/Logout Events**: Tracks user sessions.
      - **Privilege Usage**: Captures the use of system or object privileges.
      - **Data Manipulation (DML)**: Logs INSERT, UPDATE, and DELETE operations.
      - **Schema Changes**: Monitors CREATE, DROP, and ALTER statements.
+
+   ![Start Audit Trail](../../images/ex08_enable_audit03.png)
 
 4. **Save the Configuration**:
    - Ensure that the appropriate audit policies are applied to the database for logging key activities.
 
 ### Step 2: Review and Analyze Database Activity Logs
 
-1. **Access the Audit Reports**:
-   - Navigate to **Data Safe** → **Audit Reports**.
+1. **Explore Audit Insights**:  
+   - Go to **Data Safe** -> **Activity Auditing** -> **Audit Insights**.  
+   - Review the top 10 charts displayed.  
+   - Drill down into specific audit events for deeper analysis.
 
-2. **Filter Logs by Criteria**:
+   ![Audit Insights](../../images/ex08_audit_insights01.png)
+
+2. **Access the Audit Reports**:
+   - Go to **Data Safe** -> **Activity Auditing** -> **Audit Reports**.
+   - Review the *Standard Reports* or create a *Custom Report*
+
+   ![Audit Insights](../../images/ex08_audit_reports01.png)
+
+3. **Filter Logs by Criteria**:
    - Use the filters to view specific activities, such as:
      - **Time Period**: Specify a date and time range for recent activities.
      - **Users**: Focus on actions performed by specific users.
      - **Events**: Filter for particular event types, such as failed logins or schema changes.
 
-3. **Analyze Audit Logs**:
+4. **Analyze Audit Logs**:
    - Review details of the audit logs, including:
      - **Event Type**: Type of action performed (e.g., login, DML operations).
      - **User**: Who performed the action.
      - **Timestamp**: When the action occurred.
      - **Object Affected**: Database objects involved in the operation.
 
-4. **Identify Suspicious Activities**:
+5. **Identify Suspicious Activities**:
    - Look for anomalies or risks, such as:
      - Unusual login attempts from unexpected IP addresses.
      - Privilege escalation events.
      - Unauthorized schema changes.
 
-5. **Generate an Audit Report**:
+6. **Generate an Audit Report**:
    - Create a custom audit report for your findings:
      - Select specific events and users.
      - Export the report in PDF or CSV format for further analysis.
