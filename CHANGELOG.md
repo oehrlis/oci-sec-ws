@@ -25,8 +25,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - simplify OS commands in exercise 00
 
-### Fixed
-
 ## [0.13.1] - 2024-11-22
 
 ### Fixed
