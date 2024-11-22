@@ -19,12 +19,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - add images for exercise 08
+- add images for exercise 09
 
 ### Changed
 
 - replace intro slides with new contact information
 - change format for download version
 - rewrite exercise 08
+- rewrite exercise 09
 
 ### Fixed
 
