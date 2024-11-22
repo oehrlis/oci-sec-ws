@@ -14,6 +14,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+## [0.14.1] - 2024-11-22
+
+### Changed
+
+- add OCI user and password info to each environement chapter of the exercises.
+
 ## [0.14.0] - 2024-11-22
 
 ### Added
